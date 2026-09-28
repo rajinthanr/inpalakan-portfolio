@@ -508,8 +508,8 @@ function homePage() {
     },
     furniture: {
       code: 'FN-004',
-      image: 'furniture-pooja-cabinet-lit-front.jpg',
-      alt: 'Illuminated timber pooja cabinet with carved crown'
+      image: 'furniture-pooja-cabinet-side.jpg',
+      alt: 'Handcrafted timber pooja cabinet with carved crown and storage'
     },
     'tv-units': {
       code: 'TV-004',

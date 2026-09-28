@@ -34,19 +34,7 @@
     "summary": "A single entrance door featuring Lord Ganesha enthroned and a sacred kalash with ceremonial lamps.",
     "image": "door-carved-ganesha-pooja.jpg",
     "alt": "Carved timber entrance door featuring Lord Ganesha on a throne and sacred kalash with ceremonial lamps",
-    "featured": true,
-    "views": [
-      {
-        "src": "door-carved-ganesha-pooja.jpg",
-        "label": "Full front view",
-        "alt": "Installed full front view of carved Ganesha door with floral garland"
-      },
-      {
-        "src": "door-carved-ganesha-workshop-floor.jpg",
-        "label": "Workshop finish stage",
-        "alt": "Lord Ganesha carved timber door on workshop floor during final inspection"
-      }
-    ]
+    "featured": true
   },
   {
     "code": "DR-006",
@@ -114,11 +102,23 @@
     "code": "WN-007",
     "slug": "transom-scrollwork-window",
     "category": "windows",
-    "title": "Transom scrollwork timber window",
-    "summary": "Three glazed sections with curved cross rails and dark scrollwork grilles in the upper transom.",
-    "image": "window-transom-scrollwork.jpg",
-    "alt": "Three-section timber window with curved cross rails and scrollwork wrought iron in upper transom",
-    "featured": false
+    "title": "Transom timber window frame with decorative grille",
+    "summary": "Handcrafted solid timber window frame with decorative transom grille and precision joinery.",
+    "image": "DSC00256.jpg",
+    "alt": "Solid timber window frame with decorative transom and protective grille",
+    "featured": false,
+    "views": [
+      {
+        "src": "DSC00256.jpg",
+        "label": "Front elevation",
+        "alt": "Solid timber window frame with decorative transom and protective grille"
+      },
+      {
+        "src": "DSC00258.jpg",
+        "label": "Workshop perspective",
+        "alt": "Solid timber window frame workshop finish and joinery detail"
+      }
+    ]
   },
   {
     "code": "CB-002",
@@ -330,19 +330,7 @@
     "summary": "A grand contemporary double entrance door featuring warm polished timber, horizontal metallic inlays, and custom floral frosted glass sidelights that illuminate the home entrance.",
     "image": "door-dr-033.jpg",
     "alt": "Full front elevation of double timber entrance door with floral frosted sidelights and horizontal inlays",
-    "featured": true,
-    "views": [
-      {
-        "src": "door-dr-033.jpg",
-        "label": "Full front elevation",
-        "alt": "Full front view of double entrance door with sidelights"
-      },
-      {
-        "src": "window-wn-025.jpg",
-        "label": "Veranda context",
-        "alt": "Wide veranda elevation showing porch entrance and marble flooring"
-      }
-    ]
+    "featured": true
   },
   {
     "code": "DR-034",
@@ -487,19 +475,7 @@
     "summary": "Custom devotional prayer altar cabinet featuring a carved ornamental mandap crest, polished granite worktop for deities and offerings, and four storage cupboards below.",
     "image": "cupboard-cb-017.jpg",
     "alt": "Full front elevation of handcrafted timber pooja prayer shrine cabinet with ornate crest and granite counter",
-    "featured": false,
-    "views": [
-      {
-        "src": "cupboard-cb-017.jpg",
-        "label": "Full front altar view",
-        "alt": "Straight-on centered front view of timber pooja shrine"
-      },
-      {
-        "src": "cupboard-cb-018.jpg",
-        "label": "Perspective angle",
-        "alt": "Angled perspective view showing granite countertop and storage doors"
-      }
-    ]
+    "featured": false
   },
   {
     "code": "CB-022",
@@ -590,7 +566,7 @@
     "category": "furniture",
     "title": "Carved Twin Peacock Timber Bed Headboard",
     "summary": "Exquisite solid timber bedhead deeply relief-carved with mirroring peacocks, floral scrollwork crest, and turned finial side posts.",
-    "image": "furniture-carved-peacock-bed-headboard.jpg",
+    "image": "DSC00797.JPG",
     "alt": "Solid timber master bed headboard deeply carved with mirroring peacocks and floral scrollwork",
     "featured": false
   },
@@ -828,11 +804,6 @@
         "alt": "Wide front view of the warm timber-toned L-shaped kitchen"
       },
       {
-        "src": "kitchen-warm-timber-angle.jpg",
-        "label": "Worktop angle",
-        "alt": "Angled view along the dark worktop and illuminated upper cabinets"
-      },
-      {
         "src": "kitchen-warm-timber-drawers.jpg",
         "label": "Drawer storage",
         "alt": "Open pull-out drawers below the dark kitchen worktop"
@@ -877,26 +848,9 @@
     "category": "furniture",
     "title": "Illuminated Pooja Cabinet",
     "summary": "A freestanding pooja cabinet with a tiered carved crown, enclosed lower storage, stone-look shelf, and focused interior lighting.",
-    "image": "furniture-pooja-cabinet-lit-front.jpg",
-    "alt": "Freestanding timber pooja cabinet with carved crown and illuminated shrine shelf",
-    "featured": true,
-    "views": [
-      {
-        "src": "furniture-pooja-cabinet-lit-front.jpg",
-        "label": "Illuminated front",
-        "alt": "Front view of the pooja cabinet with its shrine shelf illuminated"
-      },
-      {
-        "src": "furniture-pooja-cabinet-open.jpg",
-        "label": "Full open display",
-        "alt": "Wide front view showing the shrine display and lower cabinet storage"
-      },
-      {
-        "src": "furniture-pooja-cabinet-side.jpg",
-        "label": "Side perspective",
-        "alt": "Side view showing the cabinet depth, carved crown, and shrine columns"
-      }
-    ]
+    "image": "furniture-pooja-cabinet-side.jpg",
+    "alt": "Freestanding timber pooja cabinet with carved crown and shrine shelving",
+    "featured": true
   },
   {
     "code": "TV-004",
@@ -906,19 +860,7 @@
     "summary": "A complete media wall with rounded display towers, teal base cabinets, vertical timber slats, and warm integrated lighting.",
     "image": "tv-unit-rounded-teal-wide.jpg",
     "alt": "Teal television feature wall with rounded display towers and illuminated timber slats",
-    "featured": true,
-    "views": [
-      {
-        "src": "tv-unit-rounded-teal-wide.jpg",
-        "label": "Complete media wall",
-        "alt": "Wide room view of the teal TV unit with two rounded display towers"
-      },
-      {
-        "src": "tv-unit-rounded-teal-feature-wall.jpg",
-        "label": "Angled perspective",
-        "alt": "Angled view showing the curved display end and lower storage cabinets"
-      }
-    ]
+    "featured": true
   },
   {
     "code": "GY-007",
@@ -978,6 +920,642 @@
     "summary": "Custom timber casement window with geometric mullion design and textured glass inserts.",
     "image": "window-geometric-casement.jpg",
     "alt": "Timber casement window with geometric wood pattern and glass panes",
+    "featured": false
+  },
+  {
+    "code": "BC-028",
+    "slug": "fitted-bedroom-wardrobe-bc-028",
+    "category": "bedrooms",
+    "title": "Custom Fitted Bedroom Wardrobe and Storage",
+    "summary": "Floor-to-ceiling fitted bedroom wardrobe cabinetry with integrated drawers, interior shelving, and smooth natural finish.",
+    "image": "IMG_20260217_112313.jpg",
+    "alt": "Custom fitted timber bedroom wardrobe and storage cabinetry",
+    "featured": false,
+    "views": [
+      {
+        "src": "IMG_20260217_112313.jpg",
+        "label": "Wardrobe exterior",
+        "alt": "Custom fitted timber bedroom wardrobe and storage cabinetry"
+      },
+      {
+        "src": "IMG_20260217_112523 (1).jpg",
+        "label": "Interior layout",
+        "alt": "Interior shelving and drawer layout of fitted bedroom wardrobe"
+      }
+    ]
+  },
+  {
+    "code": "TV-005",
+    "slug": "contemporary-tv-feature-wall-tv-005",
+    "category": "tv-units",
+    "title": "Contemporary TV Feature Wall Unit",
+    "summary": "Custom timber TV wall entertainment unit with display shelving, media console, and clean modern lines.",
+    "image": "20251018_163709.jpg",
+    "alt": "Contemporary timber TV wall unit with media storage and display shelving",
+    "featured": false
+  },
+  {
+    "code": "KC-026",
+    "slug": "modular-kitchen-cabinetry-kc-026",
+    "category": "kitchens",
+    "title": "Modular Timber Kitchen Cabinetry",
+    "summary": "Custom kitchen cabinetry with polished timber finish, fitted storage compartments, and clean countertop installation.",
+    "image": "20251018_160058.jpg",
+    "alt": "Custom timber modular kitchen cabinets and countertop installation",
+    "featured": false
+  },
+  {
+    "code": "KC-027",
+    "slug": "fitted-kitchen-cupboards-kc-027",
+    "category": "kitchens",
+    "title": "Fitted Kitchen Storage Cupboards",
+    "summary": "Custom built-in kitchen cupboards with upper and lower storage cabinets and durable worktop fitting.",
+    "image": "IMG-20260426-WA0011 (1).jpg",
+    "alt": "Custom built-in kitchen storage cupboards and worktop fitting",
+    "featured": false
+  },
+  {
+    "code": "FN-005",
+    "slug": "solid-timber-cabinet-fn-005",
+    "category": "furniture",
+    "title": "Solid Timber Storage Cabinet",
+    "summary": "Handcrafted solid timber storage cabinet featuring paneled doors, fine wood grain, and durable joinery.",
+    "image": "20220717_132633881.jpg",
+    "alt": "Handcrafted solid timber storage cabinet with paneled doors",
+    "featured": false,
+    "views": [
+      {
+        "src": "20220717_132633881.jpg",
+        "label": "Front view",
+        "alt": "Front view of handcrafted solid timber storage cabinet"
+      },
+      {
+        "src": "20220717_132649976.jpg",
+        "label": "Angle view",
+        "alt": "Angled view of solid timber cabinet showcasing side panels and joinery"
+      }
+    ]
+  },
+  {
+    "code": "FN-006",
+    "slug": "carved-timber-pooja-shrine-fn-006",
+    "category": "furniture",
+    "title": "Carved Timber Pooja Shrine Altar",
+    "summary": "Intricately crafted home pooja shrine mandir in solid wood with carved spires and prayer drawers.",
+    "image": "20250123_131506~2.jpg",
+    "alt": "Carved solid timber home pooja shrine mandir with traditional crest and storage drawers",
+    "featured": false
+  },
+  {
+    "code": "FN-007",
+    "slug": "timber-sideboard-credenza-fn-007",
+    "category": "furniture",
+    "title": "Solid Timber Sideboard Credenza",
+    "summary": "Custom timber sideboard credenza with spacious cupboards, smooth tabletop, and refined workshop polish.",
+    "image": "20251229_161911.jpg",
+    "alt": "Solid timber sideboard credenza cabinet with spacious storage cupboards",
+    "featured": false
+  },
+  {
+    "code": "FN-008",
+    "slug": "ornate-pooja-cabinet-fn-008",
+    "category": "furniture",
+    "title": "Ornate Carved Pooja Cabinet Unit",
+    "summary": "Custom carved timber prayer cabinet with traditional floral detailing, shrine platform, and enclosed lower storage.",
+    "image": "20251231_123439.jpg",
+    "alt": "Ornate carved timber prayer cabinet unit with traditional detailing",
+    "featured": false
+  },
+  {
+    "code": "FN-009",
+    "slug": "custom-wood-furniture-fn-009",
+    "category": "furniture",
+    "title": "Custom Handcrafted Timber Furniture Unit",
+    "summary": "Bespoke solid wood cabinetry crafted with traditional joinery techniques and durable hand-rubbed finish.",
+    "image": "IMG-20250420-WA0038.jpg",
+    "alt": "Bespoke solid wood furniture unit with traditional craftsmanship",
+    "featured": false
+  },
+  {
+    "code": "FN-010",
+    "slug": "handcrafted-timber-stand-fn-010",
+    "category": "furniture",
+    "title": "Handcrafted Timber Stand and Cabinet",
+    "summary": "Solid timber utility and display stand built with mortise and tenon joinery and smooth natural polish.",
+    "image": "IMG-20260923-WA0004.jpg",
+    "alt": "Solid timber display stand and storage cabinet",
+    "featured": false,
+    "views": [
+      {
+        "src": "IMG-20260923-WA0004.jpg",
+        "label": "Overview",
+        "alt": "Solid timber display stand and storage cabinet overview"
+      },
+      {
+        "src": "IMG-20260923-WA0007.jpg",
+        "label": "Detail view",
+        "alt": "Detail view of solid timber stand joinery and grain"
+      }
+    ]
+  },
+  {
+    "code": "FN-011",
+    "slug": "timber-dining-furniture-fn-011",
+    "category": "furniture",
+    "title": "Handcrafted Timber Dining Furniture",
+    "summary": "Solid hardwood dining furniture featuring sturdy timber construction, smooth beveled edges, and rich polish.",
+    "image": "image-0-02-06-30707e99d013b87aa673881945972408eb721afd7c1a98da5c47c9c22474e95d-V.jpg",
+    "alt": "Handcrafted solid hardwood timber dining furniture",
+    "featured": false
+  },
+  {
+    "code": "FN-012",
+    "slug": "timber-living-cabinet-fn-012",
+    "category": "furniture",
+    "title": "Custom Timber Living Room Cabinet",
+    "summary": "Solid timber living room cabinet offering multi-tiered shelving and integrated drawer storage.",
+    "image": "image-0-02-06-31ebc67ba31ab105e460f1d2ef5cddb230fd027788efa903fc67476dcea2685b-V.jpg",
+    "alt": "Solid timber living room cabinet with multi-tiered shelving",
+    "featured": false
+  },
+  {
+    "code": "FN-013",
+    "slug": "timber-coffee-table-fn-013",
+    "category": "furniture",
+    "title": "Solid Wood Coffee Table",
+    "summary": "Handmade solid wood low table with sculpted legs and a thick polished hardwood top.",
+    "image": "image-0-02-06-68323217e5bc7baaf4faadd1cd180d4ffa164c042eb207564e1bac5282711079-V.jpg",
+    "alt": "Solid wood coffee table with sculpted legs and polished timber top",
+    "featured": false
+  },
+  {
+    "code": "FN-014",
+    "slug": "timber-display-shelf-fn-014",
+    "category": "furniture",
+    "title": "Custom Timber Display Shelf",
+    "summary": "Open display shelving crafted from select timber, designed for living room or study spaces.",
+    "image": "image-0-02-06-bdbd1588b2397c102a374cc8c45299a74fcb18e156b7e326688e72aae33930b5-V.jpg",
+    "alt": "Custom timber open display shelving unit",
+    "featured": false
+  },
+  {
+    "code": "WN-037",
+    "slug": "timber-casement-window-wn-037",
+    "category": "windows",
+    "title": "Solid Timber Casement Window Frame",
+    "summary": "Precision-crafted timber casement window frame with secure rebate profiling and weather-resistant construction.",
+    "image": "20220426_112714.jpg",
+    "alt": "Solid timber casement window frame with precision rebate profiling",
+    "featured": false
+  },
+  {
+    "code": "WN-038",
+    "slug": "timber-window-sash-wn-038",
+    "category": "windows",
+    "title": "Handcrafted Timber Window Sash",
+    "summary": "Multi-pane timber window sash frame crafted with traditional mortise joinery and smooth sanding.",
+    "image": "20240508_155919 (1).jpg",
+    "alt": "Multi-pane timber window sash frame with traditional joinery",
+    "featured": false
+  },
+  {
+    "code": "WN-039",
+    "slug": "timber-window-installation-wn-039",
+    "category": "windows",
+    "title": "Custom Timber Window Suite with Transom",
+    "summary": "Full window installation featuring solid timber frame, protective ironwork, and top transom ventilation.",
+    "image": "20240508_162845.jpg",
+    "alt": "Full solid timber window suite installation with transom",
+    "featured": false,
+    "views": [
+      {
+        "src": "20240508_162845.jpg",
+        "label": "Window elevation",
+        "alt": "Full solid timber window suite installation with transom"
+      },
+      {
+        "src": "20240508_163911.jpg",
+        "label": "Interior perspective",
+        "alt": "Interior view showing window frame fitting and sill"
+      },
+      {
+        "src": "20240508_165515.jpg",
+        "label": "Sash detail",
+        "alt": "Detail view of timber window sashes and brass fittings"
+      }
+    ]
+  },
+  {
+    "code": "WN-040",
+    "slug": "decorative-timber-window-wn-040",
+    "category": "windows",
+    "title": "Decorative Timber Window Frame",
+    "summary": "Handcrafted timber window frame with decorative curved mullions and textured glass panes.",
+    "image": "20240921_114246.jpg",
+    "alt": "Handcrafted timber window frame with decorative curved mullions",
+    "featured": false
+  },
+  {
+    "code": "WN-041",
+    "slug": "contemporary-timber-window-wn-041",
+    "category": "windows",
+    "title": "Contemporary Timber Glazed Window",
+    "summary": "Clean-lined modern timber window unit featuring large glazed panels for maximum natural light.",
+    "image": "20251018_160531.jpg",
+    "alt": "Contemporary timber glazed window unit for residential spaces",
+    "featured": false
+  },
+  {
+    "code": "WN-042",
+    "slug": "traditional-timber-window-wn-042",
+    "category": "windows",
+    "title": "Traditional Timber Window with Security Grille",
+    "summary": "Solid timber window frame fitted with integrated protective grilles and durable Sri Lankan hardwood sill.",
+    "image": "20251231_122754 (1).jpg",
+    "alt": "Traditional timber window frame with integrated protective grilles",
+    "featured": false,
+    "views": [
+      {
+        "src": "20251231_122754 (1).jpg",
+        "label": "Front view",
+        "alt": "Traditional timber window frame with integrated protective grilles"
+      },
+      {
+        "src": "20251231_123056.jpg",
+        "label": "Angle view",
+        "alt": "Angled view showing timber frame depth and grille mounting"
+      }
+    ]
+  },
+  {
+    "code": "WN-043",
+    "slug": "carved-timber-window-wn-043",
+    "category": "windows",
+    "title": "Handcrafted Arch Timber Window",
+    "summary": "Classical arched timber window frame featuring precision joinery and elegant architectural curves.",
+    "image": "Window01.jpg",
+    "alt": "Classical arched timber window frame with precision joinery",
+    "featured": false
+  },
+  {
+    "code": "WN-044",
+    "slug": "three-sash-timber-window-wn-044",
+    "category": "windows",
+    "title": "Three-Sash Hardwood Window Unit",
+    "summary": "Three-sash timber window frame designed for expansive wall openings with smooth casement operation.",
+    "image": "Window3s.jpg",
+    "alt": "Three-sash timber window frame unit with smooth casement operation",
+    "featured": false
+  },
+  {
+    "code": "WN-045",
+    "slug": "residential-timber-window-wn-045",
+    "category": "windows",
+    "title": "Residential Timber Window Frame Unit",
+    "summary": "Custom fabricated timber window unit ready for glazing and site installation in modern residences.",
+    "image": "image-0-02-03-e95b5b77651fedbe722b792919a8797a417627401add2d2f2502f674c281090c-V.jpg",
+    "alt": "Custom fabricated residential timber window frame unit",
+    "featured": false
+  },
+  {
+    "code": "DR-042",
+    "slug": "carved-solid-timber-door-dr-042",
+    "category": "doors",
+    "title": "Carved Solid Timber Entrance Door",
+    "summary": "Grand solid timber entrance door featuring deeply relief-carved floral panels and solid frame surround.",
+    "image": "20220126_183123.jpg",
+    "alt": "Grand solid timber entrance door with carved floral panels",
+    "featured": false,
+    "views": [
+      {
+        "src": "20220126_183123.jpg",
+        "label": "Full entrance view",
+        "alt": "Full view of grand solid timber entrance door"
+      },
+      {
+        "src": "20220126_183558.jpg",
+        "label": "Carving detail",
+        "alt": "Close-up detail of deep relief hand-carved floral door panel"
+      },
+      {
+        "src": "20220126_183713.jpg",
+        "label": "Panel perspective",
+        "alt": "Angled view of door surface relief and grain texture"
+      },
+      {
+        "src": "20220126_183807(0).jpg",
+        "label": "Hardware and finish",
+        "alt": "Detail view of door finish and precision hardware fitting"
+      }
+    ]
+  },
+  {
+    "code": "DR-043",
+    "slug": "hand-carved-entrance-door-dr-043",
+    "category": "doors",
+    "title": "Hand-Carved Double Entrance Door",
+    "summary": "Double entrance door hand-carved with traditional Sri Lankan ornamental motifs and rich timber polish.",
+    "image": "20220316_143059.jpg",
+    "alt": "Hand-carved double entrance door with ornamental motifs",
+    "featured": false,
+    "views": [
+      {
+        "src": "20220316_143059.jpg",
+        "label": "Front elevation",
+        "alt": "Hand-carved double entrance door front elevation"
+      },
+      {
+        "src": "20220316_143323.jpg",
+        "label": "Carved panel detail",
+        "alt": "Detail of carved ornamental panel and timber finish"
+      }
+    ]
+  },
+  {
+    "code": "DR-044",
+    "slug": "sculpted-timber-door-dr-044",
+    "category": "doors",
+    "title": "Sculpted Hardwood Entrance Door",
+    "summary": "Solid hardwood door with sculpted multi-panel design, robust stiles, and weather-sealed joints.",
+    "image": "20231211_164330.jpg",
+    "alt": "Solid hardwood door with sculpted multi-panel design",
+    "featured": false,
+    "views": [
+      {
+        "src": "20231211_164330.jpg",
+        "label": "Main elevation",
+        "alt": "Solid hardwood door main elevation"
+      },
+      {
+        "src": "20231211_164542.jpg",
+        "label": "Angle perspective",
+        "alt": "Angled view of hardwood door showing depth and profile"
+      }
+    ]
+  },
+  {
+    "code": "DR-045",
+    "slug": "ornamental-entrance-door-dr-045",
+    "category": "doors",
+    "title": "Ornamental Timber Entrance Door",
+    "summary": "Handcrafted entrance door with ornamental moldings, paneled detailing, and premium protective lacquer.",
+    "image": "20240508_162650.jpg",
+    "alt": "Handcrafted timber entrance door with ornamental moldings",
+    "featured": false,
+    "views": [
+      {
+        "src": "20240508_162650.jpg",
+        "label": "Door elevation",
+        "alt": "Handcrafted timber entrance door with ornamental moldings"
+      },
+      {
+        "src": "20240508_164124 (1).jpg",
+        "label": "Panel detail",
+        "alt": "Close-up of timber molding and panel joinery"
+      }
+    ]
+  },
+  {
+    "code": "DR-046",
+    "slug": "relief-carved-temple-door-dr-046",
+    "category": "doors",
+    "title": "Relief-Carved Traditional Entrance Door",
+    "summary": "Traditional Sri Lankan timber entrance door with deep floral relief carvings and solid jamb construction.",
+    "image": "DSC00247.jpg",
+    "alt": "Traditional timber entrance door with deep floral relief carvings",
+    "featured": false,
+    "views": [
+      {
+        "src": "DSC00247.jpg",
+        "label": "Front view",
+        "alt": "Traditional timber entrance door with deep floral relief carvings"
+      },
+      {
+        "src": "DSC00252.jpg",
+        "label": "Workshop inspection",
+        "alt": "Relief-carved timber door during final workshop inspection"
+      }
+    ]
+  },
+  {
+    "code": "DR-047",
+    "slug": "grand-residence-door-dr-047",
+    "category": "doors",
+    "title": "Grand Residence Double Entrance Door",
+    "summary": "Stately double entrance door pair crafted from heavy timber with symmetrical paneling and brass handle mounts.",
+    "image": "DSC_0626.jpg",
+    "alt": "Grand residence double entrance door pair crafted from heavy timber",
+    "featured": false,
+    "views": [
+      {
+        "src": "DSC_0626.jpg",
+        "label": "Double door pair",
+        "alt": "Grand residence double entrance door pair crafted from heavy timber"
+      },
+      {
+        "src": "DSC_0634.jpg",
+        "label": "Arch and transom view",
+        "alt": "Double entrance door pair showing frame surround and arch detail"
+      }
+    ]
+  },
+  {
+    "code": "DR-048",
+    "slug": "carved-pooja-door-dr-048",
+    "category": "doors",
+    "title": "Traditional Carved Pooja Room Door",
+    "summary": "Exquisite carved door created for prayer rooms and sacred home spaces featuring symbolic floral medallions.",
+    "image": "FB_IMG_1527696093909.jpg",
+    "alt": "Traditional carved timber pooja room door with floral medallions",
+    "featured": false,
+    "views": [
+      {
+        "src": "FB_IMG_1527696093909.jpg",
+        "label": "Full door view",
+        "alt": "Traditional carved timber pooja room door with floral medallions"
+      },
+      {
+        "src": "FB_IMG_1527696096380.jpg",
+        "label": "Carving detail",
+        "alt": "Detail view of traditional relief carving and polished surface"
+      }
+    ]
+  },
+  {
+    "code": "DR-049",
+    "slug": "contemporary-timber-door-dr-049",
+    "category": "doors",
+    "title": "Contemporary Paneled Timber Entrance",
+    "summary": "Modern solid timber entrance door with geometric paneling and warm natural wood grain.",
+    "image": "IMG-20210725-WA0017.jpg",
+    "alt": "Contemporary solid timber entrance door with geometric paneling",
+    "featured": false,
+    "views": [
+      {
+        "src": "IMG-20210725-WA0017.jpg",
+        "label": "Front view",
+        "alt": "Contemporary solid timber entrance door with geometric paneling"
+      },
+      {
+        "src": "IMG-20210725-WA0018.jpg",
+        "label": "Angle perspective",
+        "alt": "Angled view showing timber panel depth and side jambs"
+      },
+      {
+        "src": "IMG-20210725-WA0019.jpg",
+        "label": "Texture detail",
+        "alt": "Close-up of wood grain and lacquer finish"
+      }
+    ]
+  },
+  {
+    "code": "DR-050",
+    "slug": "timber-panel-door-dr-050",
+    "category": "doors",
+    "title": "Traditional Paneled Timber Entrance Door",
+    "summary": "Classic solid timber entrance door featuring raised field panels and heavy-duty frame.",
+    "image": "20180525_130220.jpg",
+    "alt": "Traditional Paneled Timber Entrance Door - Classic solid timber entrance door featuring raised field panels and heavy-duty frame.",
+    "featured": false
+  },
+  {
+    "code": "DR-051",
+    "slug": "custom-hardwood-door-dr-051",
+    "category": "doors",
+    "title": "Custom Handcrafted Hardwood Door",
+    "summary": "Precision-milled hardwood door with balanced rail proportions and deep stain finish.",
+    "image": "20200529_113610.jpg",
+    "alt": "Custom Handcrafted Hardwood Door - Precision-milled hardwood door with balanced rail proportions and deep stain finish.",
+    "featured": false
+  },
+  {
+    "code": "DR-052",
+    "slug": "carved-crest-door-dr-052",
+    "category": "doors",
+    "title": "Carved Crest Solid Timber Door",
+    "summary": "Single entry door featuring an ornate carved crest header and decorative side moldings.",
+    "image": "20210324_212407-01.jpeg",
+    "alt": "Carved Crest Solid Timber Door - Single entry door featuring an ornate carved crest header and decorative side moldings.",
+    "featured": false
+  },
+  {
+    "code": "DR-053",
+    "slug": "architectural-timber-door-dr-053",
+    "category": "doors",
+    "title": "Architectural Timber Entrance Door",
+    "summary": "Contemporary entrance door crafted to custom architectural specifications with fine joinery.",
+    "image": "20220313_165638 (1).jpg",
+    "alt": "Architectural Timber Entrance Door - Contemporary entrance door crafted to custom architectural specifications with fine joinery.",
+    "featured": false
+  },
+  {
+    "code": "DR-054",
+    "slug": "hand-carved-floral-door-dr-054",
+    "category": "doors",
+    "title": "Hand-Carved Floral Motif Timber Door",
+    "summary": "Solid timber door relief-carved with delicate floral scrollwork and lotus flower motifs.",
+    "image": "20220507_165933-01.jpeg",
+    "alt": "Hand-Carved Floral Motif Timber Door - Solid timber door relief-carved with delicate floral scrollwork and lotus flower motifs.",
+    "featured": false
+  },
+  {
+    "code": "DR-055",
+    "slug": "classical-timber-door-dr-055",
+    "category": "doors",
+    "title": "Classical Sri Lankan Hardwood Door",
+    "summary": "Authentic Sri Lankan hardwood entrance door showcasing master carver craftsmanship.",
+    "image": "20220512_121218-01.jpeg",
+    "alt": "Classical Sri Lankan Hardwood Door - Authentic Sri Lankan hardwood entrance door showcasing master carver craftsmanship.",
+    "featured": false
+  },
+  {
+    "code": "DR-056",
+    "slug": "ornate-carved-door-dr-056",
+    "category": "doors",
+    "title": "Deep Relief Carved Timber Door",
+    "summary": "Stunning solid timber door with deep geometric and botanical carvings across all panels.",
+    "image": "DSC00629.JPG",
+    "alt": "Deep Relief Carved Timber Door - Stunning solid timber door with deep geometric and botanical carvings across all panels.",
+    "featured": false
+  },
+  {
+    "code": "DR-057",
+    "slug": "main-entrance-door-dr-057",
+    "category": "doors",
+    "title": "Solid Hardwood Main Entrance Door",
+    "summary": "Substantial solid wood main door built for enduring durability, privacy, and security.",
+    "image": "Door01.jpg",
+    "alt": "Solid Hardwood Main Entrance Door - Substantial solid wood main door built for enduring durability, privacy, and security.",
+    "featured": false
+  },
+  {
+    "code": "DR-058",
+    "slug": "heritage-carved-door-dr-058",
+    "category": "doors",
+    "title": "Heritage Carved Timber Entrance",
+    "summary": "Heritage style entrance door featuring traditional Tamil and Sri Lankan wood carving accents.",
+    "image": "FB_IMG_1527695944153.jpg",
+    "alt": "Heritage Carved Timber Entrance - Heritage style entrance door featuring traditional Tamil and Sri Lankan wood carving accents.",
+    "featured": false
+  },
+  {
+    "code": "DR-059",
+    "slug": "decorative-panel-door-dr-059",
+    "category": "doors",
+    "title": "Decorative Raised Panel Door",
+    "summary": "Fine timber door crafted with multi-tier raised panels and smooth satin varnish.",
+    "image": "FB_IMG_1527695996412.jpg",
+    "alt": "Decorative Raised Panel Door - Fine timber door crafted with multi-tier raised panels and smooth satin varnish.",
+    "featured": false
+  },
+  {
+    "code": "DR-060",
+    "slug": "mandap-carved-door-dr-060",
+    "category": "doors",
+    "title": "Mandap Style Carved Timber Door",
+    "summary": "Sacred and ceremonial entrance door with carved arch mandap framing and auspicious symbols.",
+    "image": "FB_IMG_1527696017029.jpg",
+    "alt": "Mandap Style Carved Timber Door - Sacred and ceremonial entrance door with carved arch mandap framing and auspicious symbols.",
+    "featured": false
+  },
+  {
+    "code": "DR-061",
+    "slug": "solid-wood-entrance-dr-061",
+    "category": "doors",
+    "title": "Solid Wood Home Entrance Door",
+    "summary": "Custom fabricated timber home entrance door combining privacy with robust durability.",
+    "image": "IMG-20210725-WA0001.jpg",
+    "alt": "Solid Wood Home Entrance Door - Custom fabricated timber home entrance door combining privacy with robust durability.",
+    "featured": false
+  },
+  {
+    "code": "DR-062",
+    "slug": "sculpted-timber-entrance-dr-062",
+    "category": "doors",
+    "title": "Sculpted Hardwood Double Entry",
+    "summary": "Handcrafted double entry doors with symmetrical sculpted panels and natural timber luster.",
+    "image": "IMG-20231215-WA0004.jpg",
+    "alt": "Sculpted Hardwood Double Entry - Handcrafted double entry doors with symmetrical sculpted panels and natural timber luster.",
+    "featured": false
+  },
+  {
+    "code": "DR-063",
+    "slug": "grand-main-door-dr-063",
+    "category": "doors",
+    "title": "Grand Residential Main Timber Door",
+    "summary": "Imposing residential main entrance door built from select aged hardwood with rich polish.",
+    "image": "MainDoor01.jpg",
+    "alt": "Grand Residential Main Timber Door - Imposing residential main entrance door built from select aged hardwood with rich polish.",
+    "featured": false
+  },
+  {
+    "code": "DR-064",
+    "slug": "bespoke-carved-door-dr-064",
+    "category": "doors",
+    "title": "Bespoke Carved Timber Entrance",
+    "summary": "Artisanal carved entrance door with intricate center relief and elegant frame moldings.",
+    "image": "image-0-02-06-d1c41349c7f0281d4d57441e1bb57eed9787efb6e408db00b509aac12b618792-V.jpg",
+    "alt": "Bespoke Carved Timber Entrance - Artisanal carved entrance door with intricate center relief and elegant frame moldings.",
     "featured": false
   }
 ]
