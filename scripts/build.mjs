@@ -381,7 +381,7 @@ function layout({
                       esc(canonical)}">` :
                   ''}${
       socialImage ? `<meta property="og:image" content="${esc(socialImage)}">` :
-                    ''}<link rel="icon" href="${
+                    ''}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="icon" href="${
       logo}" type="image/png"><link rel="apple-touch-icon" href="${
       logo}"><link rel="stylesheet" href="${prefix}styles.css"><script src="${
       prefix}site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${
@@ -557,11 +557,13 @@ function homePage() {
   const body = `<section class="hero">
     <div class="hero-copy">
       <div class="hero-copy-inner">
-        <h1 class="hero-business-title">
-          <span class="hero-name-en">Inpalakan <em>Timbers</em></span>
-          <span class="hero-name-ta" lang="ta">இன்பழகன் கைத்தொழிலகம்</span>
-        </h1>
-        <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
+        <div class="hero-title-block">
+          <h1 class="hero-business-title">
+            <span class="hero-name-en">Inpalakan <em>Timbers</em></span>
+            <span class="hero-name-ta" lang="ta">இன்பழகன் <em>கைத்தொழிலகம்</em></span>
+          </h1>
+          <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
+        </div>
         <p class="hero-lead">Custom carved doors, windows, modular kitchens &amp; granite worktops, gypsum ceilings, and custom furniture. Explore our work, find a design code, and connect with our workshop.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="gallery.html">View Our Work ${
@@ -578,7 +580,6 @@ function homePage() {
   </section>
 
   <section class="section services-section shell" id="services">
-    <div class="section-kicker"><span class="section-index">01 / SERVICES &amp; SPECIALTIES</span><span class="hairline"></span></div>
     <div class="section-heading">
       <div>
         <p class="eyebrow">WHAT WE CRAFT</p>
