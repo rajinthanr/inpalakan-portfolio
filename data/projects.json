@@ -7,7 +7,7 @@
     "summary": "A paired timber entrance with floral carving and a sculpted centre panel.",
     "image": "door-carved-entrance.jpg",
     "alt": "Paired timber entrance doors with floral carved panels",
-    "featured": true
+    "featured": false
   },
   {
     "code": "DR-002",
@@ -17,7 +17,7 @@
     "summary": "A single door with stepped panels and a sweeping curved detail.",
     "image": "door-curved-panel.jpg",
     "alt": "Single timber door with rectangular panels and a broad curved inset",
-    "featured": true
+    "featured": false
   },
   {
     "code": "DR-003",
@@ -30,6 +30,66 @@
     "featured": false
   },
   {
+    "code": "DR-004",
+    "slug": "carved-medallion-entrance",
+    "category": "doors",
+    "title": "Carved medallion entrance",
+    "summary": "A paired entrance with circular carving and matching narrow glazed sidelights.",
+    "image": "door-carved-medallion-entrance.jpg",
+    "alt": "Carved paired timber doors with circular centre motifs and narrow textured-glass sidelights",
+    "featured": true
+  },
+  {
+    "code": "DR-005",
+    "slug": "carved-ganesha-pooja-door",
+    "category": "doors",
+    "title": "Carved Ganesha entrance door",
+    "summary": "A single entrance door featuring Lord Ganesha enthroned and a sacred kalash with ceremonial lamps.",
+    "image": "door-carved-ganesha-pooja.jpg",
+    "alt": "Carved timber entrance door featuring Lord Ganesha on a throne and sacred kalash with ceremonial lamps",
+    "featured": true
+  },
+  {
+    "code": "DR-006",
+    "slug": "chevron-timber-entrance",
+    "category": "doors",
+    "title": "Chevron timber entrance",
+    "summary": "A solid timber door with diagonal chevron grooves, geometric glass sidelights, and an arched transom.",
+    "image": "door-chevron-timber-entrance.jpg",
+    "alt": "Solid timber entrance door with chevron grooves, geometric sidelights, and an arched transom",
+    "featured": false
+  },
+  {
+    "code": "DR-007",
+    "slug": "floral-vine-carved-entrance",
+    "category": "doors",
+    "title": "Floral vine carved entrance",
+    "summary": "Carved paired timber doors with curling floral vines and lotus blossoms rising from ornamental urns.",
+    "image": "door-floral-vine-carved-entrance.jpg",
+    "alt": "Carved paired timber entrance doors with relief-carved floral vines rising from decorative urns",
+    "featured": true
+  },
+  {
+    "code": "DR-008",
+    "slug": "two-tone-peacock-entrance",
+    "category": "doors",
+    "title": "Two-tone peacock entrance",
+    "summary": "A paired entrance with mirrored peacocks deeply carved into dark-stained panels set in warm timber.",
+    "image": "door-two-tone-peacock-entrance.jpg",
+    "alt": "Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes",
+    "featured": false
+  },
+  {
+    "code": "DR-009",
+    "slug": "contemporary-inlay-door",
+    "category": "doors",
+    "title": "Contemporary inlay timber door",
+    "summary": "A modern single door featuring contrasting metal inlays and an architectural rectangular pull handle.",
+    "image": "door-contemporary-inlay.jpg",
+    "alt": "Contemporary timber entrance door with horizontal inlays and modern brushed metal pull handle",
+    "featured": false
+  },
+  {
     "code": "WN-001",
     "slug": "geometric-grid-window",
     "category": "windows",
@@ -37,7 +97,7 @@
     "summary": "A timber window with a strong rectangular grid across two sections.",
     "image": "window-geometric-grid.jpg",
     "alt": "Two-section timber window with rectangular glazing grid",
-    "featured": true
+    "featured": false
   },
   {
     "code": "WN-002",
@@ -50,6 +110,56 @@
     "featured": false
   },
   {
+    "code": "WN-003",
+    "slug": "arched-textured-glass-window",
+    "category": "windows",
+    "title": "Arched textured-glass window",
+    "summary": "Three glazed sections with arched timber details below a glazed top row.",
+    "image": "window-arched-textured-glass.jpg",
+    "alt": "Three-section timber window with arched details and textured glass above and below",
+    "featured": true
+  },
+  {
+    "code": "WN-004",
+    "slug": "decorative-grille-window",
+    "category": "windows",
+    "title": "Decorative grille window",
+    "summary": "A three-section window with dark scrolling grille patterns set into timber frames.",
+    "image": "window-decorative-grille.jpg",
+    "alt": "Timber-framed three-section window with decorative dark metal scroll grilles",
+    "featured": false
+  },
+  {
+    "code": "WN-005",
+    "slug": "geometric-casement-window",
+    "category": "windows",
+    "title": "Geometric casement window",
+    "summary": "A two-leaf timber casement window with crisp geometric mullions, brass fittings, and textured glass.",
+    "image": "window-geometric-casement.jpg",
+    "alt": "Two-leaf timber casement window with geometric mullion pattern and textured privacy glass",
+    "featured": true
+  },
+  {
+    "code": "WN-006",
+    "slug": "scalloped-arch-window",
+    "category": "windows",
+    "title": "Scalloped arch window with grilles",
+    "summary": "A three-section window combining scalloped timber arches, textured glass, and decorative flower grilles.",
+    "image": "window-scalloped-arch.jpg",
+    "alt": "Three-section timber window with scalloped arches and decorative floral metal grilles",
+    "featured": false
+  },
+  {
+    "code": "WN-007",
+    "slug": "transom-scrollwork-window",
+    "category": "windows",
+    "title": "Transom scrollwork timber window",
+    "summary": "Three glazed sections with curved cross rails and dark scrollwork grilles in the upper transom.",
+    "image": "window-transom-scrollwork.jpg",
+    "alt": "Three-section timber window with curved cross rails and scrollwork wrought iron in upper transom",
+    "featured": false
+  },
+  {
     "code": "CB-001",
     "slug": "fitted-wardrobe",
     "category": "cupboards",
@@ -57,7 +167,7 @@
     "summary": "Full-height dark green storage with a mirror and an open centre section.",
     "image": "cupboard-fitted-wardrobe.jpg",
     "alt": "Dark green fitted wardrobe with a mirror and open central niche",
-    "featured": true
+    "featured": false
   },
   {
     "code": "CB-002",
@@ -77,6 +187,866 @@
     "summary": "Dark cabinet fronts with light geometric outlines above and below the counter.",
     "image": "cupboard-geometric-kitchen.jpg",
     "alt": "Dark kitchen cabinets with light geometric outlines on the doors",
+    "featured": false
+  },
+  {
+    "code": "CB-004",
+    "slug": "contemporary-grey-kitchen",
+    "category": "cupboards",
+    "title": "Contemporary grey kitchen",
+    "summary": "A light grey kitchen arrangement with flat fronts, dark counters and upper lighting.",
+    "image": "cupboard-contemporary-grey-kitchen.jpg",
+    "alt": "Light grey fitted kitchen cabinets with black counters and lighting above the upper cabinets",
+    "featured": false
+  },
+  {
+    "code": "CB-005",
+    "slug": "grey-fitted-storage",
+    "category": "cupboards",
+    "title": "Grey fitted storage",
+    "summary": "Full-height grey cabinets with a narrow mirror and open curved shelves beside the door.",
+    "image": "cupboard-grey-fitted-storage.jpg",
+    "alt": "Full-height grey fitted cabinets with a vertical mirror and open corner shelves",
+    "featured": false
+  },
+  {
+    "code": "CB-006",
+    "slug": "light-kitchen-cabinetry",
+    "category": "cupboards",
+    "title": "Light kitchen cabinetry",
+    "summary": "Pale cabinet fronts frame a central window above dark counters and a geometric backsplash.",
+    "image": "cupboard-light-kitchen.jpg",
+    "alt": "Pale fitted kitchen cabinets with a central timber window and geometric tiled backsplash",
+    "featured": false
+  },
+  {
+    "code": "CB-007",
+    "slug": "integrated-grey-kitchen-suite",
+    "category": "cupboards",
+    "title": "Integrated grey kitchen suite",
+    "summary": "A full fitted kitchen with light-grey cabinetry, integrated ceiling downlights, and black granite worktops.",
+    "image": "cupboard-integrated-grey-kitchen-suite.jpg",
+    "alt": "Fitted contemporary grey kitchen with ceiling downlights, black granite countertops, and tiled walls",
+    "featured": true
+  },
+  {
+    "code": "CB-008",
+    "slug": "l-shaped-fitted-pantry",
+    "category": "cupboards",
+    "title": "L-shaped fitted pantry",
+    "summary": "An L-shaped kitchen layout in gloss cream with dark counters, drawer storage, and overhead cabinets.",
+    "image": "cupboard-l-shaped-fitted-pantry.jpg",
+    "alt": "Gloss cream L-shaped fitted pantry cabinetry with black countertops and modern hardware",
+    "featured": false
+  },
+  {
+    "code": "CB-009",
+    "slug": "timber-prayer-shrine-cabinet",
+    "category": "cupboards",
+    "title": "Timber prayer shrine cabinet",
+    "summary": "A dedicated two-door timber pooja shrine cupboard with raised panels and stainless steel handles.",
+    "image": "cupboard-timber-prayer-shrine.jpg",
+    "alt": "Two-door polished timber prayer shrine cabinet with raised panel doors",
+    "featured": true
+  },
+  {
+    "code": "DR-010",
+    "slug": "timber-door-dr-010",
+    "category": "doors",
+    "title": "Traditional carved panel entrance (DR-010)",
+    "summary": "A classic paired entrance with detailed paneling and warm polished timber finish. Reference code DR-010.",
+    "image": "door-dr-010.jpg",
+    "alt": "Traditional carved panel entrance in polished timber, design DR-010",
+    "featured": false
+  },
+  {
+    "code": "DR-011",
+    "slug": "timber-door-dr-011",
+    "category": "doors",
+    "title": "Geometric timber door (DR-011)",
+    "summary": "Single timber door with clean rectangular framing and rich natural grain patterns. Reference code DR-011.",
+    "image": "door-dr-011.jpg",
+    "alt": "Geometric timber door in polished timber, design DR-011",
+    "featured": false
+  },
+  {
+    "code": "DR-012",
+    "slug": "timber-door-dr-012",
+    "category": "doors",
+    "title": "Arched panel entrance door (DR-012)",
+    "summary": "An entrance door featuring elegant curved upper rails and substantial timber moldings. Reference code DR-012.",
+    "image": "door-dr-012.jpg",
+    "alt": "Arched panel entrance door in polished timber, design DR-012",
+    "featured": false
+  },
+  {
+    "code": "DR-013",
+    "slug": "timber-door-dr-013",
+    "category": "doors",
+    "title": "Contemporary grooved entrance (DR-013)",
+    "summary": "Modern timber door with horizontal accent grooves and satin architectural hardware. Reference code DR-013.",
+    "image": "door-dr-013.jpg",
+    "alt": "Contemporary grooved entrance in polished timber, design DR-013",
+    "featured": false
+  },
+  {
+    "code": "DR-014",
+    "slug": "timber-door-dr-014",
+    "category": "doors",
+    "title": "Double panel entrance suite (DR-014)",
+    "summary": "Symmetrical paired doors with raised timber panels and substantial frame moldings. Reference code DR-014.",
+    "image": "door-dr-014.jpg",
+    "alt": "Double panel entrance suite in polished timber, design DR-014",
+    "featured": false
+  },
+  {
+    "code": "DR-015",
+    "slug": "timber-door-dr-015",
+    "category": "doors",
+    "title": "Decorative pooja room door (DR-015)",
+    "summary": "Interior timber door crafted with traditional carvings suited for prayer rooms and shrines. Reference code DR-015.",
+    "image": "door-dr-015.jpg",
+    "alt": "Decorative pooja room door in polished timber, design DR-015",
+    "featured": false
+  },
+  {
+    "code": "DR-016",
+    "slug": "timber-door-dr-016",
+    "category": "doors",
+    "title": "Crafted timber entry door (DR-016)",
+    "summary": "Single entrance door showcasing fine joinery, durable construction, and smooth polish. Reference code DR-016.",
+    "image": "door-dr-016.jpg",
+    "alt": "Crafted timber entry door in polished timber, design DR-016",
+    "featured": false
+  },
+  {
+    "code": "DR-017",
+    "slug": "timber-door-dr-017",
+    "category": "doors",
+    "title": "Glazed panel timber door (DR-017)",
+    "summary": "A balanced door composition combining solid timber rails with decorative glazed upper sections. Reference code DR-017.",
+    "image": "door-dr-017.jpg",
+    "alt": "Glazed panel timber door in polished timber, design DR-017",
+    "featured": false
+  },
+  {
+    "code": "DR-018",
+    "slug": "timber-door-dr-018",
+    "category": "doors",
+    "title": "Heritage panel entrance (DR-018)",
+    "summary": "Substantial paired timber doors with classical molding profiles and deep grain luster. Reference code DR-018.",
+    "image": "door-dr-018.jpg",
+    "alt": "Heritage panel entrance in polished timber, design DR-018",
+    "featured": false
+  },
+  {
+    "code": "DR-019",
+    "slug": "timber-door-dr-019",
+    "category": "doors",
+    "title": "Modern linear entrance door (DR-019)",
+    "summary": "Contemporary door with clean vertical stiles and understated horizontal division. Reference code DR-019.",
+    "image": "door-dr-019.jpg",
+    "alt": "Modern linear entrance door in polished timber, design DR-019",
+    "featured": false
+  },
+  {
+    "code": "DR-020",
+    "slug": "timber-door-dr-020",
+    "category": "doors",
+    "title": "Traditional carved panel entrance (DR-020)",
+    "summary": "A classic paired entrance with detailed paneling and warm polished timber finish. Reference code DR-020.",
+    "image": "door-dr-020.jpg",
+    "alt": "Traditional carved panel entrance in polished timber, design DR-020",
+    "featured": false
+  },
+  {
+    "code": "DR-021",
+    "slug": "timber-door-dr-021",
+    "category": "doors",
+    "title": "Geometric timber door (DR-021)",
+    "summary": "Single timber door with clean rectangular framing and rich natural grain patterns. Reference code DR-021.",
+    "image": "door-dr-021.jpg",
+    "alt": "Geometric timber door in polished timber, design DR-021",
+    "featured": false
+  },
+  {
+    "code": "DR-022",
+    "slug": "timber-door-dr-022",
+    "category": "doors",
+    "title": "Arched panel entrance door (DR-022)",
+    "summary": "An entrance door featuring elegant curved upper rails and substantial timber moldings. Reference code DR-022.",
+    "image": "door-dr-022.jpg",
+    "alt": "Arched panel entrance door in polished timber, design DR-022",
+    "featured": false
+  },
+  {
+    "code": "DR-023",
+    "slug": "timber-door-dr-023",
+    "category": "doors",
+    "title": "Contemporary grooved entrance (DR-023)",
+    "summary": "Modern timber door with horizontal accent grooves and satin architectural hardware. Reference code DR-023.",
+    "image": "door-dr-023.jpg",
+    "alt": "Contemporary grooved entrance in polished timber, design DR-023",
+    "featured": false
+  },
+  {
+    "code": "DR-024",
+    "slug": "timber-door-dr-024",
+    "category": "doors",
+    "title": "Double panel entrance suite (DR-024)",
+    "summary": "Symmetrical paired doors with raised timber panels and substantial frame moldings. Reference code DR-024.",
+    "image": "door-dr-024.jpg",
+    "alt": "Double panel entrance suite in polished timber, design DR-024",
+    "featured": false
+  },
+  {
+    "code": "DR-025",
+    "slug": "timber-door-dr-025",
+    "category": "doors",
+    "title": "Decorative pooja room door (DR-025)",
+    "summary": "Interior timber door crafted with traditional carvings suited for prayer rooms and shrines. Reference code DR-025.",
+    "image": "door-dr-025.jpg",
+    "alt": "Decorative pooja room door in polished timber, design DR-025",
+    "featured": false
+  },
+  {
+    "code": "DR-026",
+    "slug": "timber-door-dr-026",
+    "category": "doors",
+    "title": "Crafted timber entry door (DR-026)",
+    "summary": "Single entrance door showcasing fine joinery, durable construction, and smooth polish. Reference code DR-026.",
+    "image": "door-dr-026.jpg",
+    "alt": "Crafted timber entry door in polished timber, design DR-026",
+    "featured": false
+  },
+  {
+    "code": "DR-027",
+    "slug": "timber-door-dr-027",
+    "category": "doors",
+    "title": "Glazed panel timber door (DR-027)",
+    "summary": "A balanced door composition combining solid timber rails with decorative glazed upper sections. Reference code DR-027.",
+    "image": "door-dr-027.jpg",
+    "alt": "Glazed panel timber door in polished timber, design DR-027",
+    "featured": false
+  },
+  {
+    "code": "DR-028",
+    "slug": "timber-door-dr-028",
+    "category": "doors",
+    "title": "Heritage panel entrance (DR-028)",
+    "summary": "Substantial paired timber doors with classical molding profiles and deep grain luster. Reference code DR-028.",
+    "image": "door-dr-028.jpg",
+    "alt": "Heritage panel entrance in polished timber, design DR-028",
+    "featured": false
+  },
+  {
+    "code": "DR-029",
+    "slug": "timber-door-dr-029",
+    "category": "doors",
+    "title": "Modern linear entrance door (DR-029)",
+    "summary": "Contemporary door with clean vertical stiles and understated horizontal division. Reference code DR-029.",
+    "image": "door-dr-029.jpg",
+    "alt": "Modern linear entrance door in polished timber, design DR-029",
+    "featured": false
+  },
+  {
+    "code": "DR-030",
+    "slug": "timber-door-dr-030",
+    "category": "doors",
+    "title": "Traditional carved panel entrance (DR-030)",
+    "summary": "A classic paired entrance with detailed paneling and warm polished timber finish. Reference code DR-030.",
+    "image": "door-dr-030.jpg",
+    "alt": "Traditional carved panel entrance in polished timber, design DR-030",
+    "featured": false
+  },
+  {
+    "code": "DR-031",
+    "slug": "timber-door-dr-031",
+    "category": "doors",
+    "title": "Geometric timber door (DR-031)",
+    "summary": "Single timber door with clean rectangular framing and rich natural grain patterns. Reference code DR-031.",
+    "image": "door-dr-031.jpg",
+    "alt": "Geometric timber door in polished timber, design DR-031",
+    "featured": false
+  },
+  {
+    "code": "DR-032",
+    "slug": "timber-door-dr-032",
+    "category": "doors",
+    "title": "Arched panel entrance door (DR-032)",
+    "summary": "An entrance door featuring elegant curved upper rails and substantial timber moldings. Reference code DR-032.",
+    "image": "door-dr-032.jpg",
+    "alt": "Arched panel entrance door in polished timber, design DR-032",
+    "featured": false
+  },
+  {
+    "code": "DR-033",
+    "slug": "timber-door-dr-033",
+    "category": "doors",
+    "title": "Contemporary grooved entrance (DR-033)",
+    "summary": "Modern timber door with horizontal accent grooves and satin architectural hardware. Reference code DR-033.",
+    "image": "door-dr-033.jpg",
+    "alt": "Contemporary grooved entrance in polished timber, design DR-033",
+    "featured": false
+  },
+  {
+    "code": "DR-034",
+    "slug": "timber-door-dr-034",
+    "category": "doors",
+    "title": "Double panel entrance suite (DR-034)",
+    "summary": "Symmetrical paired doors with raised timber panels and substantial frame moldings. Reference code DR-034.",
+    "image": "door-dr-034.jpg",
+    "alt": "Double panel entrance suite in polished timber, design DR-034",
+    "featured": false
+  },
+  {
+    "code": "DR-035",
+    "slug": "timber-door-dr-035",
+    "category": "doors",
+    "title": "Decorative pooja room door (DR-035)",
+    "summary": "Interior timber door crafted with traditional carvings suited for prayer rooms and shrines. Reference code DR-035.",
+    "image": "door-dr-035.jpg",
+    "alt": "Decorative pooja room door in polished timber, design DR-035",
+    "featured": false
+  },
+  {
+    "code": "DR-036",
+    "slug": "timber-door-dr-036",
+    "category": "doors",
+    "title": "Crafted timber entry door (DR-036)",
+    "summary": "Single entrance door showcasing fine joinery, durable construction, and smooth polish. Reference code DR-036.",
+    "image": "door-dr-036.jpg",
+    "alt": "Crafted timber entry door in polished timber, design DR-036",
+    "featured": false
+  },
+  {
+    "code": "DR-037",
+    "slug": "timber-door-dr-037",
+    "category": "doors",
+    "title": "Glazed panel timber door (DR-037)",
+    "summary": "A balanced door composition combining solid timber rails with decorative glazed upper sections. Reference code DR-037.",
+    "image": "door-dr-037.jpg",
+    "alt": "Glazed panel timber door in polished timber, design DR-037",
+    "featured": false
+  },
+  {
+    "code": "DR-038",
+    "slug": "timber-door-dr-038",
+    "category": "doors",
+    "title": "Heritage panel entrance (DR-038)",
+    "summary": "Substantial paired timber doors with classical molding profiles and deep grain luster. Reference code DR-038.",
+    "image": "door-dr-038.jpg",
+    "alt": "Heritage panel entrance in polished timber, design DR-038",
+    "featured": false
+  },
+  {
+    "code": "DR-039",
+    "slug": "timber-door-dr-039",
+    "category": "doors",
+    "title": "Modern linear entrance door (DR-039)",
+    "summary": "Contemporary door with clean vertical stiles and understated horizontal division. Reference code DR-039.",
+    "image": "door-dr-039.jpg",
+    "alt": "Modern linear entrance door in polished timber, design DR-039",
+    "featured": false
+  },
+  {
+    "code": "DR-040",
+    "slug": "timber-door-dr-040",
+    "category": "doors",
+    "title": "Traditional carved panel entrance (DR-040)",
+    "summary": "A classic paired entrance with detailed paneling and warm polished timber finish. Reference code DR-040.",
+    "image": "door-dr-040.jpg",
+    "alt": "Traditional carved panel entrance in polished timber, design DR-040",
+    "featured": false
+  },
+  {
+    "code": "WN-008",
+    "slug": "timber-window-wn-008",
+    "category": "windows",
+    "title": "Two-section timber casement window (WN-008)",
+    "summary": "A balanced two-leaf window with solid timber frames and clear architectural lines. Reference code WN-008.",
+    "image": "window-wn-008.jpg",
+    "alt": "Two-section timber casement window in solid timber, design WN-008",
+    "featured": false
+  },
+  {
+    "code": "WN-009",
+    "slug": "timber-window-wn-009",
+    "category": "windows",
+    "title": "Textured-glass timber window (WN-009)",
+    "summary": "Three-leaf timber window fitted with textured privacy glass and durable brass fittings. Reference code WN-009.",
+    "image": "window-wn-009.jpg",
+    "alt": "Textured-glass timber window in solid timber, design WN-009",
+    "featured": false
+  },
+  {
+    "code": "WN-010",
+    "slug": "timber-window-wn-010",
+    "category": "windows",
+    "title": "Arched timber frame window (WN-010)",
+    "summary": "Crafted window unit with gentle curved head detailing and substantial outer casing. Reference code WN-010.",
+    "image": "window-wn-010.jpg",
+    "alt": "Arched timber frame window in solid timber, design WN-010",
+    "featured": false
+  },
+  {
+    "code": "WN-011",
+    "slug": "timber-window-wn-011",
+    "category": "windows",
+    "title": "Geometric grid casement window (WN-011)",
+    "summary": "Timber window featuring a structured rectangular mullion grid and fine joinery. Reference code WN-011.",
+    "image": "window-wn-011.jpg",
+    "alt": "Geometric grid casement window in solid timber, design WN-011",
+    "featured": false
+  },
+  {
+    "code": "WN-012",
+    "slug": "timber-window-wn-012",
+    "category": "windows",
+    "title": "Safety grille timber window (WN-012)",
+    "summary": "Traditional window framing with integrated dark metal security grilles behind textured glass. Reference code WN-012.",
+    "image": "window-wn-012.jpg",
+    "alt": "Safety grille timber window in solid timber, design WN-012",
+    "featured": false
+  },
+  {
+    "code": "WN-013",
+    "slug": "timber-window-wn-013",
+    "category": "windows",
+    "title": "Veranda casement window suite (WN-013)",
+    "summary": "Multi-panel timber window arrangement designed for generous light and ventilation. Reference code WN-013.",
+    "image": "window-wn-013.jpg",
+    "alt": "Veranda casement window suite in solid timber, design WN-013",
+    "featured": false
+  },
+  {
+    "code": "WN-014",
+    "slug": "timber-window-wn-014",
+    "category": "windows",
+    "title": "Classic molded timber window (WN-014)",
+    "summary": "Solid wood window with traditional jamb profiles and smooth weather-resistant finish. Reference code WN-014.",
+    "image": "window-wn-014.jpg",
+    "alt": "Classic molded timber window in solid timber, design WN-014",
+    "featured": false
+  },
+  {
+    "code": "WN-015",
+    "slug": "timber-window-wn-015",
+    "category": "windows",
+    "title": "Two-section timber casement window (WN-015)",
+    "summary": "A balanced two-leaf window with solid timber frames and clear architectural lines. Reference code WN-015.",
+    "image": "window-wn-015.jpg",
+    "alt": "Two-section timber casement window in solid timber, design WN-015",
+    "featured": false
+  },
+  {
+    "code": "WN-016",
+    "slug": "timber-window-wn-016",
+    "category": "windows",
+    "title": "Textured-glass timber window (WN-016)",
+    "summary": "Three-leaf timber window fitted with textured privacy glass and durable brass fittings. Reference code WN-016.",
+    "image": "window-wn-016.jpg",
+    "alt": "Textured-glass timber window in solid timber, design WN-016",
+    "featured": false
+  },
+  {
+    "code": "WN-017",
+    "slug": "timber-window-wn-017",
+    "category": "windows",
+    "title": "Arched timber frame window (WN-017)",
+    "summary": "Crafted window unit with gentle curved head detailing and substantial outer casing. Reference code WN-017.",
+    "image": "window-wn-017.jpg",
+    "alt": "Arched timber frame window in solid timber, design WN-017",
+    "featured": false
+  },
+  {
+    "code": "WN-018",
+    "slug": "timber-window-wn-018",
+    "category": "windows",
+    "title": "Geometric grid casement window (WN-018)",
+    "summary": "Timber window featuring a structured rectangular mullion grid and fine joinery. Reference code WN-018.",
+    "image": "window-wn-018.jpg",
+    "alt": "Geometric grid casement window in solid timber, design WN-018",
+    "featured": false
+  },
+  {
+    "code": "WN-019",
+    "slug": "timber-window-wn-019",
+    "category": "windows",
+    "title": "Safety grille timber window (WN-019)",
+    "summary": "Traditional window framing with integrated dark metal security grilles behind textured glass. Reference code WN-019.",
+    "image": "window-wn-019.jpg",
+    "alt": "Safety grille timber window in solid timber, design WN-019",
+    "featured": false
+  },
+  {
+    "code": "WN-020",
+    "slug": "timber-window-wn-020",
+    "category": "windows",
+    "title": "Veranda casement window suite (WN-020)",
+    "summary": "Multi-panel timber window arrangement designed for generous light and ventilation. Reference code WN-020.",
+    "image": "window-wn-020.jpg",
+    "alt": "Veranda casement window suite in solid timber, design WN-020",
+    "featured": false
+  },
+  {
+    "code": "WN-021",
+    "slug": "timber-window-wn-021",
+    "category": "windows",
+    "title": "Classic molded timber window (WN-021)",
+    "summary": "Solid wood window with traditional jamb profiles and smooth weather-resistant finish. Reference code WN-021.",
+    "image": "window-wn-021.jpg",
+    "alt": "Classic molded timber window in solid timber, design WN-021",
+    "featured": false
+  },
+  {
+    "code": "WN-022",
+    "slug": "timber-window-wn-022",
+    "category": "windows",
+    "title": "Two-section timber casement window (WN-022)",
+    "summary": "A balanced two-leaf window with solid timber frames and clear architectural lines. Reference code WN-022.",
+    "image": "window-wn-022.jpg",
+    "alt": "Two-section timber casement window in solid timber, design WN-022",
+    "featured": false
+  },
+  {
+    "code": "WN-023",
+    "slug": "timber-window-wn-023",
+    "category": "windows",
+    "title": "Textured-glass timber window (WN-023)",
+    "summary": "Three-leaf timber window fitted with textured privacy glass and durable brass fittings. Reference code WN-023.",
+    "image": "window-wn-023.jpg",
+    "alt": "Textured-glass timber window in solid timber, design WN-023",
+    "featured": false
+  },
+  {
+    "code": "WN-024",
+    "slug": "timber-window-wn-024",
+    "category": "windows",
+    "title": "Arched timber frame window (WN-024)",
+    "summary": "Crafted window unit with gentle curved head detailing and substantial outer casing. Reference code WN-024.",
+    "image": "window-wn-024.jpg",
+    "alt": "Arched timber frame window in solid timber, design WN-024",
+    "featured": false
+  },
+  {
+    "code": "WN-025",
+    "slug": "timber-window-wn-025",
+    "category": "windows",
+    "title": "Geometric grid casement window (WN-025)",
+    "summary": "Timber window featuring a structured rectangular mullion grid and fine joinery. Reference code WN-025.",
+    "image": "window-wn-025.jpg",
+    "alt": "Geometric grid casement window in solid timber, design WN-025",
+    "featured": false
+  },
+  {
+    "code": "WN-026",
+    "slug": "timber-window-wn-026",
+    "category": "windows",
+    "title": "Safety grille timber window (WN-026)",
+    "summary": "Traditional window framing with integrated dark metal security grilles behind textured glass. Reference code WN-026.",
+    "image": "window-wn-026.jpg",
+    "alt": "Safety grille timber window in solid timber, design WN-026",
+    "featured": false
+  },
+  {
+    "code": "WN-027",
+    "slug": "timber-window-wn-027",
+    "category": "windows",
+    "title": "Veranda casement window suite (WN-027)",
+    "summary": "Multi-panel timber window arrangement designed for generous light and ventilation. Reference code WN-027.",
+    "image": "window-wn-027.jpg",
+    "alt": "Veranda casement window suite in solid timber, design WN-027",
+    "featured": false
+  },
+  {
+    "code": "WN-028",
+    "slug": "timber-window-wn-028",
+    "category": "windows",
+    "title": "Classic molded timber window (WN-028)",
+    "summary": "Solid wood window with traditional jamb profiles and smooth weather-resistant finish. Reference code WN-028.",
+    "image": "window-wn-028.jpg",
+    "alt": "Classic molded timber window in solid timber, design WN-028",
+    "featured": false
+  },
+  {
+    "code": "WN-029",
+    "slug": "timber-window-wn-029",
+    "category": "windows",
+    "title": "Two-section timber casement window (WN-029)",
+    "summary": "A balanced two-leaf window with solid timber frames and clear architectural lines. Reference code WN-029.",
+    "image": "window-wn-029.jpg",
+    "alt": "Two-section timber casement window in solid timber, design WN-029",
+    "featured": false
+  },
+  {
+    "code": "WN-030",
+    "slug": "timber-window-wn-030",
+    "category": "windows",
+    "title": "Textured-glass timber window (WN-030)",
+    "summary": "Three-leaf timber window fitted with textured privacy glass and durable brass fittings. Reference code WN-030.",
+    "image": "window-wn-030.jpg",
+    "alt": "Textured-glass timber window in solid timber, design WN-030",
+    "featured": false
+  },
+  {
+    "code": "CB-010",
+    "slug": "cabinetry-cb-010",
+    "category": "cupboards",
+    "title": "Modern fitted kitchen pantry (CB-010)",
+    "summary": "Full-height kitchen cabinetry with flat cabinet fronts, dark worktops, and generous storage. Reference code CB-010.",
+    "image": "cupboard-cb-010.jpg",
+    "alt": "Modern fitted kitchen pantry, design CB-010",
+    "featured": false
+  },
+  {
+    "code": "CB-011",
+    "slug": "cabinetry-cb-011",
+    "category": "cupboards",
+    "title": "Custom timber wardrobe (CB-011)",
+    "summary": "Floor-to-ceiling bedroom wardrobe with integrated drawers, hanging space, and clean handles. Reference code CB-011.",
+    "image": "cupboard-cb-011.jpg",
+    "alt": "Custom timber wardrobe, design CB-011",
+    "featured": false
+  },
+  {
+    "code": "CB-012",
+    "slug": "cabinetry-cb-012",
+    "category": "cupboards",
+    "title": "Contemporary pantry arrangement (CB-012)",
+    "summary": "L-shaped fitted kitchen cabinetry featuring sleek surfaces and contrast countertops. Reference code CB-012.",
+    "image": "cupboard-cb-012.jpg",
+    "alt": "Contemporary pantry arrangement, design CB-012",
+    "featured": false
+  },
+  {
+    "code": "CB-013",
+    "slug": "cabinetry-cb-013",
+    "category": "cupboards",
+    "title": "Timber prayer shrine unit (CB-013)",
+    "summary": "Custom-built wooden prayer shrine cabinet with paneled storage doors and brass accents. Reference code CB-013.",
+    "image": "cupboard-cb-013.jpg",
+    "alt": "Timber prayer shrine unit, design CB-013",
+    "featured": false
+  },
+  {
+    "code": "CB-014",
+    "slug": "cabinetry-cb-014",
+    "category": "cupboards",
+    "title": "Under-counter kitchen storage (CB-014)",
+    "summary": "Fitted base cabinets with smooth gliding drawers, solid timber framing, and dark worktops. Reference code CB-014.",
+    "image": "cupboard-cb-014.jpg",
+    "alt": "Under-counter kitchen storage, design CB-014",
+    "featured": false
+  },
+  {
+    "code": "CB-015",
+    "slug": "cabinetry-cb-015",
+    "category": "cupboards",
+    "title": "Integrated storage cabinetry (CB-015)",
+    "summary": "Room-fitted cupboard arrangement with upper overhead storage and durable hardware. Reference code CB-015.",
+    "image": "cupboard-cb-015.jpg",
+    "alt": "Integrated storage cabinetry, design CB-015",
+    "featured": false
+  },
+  {
+    "code": "CB-016",
+    "slug": "cabinetry-cb-016",
+    "category": "cupboards",
+    "title": "Two-tone contemporary kitchen (CB-016)",
+    "summary": "Fitted kitchen with contrasting upper and lower cabinetry framing a central prep counter. Reference code CB-016.",
+    "image": "cupboard-cb-016.jpg",
+    "alt": "Two-tone contemporary kitchen, design CB-016",
+    "featured": false
+  },
+  {
+    "code": "CB-017",
+    "slug": "cabinetry-cb-017",
+    "category": "cupboards",
+    "title": "Full-height fitted closet (CB-017)",
+    "summary": "Custom bedroom storage with vertical panel doors and optimized internal compartments. Reference code CB-017.",
+    "image": "cupboard-cb-017.jpg",
+    "alt": "Full-height fitted closet, design CB-017",
+    "featured": false
+  },
+  {
+    "code": "CB-018",
+    "slug": "cabinetry-cb-018",
+    "category": "cupboards",
+    "title": "Modern fitted kitchen pantry (CB-018)",
+    "summary": "Full-height kitchen cabinetry with flat cabinet fronts, dark worktops, and generous storage. Reference code CB-018.",
+    "image": "cupboard-cb-018.jpg",
+    "alt": "Modern fitted kitchen pantry, design CB-018",
+    "featured": false
+  },
+  {
+    "code": "CB-019",
+    "slug": "cabinetry-cb-019",
+    "category": "cupboards",
+    "title": "Custom timber wardrobe (CB-019)",
+    "summary": "Floor-to-ceiling bedroom wardrobe with integrated drawers, hanging space, and clean handles. Reference code CB-019.",
+    "image": "cupboard-cb-019.jpg",
+    "alt": "Custom timber wardrobe, design CB-019",
+    "featured": false
+  },
+  {
+    "code": "CB-020",
+    "slug": "cabinetry-cb-020",
+    "category": "cupboards",
+    "title": "Contemporary pantry arrangement (CB-020)",
+    "summary": "L-shaped fitted kitchen cabinetry featuring sleek surfaces and contrast countertops. Reference code CB-020.",
+    "image": "cupboard-cb-020.jpg",
+    "alt": "Contemporary pantry arrangement, design CB-020",
+    "featured": false
+  },
+  {
+    "code": "CB-021",
+    "slug": "cabinetry-cb-021",
+    "category": "cupboards",
+    "title": "Timber prayer shrine unit (CB-021)",
+    "summary": "Custom-built wooden prayer shrine cabinet with paneled storage doors and brass accents. Reference code CB-021.",
+    "image": "cupboard-cb-021.jpg",
+    "alt": "Timber prayer shrine unit, design CB-021",
+    "featured": false
+  },
+  {
+    "code": "CB-022",
+    "slug": "cabinetry-cb-022",
+    "category": "cupboards",
+    "title": "Under-counter kitchen storage (CB-022)",
+    "summary": "Fitted base cabinets with smooth gliding drawers, solid timber framing, and dark worktops. Reference code CB-022.",
+    "image": "cupboard-cb-022.jpg",
+    "alt": "Under-counter kitchen storage, design CB-022",
+    "featured": false
+  },
+  {
+    "code": "CB-023",
+    "slug": "cabinetry-cb-023",
+    "category": "cupboards",
+    "title": "Integrated storage cabinetry (CB-023)",
+    "summary": "Room-fitted cupboard arrangement with upper overhead storage and durable hardware. Reference code CB-023.",
+    "image": "cupboard-cb-023.jpg",
+    "alt": "Integrated storage cabinetry, design CB-023",
+    "featured": false
+  },
+  {
+    "code": "CB-024",
+    "slug": "cabinetry-cb-024",
+    "category": "cupboards",
+    "title": "Two-tone contemporary kitchen (CB-024)",
+    "summary": "Fitted kitchen with contrasting upper and lower cabinetry framing a central prep counter. Reference code CB-024.",
+    "image": "cupboard-cb-024.jpg",
+    "alt": "Two-tone contemporary kitchen, design CB-024",
+    "featured": false
+  },
+  {
+    "code": "CB-025",
+    "slug": "cabinetry-cb-025",
+    "category": "cupboards",
+    "title": "Full-height fitted closet (CB-025)",
+    "summary": "Custom bedroom storage with vertical panel doors and optimized internal compartments. Reference code CB-025.",
+    "image": "cupboard-cb-025.jpg",
+    "alt": "Full-height fitted closet, design CB-025",
+    "featured": false
+  },
+  {
+    "code": "CB-026",
+    "slug": "cabinetry-cb-026",
+    "category": "cupboards",
+    "title": "Modern fitted kitchen pantry (CB-026)",
+    "summary": "Full-height kitchen cabinetry with flat cabinet fronts, dark worktops, and generous storage. Reference code CB-026.",
+    "image": "cupboard-cb-026.jpg",
+    "alt": "Modern fitted kitchen pantry, design CB-026",
+    "featured": false
+  },
+  {
+    "code": "CB-027",
+    "slug": "cabinetry-cb-027",
+    "category": "cupboards",
+    "title": "Custom timber wardrobe (CB-027)",
+    "summary": "Floor-to-ceiling bedroom wardrobe with integrated drawers, hanging space, and clean handles. Reference code CB-027.",
+    "image": "cupboard-cb-027.jpg",
+    "alt": "Custom timber wardrobe, design CB-027",
+    "featured": false
+  },
+  {
+    "code": "CB-028",
+    "slug": "cabinetry-cb-028",
+    "category": "cupboards",
+    "title": "Contemporary pantry arrangement (CB-028)",
+    "summary": "L-shaped fitted kitchen cabinetry featuring sleek surfaces and contrast countertops. Reference code CB-028.",
+    "image": "cupboard-cb-028.jpg",
+    "alt": "Contemporary pantry arrangement, design CB-028",
+    "featured": false
+  },
+  {
+    "code": "CB-029",
+    "slug": "cabinetry-cb-029",
+    "category": "cupboards",
+    "title": "Timber prayer shrine unit (CB-029)",
+    "summary": "Custom-built wooden prayer shrine cabinet with paneled storage doors and brass accents. Reference code CB-029.",
+    "image": "cupboard-cb-029.jpg",
+    "alt": "Timber prayer shrine unit, design CB-029",
+    "featured": false
+  },
+  {
+    "code": "CB-030",
+    "slug": "cabinetry-cb-030",
+    "category": "cupboards",
+    "title": "Under-counter kitchen storage (CB-030)",
+    "summary": "Fitted base cabinets with smooth gliding drawers, solid timber framing, and dark worktops. Reference code CB-030.",
+    "image": "cupboard-cb-030.jpg",
+    "alt": "Under-counter kitchen storage, design CB-030",
+    "featured": false
+  },
+  {
+    "code": "CB-031",
+    "slug": "cabinetry-cb-031",
+    "category": "cupboards",
+    "title": "Integrated storage cabinetry (CB-031)",
+    "summary": "Room-fitted cupboard arrangement with upper overhead storage and durable hardware. Reference code CB-031.",
+    "image": "cupboard-cb-031.jpg",
+    "alt": "Integrated storage cabinetry, design CB-031",
+    "featured": false
+  },
+  {
+    "code": "CB-032",
+    "slug": "cabinetry-cb-032",
+    "category": "cupboards",
+    "title": "Two-tone contemporary kitchen (CB-032)",
+    "summary": "Fitted kitchen with contrasting upper and lower cabinetry framing a central prep counter. Reference code CB-032.",
+    "image": "cupboard-cb-032.jpg",
+    "alt": "Two-tone contemporary kitchen, design CB-032",
+    "featured": false
+  },
+  {
+    "code": "CB-033",
+    "slug": "cabinetry-cb-033",
+    "category": "cupboards",
+    "title": "Full-height fitted closet (CB-033)",
+    "summary": "Custom bedroom storage with vertical panel doors and optimized internal compartments. Reference code CB-033.",
+    "image": "cupboard-cb-033.jpg",
+    "alt": "Full-height fitted closet, design CB-033",
+    "featured": false
+  },
+  {
+    "code": "CB-034",
+    "slug": "cabinetry-cb-034",
+    "category": "cupboards",
+    "title": "Modern fitted kitchen pantry (CB-034)",
+    "summary": "Full-height kitchen cabinetry with flat cabinet fronts, dark worktops, and generous storage. Reference code CB-034.",
+    "image": "cupboard-cb-034.jpg",
+    "alt": "Modern fitted kitchen pantry, design CB-034",
+    "featured": false
+  },
+  {
+    "code": "CB-035",
+    "slug": "cabinetry-cb-035",
+    "category": "cupboards",
+    "title": "Custom timber wardrobe (CB-035)",
+    "summary": "Floor-to-ceiling bedroom wardrobe with integrated drawers, hanging space, and clean handles. Reference code CB-035.",
+    "image": "cupboard-cb-035.jpg",
+    "alt": "Custom timber wardrobe, design CB-035",
     "featured": false
   }
 ]

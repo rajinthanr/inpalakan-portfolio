@@ -39,7 +39,7 @@ This adds absolute canonical and Open Graph image URLs to each generated page. T
 - [Windows](https://photos.app.goo.gl/17SfQxbBY2sAMRaA7)
 - [Facebook page](https://www.facebook.com/inpalakan)
 
-The eight initial portfolio photos were selected from the shared work albums. Titles and descriptions describe visible design details only. Confirm preferred captions, ordering, and any additional project details before public launch.
+The 105 portfolio photos were selected from the shared work albums (40 doors, 30 windows, and 35 cupboards/interiors). Titles and descriptions describe visible design details only. Confirm preferred captions, ordering, and any additional project details before public launch.
 
 `references/concepts/doors/` contains five AI-generated door concepts from the earlier exploration. Those are **not** photographs of Inpalakan's completed work and do not appear in the website gallery.
 
