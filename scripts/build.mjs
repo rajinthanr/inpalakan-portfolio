@@ -55,6 +55,25 @@ const kitchenPatterns = [
   alt: `Sample kitchen cupboard pattern: ${title}`
 }));
 
+const granitePatterns = [
+  ['GR-004', 'Ceylon teak L-shaped kitchen with jet black granite', '01-sl-teak-l-shape-granite.jpg'],
+  ['GR-005', 'Black Galaxy granite waterfall kitchen island', '02-sl-waterfall-island-open-plan.jpg'],
+  ['GR-006', 'Polished black granite countertop with fluted drainboard', '03-sl-sink-fluted-drainboard-window.jpg'],
+  ['GR-007', 'Natural Tan Brown granite countertop with teak cabinetry', '04-sl-teak-cabinets-tan-brown-granite.jpg'],
+  ['GR-008', 'Mirror-polished black granite with undermount double sink', '05-undermount-sink-mirror-black.jpg'],
+  ['GR-009', 'Monolithic 45-degree mitered granite waterfall island', '06-waterfall-island-mitered-edge.jpg'],
+  ['GR-010', 'L-shaped wrap-around kitchen granite countertop', '07-l-shaped-wrap-countertop.jpg'],
+  ['GR-011', 'Precision diamond-cut flush cooktop granite opening', '08-flush-cooktop-precision-cutout.jpg'],
+  ['GR-012', 'Diamond-routed water drainage flutes grooved in granite', '09-carved-drainboard-flutes.jpg'],
+  ['GR-013', 'Cantilevered granite breakfast bar seating overhang', '10-breakfast-bar-cantilever-overhang.jpg'],
+  ['GR-014', 'Full U-shaped kitchen granite wrap-around worktop', '11-u-shaped-full-kitchen-worktop.jpg'],
+  ['GR-015', 'Custom 40mm laminated granite edge profiles showcase', '12-edge-profiles-bullnose-bevel-detail.jpg'],
+  ['GR-016', 'Master craftsmen on-site slab leveling and installation', '13-craftsmen-on-site-installation.jpg']
+].map(([code, title, image]) => ({
+  code, title, image, category: 'kitchens',
+  alt: `Sample granite countertop pattern: ${title}`
+}));
+
 const tvUnitPatterns = [
   ['TVS-001', 'Metallic teal display wall', '01-metallic-teal-display-wall.png'],
   ['TVS-002', 'Graphite and champagne wall', '02-graphite-champagne-wall.png'],
@@ -91,7 +110,7 @@ const gypsumPatterns = [
 }));
 
 const samplePatterns = [
-  ...doorPatterns, ...kitchenPatterns, ...tvUnitPatterns, ...gypsumPatterns
+  ...doorPatterns, ...kitchenPatterns, ...granitePatterns, ...tvUnitPatterns, ...gypsumPatterns
 ];
 
 const categories = {
@@ -188,6 +207,9 @@ function projectUrl(project, prefix = '') {
 }
 
 function projectImagePath(project, filename = project.image) {
+  if (project.isSample || project.collection === 'sample') {
+    return `images/concepts/${project.category}/${filename}`;
+  }
   return `images/projects/${project.category}/${filename}`;
 }
 
@@ -322,7 +344,7 @@ function generatePlaylist(prefix = '') {
     src: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     rawSrc: pattern.image,
     label: pattern.category === 'doors' ? 'Sample door pattern' :
-        pattern.category === 'kitchens' ? 'Sample kitchen cupboard pattern' :
+        pattern.category === 'kitchens' ? (pattern.code.startsWith('GR') ? 'Sample granite countertop pattern' : 'Sample kitchen cupboard pattern') :
         pattern.category === 'tv-units' ? 'Sample TV-unit pattern' :
                                            'Sample gypsum ceiling pattern',
     alt: pattern.alt,
@@ -429,7 +451,7 @@ function card(project, prefix = '', index = 0) {
 
 function patternCard(pattern, index = 0) {
   const type = pattern.category === 'doors' ? 'door' :
-      pattern.category === 'kitchens' ? 'kitchen cupboard' :
+      pattern.category === 'kitchens' ? (pattern.code.startsWith('GR') ? 'granite countertop' : 'kitchen cupboard') :
       pattern.category === 'tv-units' ? 'TV-unit' : 'gypsum ceiling';
   const image = `images/concepts/${pattern.category}/${pattern.image}`;
   const keywords = `${pattern.code} ${pattern.title} sample pattern ${type}`;
@@ -467,7 +489,7 @@ function homePage() {
     },
     kitchens: {
       code: 'GR-008',
-      image: 'granite-mirror-black-undermount-double-sink.jpg',
+      image: '05-undermount-sink-mirror-black.jpg',
       alt: 'Mirror-polished black granite countertop with undermount double-bowl stainless steel sink and gooseneck faucet'
     },
     bedrooms: {
@@ -493,10 +515,15 @@ function homePage() {
   };
   const categoryCovers = Object.fromEntries(
       Object.entries(categoryCoverSelections).map(([key, selection]) => {
-        const project = projects.find(p => p.code === selection.code);
+        const project = projects.find(p => p.code === selection.code) ||
+            samplePatterns.find(p => p.code === selection.code);
         if (!project || project.category !== key)
           throw new Error(`Invalid category cover ${key}: ${selection.code}`);
-        return [key, {...project, image: selection.image, alt: selection.alt}];
+        const isSample = !projects.some(p => p.code === selection.code);
+        return [
+          key,
+          {...project, image: selection.image, alt: selection.alt, isSample}
+        ];
       }));
 
   const servicesByKey = Object.fromEntries(
@@ -639,6 +666,15 @@ function galleryPage() {
       </div>
       <div class="project-grid gallery-grid sample-pattern-grid">
         ${kitchenPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-granite-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">DESIGN INSPIRATION</p><h2 id="sample-granite-patterns-title">Sample kitchen granite patterns.</h2></div>
+        <p>Polished natural granite worktop, waterfall island, and undermount sink references tailored for Sri Lankan homes. Ask us how edge profiles and stone layouts can be crafted for your kitchen.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${granitePatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
       </div>
     </section>
     <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-tv-unit-patterns-title">
@@ -804,6 +840,9 @@ if (existsSync(join(root, 'references/concepts/doors'))) {
 }
 await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
+if (existsSync(join(root, 'references/granite-samples'))) {
+  await cp(join(root, 'references/granite-samples'), join(dist, 'images/concepts/kitchens'), {recursive: true});
+}
 await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
 await cp(join(root, 'references/tv-unit-patterns'), join(dist, 'images/concepts/tv-units'), {recursive: true});
 await mkdir(join(dist, 'images/concepts/gypsum'), {recursive: true});
