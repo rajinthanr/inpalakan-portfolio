@@ -1,5 +1,5 @@
-import {cp, mkdir, readdir, readFile, rm, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
+import {cp, mkdir, readdir, readFile, rm, writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -15,8 +15,13 @@ const doorPatterns = [
   ['SP-002', 'Vertical slat grid', '01-vertical-slat-grid.png'],
   ['SP-003', 'Circular geometry', '02-circular-geometry.png'],
   ['SP-004', 'Horizontal slat bands', '02-horizontal-slat-bands.png'],
-  ['SP-005', 'Peacock heritage entrance', '02-peacock-heritage-double-door.jpg'],
-  ['SP-006', 'Circular medallion entrance', '03-circular-medallion-double-door.jpg'],
+  [
+    'SP-005', 'Peacock heritage entrance', '02-peacock-heritage-double-door.jpg'
+  ],
+  [
+    'SP-006', 'Circular medallion entrance',
+    '03-circular-medallion-double-door.jpg'
+  ],
   ['SP-007', 'Mixed slat rails', '03-mixed-slat-rails.png'],
   ['SP-008', 'Peacock heritage carving', '03-peacock-heritage.png'],
   ['SP-009', 'Modular slat single door', '04-modular-slat-single.png'],
@@ -31,67 +36,147 @@ const doorPatterns = [
   ['SP-018', 'Framed chevron slats', '08-framed-chevron-slats.png'],
   ['SP-019', 'Lotus vertical slats', '09-lotus-vertical-slats.png'],
   ['SP-020', 'T-rail slat panels', '09-t-rail-slat-panels.png'],
-  ['SP-021', 'Horizontal slats with vine detail', '10-horizontal-slats-vine.png'],
+  [
+    'SP-021', 'Horizontal slats with vine detail',
+    '10-horizontal-slats-vine.png'
+  ],
   ['SP-022', 'Mixed module single door', '10-mixed-module-single.png'],
-  ['SP-023', 'Teak multi-panel divider rails', '18-teak-multi-panel-divider-rails.jpg']
+  [
+    'SP-023', 'Teak multi-panel divider rails',
+    '18-teak-multi-panel-divider-rails.jpg'
+  ]
 ].map(([code, title, image]) => ({
-  code, title, image, category: 'doors',
-  alt: `Sample door pattern: ${title}`
-}));
+        code,
+        title,
+        image,
+        category: 'doors',
+        alt: `Sample door pattern: ${title}`
+      }));
 
 const kitchenPatterns = [
   ['KS-001', 'Champagne metallic L-shape', '01-champagne-metallic-l-shape.png'],
   ['KS-002', 'Graphite metallic U-shape', '02-graphite-metallic-u-shape.png'],
   ['KS-003', 'Sage metallic galley', '03-sage-metallic-galley.png'],
-  ['KS-004', 'Pearl silver metallic L-shape', '04-pearl-silver-metallic-l-shape.png'],
+  [
+    'KS-004', 'Pearl silver metallic L-shape',
+    '04-pearl-silver-metallic-l-shape.png'
+  ],
   ['KS-005', 'Bronze metallic peninsula', '05-bronze-metallic-peninsula.png'],
   ['KS-006', 'Midnight blue metallic kitchen', '06-midnight-blue-metallic.png'],
-  ['KS-007', 'Rose-gold and charcoal metallic', '07-rose-gold-charcoal-metallic.png'],
-  ['KS-008', 'Pearl white metallic galley', '08-pearl-white-metallic-galley.png'],
+  [
+    'KS-007', 'Rose-gold and charcoal metallic',
+    '07-rose-gold-charcoal-metallic.png'
+  ],
+  [
+    'KS-008', 'Pearl white metallic galley',
+    '08-pearl-white-metallic-galley.png'
+  ],
   ['KS-009', 'Teal metallic corner kitchen', '09-teal-metallic-corner.png'],
-  ['KS-010', 'Gunmetal and champagne island', '10-gunmetal-champagne-island.png']
+  [
+    'KS-010', 'Gunmetal and champagne island',
+    '10-gunmetal-champagne-island.png'
+  ]
 ].map(([code, title, image]) => ({
-  code, title, image, category: 'kitchens',
-  alt: `Sample kitchen cupboard pattern: ${title}`
-}));
+        code,
+        title,
+        image,
+        category: 'kitchens',
+        alt: `Sample kitchen cupboard pattern: ${title}`
+      }));
 
 const granitePatterns = [
-  ['GR-004', 'Ceylon teak L-shaped kitchen with jet black granite', '01-sl-teak-l-shape-granite.jpg'],
-  ['GR-005', 'Black Galaxy granite waterfall kitchen island', '02-sl-waterfall-island-open-plan.jpg'],
-  ['GR-006', 'Polished black granite countertop with fluted drainboard', '03-sl-sink-fluted-drainboard-window.jpg'],
-  ['GR-007', 'Natural Tan Brown granite countertop with teak cabinetry', '04-sl-teak-cabinets-tan-brown-granite.jpg'],
-  ['GR-008', 'Mirror-polished black granite with undermount double sink', '05-undermount-sink-mirror-black.jpg'],
-  ['GR-009', 'Monolithic 45-degree mitered granite waterfall island', '06-waterfall-island-mitered-edge.jpg'],
-  ['GR-010', 'L-shaped wrap-around kitchen granite countertop', '07-l-shaped-wrap-countertop.jpg'],
-  ['GR-011', 'Precision diamond-cut flush cooktop granite opening', '08-flush-cooktop-precision-cutout.jpg'],
-  ['GR-012', 'Diamond-routed water drainage flutes grooved in granite', '09-carved-drainboard-flutes.jpg'],
-  ['GR-013', 'Cantilevered granite breakfast bar seating overhang', '10-breakfast-bar-cantilever-overhang.jpg'],
-  ['GR-014', 'Full U-shaped kitchen granite wrap-around worktop', '11-u-shaped-full-kitchen-worktop.jpg'],
-  ['GR-015', 'Custom 40mm laminated granite edge profiles showcase', '12-edge-profiles-bullnose-bevel-detail.jpg'],
-  ['GR-016', 'Master craftsmen on-site slab leveling and installation', '13-craftsmen-on-site-installation.jpg']
+  [
+    'GR-004', 'Ceylon teak L-shaped kitchen with jet black granite',
+    '01-sl-teak-l-shape-granite.jpg'
+  ],
+  [
+    'GR-005', 'Black Galaxy granite waterfall kitchen island',
+    '02-sl-waterfall-island-open-plan.jpg'
+  ],
+  [
+    'GR-006', 'Polished black granite countertop with fluted drainboard',
+    '03-sl-sink-fluted-drainboard-window.jpg'
+  ],
+  [
+    'GR-007', 'Natural Tan Brown granite countertop with teak cabinetry',
+    '04-sl-teak-cabinets-tan-brown-granite.jpg'
+  ],
+  [
+    'GR-008', 'Mirror-polished black granite with undermount double sink',
+    '05-undermount-sink-mirror-black.jpg'
+  ],
+  [
+    'GR-009', 'Monolithic 45-degree mitered granite waterfall island',
+    '06-waterfall-island-mitered-edge.jpg'
+  ],
+  [
+    'GR-010', 'L-shaped wrap-around kitchen granite countertop',
+    '07-l-shaped-wrap-countertop.jpg'
+  ],
+  [
+    'GR-011', 'Precision diamond-cut flush cooktop granite opening',
+    '08-flush-cooktop-precision-cutout.jpg'
+  ],
+  [
+    'GR-012', 'Diamond-routed water drainage flutes grooved in granite',
+    '09-carved-drainboard-flutes.jpg'
+  ],
+  [
+    'GR-013', 'Cantilevered granite breakfast bar seating overhang',
+    '10-breakfast-bar-cantilever-overhang.jpg'
+  ],
+  [
+    'GR-014', 'Full U-shaped kitchen granite wrap-around worktop',
+    '11-u-shaped-full-kitchen-worktop.jpg'
+  ],
+  [
+    'GR-015', 'Custom 40mm laminated granite edge profiles showcase',
+    '12-edge-profiles-bullnose-bevel-detail.jpg'
+  ],
+  [
+    'GR-016', 'Master craftsmen on-site slab leveling and installation',
+    '13-craftsmen-on-site-installation.jpg'
+  ]
 ].map(([code, title, image]) => ({
-  code, title, image, category: 'kitchens',
-  alt: `Sample granite countertop pattern: ${title}`
-}));
+        code,
+        title,
+        image,
+        category: 'kitchens',
+        alt: `Sample granite countertop pattern: ${title}`
+      }));
 
 const tvUnitPatterns = [
-  ['TVS-001', 'Metallic teal display wall', '01-metallic-teal-display-wall.png'],
+  [
+    'TVS-001', 'Metallic teal display wall', '01-metallic-teal-display-wall.png'
+  ],
   ['TVS-002', 'Graphite and champagne wall', '02-graphite-champagne-wall.png'],
   ['TVS-003', 'Pearl-grey corner unit', '03-pearl-grey-corner-unit.png'],
-  ['TVS-005', 'Champagne and charcoal media wall', '05-champagne-charcoal-media-wall.png'],
+  [
+    'TVS-005', 'Champagne and charcoal media wall',
+    '05-champagne-charcoal-media-wall.png'
+  ],
   ['TVS-006', 'Graphite asymmetric unit', '06-graphite-asymmetric-unit.png'],
   ['TVS-008', 'Bronze and gunmetal wall', '08-bronze-gunmetal-wall.png'],
   ['TVS-009', 'Layered rectangle wall', '09-layered-rectangle-wall.png'],
   ['TVS-010', 'Media wall with desk', '10-media-wall-desk.png'],
-  ['TVS-011', 'Graphite and bronze hall unit', '11-graphite-bronze-sri-lankan-hall.png'],
+  [
+    'TVS-011', 'Graphite and bronze hall unit',
+    '11-graphite-bronze-sri-lankan-hall.png'
+  ],
   ['TVS-012', 'Open-plan divider unit', '12-open-plan-divider-unit.png'],
   ['TVS-013', 'Under-stair sage unit', '13-under-stair-sage-unit.png'],
   ['TVS-014', 'Pearl-grey open-hall unit', '14-pearl-grey-open-hall.png'],
-  ['TVS-015', 'Column-integrated blue unit', '15-column-integrated-blue-unit.png']
+  [
+    'TVS-015', 'Column-integrated blue unit',
+    '15-column-integrated-blue-unit.png'
+  ]
 ].map(([code, title, image]) => ({
-  code, title, image, category: 'tv-units',
-  alt: `Sample TV-unit pattern: ${title}`
-}));
+        code,
+        title,
+        image,
+        category: 'tv-units',
+        alt: `Sample TV-unit pattern: ${title}`
+      }));
 
 const gypsumPatterns = [
   ['GYS-001', 'Double-step rectangle ceiling', '01-double-step-rectangle.png'],
@@ -99,18 +184,30 @@ const gypsumPatterns = [
   ['GYS-003', 'Green star centre ceiling', '03-green-star-centre.png'],
   ['GYS-004', 'S-curve hall ceiling', '04-s-curve-hall.png'],
   ['GYS-005', 'Concentric ring halo ceiling', '05-concentric-ring-halo.png'],
-  ['GYS-006', 'Connected rectangle islands', '06-connected-rectangle-islands.png'],
+  [
+    'GYS-006', 'Connected rectangle islands',
+    '06-connected-rectangle-islands.png'
+  ],
   ['GYS-007', 'Scalloped corner tray ceiling', '07-scalloped-corner-tray.png'],
-  ['GYS-008', 'Rounded rectangle tray ceiling', '08-rounded-rectangle-tray.png'],
+  [
+    'GYS-008', 'Rounded rectangle tray ceiling', '08-rounded-rectangle-tray.png'
+  ],
   ['GYS-009', 'Simple cross feature ceiling', '09-simple-cross-feature.png'],
-  ['GYS-010', 'Symmetrical square tray ceiling', '10-symmetrical-square-tray.png']
+  [
+    'GYS-010', 'Symmetrical square tray ceiling',
+    '10-symmetrical-square-tray.png'
+  ]
 ].map(([code, title, image]) => ({
-  code, title, image, category: 'gypsum',
-  alt: `Sample gypsum ceiling pattern: ${title}`
-}));
+        code,
+        title,
+        image,
+        category: 'gypsum',
+        alt: `Sample gypsum ceiling pattern: ${title}`
+      }));
 
 const samplePatterns = [
-  ...doorPatterns, ...kitchenPatterns, ...granitePatterns, ...tvUnitPatterns, ...gypsumPatterns
+  ...doorPatterns, ...kitchenPatterns, ...granitePatterns, ...tvUnitPatterns,
+  ...gypsumPatterns
 ];
 
 const categories = {
@@ -259,8 +356,9 @@ function header(prefix = '', active = '') {
         <a href="${prefix}index.html#services">Services</a>
         <a href="${prefix}index.html#location">Location</a>
       </nav>
-      <a class="header-work-link ${active === 'work' ? 'is-active' : ''}" href="${
-      prefix}gallery.html">Our Work</a>
+      <a class="header-work-link ${
+      active === 'work' ? 'is-active' :
+                          ''}" href="${prefix}gallery.html">Our Work</a>
       <a class="header-cta" href="${
       whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>Enquire <span aria-hidden="true">↗</span></a>
     </div>
@@ -299,15 +397,15 @@ function footer(prefix = '') {
           <a href="${
       site.facebookUrl}" target="_blank" rel="noopener noreferrer" class="footer-icon-link">${
       icon('facebook')}<span>Facebook</span></a>
-          <a href="tel:${site.phone.replace(/\s+/g, '')}" class="footer-icon-link">${
+          <a href="tel:${
+      site.phone.replace(/\s+/g, '')}" class="footer-icon-link">${
       icon('phone')}<span>${esc(site.phone)}</span></a>
         </div>
       </div>
     </div>
     <div class="shell footer-bottom">
       <span>© ${
-      new Date()
-          .getFullYear()} Inpalakan Timbers. All rights reserved.</span>
+      new Date().getFullYear()} Inpalakan Timbers. All rights reserved.</span>
     </div>
   </footer>`;
 }
@@ -342,10 +440,13 @@ function generatePlaylist(prefix = '') {
     title: pattern.title,
     src: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     rawSrc: pattern.image,
-    label: pattern.category === 'doors' ? 'Sample door pattern' :
-        pattern.category === 'kitchens' ? (pattern.code.startsWith('GR') ? 'Sample granite countertop pattern' : 'Sample kitchen cupboard pattern') :
+    label: pattern.category === 'doors' ?
+        'Sample door pattern' :
+        pattern.category === 'kitchens' ?
+        (pattern.code.startsWith('GR') ? 'Sample granite countertop pattern' :
+                                         'Sample kitchen cupboard pattern') :
         pattern.category === 'tv-units' ? 'Sample TV-unit pattern' :
-                                           'Sample gypsum ceiling pattern',
+                                          'Sample gypsum ceiling pattern',
     alt: pattern.alt,
     url: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     whatsapp: whatsappHref(pattern.code)
@@ -379,8 +480,9 @@ function layout({
                       esc(canonical)}"><meta property="og:url" content="${
                       esc(canonical)}">` :
                   ''}${
-      socialImage ? `<meta property="og:image" content="${esc(socialImage)}">` :
-                    ''}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="icon" href="${
+      socialImage ?
+          `<meta property="og:image" content="${esc(socialImage)}">` :
+          ''}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="icon" href="${
       logo}" type="image/png"><link rel="apple-touch-icon" href="${
       logo}"><link rel="stylesheet" href="${prefix}styles.css"><script src="${
       prefix}site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${
@@ -427,18 +529,21 @@ function card(project, prefix = '', index = 0) {
           ''} ${categories[project.category]?.english || ''}`;
   const url = projectUrl(project, prefix);
   const category = categories[project.category];
-  return `<article class="project-card" data-category="${project.category}" data-code="${
-      esc(project.code)}" data-keywords="${esc(searchKeywords)}">
+  return `<article class="project-card" data-category="${
+      project.category}" data-code="${esc(project.code)}" data-keywords="${
+      esc(searchKeywords)}">
     <div class="card-image-wrap">
-      <a class="card-image" href="${url}" data-open-lightbox="${esc(project.code)}" aria-label="View ${
-      esc(project.title)} (${esc(project.code)}) full screen">
+      <a class="card-image" href="${url}" data-open-lightbox="${
+      esc(project.code)}" aria-label="View ${esc(project.title)} (${
+      esc(project.code)}) full screen">
       <img src="${imageUrl(project, prefix)}" alt="${
       esc(project.alt)}" loading="${
       index < 4 ? 'eager' : 'lazy'}" decoding="async">
       ${viewsBadge}
       <span class="card-image-gradient" aria-hidden="true"></span>
       <span class="card-overlay">
-        <span class="card-overlay-row"><span class="card-code">${esc(project.code)}</span></span>
+        <span class="card-overlay-row"><span class="card-code">${
+      esc(project.code)}</span></span>
       </span>
       </a>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${
@@ -450,21 +555,31 @@ function card(project, prefix = '', index = 0) {
 
 function patternCard(pattern, index = 0) {
   const type = pattern.category === 'doors' ? 'door' :
-      pattern.category === 'kitchens' ? (pattern.code.startsWith('GR') ? 'granite countertop' : 'kitchen cupboard') :
-      pattern.category === 'tv-units' ? 'TV-unit' : 'gypsum ceiling';
+      pattern.category === 'kitchens'       ? (pattern.code.startsWith('GR') ?
+                                                   'granite countertop' :
+                                                   'kitchen cupboard') :
+      pattern.category === 'tv-units'       ? 'TV-unit' :
+                                              'gypsum ceiling';
   const image = `images/concepts/${pattern.category}/${pattern.image}`;
   const keywords = `${pattern.code} ${pattern.title} sample pattern ${type}`;
-  return `<article class="project-card sample-pattern-card" data-category="${pattern.category}" data-code="${esc(pattern.code)}" data-keywords="${esc(keywords)}">
+  return `<article class="project-card sample-pattern-card" data-category="${
+      pattern.category}" data-code="${esc(pattern.code)}" data-keywords="${
+      esc(keywords)}">
     <div class="card-image-wrap">
-      <button class="card-image sample-pattern-image" type="button" aria-label="View sample pattern ${esc(pattern.code)} full screen" data-open-lightbox="${esc(pattern.code)}">
-        <img src="${image}" alt="${esc(pattern.alt)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">
+      <button class="card-image sample-pattern-image" type="button" aria-label="View sample pattern ${
+      esc(pattern.code)} full screen" data-open-lightbox="${esc(pattern.code)}">
+        <img src="${image}" alt="${esc(pattern.alt)}" loading="${
+      index < 2 ? 'eager' : 'lazy'}" decoding="async">
         <span class="ai-generated-badge">Sample</span>
         <span class="card-image-gradient" aria-hidden="true"></span>
         <span class="card-overlay">
-          <span class="card-overlay-row"><span class="card-code">${esc(pattern.code)}</span></span>
+          <span class="card-overlay-row"><span class="card-code">${
+      esc(pattern.code)}</span></span>
         </span>
       </button>
-      <button class="card-expand-btn" type="button" aria-label="View full screen ${esc(pattern.code)}" data-open-lightbox="${esc(pattern.code)}" title="Full screen">⛶</button>
+      <button class="card-expand-btn" type="button" aria-label="View full screen ${
+      esc(pattern.code)}" data-open-lightbox="${
+      esc(pattern.code)}" title="Full screen">⛶</button>
     </div>
   </article>`;
 }
@@ -473,7 +588,8 @@ function homePage() {
   const heroProject = projects.find(p => p.code === 'KC-021');
   if (!heroProject) throw new Error('Missing featured home design KC-021');
   const selectedWorkCodes = [
-    'DR-008', 'DR-031', 'KC-021', 'BC-024', 'GY-002', 'FN-004', 'TV-004', 'WN-003', 'DR-005'
+    'DR-008', 'DR-031', 'KC-021', 'BC-024', 'GY-002', 'FN-004', 'TV-004',
+    'WN-003', 'DR-005'
   ];
   const featured = selectedWorkCodes.map(code => {
     const proj = projects.find(p => p.code === code);
@@ -484,7 +600,8 @@ function homePage() {
     doors: {
       code: 'DR-008',
       image: 'door-two-tone-peacock-veranda-full.jpg',
-      alt: 'Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes'
+      alt:
+          'Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes'
     },
     windows: {
       code: 'WN-019',
@@ -494,17 +611,20 @@ function homePage() {
     kitchens: {
       code: 'GR-008',
       image: '05-undermount-sink-mirror-black.jpg',
-      alt: 'Mirror-polished black granite countertop with undermount double-bowl stainless steel sink and gooseneck faucet'
+      alt:
+          'Mirror-polished black granite countertop with undermount double-bowl stainless steel sink and gooseneck faucet'
     },
     bedrooms: {
       code: 'BC-024',
       image: 'bedroom-teal-wardrobe-mirror-bed-suite.jpg',
-      alt: 'Modern fitted bedroom suite in soft teal with mirrored closet door and matching bedhead storage'
+      alt:
+          'Modern fitted bedroom suite in soft teal with mirrored closet door and matching bedhead storage'
     },
     gypsum: {
       code: 'GY-002',
       image: 'gypsum-magenta-gold-tray.jpg',
-      alt: 'Dual-tone magenta and warm gold false ceiling tray with ambient LED strip lighting and downlights'
+      alt:
+          'Dual-tone magenta and warm gold false ceiling tray with ambient LED strip lighting and downlights'
     },
     furniture: {
       code: 'FN-004',
@@ -559,7 +679,7 @@ function homePage() {
         <div class="hero-title-block">
           <h1 class="hero-business-title">
             <span class="hero-name-en">Inpalakan <em>Timbers</em></span>
-            <span class="hero-name-ta" lang="ta">இன்பழகன் கைத்தொழிலகம்</span>
+            <span class="hero-name-ta" lang="ta">இன்பழகன் <em>கைத்தொழிலகம்</em></span>
           </h1>
           <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
         </div>
@@ -737,9 +857,8 @@ function projectPage(project) {
               .map(
                   (v, i) => `
           <button class="thumb-btn ${
-                      i === 0 ?
-                          'is-active' :
-                      ''}" type="button" data-view-src="../${
+                      i === 0 ? 'is-active' :
+                                ''}" type="button" data-view-src="../${
                       projectImagePath(project, v.src)}" data-view-label="${
                       esc(v.label)}" data-view-alt="${
                       esc(v.alt)}" aria-label="${esc(v.label)}" ${
@@ -838,20 +957,32 @@ await mkdir(join(dist, 'projects'), {recursive: true});
 await cp(join(root, 'public'), dist, {recursive: true});
 await mkdir(join(dist, 'images/concepts/doors'), {recursive: true});
 if (existsSync(join(root, 'references/door-patterns'))) {
-  await cp(join(root, 'references/door-patterns'), join(dist, 'images/concepts/doors'), {recursive: true});
+  await cp(
+      join(root, 'references/door-patterns'),
+      join(dist, 'images/concepts/doors'), {recursive: true});
 }
 if (existsSync(join(root, 'references/concepts/doors'))) {
-  await cp(join(root, 'references/concepts/doors'), join(dist, 'images/concepts/doors'), {recursive: true});
+  await cp(
+      join(root, 'references/concepts/doors'),
+      join(dist, 'images/concepts/doors'), {recursive: true});
 }
 await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
-await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
+await cp(
+    join(root, 'references/kitchen-patterns'),
+    join(dist, 'images/concepts/kitchens'), {recursive: true});
 if (existsSync(join(root, 'references/granite-samples'))) {
-  await cp(join(root, 'references/granite-samples'), join(dist, 'images/concepts/kitchens'), {recursive: true});
+  await cp(
+      join(root, 'references/granite-samples'),
+      join(dist, 'images/concepts/kitchens'), {recursive: true});
 }
 await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
-await cp(join(root, 'references/tv-unit-patterns'), join(dist, 'images/concepts/tv-units'), {recursive: true});
+await cp(
+    join(root, 'references/tv-unit-patterns'),
+    join(dist, 'images/concepts/tv-units'), {recursive: true});
 await mkdir(join(dist, 'images/concepts/gypsum'), {recursive: true});
-await cp(join(root, 'references/gypsum-patterns'), join(dist, 'images/concepts/gypsum'), {recursive: true});
+await cp(
+    join(root, 'references/gypsum-patterns'),
+    join(dist, 'images/concepts/gypsum'), {recursive: true});
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await writeFile(join(dist, 'index.html'), homePage());

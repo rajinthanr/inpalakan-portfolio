@@ -1557,5 +1557,127 @@
     "image": "image-0-02-06-d1c41349c7f0281d4d57441e1bb57eed9787efb6e408db00b509aac12b618792-V.jpg",
     "alt": "Bespoke Carved Timber Entrance - Artisanal carved entrance door with intricate center relief and elegant frame moldings.",
     "featured": false
+  },
+  {
+    "code": "DR-065",
+    "slug": "solid-timber-entrance-door-dr-065",
+    "category": "doors",
+    "title": "Solid Timber Architectural Entrance Door",
+    "summary": "Handcrafted solid timber entrance door featuring custom paneling and precision joinery.",
+    "image": "IMG_1223.JPG",
+    "alt": "Solid timber architectural entrance door with custom paneling",
+    "featured": false
+  },
+  {
+    "code": "DR-066",
+    "slug": "carved-timber-entrance-dr-066",
+    "category": "doors",
+    "title": "Carved Hardwood Main Entrance Door",
+    "summary": "Substantial hardwood main entrance door with decorative carved detailing and rich protective finish.",
+    "image": "IMG_1233.JPG",
+    "alt": "Carved hardwood main entrance door with decorative detailing",
+    "featured": false
+  },
+  {
+    "code": "DR-067",
+    "slug": "double-entrance-door-pair-dr-067",
+    "category": "doors",
+    "title": "Double Timber Entrance Door Pair",
+    "summary": "Stately double entrance timber door pair with symmetrical molded panels and polished finish.",
+    "image": "IMG_1238.JPG",
+    "alt": "Double timber entrance door pair with symmetrical molded panels",
+    "featured": false
+  },
+  {
+    "code": "DR-068",
+    "slug": "handcrafted-panel-door-dr-068",
+    "category": "doors",
+    "title": "Handcrafted Timber Panel Entrance Door",
+    "summary": "Single entry timber door crafted with multi-field raised panels and solid jamb frame.",
+    "image": "IMG_2277.jpg",
+    "alt": "Handcrafted timber panel entrance door with solid jamb frame",
+    "featured": false
+  },
+  {
+    "code": "FN-015",
+    "slug": "custom-timber-cabinet-fn-015",
+    "category": "furniture",
+    "title": "Custom Timber Cabinetry Unit",
+    "summary": "Handcrafted timber storage cabinet featuring paneled woodwork and smooth hand-rubbed finish.",
+    "image": "IMG_1226.JPG",
+    "alt": "Handcrafted timber storage cabinet unit with paneled woodwork",
+    "featured": false
+  },
+  {
+    "code": "FN-016",
+    "slug": "solid-wood-furniture-unit-fn-016",
+    "category": "furniture",
+    "title": "Solid Wood Living Furniture Unit",
+    "summary": "Bespoke solid wood cabinetry crafted for living spaces with durable hardwood joinery.",
+    "image": "IMG_1421.JPG",
+    "alt": "Bespoke solid wood living furniture cabinetry unit",
+    "featured": false
+  },
+  {
+    "code": "FN-017",
+    "slug": "handcrafted-hardwood-furniture-fn-017",
+    "category": "furniture",
+    "title": "Handcrafted Hardwood Furniture Piece",
+    "summary": "Custom hardwood furniture installation showcasing traditional joinery and elegant polish.",
+    "image": "IMG_1431.JPG",
+    "alt": "Custom handcrafted hardwood furniture piece with elegant polish",
+    "featured": false
+  },
+  {
+    "code": "KC-028",
+    "slug": "custom-kitchen-cabinetry-kc-028",
+    "category": "kitchens",
+    "title": "Custom Timber Kitchen Cabinetry Suite",
+    "summary": "Fitted timber kitchen cabinets featuring spacious overhead storage and fitted base units.",
+    "image": "IMG_1245.JPG",
+    "alt": "Fitted timber kitchen cabinetry suite with overhead storage",
+    "featured": false
+  },
+  {
+    "code": "KC-029",
+    "slug": "fitted-kitchen-cupboards-kc-029",
+    "category": "kitchens",
+    "title": "Modular Kitchen Cupboards and Countertop",
+    "summary": "Complete kitchen cupboard installation with upper and lower storage cabinets, drawers, and durable countertop.",
+    "image": "IMG_2279.jpg",
+    "alt": "Modular kitchen cupboard installation with upper and lower storage",
+    "featured": false,
+    "views": [
+      {
+        "src": "IMG_2279.jpg",
+        "label": "Front view",
+        "alt": "Modular kitchen cupboard installation with upper and lower storage"
+      },
+      {
+        "src": "IMG_2280.jpg",
+        "label": "Counter perspective",
+        "alt": "Angled perspective of kitchen cupboards and countertop layout"
+      }
+    ]
+  },
+  {
+    "code": "WN-046",
+    "slug": "solid-timber-window-frame-wn-046",
+    "category": "windows",
+    "title": "Solid Timber Residential Window Frame",
+    "summary": "Handcrafted timber window frame with precision mullions, weather rebate, and smooth sanding.",
+    "image": "IMG_1242.JPG",
+    "alt": "Solid timber residential window frame with precision mullions",
+    "featured": false
+  },
+  {
+    "code": "WN-047",
+    "slug": "custom-timber-casement-window-wn-047",
+    "category": "windows",
+    "title": "Custom Timber Casement Window Unit",
+    "summary": "Architectural timber window unit built with durable hardwood frames for residential openings.",
+    "image": "IMG_2270.jpg",
+    "alt": "Architectural custom timber casement window unit",
+    "featured": false
   }
 ]
