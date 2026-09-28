@@ -149,8 +149,6 @@
     const lbImg = lightboxModal.querySelector('#lb-image');
     const lbCode = lightboxModal.querySelector('#lb-code');
     const lbCounter = lightboxModal.querySelector('#lb-counter');
-    const lbCaption = lightboxModal.querySelector('#lb-caption');
-    const lbCategory = lightboxModal.querySelector('#lb-category');
     const lbWhatsappBtn = lightboxModal.querySelector('#lb-whatsapp-btn');
     const lbShareBtn = lightboxModal.querySelector('#lb-share-btn');
     const lbPrevBtn = lightboxModal.querySelector('#lb-prev-btn');
@@ -221,9 +219,6 @@
       lbImg.alt = item.alt || item.title || item.code;
       lbCode.textContent = item.code;
       lbCounter.textContent = `${currentIndex + 1} / ${activePlaylist.length}`;
-      lbCaption.textContent = item.title;
-      lbCategory.textContent = `${item.collection === 'sample' ? 'Sample · ' : ''}${(item.category || '').replace('-', ' ')}`;
-
       const itemPageUrl = new URL(item.url, window.location.href).href;
       if (lbWhatsappBtn) {
         const whatsappUrl = new URL(item.whatsapp);
@@ -267,7 +262,8 @@
       const category = categoryFilter && categoryFilter !== 'all' ?
           categoryFilter : selected.category;
       activePlaylist = fullPlaylist.filter(item =>
-          item.category === category && item.collection === selected.collection);
+          item.collection === selected.collection &&
+          (selected.collection === 'work' || item.category === category));
       if (!activePlaylist.length) activePlaylist = [selected];
       currentIndex = Math.max(0, activePlaylist.findIndex(item =>
           item.src === selected.src && item.code === selected.code));

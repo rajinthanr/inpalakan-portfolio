@@ -390,10 +390,6 @@ function layout({
       <button id="lb-next-btn" class="lb-nav-btn lb-next" type="button" aria-label="Next image (Right arrow)">›</button>
     </div>
     <div class="lightbox-bottom-sheet">
-      <div class="lightbox-info">
-        <p id="lb-caption" class="lb-caption"></p>
-        <span id="lb-category" class="lb-category"></span>
-      </div>
       <div id="lb-thumbnails" class="lb-thumbnails" aria-label="Images in this collection"></div>
       <div class="lightbox-actions">
         <a id="lb-whatsapp-btn" class="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
