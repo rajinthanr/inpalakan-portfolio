@@ -295,7 +295,6 @@ function footer(prefix = '') {
         <address>${esc(site.address)}</address>
         <p class="footer-service-area">Serving Valvettithurai, Point Pedro, Nelliady, Thondaimanaru, Thikkam, and the wider Vadamarachy area.</p>
         <div class="footer-links">
-          <a href="${prefix}gallery.html">Portfolio</a>
           <a href="${prefix}index.html#services">Services</a>
           <a href="${
       site.facebookUrl}" target="_blank" rel="noopener noreferrer" class="footer-icon-link">${
