@@ -144,11 +144,13 @@ function header(prefix = '', active = '') {
           prefix)}" alt="Inpalakan Timbers logo" width="44" height="44"><span class="brand-name">INPALAKAN <small>TIMBERS</small></span></a>
       <nav class="main-nav" aria-label="Main navigation">
         <a class="${active === 'work' ? 'is-active' : ''}" href="${
-      prefix}gallery.html">Portfolio</a>
+      prefix}gallery.html">Our Work</a>
         <a href="${prefix}index.html#services">Services</a>
         <a href="${prefix}index.html#location">Location</a>
         <a href="${prefix}index.html#about">About</a>
       </nav>
+      <a class="header-work-link ${active === 'work' ? 'is-active' : ''}" href="${
+      prefix}gallery.html">Our Work</a>
       <a class="header-cta" href="${
       whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>Enquire <span aria-hidden="true">↗</span></a>
     </div>
@@ -255,7 +257,7 @@ function layout({
                     ''}<link rel="icon" href="${
       logo}" type="image/png"><link rel="apple-touch-icon" href="${
       logo}"><link rel="stylesheet" href="${prefix}styles.css"><script src="${
-      prefix}site.js" defer></script></head><body>${
+      prefix}site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${
       header(prefix, active)}<main id="main">${body}</main>${footer(prefix)}
   <div id="fullscreen-lightbox" class="lightbox-modal" hidden role="dialog" aria-modal="true" aria-label="Full screen image viewer">
     <div class="lightbox-backdrop"></div>
@@ -298,23 +300,30 @@ function card(project, prefix = '', index = 0) {
       `${project.code} ${project.title} ${project.category} ${
           categories[project.category]?.singular ||
           ''} ${categories[project.category]?.english || ''}`;
-  return `<a class="project-card" href="${
-      projectUrl(
-          project, prefix)}" data-category="${project.category}" data-code="${
+  const url = projectUrl(project, prefix);
+  const category = categories[project.category];
+  return `<article class="project-card" data-category="${project.category}" data-code="${
       esc(project.code)}" data-keywords="${esc(searchKeywords)}">
-    <span class="card-image">
+    <div class="card-image-wrap">
+      <a class="card-image" href="${url}" aria-label="Open ${
+      esc(project.title)} (${esc(project.code)})">
       <img src="${imageUrl(project, prefix)}" alt="${
       esc(project.alt)}" loading="${
       index < 4 ? 'eager' : 'lazy'}" decoding="async">
       ${viewsBadge}
+      </a>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${
       esc(project.code)}" data-open-lightbox="${
       esc(project.code)}" title="Full screen">⛶</button>
-    </span>
-    <span class="card-meta-code">
-      <strong class="card-code">${esc(project.code)}</strong>
-    </span>
-  </a>`;
+    </div>
+    <a class="card-meta" href="${url}">
+      <span class="card-meta-text">
+        <strong class="card-title">${esc(project.title)}</strong>
+        <span class="card-category">${esc(category.english)}</span>
+      </span>
+      <span class="card-code">${esc(project.code)}</span>
+    </a>
+  </article>`;
 }
 
 function homePage() {
@@ -374,7 +383,7 @@ function homePage() {
         <h1>Crafted to<br><em>belong.</em></h1>
         <p class="hero-lead">Custom carved doors, windows, modular kitchens, granite fitting, gypsum ceilings, and custom furniture. Explore our work, find a design code, and connect with our workshop.</p>
         <div class="hero-actions">
-          <a class="button button-dark" href="gallery.html">Explore our portfolio ${
+          <a class="button button-dark" href="gallery.html">View Our Work ${
       icon('arrow')}</a>
           <a class="text-link" href="#services">Our services <span aria-hidden="true">↘</span></a>
         </div>
@@ -532,11 +541,12 @@ function homePage() {
 
 function galleryPage() {
   const body = `<section class="page-hero shell">
-    <p class="eyebrow">THE PORTFOLIO</p>
-    <h1>Made for<br><em>real spaces.</em></h1>
-    <p>Browse doors, windows, kitchens, granite fittings, wardrobes, ceilings, and custom furniture. Every design has a reference code to discuss on WhatsApp.</p>
+    <p class="eyebrow">OUR COMPLETED WORK</p>
+    <h1>Choose a design<br><em>you like.</em></h1>
+    <p>Tap a category, then tap any photo to see it clearly. Every design has a reference code you can send to us on WhatsApp.</p>
   </section>
   <section class="gallery-section shell" aria-label="Project gallery">
+    <p class="gallery-help"><strong>Step 1:</strong> Choose a category or search by design code.</p>
     <div class="gallery-toolbar">
       <div class="filters" role="group" aria-label="Filter designs">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
@@ -554,11 +564,12 @@ function galleryPage() {
         `).join('')}
       </div>
       <div class="gallery-search-wrap">
-        <input class="gallery-search" type="search" placeholder="Search by code or keyword (e.g. GY-001, granite)..." aria-label="Search designs" data-gallery-search>
+        <input class="gallery-search" type="search" placeholder="Search designs, for example DR-004" aria-label="Search designs" data-gallery-search>
       </div>
       <p class="gallery-count" aria-live="polite"><span id="visible-count">${
       projects.length}</span> designs</p>
     </div>
+    <p class="gallery-help gallery-help-results"><strong>Step 2:</strong> Tap a photo to open its design page, or use the full-screen button.</p>
     <div class="project-grid gallery-grid">
       ${projects.map((p, i) => card(p, '', i)).join('')}
     </div>

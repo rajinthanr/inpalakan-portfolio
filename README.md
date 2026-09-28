@@ -12,6 +12,8 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
+On phones, the main action and sticky header lead directly to **Our Work**. Gallery filters wrap into large tap targets, and each result shows a readable title, category, reference code, and separate full-screen control.
+
 ## Run locally
 
 Node.js 20 or newer is recommended. The build has no installed npm dependencies.
@@ -106,6 +108,8 @@ Titles and descriptions should describe visible design details only. Confirm cap
 2. Open **Settings → Pages** and select **GitHub Actions** as the source.
 3. Push to `main`, or run the workflow manually from the Actions tab.
 4. The included workflow builds with Node.js 20 and deploys `dist/`.
+
+The workflow uses the standard GitHub Pages project URL for canonical and social-preview links. If the site later uses a custom domain, add a repository Actions variable named `PUBLIC_BASE_URL` containing that origin, without a trailing slash.
 
 GitHub Pages supports a custom domain and HTTPS. Its generated site URL is available from the completed deployment job.
 
