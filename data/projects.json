@@ -126,16 +126,6 @@
     "featured": false
   },
   {
-    "code": "CB-001",
-    "slug": "fitted-wardrobe",
-    "category": "bedrooms",
-    "title": "Fitted wardrobe",
-    "summary": "Full-height dark green storage with a mirror and an open centre section.",
-    "image": "cupboard-fitted-wardrobe.jpg",
-    "alt": "Dark green fitted wardrobe with a mirror and open central niche",
-    "featured": false
-  },
-  {
     "code": "CB-002",
     "slug": "timber-kitchen-cabinets",
     "category": "kitchens",
@@ -179,11 +169,6 @@
         "src": "cupboard-grey-fitted-storage.jpg",
         "label": "Exterior front elevation",
         "alt": "Full-height grey fitted storage with vertical mirror and corner shelves"
-      },
-      {
-        "src": "cupboard-grey-storage-interior.jpg",
-        "label": "Interior shelving & wardrobe",
-        "alt": "Interior view showing open cabinet doors with adjustable shelves and hanging rail"
       }
     ]
   },
@@ -496,11 +481,6 @@
         "src": "cupboard-cb-012.jpg",
         "label": "Base drawers & cupboards",
         "alt": "Under-counter cabinetry with cutlery drawers and storage doors"
-      },
-      {
-        "src": "cupboard-cb-013.jpg",
-        "label": "Corner display cabinets",
-        "alt": "Close-up of corner glazed wall cupboards"
       }
     ]
   },
@@ -565,21 +545,6 @@
         "src": "cupboard-cb-028.jpg",
         "label": "Mirror closet & alcove",
         "alt": "Close-up of mirror closet door and illuminated bedhead alcove"
-      },
-      {
-        "src": "cupboard-cb-032.jpg",
-        "label": "Under-bed storage",
-        "alt": "Demonstration of hinged lift-up internal storage compartment inside the bed"
-      },
-      {
-        "src": "cupboard-cb-021.jpg",
-        "label": "Hydraulic overhead flap",
-        "alt": "Close-up of hydraulic lift-up overhead cupboard above bedhead"
-      },
-      {
-        "src": "cupboard-cb-026.jpg",
-        "label": "Right wardrobe wing",
-        "alt": "Full height wardrobe wing showing ceiling soffit spotlighting integration"
       }
     ]
   },
@@ -589,34 +554,14 @@
     "category": "gypsum",
     "title": "Emerald Star Geometric Gypsum Ceiling",
     "summary": "A showpiece geometric multi-tier false ceiling featuring radiant emerald ambient cove lighting, central star medallion, and integrated recessed spotlighting.",
-    "image": "gypsum-emerald-star-finished.jpg",
+    "image": "gypsum-emerald-star-perspective.jpg",
     "alt": "Finished emerald star geometric false ceiling with radiant emerald green ambient cove lighting and recessed ceiling spotlights",
     "featured": true,
     "views": [
       {
-        "src": "gypsum-emerald-star-finished.jpg",
-        "label": "Finished ambient lighting",
-        "alt": "Illuminated emerald star false ceiling at night"
-      },
-      {
-        "src": "gypsum-emerald-star-direct.jpg",
-        "label": "Direct overhead view",
-        "alt": "Centered overhead view of geometric star and circular coves"
-      },
-      {
         "src": "gypsum-emerald-star-perspective.jpg",
         "label": "Wide room perspective",
         "alt": "Wide room view showing illuminated false ceiling above tiled floor"
-      },
-      {
-        "src": "gypsum-emerald-star-framework.jpg",
-        "label": "Metal framework stage",
-        "alt": "Galvanized ceiling channel framing and hanging wire grid before board fitting"
-      },
-      {
-        "src": "gypsum-emerald-star-conduit.jpg",
-        "label": "Electrical conduit stage",
-        "alt": "Ceiling wiring conduits and framing layout"
       }
     ]
   },
@@ -636,51 +581,14 @@
     "category": "gypsum",
     "title": "Concentric Rings Architectural Gypsum Ceiling",
     "summary": "Multi-layered curved ceiling design with interlocking concentric circular light troughs, shown through precision framing, curved board installation, and plastering.",
-    "image": "gypsum-concentric-rings-framework.jpg",
+    "image": "gypsum-concentric-rings-detail.jpg",
     "alt": "Precision galvanized metal framing for multi-layer circular and curved gypsum false ceiling",
     "featured": false,
     "views": [
       {
-        "src": "gypsum-concentric-rings-framework.jpg",
-        "label": "Circular framing grid",
-        "alt": "Interlocking circular steel framework on ceiling"
-      },
-      {
         "src": "gypsum-concentric-rings-detail.jpg",
         "label": "Curved channel detail",
         "alt": "Close-up of curved channel perimeter forming concentric rings"
-      },
-      {
-        "src": "gypsum-concentric-rings-plastering.jpg",
-        "label": "Plastering stage",
-        "alt": "Inpalakan craftsmen on scaffolding applying jointing compound and plaster"
-      }
-    ]
-  },
-  {
-    "code": "GY-004",
-    "slug": "modern-recessed-stepped-tray-ceiling",
-    "category": "gypsum",
-    "title": "Modern Recessed Stepped Tray Ceiling",
-    "summary": "Clean contemporary stepped perimeter false ceiling with concealed cove lighting and recessed downlights, shown completed and during workshop framework stages.",
-    "image": "gypsum-recessed-stepped-tray.jpg",
-    "alt": "Finished modern living hall with recessed stepped gypsum tray ceiling, downlights, and timber doors",
-    "featured": false,
-    "views": [
-      {
-        "src": "gypsum-recessed-stepped-tray.jpg",
-        "label": "Finished living hall",
-        "alt": "Completed stepped tray ceiling in hall with timber doorways"
-      },
-      {
-        "src": "gypsum-recessed-tray-framework.jpg",
-        "label": "Framework grid",
-        "alt": "Steel grid framework installed across concrete ceiling"
-      },
-      {
-        "src": "gypsum-recessed-tray-scaffolding.jpg",
-        "label": "Scaffolding perspective",
-        "alt": "Installation staging view with work platform and laser level marks"
       }
     ]
   },
@@ -698,70 +606,8 @@
         "src": "gypsum-classic-hall-ceiling.jpg",
         "label": "Warm spotlight illumination",
         "alt": "Ceiling angle showing soft ambient spotlights on walls"
-      },
-      {
-        "src": "gypsum-classic-hall-wide.jpg",
-        "label": "Wide room perspective",
-        "alt": "Wide view of spacious hall with finished false ceiling"
       }
     ]
-  },
-  {
-    "code": "GY-006",
-    "slug": "scalloped-arch-recessed-tray-ceiling",
-    "category": "gypsum",
-    "title": "Scalloped Arch Recessed Tray Ceiling",
-    "summary": "Curved architectural false ceiling with sculpted scalloped perimeter edging, designed for dining halls and master living rooms.",
-    "image": "gypsum-scalloped-arch-tray.jpg",
-    "alt": "Curved scalloped edge recessed gypsum tray ceiling with hidden cove lighting",
-    "featured": false
-  },
-  {
-    "code": "TV-001",
-    "slug": "handcrafted-carved-timber-tv-showcase",
-    "category": "tv-units",
-    "title": "Handcrafted Carved Timber TV Showcase & Console",
-    "summary": "Custom solid timber entertainment showcase unit with carved column pillars, glazed display side cabinets, integrated audio shelving, and spacious media drawers.",
-    "image": "tv-unit-handcrafted-showcase-console.jpg",
-    "alt": "Handcrafted solid timber TV entertainment showcase cabinet with carved side columns and media storage",
-    "featured": true,
-    "views": [
-      {
-        "src": "tv-unit-handcrafted-showcase-console.jpg",
-        "label": "Full showcase front",
-        "alt": "Finished timber entertainment unit with side display cabinets and drawer console"
-      },
-      {
-        "src": "tv-unit-showcase-carpenter-fitting.jpg",
-        "label": "Carpenter fitting stage",
-        "alt": "Inpalakan craftsman aligning and securing side cabinets on site"
-      },
-      {
-        "src": "tv-unit-showcase-joinery-process.jpg",
-        "label": "Workshop joinery assembly",
-        "alt": "Solid timber cabinet joinery being assembled and clamped in workshop"
-      }
-    ]
-  },
-  {
-    "code": "TV-002",
-    "slug": "low-profile-teak-media-console",
-    "category": "tv-units",
-    "title": "Low-Profile Teak Living Room TV Media Console",
-    "summary": "Minimalist low-profile media console crafted in polished teak timber with wide push-to-open drawer compartments, cable routing channels, and sturdy tapered feet.",
-    "image": "tv-unit-teak-media-console.jpg",
-    "alt": "Low-profile polished teak living room TV console unit with storage drawers",
-    "featured": false
-  },
-  {
-    "code": "TV-003",
-    "slug": "carved-timber-living-room-archway-media-wall",
-    "category": "tv-units",
-    "title": "Carved Timber Living Room Archway & Media Wall",
-    "summary": "Grand ornamental timber archway framing living room entertainment zone, featuring fluted jambs, molded decorative cornice, and rich natural timber finish.",
-    "image": "tv-unit-living-room-timber-archway.jpg",
-    "alt": "Ornate carved timber living room archway creating a feature backdrop partition",
-    "featured": false
   },
   {
     "code": "FN-001",
@@ -772,38 +618,6 @@
     "image": "furniture-carved-peacock-bed-headboard.jpg",
     "alt": "Solid timber master bed headboard deeply carved with mirroring peacocks and floral scrollwork",
     "featured": true
-  },
-  {
-    "code": "FN-002",
-    "slug": "carved-timber-pooja-shrine-cabinet-temple-bell",
-    "category": "furniture",
-    "title": "Carved Timber Pooja Shrine Cabinet & Sacred Bells",
-    "summary": "Authentic devotional pooja shrine featuring traditional gopuram mandap crest, lattice door panels with hanging brass temple bells, and drawer storage for pooja items.",
-    "image": "furniture-pooja-room-temple-bell-door.jpg",
-    "alt": "Pooja room timber shrine door with carved mandap arches and hanging brass temple bells",
-    "featured": false,
-    "views": [
-      {
-        "src": "furniture-pooja-room-temple-bell-door.jpg",
-        "label": "Temple bell shrine door",
-        "alt": "Intricately carved timber shrine door with traditional hanging brass bells"
-      },
-      {
-        "src": "cupboard-timber-prayer-shrine.jpg",
-        "label": "Full shrine cabinet elevation",
-        "alt": "Full elevation of solid timber pooja cabinet with mandap crown"
-      }
-    ]
-  },
-  {
-    "code": "FN-003",
-    "slug": "wall-mounted-modular-cubby-shelving",
-    "category": "furniture",
-    "title": "Wall-Mounted Modular Living & Bedroom Cubby Storage",
-    "summary": "Contemporary multi-tier floating wall storage shelving with asymmetric display cubes and concealed keyhole wall mounting.",
-    "image": "furniture-wall-mounted-cubby-shelving.jpg",
-    "alt": "Wall-mounted modular timber cubby shelving unit for living room or bedroom display",
-    "featured": false
   },
   {
     "code": "KC-018",
@@ -897,16 +711,6 @@
     "summary": "Precision water-resistant kitchen granite installation featuring diamond-cut sink opening, silicone watertight seal, and beveled corner safety profiles.",
     "image": "granite-l-shaped-worktop-sink.jpg",
     "alt": "L-shaped kitchen granite counter with precision-cut sink cavity and undermount stainless sink",
-    "featured": false
-  },
-  {
-    "code": "GR-003",
-    "slug": "glazed-wall-pantry-granite-countertop-fitting",
-    "category": "kitchens",
-    "title": "Continuous Kitchen Granite Countertop beneath Wall Pantry",
-    "summary": "Deep polished granite countertop installed beneath glazed timber wall cupboards, providing a heat-resistant, scratch-resistant food preparation surface.",
-    "image": "granite-wall-pantry-countertop.jpg",
-    "alt": "Full length polished granite worktop beneath continuous wall pantry cabinets",
     "featured": false
   },
   {
@@ -1063,23 +867,8 @@
         "src": "bedroom-black-geometric-wardrobe-closed.jpg",
         "label": "Closed geometric doors",
         "alt": "Closed view of modern black wardrobe with textured groove pattern"
-      },
-      {
-        "src": "bedroom-black-geometric-wardrobe-open.jpg",
-        "label": "Open interior storage",
-        "alt": "Open wardrobe view demonstrating internal shelving tiers and hanging rod"
       }
     ]
-  },
-  {
-    "code": "BC-026",
-    "slug": "floor-to-ceiling-built-in-closet",
-    "category": "bedrooms",
-    "title": "Floor-to-Ceiling Built-In Closet with Timber Shelving",
-    "summary": "Spacious floor-to-ceiling built-in wardrobe interior featuring warm timber shelves, dedicated trouser hanging tier, and overhead luggage storage compartments.",
-    "image": "bedroom-floor-to-ceiling-closet-interior.jpg",
-    "alt": "Internal storage layout of floor-to-ceiling custom bedroom wardrobe with solid timber shelving",
-    "featured": false
   },
   {
     "code": "WN-031",
@@ -1210,11 +999,6 @@
         "src": "kitchen-grey-led-wide.jpg",
         "label": "Wide room view",
         "alt": "Wide view showing the kitchen cabinetry arranged around the room"
-      },
-      {
-        "src": "kitchen-grey-led-pantry-wall.jpg",
-        "label": "Tall pantry wall",
-        "alt": "Full-height grey pantry cabinets arranged around a timber doorway"
       }
     ]
   },
@@ -1320,11 +1104,6 @@
         "alt": "Wide room view of the teal TV unit with two rounded display towers"
       },
       {
-        "src": "tv-unit-rounded-teal-lit.jpg",
-        "label": "Illuminated front",
-        "alt": "Front view of the TV wall with warm lighting behind the screen"
-      },
-      {
         "src": "tv-unit-rounded-teal-feature-wall.jpg",
         "label": "Angled perspective",
         "alt": "Angled view showing the curved display end and lower storage cabinets"
@@ -1339,6 +1118,56 @@
     "summary": "A layered geometric ceiling with a floating central tray, blue concealed lighting, and evenly spaced recessed downlights.",
     "image": "gypsum-blue-led-floating-tray.jpg",
     "alt": "Layered floating gypsum tray ceiling with blue concealed lighting and recessed downlights",
+    "featured": false
+  },
+  {
+    "code": "DR-020",
+    "slug": "timber-door-dr-020",
+    "category": "doors",
+    "title": "Classic framed entrance door (DR-020)",
+    "summary": "Solid timber entrance door with traditional perimeter frame and fielded center panels. Reference code DR-020.",
+    "image": "door-dr-020.jpg",
+    "alt": "Classic framed entrance door in polished timber, design DR-020",
+    "featured": false
+  },
+  {
+    "code": "DR-036",
+    "slug": "timber-door-dr-036",
+    "category": "doors",
+    "title": "Fielded panel timber door (DR-036)",
+    "summary": "Handcrafted single door with raised fielded panels and precision mortise-and-tenon joints. Reference code DR-036.",
+    "image": "door-dr-036.jpg",
+    "alt": "Fielded panel timber door in polished timber, design DR-036",
+    "featured": false
+  },
+  {
+    "code": "WN-013",
+    "slug": "timber-window-wn-013",
+    "category": "windows",
+    "title": "Timber framed glass window (WN-013)",
+    "summary": "Clean-lined timber window unit with wide glass panes for natural daylight. Reference code WN-013.",
+    "image": "window-wn-013.jpg",
+    "alt": "Timber framed glass window in polished timber, design WN-013",
+    "featured": false
+  },
+  {
+    "code": "WN-029",
+    "slug": "timber-window-wn-029",
+    "category": "windows",
+    "title": "Arched top timber casement window (WN-029)",
+    "summary": "Classic arched timber window with central vertical divider and safety ironwork. Reference code WN-029.",
+    "image": "window-wn-029.jpg",
+    "alt": "Arched top timber casement window in polished timber, design WN-029",
+    "featured": false
+  },
+  {
+    "code": "WN-001",
+    "slug": "geometric-casement-window",
+    "category": "windows",
+    "title": "Geometric Casement Timber Window",
+    "summary": "Custom timber casement window with geometric mullion design and textured glass inserts.",
+    "image": "window-geometric-casement.jpg",
+    "alt": "Timber casement window with geometric wood pattern and glass panes",
     "featured": false
   }
 ]

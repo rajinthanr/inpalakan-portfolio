@@ -1,4 +1,5 @@
 import {cp, mkdir, readdir, readFile, rm, writeFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -470,9 +471,9 @@ function homePage() {
       alt: 'Mirror-polished black granite countertop with undermount double-bowl stainless steel sink and gooseneck faucet'
     },
     bedrooms: {
-      code: 'CB-001',
-      image: 'cupboard-fitted-wardrobe.jpg',
-      alt: 'Dark green fitted bedroom wardrobe with mirror and open niche'
+      code: 'BC-024',
+      image: 'bedroom-teal-wardrobe-mirror-bed-suite.jpg',
+      alt: 'Modern fitted bedroom suite in soft teal with mirrored closet door and matching bedhead storage'
     },
     gypsum: {
       code: 'GY-002',
@@ -795,7 +796,12 @@ await rm(dist, {recursive: true, force: true});
 await mkdir(join(dist, 'projects'), {recursive: true});
 await cp(join(root, 'public'), dist, {recursive: true});
 await mkdir(join(dist, 'images/concepts/doors'), {recursive: true});
-await cp(join(root, 'references/door-patterns'), join(dist, 'images/concepts/doors'), {recursive: true});
+if (existsSync(join(root, 'references/door-patterns'))) {
+  await cp(join(root, 'references/door-patterns'), join(dist, 'images/concepts/doors'), {recursive: true});
+}
+if (existsSync(join(root, 'references/concepts/doors'))) {
+  await cp(join(root, 'references/concepts/doors'), join(dist, 'images/concepts/doors'), {recursive: true});
+}
 await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
 await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
