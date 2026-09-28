@@ -456,9 +456,9 @@ function homePage() {
   ];
   const categoryCoverSelections = {
     doors: {
-      code: 'DR-004',
-      image: 'door-carved-medallion-wide.jpg',
-      alt: 'Wide view of a carved timber entrance installed on a veranda'
+      code: 'DR-008',
+      image: 'door-two-tone-peacock-veranda-full.jpg',
+      alt: 'Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes'
     },
     windows: {
       code: 'WN-019',
@@ -476,9 +476,9 @@ function homePage() {
       alt: 'Modern fitted bedroom suite in soft teal with mirrored closet door and matching bedhead storage'
     },
     gypsum: {
-      code: 'GY-002',
-      image: 'gypsum-magenta-gold-tray.jpg',
-      alt: 'Gypsum tray ceiling with magenta and warm gold lighting'
+      code: 'GY-005',
+      image: 'gypsum-classic-hall-ceiling.jpg',
+      alt: 'Classic perimeter false ceiling with soft warm downlights illuminating hall walls'
     },
     furniture: {
       code: 'FN-004',

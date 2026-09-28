@@ -399,16 +399,6 @@
     ]
   },
   {
-    "code": "WN-016",
-    "slug": "timber-window-wn-016",
-    "category": "windows",
-    "title": "Textured-glass timber window (WN-016)",
-    "summary": "Three-leaf timber window fitted with textured privacy glass and durable brass fittings. Reference code WN-016.",
-    "image": "window-wn-016.jpg",
-    "alt": "Textured-glass timber window in solid timber, design WN-016",
-    "featured": false
-  },
-  {
     "code": "WN-018",
     "slug": "timber-window-wn-018",
     "category": "windows",
@@ -476,11 +466,6 @@
         "src": "cupboard-cb-011.jpg",
         "label": "Overhead glazed suite",
         "alt": "Full overhead view of glazed cabinets, countertop, and sink"
-      },
-      {
-        "src": "cupboard-cb-012.jpg",
-        "label": "Base drawers & cupboards",
-        "alt": "Under-counter cabinetry with cutlery drawers and storage doors"
       }
     ]
   },
@@ -657,19 +642,14 @@
     "category": "kitchens",
     "title": "Traditional Teak Arched Pantry Cabinets",
     "summary": "Handcrafted natural teak kitchen wall units featuring classical Roman arched glazed panes, molded cornice, and brass pull knobs.",
-    "image": "kitchen-teak-arched-cabinets.jpg",
+    "image": "kitchen-teak-overhead-glazed-pantry.jpg",
     "alt": "Handcrafted natural teak wall kitchen cupboards with arched glass panels",
     "featured": false,
     "views": [
       {
-        "src": "kitchen-teak-arched-cabinets.jpg",
-        "label": "Arched glazed wall unit",
-        "alt": "Teak timber overhead cupboards with Roman arch glass frames"
-      },
-      {
         "src": "kitchen-teak-overhead-glazed-pantry.jpg",
-        "label": "Extended pantry run",
-        "alt": "Continuous wall pantry run showing precision door alignment"
+        "label": "Overhead glazed pantry",
+        "alt": "Teak timber overhead cupboards with Roman arch glass frames"
       }
     ]
   },
@@ -681,36 +661,6 @@
     "summary": "Central island counter with overhang for bar seating, heavy-duty quartz/granite countertop, built-in prep power outlets, and under-island pots drawer storage.",
     "image": "kitchen-breakfast-bar-island-pendant-lights.jpg",
     "alt": "Contemporary kitchen island breakfast counter with stone top and stylish overhead pendant lighting",
-    "featured": false
-  },
-  {
-    "code": "KC-023",
-    "slug": "l-shaped-kitchen-granite-worktop-sink",
-    "category": "kitchens",
-    "title": "L-Shaped Kitchen Granite Worktop with Undermount Sink",
-    "summary": "Ergonomic L-shaped kitchen layout pairing polished black granite worktops with white gloss overhead cupboards, stainless steel dual-bowl sink, and mixer tap.",
-    "image": "kitchen-l-shaped-granite-worktop-sink.jpg",
-    "alt": "L-shaped polished granite kitchen counter with undermount double sink and matching overhead cabinets",
-    "featured": false
-  },
-  {
-    "code": "GR-001",
-    "slug": "polished-black-kitchen-granite-countertop",
-    "category": "kitchens",
-    "title": "Precision Cut Polished Black Kitchen Granite Countertop",
-    "summary": "Heavy-duty natural jet black granite slab cut to fit modular kitchen layout, featuring bevel-nosed edges, cooktop cutouts, and polished stone water barriers.",
-    "image": "granite-polished-black-kitchen-counter.jpg",
-    "alt": "Polished jet black natural granite countertop fitted on kitchen cabinetry with seamless jointing",
-    "featured": true
-  },
-  {
-    "code": "GR-002",
-    "slug": "l-shaped-kitchen-granite-worktop-undermount-sink",
-    "category": "kitchens",
-    "title": "L-Shaped Kitchen Granite Worktop with Undermount Sink Fitting",
-    "summary": "Precision water-resistant kitchen granite installation featuring diamond-cut sink opening, silicone watertight seal, and beveled corner safety profiles.",
-    "image": "granite-l-shaped-worktop-sink.jpg",
-    "alt": "L-shaped kitchen granite counter with precision-cut sink cavity and undermount stainless sink",
     "featured": false
   },
   {
