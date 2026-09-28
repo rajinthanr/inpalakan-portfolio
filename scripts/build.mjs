@@ -120,6 +120,29 @@ function footer(prefix = '') {
           .getFullYear()} Inpalakan Timbers</span><span>Crafted for the spaces you live in.</span></div></footer>`;
 }
 
+function generatePlaylist(prefix = '') {
+  const list = [];
+  projects.forEach(project => {
+    const views = project.views && project.views.length > 1 ?
+        project.views :
+        [{src: project.image, label: 'Full front view', alt: project.alt}];
+    views.forEach((v, idx) => {
+      list.push({
+        code: project.code,
+        category: project.category,
+        title: project.title,
+        src: `${prefix}images/projects/${v.src}`,
+        rawSrc: v.src,
+        label: v.label || `View ${idx + 1}`,
+        alt: v.alt || project.alt,
+        url: projectUrl(project, prefix),
+        whatsapp: whatsappHref(project.code)
+      });
+    });
+  });
+  return list;
+}
+
 function layout({
   title,
   description,
@@ -135,6 +158,7 @@ function layout({
       `${baseUrl}/${image || site.logo || 'images/Others/logo.png'}` :
       '';
   const logo = logoUrl(prefix);
+  const playlistJson = JSON.stringify(generatePlaylist(prefix));
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e8"><title>${
       esc(title)} · Inpalakan Timbers</title><meta name="description" content="${
@@ -151,23 +175,63 @@ function layout({
       logo}"><link rel="stylesheet" href="${
       prefix}styles.css" defer><script src="${
       prefix}site.js" defer></script></head><body>${
-      header(prefix, active)}<main id="main">${body}</main>${
-      footer(prefix)}</body></html>`;
+      header(prefix, active)}<main id="main">${body}</main>${footer(prefix)}
+  <div id="fullscreen-lightbox" class="lightbox-modal" hidden role="dialog" aria-modal="true" aria-label="Full screen image viewer">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-header">
+      <div class="lightbox-badge">
+        <span id="lb-code" class="lb-code"></span>
+        <span id="lb-counter" class="lb-counter"></span>
+      </div>
+      <div class="lightbox-header-actions">
+        <a id="lb-details-link" class="lb-details-link" href="#">Open details ↗</a>
+        <button id="lb-close-btn" class="lb-close-btn" type="button" aria-label="Close full screen viewer (Esc)">✕</button>
+      </div>
+    </div>
+    <div class="lightbox-stage">
+      <button id="lb-prev-btn" class="lb-nav-btn lb-prev" type="button" aria-label="Previous image (Left arrow)">‹</button>
+      <div class="lightbox-slide">
+        <img id="lb-image" class="lightbox-img" src="" alt="" draggable="false">
+      </div>
+      <button id="lb-next-btn" class="lb-nav-btn lb-next" type="button" aria-label="Next image (Right arrow)">›</button>
+    </div>
+    <div class="lightbox-footer">
+      <div class="lightbox-info">
+        <p id="lb-caption" class="lb-caption"></p>
+        <span id="lb-category" class="lb-category"></span>
+      </div>
+      <a id="lb-whatsapp-btn" class="button button-whatsapp lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+        Chat on WhatsApp <span aria-hidden="true">💬</span>
+      </a>
+    </div>
+  </div>
+  <script id="catalog-playlist" type="application/json">${playlistJson}</script>
+</body></html>`;
 }
 
 function card(project, prefix = '', index = 0) {
+  const viewsBadge = project.views && project.views.length > 1 ?
+      `<span class="card-views-badge">${project.views.length} views</span>` :
+      '';
+  const searchKeywords = `${project.code} ${project.title} ${
+      project.category} ${categories[project.category]?.singular || ''}`;
   return `<a class="project-card" href="${
-      projectUrl(project, prefix)}" data-category="${
-      project.category}"><span class="card-image"><img src="${
-      imageUrl(project, prefix)}" alt="${esc(project.alt)}" loading="${
-      index < 2 ?
-          'eager' :
-          'lazy'}" decoding="async"></span><span class="card-meta"><span>${
-      esc(categories[project.category]
-              .singular)} <span class="meta-separator">/</span> ${
-      esc(project
-              .code)}</span><span class="card-arrow" aria-hidden="true">↗</span></span><span class="card-title">${
-      esc(project.title)}</span></a>`;
+      projectUrl(
+          project, prefix)}" data-category="${project.category}" data-code="${
+      esc(project.code)}" data-keywords="${esc(searchKeywords)}">
+    <span class="card-image">
+      <img src="${imageUrl(project, prefix)}" alt="${
+      esc(project.alt)}" loading="${
+      index < 4 ? 'eager' : 'lazy'}" decoding="async">
+      ${viewsBadge}
+      <button class="card-expand-btn" type="button" aria-label="View full screen ${
+      esc(project.code)}" data-open-lightbox="${
+      esc(project.code)}" title="Full screen">⛶</button>
+    </span>
+    <span class="card-meta-code">
+      <strong class="card-code">${esc(project.code)}</strong>
+    </span>
+  </a>`;
 }
 
 function homePage() {
@@ -257,16 +321,52 @@ function projectPage(project) {
           .filter(
               p => p.category === project.category && p.code !== project.code)
           .slice(0, 2);
+  const views =
+      project.views && project.views.length > 1 ? project.views : null;
+  const initialAlt = views ? views[0].alt : project.alt;
+  const initialCaption = views ? ` (${views[0].label})` : '';
+
+  const thumbsHtml = views ?
+      `
+    <div class="detail-gallery-nav" role="region" aria-label="Available views of this design">
+      <p class="thumbs-title">Available views (${
+          views.length}) · <small>tap to view angle</small></p>
+      <div class="thumbs-scroller">
+        ${
+          views
+              .map(
+                  (v, i) => `
+          <button class="thumb-btn ${
+                      i === 0 ?
+                          'is-active' :
+                          ''}" type="button" data-view-src="../images/projects/${
+                      v.src}" data-view-label="${
+                      esc(v.label)}" data-view-alt="${
+                      esc(v.alt)}" aria-label="${esc(v.label)}" ${
+                      i === 0 ? 'aria-current="true"' : ''}>
+            <img src="../images/projects/${v.src}" alt="${
+                      esc(v.alt)}" loading="lazy">
+            <span class="thumb-label">${esc(v.label)}</span>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  ` :
+      '';
+
   const body = `<section class="detail-shell shell"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../gallery.html?category=${
       project.category}">${
       category.title}</a><span>/</span><span aria-current="page">${
       esc(project
-              .code)}</span></nav><div class="detail-grid"><div class="detail-image-wrap"><img class="detail-image" src="${
+              .code)}</span></nav><div class="detail-grid"><div class="detail-image-wrap"><div class="detail-main-frame" role="button" tabindex="0" aria-label="Click to view full screen" data-fullscreen-trigger data-project-code="${
+      esc(project.code)}" data-project-category="${
+      esc(project
+              .category)}"><img class="detail-image" id="active-detail-image" src="${
       imageUrl(project, '../')}" alt="${
-      esc(project
-              .alt)}" fetchpriority="high"><span class="image-stamp">INPALAKAN TIMBERS <span>●</span> ${
-      esc(project
-              .code)}</span></div><div class="detail-content"><p class="eyebrow">${
+      esc(initialAlt)}" fetchpriority="high"><span class="image-stamp">INPALAKAN TIMBERS <span>●</span> ${
+      esc(project.code)}<span id="active-view-caption">${
+      esc(initialCaption)}</span></span><span class="fullscreen-hint"><span>⛶ Tap for full screen</span></span></div>${
+      thumbsHtml}<p class="fullscreen-tip"><span>💡 Tap photo to view in full screen and slide through images</span></p></div><div class="detail-content"><p class="eyebrow">${
       esc(category.singular.toUpperCase())} / ${esc(project.code)}</p><h1>${
       esc(project
               .title)}<span class="title-period">.</span></h1><p class="detail-summary">${

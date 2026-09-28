@@ -1,0 +1,20 @@
+{
+  "name": "inpalakan-portfolio",
+  "version": "1.0.0",
+  "description": "Mobile-first portfolio for Inpalakan Timbers",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npx serve dist"
+  },
+  "keywords": [
+    "woodwork",
+    "carpentry",
+    "doors",
+    "windows",
+    "kitchens",
+    "portfolio"
+  ],
+  "author": "Inpalakan Timbers",
+  "license": "UNLICENSED"
+}

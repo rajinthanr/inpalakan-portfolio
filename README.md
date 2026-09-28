@@ -43,6 +43,31 @@ The 105 portfolio photos were selected from the shared work albums (40 doors, 30
 
 `references/concepts/doors/` contains five AI-generated door concepts from the earlier exploration. Those are **not** photographs of Inpalakan's completed work and do not appear in the website gallery.
 
+## Multi-view design catalog
+
+Projects with multiple photo angles (elevations, interior fittings, close-up carvings, hardware) are consolidated under **one permanent design code**:
+- The main gallery card displays only the primary, full-front high-quality view with a count badge (e.g. `5 views`).
+- Inside the project page, an interactive thumbnail gallery allows customers to toggle between all available angles (facade elevation, hardware close-ups, interior drawers, storage mechanisms) without leaving the design page.
+- WhatsApp enquiry buttons automatically attach the single permanent design code and canonical link.
+
+## 100% Free budget hosting options
+
+The site is a pure static portfolio (HTML, CSS, JS, optimized images) and can be hosted permanently with **zero running costs**:
+
+### Option 1: GitHub Pages (Recommended — 100% Free forever)
+1. Push your repository to GitHub.
+2. In GitHub repository settings: **Settings → Pages → Source: GitHub Actions**.
+3. The included workflow (`.github/workflows/deploy.yml`) will automatically build and publish your site on every push to `main`.
+4. Free custom domain support (e.g. `inpalakantimbers.com`) with automatic SSL.
+
+### Option 2: Cloudflare Pages (100% Free forever & blazing fast in Sri Lanka)
+1. Sign up for a free [Cloudflare](https://dash.cloudflare.com/) account.
+2. Go to **Workers & Pages → Create Application → Pages → Connect to Git**.
+3. Select this repository and set:
+   - **Build command**: `node scripts/build.mjs`
+   - **Build output directory**: `dist`
+4. Click **Save and Deploy**. Cloudflare serves assets from their Colombo edge pop with unlimited bandwidth.
+
 ## Visual direction
 
 Warm ivory, deep green, and muted brass frame the real work. The layout uses large photography, restrained typography, phone-friendly gallery filters, and direct paths from inspiration to enquiry.
