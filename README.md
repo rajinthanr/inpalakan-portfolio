@@ -12,7 +12,15 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
-On phones, the main action and sticky header lead directly to **Our Work**. Gallery filters wrap into large tap targets, and each result shows a readable title, category, reference code, and separate full-screen control.
+On phones, the main action and sticky header lead directly to **Our Work**. Gallery filters wrap into large tap targets, and each result shows a readable title, category, reference code, and separate full-screen control. The home-page featured designs use a horizontal, touch-friendly snap slider so customers can browse without a long vertical list.
+
+The opening hero presents the English and Tamil business names with “Since 2006” and features design `KC-021`. A subtle brass ornamental texture is applied consistently across the site through CSS.
+
+Homepage category tiles use an explicit curated cover selection in `scripts/build.mjs`. This keeps strong, high-resolution photographs stable even when featured-project ordering changes. Current service covers include `KC-021`, `CB-001`, `GR-001`, `GY-002`, and `CB-009` for their matching categories.
+
+Services and portfolio categories share one homepage section: each service is represented by a curated photograph that opens its filtered gallery.
+
+The closing section combines the project enquiry and workshop location. It provides one clear action each for WhatsApp and Google Maps, followed by compact Facebook and phone links with recognizable icons.
 
 ## Run locally
 
@@ -31,7 +39,8 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | --- | --- |
 | `data/projects.json` | Design codes, slugs, categories, captions, featured state, and optional multi-view image lists |
 | `data/site.json` | Brand, contact, social, source-album, and planned service information |
-| `public/images/projects/` | Completed-work photographs copied into the generated site |
+| `public/images/projects/<category>/` | Completed-work photographs grouped by their catalog category |
+| `public/images/projects/unassigned-cupboards/` | Older unused cupboard source photos awaiting a kitchen, bedroom, or furniture classification |
 | `public/images/Others/logo.png` | Current business logo |
 | `src/styles.css` | Responsive visual design |
 | `src/site.js` | Filters, search, sharing, multi-view controls, and full-screen viewer behavior |
@@ -40,13 +49,13 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
 | `scratch/` | Local image-import helpers; these are working utilities rather than site runtime files |
 
-The current templates use the logo, contact, location, social, and service fields from `data/site.json`. Service entries may include a Tamil subtitle; all other public-facing site copy is English.
+The current templates use the logo, contact, location, social, and service fields from `data/site.json`. Service entries include the Tamil subtitle shown on each image tile; all other public-facing site copy is English.
 
 ## Add or update a design
 
-1. Add a web-ready JPG or WebP to `public/images/projects/`. Prefer a clear finished-work photo with a descriptive filename.
+1. Add a web-ready JPG or WebP to the matching folder under `public/images/projects/`, such as `doors/`, `windows/`, or `kitchens/`. Prefer a clear finished-work photo with a descriptive filename.
 2. Add or edit the entry in `data/projects.json`. Keep `code` and `slug` unique and permanent, choose an existing category, and write accurate alt text and a short summary.
-3. For a multi-view design, add a `views` array. Each view needs `src`, `label`, and `alt`; keep the primary image first and set `image` to that same filename.
+3. For a multi-view design, add a `views` array. Each view needs `src`, `label`, and `alt`; keep the primary image first and set `image` to that same filename. Store every view in the folder matching the project's `category`; filenames in the JSON remain relative to that folder.
 4. Set `featured` to `true` only when the design should appear in the home-page selection.
 5. Run `npm run build` and review the home page, gallery, design page, full-screen viewer, sharing, and WhatsApp message on a phone-sized screen.
 

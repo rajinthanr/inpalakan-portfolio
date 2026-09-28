@@ -9,13 +9,16 @@ Build and maintain a mobile-first portfolio for Inpalakan Timbers. Treat `README
 - Preserve existing permanent design codes and slugs after a design has been shared with clients.
 - Use concise descriptions based on visible details and useful, specific image alt text.
 - Keep a multi-view design under one project entry and one design code. Put its primary image first in `views` and use the same filename in `image`.
+- Store each completed-work photo under `public/images/projects/<category>/`. Image filenames in `data/projects.json` are relative to the project's category folder.
 
 ## Product priorities
 
 - Optimize every page for phone browsing, touch controls, and fast access to WhatsApp.
+- Keep the home-page featured work in a horizontal snap slider to avoid a long mobile page.
 - Keep gallery filters, code search, full-screen viewing, native sharing, and copy-link fallback working.
 - Include the stable design code in each project page and WhatsApp enquiry message.
 - Keep Tamil copy inside the Our Services cards only. Use English for navigation, portfolio categories, company details, location, footer, and all other page copy.
+- Keep the workshop location inside the final contact section and avoid repeating address or contact actions on the home page.
 - Keep generated links relative during local development. Use `PUBLIC_BASE_URL` for canonical and social-preview URLs in hosted builds.
 
 ## Repository workflow

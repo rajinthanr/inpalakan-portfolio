@@ -110,8 +110,12 @@ function projectUrl(project, prefix = '') {
   return `${prefix}projects/${project.slug}.html`;
 }
 
+function projectImagePath(project, filename = project.image) {
+  return `images/projects/${project.category}/${filename}`;
+}
+
 function imageUrl(project, prefix = '') {
-  return `${prefix}images/projects/${project.image}`;
+  return `${prefix}${projectImagePath(project)}`;
 }
 
 function whatsappHref(code = '') {
@@ -128,6 +132,14 @@ function icon(name) {
     return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   if (name === 'share')
     return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 13.5v5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  if (name === 'whatsapp')
+    return '<svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .3 0 .4.4l.7 1.7c.1.3.1.4-.1.6l-.6.8c-.2.2-.1.4 0 .6.7 1.2 1.6 2.1 2.9 2.7.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.3.3.3.5-.1.8-.5 1.5-1.2 1.9-.6.4-1.5.6-2.4.3-1-.3-2.3-.8-3.8-2.1-1.2-1.1-2.1-2.4-2.5-3.4-.5-1.1 0-2.6.4-3.3Z" fill="currentColor"/></svg>';
+  if (name === 'map')
+    return '<svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20 10c0 5.2-8 11-8 11S4 15.2 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>';
+  if (name === 'facebook')
+    return '<svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.4Z"/></svg>';
+  if (name === 'phone')
+    return '<svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M8.2 3.8 10 7.9c.2.5.1 1-.3 1.4l-1.4 1.4a15 15 0 0 0 5 5l1.4-1.4c.4-.4.9-.5 1.4-.3l4.1 1.8c.5.2.8.7.7 1.3l-.4 2.4c-.1.7-.7 1.2-1.4 1.2C10.4 20.7 3.3 13.6 3.3 4.9c0-.7.5-1.3 1.2-1.4l2.4-.4c.6-.1 1.1.2 1.3.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   return '';
 }
 
@@ -147,7 +159,6 @@ function header(prefix = '', active = '') {
       prefix}gallery.html">Our Work</a>
         <a href="${prefix}index.html#services">Services</a>
         <a href="${prefix}index.html#location">Location</a>
-        <a href="${prefix}index.html#about">About</a>
       </nav>
       <a class="header-work-link ${active === 'work' ? 'is-active' : ''}" href="${
       prefix}gallery.html">Our Work</a>
@@ -165,33 +176,33 @@ function footer(prefix = '') {
         <h2>Have a design<br><em>in mind?</em></h2>
         <p>Send us a design code or a photo of what inspires you. We can discuss dimensions, finishes, and custom crafting for your space.</p>
         <div class="footer-cta-group">
-          <a class="button button-light" href="${
-      whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>Chat on WhatsApp ${
-      icon('arrow')}</a>
+          <a class="button button-light button-with-brand-icon" href="${
+      whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>${
+      icon('whatsapp')}<span>Chat on WhatsApp</span></a>
           <a class="button button-outline-light" href="${
       site.mapUrl}" target="_blank" rel="noopener noreferrer">
-            <span aria-hidden="true">📍</span> Find us on Google Maps ↗
+            ${icon('map')}<span>Find us on Google Maps</span>
           </a>
         </div>
       </div>
-      <div class="footer-aside">
+      <div class="footer-aside" id="location">
         <a class="footer-brand" href="${prefix}index.html">
           <img class="footer-brand-logo" src="${
       logoUrl(
           prefix)}" alt="Inpalakan Timbers logo" width="56" height="56" loading="lazy">
           <span class="footer-brand-text">INPALAKAN <small>TIMBERS</small></span>
         </a>
-        <p class="footer-tamil-brand">Vaavini Veethi, Valvettithurai</p>
+        <p class="footer-location-label">VISIT OUR WORKSHOP</p>
+        <address>${esc(site.address)}</address>
+        <p class="footer-service-area">Serving Valvettithurai, Point Pedro, Nelliady, Thondaimanaru, Thikkam, and the wider Vadamarachy area.</p>
         <div class="footer-links">
           <a href="${prefix}gallery.html">Portfolio</a>
           <a href="${prefix}index.html#services">Services</a>
           <a href="${
-      site.mapUrl}" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          <a href="${
-      site.facebookUrl}" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="${
-      whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>WhatsApp</a>
-          <a href="tel:${site.phone.replace(/\s+/g, '')}">${esc(site.phone)}</a>
+      site.facebookUrl}" target="_blank" rel="noopener noreferrer" class="footer-icon-link">${
+      icon('facebook')}<span>Facebook</span></a>
+          <a href="tel:${site.phone.replace(/\s+/g, '')}" class="footer-icon-link">${
+      icon('phone')}<span>${esc(site.phone)}</span></a>
         </div>
       </div>
     </div>
@@ -199,7 +210,6 @@ function footer(prefix = '') {
       <span>© ${
       new Date()
           .getFullYear()} Inpalakan Timbers. All rights reserved.</span>
-      <span>Vaavini Veethi, Valvettithurai, Sri Lanka 40000.</span>
     </div>
   </footer>`;
 }
@@ -215,7 +225,7 @@ function generatePlaylist(prefix = '') {
         code: project.code,
         category: project.category,
         title: project.title,
-        src: `${prefix}images/projects/${v.src}`,
+        src: `${prefix}${projectImagePath(project, v.src)}`,
         rawSrc: v.src,
         label: v.label || `View ${idx + 1}`,
         alt: v.alt || project.alt,
@@ -327,60 +337,92 @@ function card(project, prefix = '', index = 0) {
 }
 
 function homePage() {
-  const featured = projects.filter(p => p.featured);
+  const heroProject = projects.find(p => p.code === 'KC-021');
+  if (!heroProject) throw new Error('Missing featured home design KC-021');
+  const featured = [
+    heroProject, ...projects.filter(p => p.featured && p.code !== 'KC-021')
+  ];
+  const categoryCoverSelections = {
+    doors: {
+      code: 'DR-004',
+      image: 'door-carved-medallion-wide.jpg',
+      alt: 'Wide view of a carved timber entrance installed on a veranda'
+    },
+    windows: {
+      code: 'WN-031',
+      image: 'window-3-sash-textured-glass-iron-transom.jpg',
+      alt: 'Three-sash timber window with textured glass and iron transom'
+    },
+    kitchens: {
+      code: 'KC-021',
+      image: 'kitchen-breakfast-bar-island-pendant-lights.jpg',
+      alt: 'Modern kitchen island with cabinetry and pendant lighting'
+    },
+    granite: {
+      code: 'GR-001',
+      image: 'granite-polished-black-kitchen-counter.jpg',
+      alt: 'Polished black granite countertop fitted to kitchen cabinetry'
+    },
+    bedrooms: {
+      code: 'CB-001',
+      image: 'cupboard-fitted-wardrobe.jpg',
+      alt: 'Dark green fitted bedroom wardrobe with mirror and open niche'
+    },
+    gypsum: {
+      code: 'GY-002',
+      image: 'gypsum-magenta-gold-tray.jpg',
+      alt: 'Gypsum tray ceiling with magenta and warm gold lighting'
+    },
+    furniture: {
+      code: 'CB-009',
+      image: 'cupboard-timber-prayer-shrine.jpg',
+      alt: 'Polished timber prayer shrine cabinet with raised panel doors'
+    },
+    'tv-units': {
+      code: 'TV-001',
+      image: 'tv-unit-handcrafted-showcase-console.jpg',
+      alt: 'Handcrafted timber television showcase and console'
+    }
+  };
   const categoryCovers = Object.fromEntries(
-      Object.keys(categories)
-          .map(
-              key =>
-                  [key,
-                   projects.find(p => p.category === key && p.featured) ||
-                       projects.find(p => p.category === key)]));
+      Object.entries(categoryCoverSelections).map(([key, selection]) => {
+        const project = projects.find(p => p.code === selection.code);
+        if (!project || project.category !== key)
+          throw new Error(`Invalid category cover ${key}: ${selection.code}`);
+        return [key, {...project, image: selection.image, alt: selection.alt}];
+      }));
 
+  const servicesByKey = Object.fromEntries(
+      (site.services || []).map(service => [service.key, service]));
   const categoryTiles =
       Object.entries(categories)
           .map(([key, category], index) => {
             const cover = categoryCovers[key];
             return `<a class="category-tile category-${
-                key}" href="gallery.html?category=${key}">
+                key}" href="gallery.html?category=${key}" aria-label="View ${
+                esc(category.title)} designs">
       <img src="${imageUrl(cover)}" alt="${
                 esc(cover?.alt ||
                     category.title)}" loading="${index < 4 ? 'eager' : 'lazy'}">
       <span class="category-shade"></span>
       <span class="category-copy">
-        <span class="category-number">${category.icon} 0${
-                index + 1} / EXPLORE</span>
         <strong>${category.title}</strong>
-        <span class="category-subtitle">${category.english}</span>
-        <span class="category-link">See collection ${icon('arrow')}</span>
+        <span class="category-subtitle">${
+                esc(servicesByKey[key]?.tamil || category.english)}</span>
+        <span class="category-link">View designs ${icon('arrow')}</span>
       </span>
     </a>`;
           })
           .join('');
 
-  const servicesList = site.services || [];
-  const serviceCards = servicesList
-                           .map((s, idx) => `
-    <div class="service-card" data-service="${esc(s.key)}">
-      <div class="service-card-top">
-        <span class="service-icon">${s.icon}</span>
-        <span class="service-index">0${idx + 1}</span>
-      </div>
-      <div class="service-body">
-        <span class="service-tamil">${esc(s.tamil)}</span>
-        <h3 class="service-title">${esc(s.title)}</h3>
-        <p class="service-desc">${esc(s.description)}</p>
-        <a class="service-link" href="gallery.html?category=${esc(s.key)}">
-          Explore designs <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  `).join('');
-
   const body = `<section class="hero">
     <div class="hero-copy">
       <div class="hero-copy-inner">
-        <p class="eyebrow">TIMBER WORK &amp; INTERIORS, MADE PERSONAL</p>
-        <h1>Crafted to<br><em>belong.</em></h1>
+        <h1 class="hero-business-title">
+          <span class="hero-name-en">Inpalakan <em>Timbers</em></span>
+          <span class="hero-name-ta" lang="ta">இன்பழகன் கைத்தொழிலகம்</span>
+        </h1>
+        <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
         <p class="hero-lead">Custom carved doors, windows, modular kitchens, granite fitting, gypsum ceilings, and custom furniture. Explore our work, find a design code, and connect with our workshop.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="gallery.html">View Our Work ${
@@ -391,56 +433,26 @@ function homePage() {
       </div>
     </div>
     <div class="hero-visual">
-      <img src="${imageUrl(projects[0])}" alt="${
-      esc(projects[0].alt)}" fetchpriority="high">
-      <a class="hero-image-caption" href="${projectUrl(projects[0])}">
-        <span>Featured design <strong>${esc(projects[0].code)}</strong></span>
+      <img src="${imageUrl(heroProject)}" alt="${
+      esc(heroProject.alt)}" fetchpriority="high">
+      <a class="hero-image-caption" href="${projectUrl(heroProject)}">
+        <span>Featured kitchen design <strong>${
+      esc(heroProject.code)}</strong></span>
         <span aria-hidden="true">↗</span>
       </a>
     </div>
   </section>
 
-  <section class="section section-intro shell" id="about">
-    <div class="section-kicker"><span class="section-index">01 / THE WORKSHOP</span><span class="hairline"></span></div>
-    <div class="intro-grid">
-      <h2>Craftsmanship that<br><em>feels like home.</em></h2>
-      <div class="intro-copy">
-        <p>From welcoming hand-carved entrance doors to fitted kitchen cupboards, gypsum false ceilings, and precision granite countertops, each piece has purpose and durability. Browse real projects below and note reference codes for your space.</p>
-        <div class="intro-badge">
-          <img class="intro-badge-logo" src="${
-      logoUrl()}" alt="Inpalakan Timbers emblem" width="46" height="46" loading="lazy">
-          <div>
-            <strong>Inpalakan Timbers</strong>
-            <span>Master craftsmanship · Est. 2006 · Valvettithurai</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section services-section shell" id="services">
-    <div class="section-kicker"><span class="section-index">02 / SERVICES &amp; SPECIALTIES</span><span class="hairline"></span></div>
+    <div class="section-kicker"><span class="section-index">01 / SERVICES &amp; SPECIALTIES</span><span class="hairline"></span></div>
     <div class="section-heading">
       <div>
         <p class="eyebrow">WHAT WE CRAFT</p>
         <h2>Our services &amp;<br><em>craftsmanship.</em></h2>
+        <p class="section-heading-lead">Explore by category and tap any image to see completed designs.</p>
       </div>
       <a class="text-link" href="gallery.html">Browse full portfolio ${
       icon('arrow')}</a>
-    </div>
-    <div class="services-grid">
-      ${serviceCards}
-    </div>
-  </section>
-
-  <section class="section categories-section shell">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">PORTFOLIO COLLECTIONS</p>
-        <h2>Explore by category.</h2>
-      </div>
-      <a class="text-link" href="gallery.html">View all ${
-      projects.length} designs ${icon('arrow')}</a>
     </div>
     <div class="category-grid">
       ${categoryTiles}
@@ -457,85 +469,21 @@ function homePage() {
         <a class="text-link" href="gallery.html">See all ${
       projects.length} designs ${icon('arrow')}</a>
       </div>
-      <div class="project-grid">
+      <div class="project-grid featured-slider" aria-label="Selected work. Swipe horizontally to see more designs">
         ${featured.map((p, i) => card(p, '', i)).join('')}
       </div>
+      <p class="swipe-hint" aria-hidden="true">Swipe to explore <span>→</span></p>
     </div>
   </section>
-
-  <section class="section location-section shell" id="location">
-    <div class="section-kicker"><span class="section-index">03 / WORKSHOP LOCATION</span><span class="hairline"></span></div>
-    <div class="location-grid">
-      <div class="location-copy">
-        <p class="eyebrow">FIND OUR WORKSHOP</p>
-        <h2>Visit us in<br><em>Valvettithurai.</em></h2>
-        <div class="location-card-content">
-          <p class="location-address-box">
-            <strong>Inpalakan Timbers</strong><br>
-            <span>📍 ${esc(site.address)}</span>
-          </p>
-          <p class="location-serving">
-            <strong>Service areas:</strong> Valvettithurai, Valveddi, Nelliady, Point Pedro, Thondaimanaru, Thikkam, and throughout the Vadamarachy region.
-          </p>
-          <div class="location-actions">
-            <a class="button button-dark" href="${
-      site.mapUrl}" target="_blank" rel="noopener noreferrer">
-              <span>📍 Open Google Maps ↗</span>
-            </a>
-            <a class="button button-facebook" href="${
-      site.facebookUrl}" target="_blank" rel="noopener noreferrer">
-              <span>📘 Facebook Page ↗</span>
-            </a>
-            <a class="button button-outline" href="${
-      whatsappHref()}" target="_blank" rel="noopener noreferrer" data-whatsapp>
-              <span>💬 WhatsApp Consultation ↗</span>
-            </a>
-            <a class="button button-outline" href="tel:${
-      site.phone.replace(/\s+/g, '')}">
-              <span>📞 ${esc(site.phone)}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="location-map-aside">
-        <div class="map-card-banner">
-          <div class="map-card-header">
-            <span class="live-dot"></span>
-            <span>Workshop &amp; Joinery Mill</span>
-          </div>
-          <div class="map-card-body">
-            <h3>Inpalakan Timbers</h3>
-            <p class="map-sub">Vaavini Veethi, Valvettithurai 40000</p>
-            <p class="map-lead">Visit our workshop to inspect seasoned timber, discuss door carvings, view custom cabinetry layouts, and get direct consultations for your home.</p>
-            <a class="button button-whatsapp map-btn" href="${
-      site.mapUrl}" target="_blank" rel="noopener noreferrer">
-              Navigate with Google Maps 📍
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section how-section shell">
-    <div class="section-kicker"><span class="section-index">04 / YOUR NEXT PROJECT</span><span class="hairline"></span></div>
-    <div class="how-grid">
-      <h2>See something<br><em>you like?</em></h2>
-      <div>
-        <p>Every design in our portfolio has a reference code. Tap any image to view all photographic angles in full screen, share with family, or send the code directly on WhatsApp to discuss pricing, timber options, and custom measurements.</p>
-        <a class="button button-outline" href="gallery.html">Browse the portfolio ${
-      icon('arrow')}</a>
-      </div>
-    </div>
-  </section>`;
+  `;
 
   return layout({
-    title: 'Crafted to belong',
+    title: 'Timber craftsmanship since 2006',
     description:
         'Explore real door, window, kitchen, bedroom, gypsum ceiling, and custom furniture projects by Inpalakan Timbers in Valvettithurai.',
     body,
     path: 'index.html',
-    image: 'images/projects/door-carved-entrance.jpg'
+    image: projectImagePath(heroProject)
   });
 }
 
@@ -615,12 +563,12 @@ function projectPage(project) {
           <button class="thumb-btn ${
                       i === 0 ?
                           'is-active' :
-                          ''}" type="button" data-view-src="../images/projects/${
-                      v.src}" data-view-label="${
+                      ''}" type="button" data-view-src="../${
+                      projectImagePath(project, v.src)}" data-view-label="${
                       esc(v.label)}" data-view-alt="${
                       esc(v.alt)}" aria-label="${esc(v.label)}" ${
                       i === 0 ? 'aria-current="true"' : ''}>
-            <img src="../images/projects/${v.src}" alt="${
+            <img src="../${projectImagePath(project, v.src)}" alt="${
                       esc(v.alt)}" loading="lazy">
             <span class="thumb-label">${esc(v.label)}</span>
           </button>
@@ -715,7 +663,7 @@ function projectPage(project) {
     prefix: '../',
     active: 'work',
     path: `projects/${project.slug}.html`,
-    image: `images/projects/${project.image}`
+    image: projectImagePath(project)
   });
 }
 

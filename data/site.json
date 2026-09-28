@@ -26,21 +26,28 @@
       "key": "bedrooms",
       "icon": "🛏️",
       "title": "Bedroom Cupboards",
-      "tamil": "படுக்கையறை அலமாரி வேலைகள்",
+      "tamil": "படுக்கையறை அலுமாரிகள்",
       "description": "Fitted floor-to-ceiling wardrobes, dressing mirrors, integrated closets, and under-bed drawer storage."
+    },
+    {
+      "key": "windows",
+      "icon": "🪟",
+      "title": "Windows",
+      "tamil": "மர ஜன்னல்கள்",
+      "description": "Custom timber windows with durable frames, decorative details, privacy glass, and secure grilles."
     },
     {
       "key": "gypsum",
       "icon": "🔲",
       "title": "Gypsum Ceilings",
-      "tamil": "Gypsum Ceiling வேலைகள்",
+      "tamil": "ஜிப்சம் சீலிங் வேலைகள்",
       "description": "Architectural false ceilings, modern stepped trays, decorative perimeter coves, and warm LED ambient lighting."
     },
     {
       "key": "furniture",
       "icon": "🪑",
       "title": "Custom Furniture",
-      "tamil": "தனிப்பயன் மர தளபாடங்கள்",
+      "tamil": "மரத் தளபாடங்கள்",
       "description": "Handmade solid timber beds, dining sets, restaurant cash counters, preschool furniture, and carved pooja shrines."
     },
     {
