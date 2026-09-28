@@ -424,8 +424,7 @@ function card(project, prefix = '', index = 0) {
       ${viewsBadge}
       <span class="card-image-gradient" aria-hidden="true"></span>
       <span class="card-overlay">
-        <strong class="card-title">${esc(project.title)}</strong>
-        <span class="card-overlay-row"><span>${esc(category.english)}</span><span class="card-code">${esc(project.code)}</span></span>
+        <span class="card-overlay-row"><span class="card-code">${esc(project.code)}</span></span>
       </span>
       </a>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${
@@ -448,8 +447,7 @@ function patternCard(pattern, index = 0) {
         <span class="ai-generated-badge">Sample</span>
         <span class="card-image-gradient" aria-hidden="true"></span>
         <span class="card-overlay">
-          <strong class="card-title">${esc(pattern.title)}</strong>
-          <span class="card-overlay-row"><span>Sample ${type} pattern</span><span class="card-code">${esc(pattern.code)}</span></span>
+          <span class="card-overlay-row"><span class="card-code">${esc(pattern.code)}</span></span>
         </span>
       </button>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${esc(pattern.code)}" data-open-lightbox="${esc(pattern.code)}" title="Full screen">⛶</button>
@@ -556,11 +554,6 @@ function homePage() {
     <div class="hero-visual">
       <img src="${imageUrl(heroProject)}" alt="${
       esc(heroProject.alt)}" fetchpriority="high">
-      <a class="hero-image-caption" href="${projectUrl(heroProject)}">
-        <span>Featured kitchen design <strong>${
-      esc(heroProject.code)}</strong></span>
-        <span aria-hidden="true">↗</span>
-      </a>
     </div>
   </section>
 
@@ -705,13 +698,10 @@ function projectPage(project) {
   const views =
       project.views && project.views.length > 1 ? project.views : null;
   const initialAlt = views ? views[0].alt : project.alt;
-  const initialCaption = views ? ` (${views[0].label})` : '';
 
   const thumbsHtml = views ?
       `
     <div class="detail-gallery-nav" role="region" aria-label="Available views of this design">
-      <p class="thumbs-title">Available views (${
-          views.length}) · <small>tap to view angle</small></p>
       <div class="thumbs-scroller">
         ${
           views
@@ -727,7 +717,6 @@ function projectPage(project) {
                       i === 0 ? 'aria-current="true"' : ''}>
             <img src="../${projectImagePath(project, v.src)}" alt="${
                       esc(v.alt)}" loading="lazy">
-            <span class="thumb-label">${esc(v.label)}</span>
           </button>
         `).join('')}
       </div>
@@ -748,25 +737,17 @@ function projectPage(project) {
       esc(project.code)}" data-project-category="${esc(project.category)}">
           <img class="detail-image" id="active-detail-image" src="${
       imageUrl(project, '../')}" alt="${esc(initialAlt)}" fetchpriority="high">
-          <span class="image-stamp">INPALAKAN TIMBERS <span>●</span> ${
-      esc(project.code)}<span id="active-view-caption">${
-      esc(initialCaption)}</span></span>
+          <span class="image-stamp">${esc(project.code)}</span>
           <span class="fullscreen-hint"><span>⛶ Tap for full screen</span></span>
         </div>
         ${thumbsHtml}
         <p class="fullscreen-tip"><span>💡 Tap photo to view in full screen and slide through images</span></p>
       </div>
       <div class="detail-content">
-        <p class="eyebrow">${esc(category.singular.toUpperCase())} / ${
-      esc(project.code)}</p>
-        <h1>${esc(project.title)}<span class="title-period">.</span></h1>
-        <p class="detail-summary">${esc(project.summary)}</p>
-        <div class="detail-rule"></div>
         <div class="detail-info">
           <span>DESIGN REFERENCE</span>
           <strong>${esc(project.code)}</strong>
         </div>
-        <p class="detail-prompt">Interested in a similar idea? Mention this reference code when you contact us, and tell us what you would like for your space.</p>
         <div class="detail-actions">
           <a class="button button-dark" href="${
       whatsappHref(
@@ -780,8 +761,6 @@ function projectPage(project) {
             ${icon('share')} <span>Share design</span>
           </button>
         </div>
-        <p class="source-note">Photograph from Inpalakan Timbers' ${
-      category.english.toLowerCase()} collection.</p>
       </div>
     </div>
   </section>

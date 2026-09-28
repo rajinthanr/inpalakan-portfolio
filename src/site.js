@@ -68,7 +68,6 @@
   // Project Page Multi-View Switcher
   const thumbButtons = [...document.querySelectorAll('.thumb-btn')];
   const activeDetailImg = document.querySelector('#active-detail-image');
-  const activeCaption = document.querySelector('#active-view-caption');
 
   thumbButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -81,9 +80,6 @@
       if (activeDetailImg && btn.dataset.viewSrc) {
         activeDetailImg.src = btn.dataset.viewSrc;
         activeDetailImg.alt = btn.dataset.viewAlt || '';
-      }
-      if (activeCaption && btn.dataset.viewLabel) {
-        activeCaption.textContent = ` (${btn.dataset.viewLabel})`;
       }
     });
   });
@@ -224,11 +220,11 @@
         const whatsappUrl = new URL(item.whatsapp);
         whatsappUrl.searchParams.set(
             'text',
-            `Hello Inpalakan Timbers, I am interested in design ${item.code}${item.label ? ` (${item.label})` : ''}: ${itemPageUrl}`);
+            `Hello Inpalakan Timbers, I am interested in design ${item.code}: ${itemPageUrl}`);
         lbWhatsappBtn.href = whatsappUrl.href;
       }
       if (lbShareBtn) {
-        lbShareBtn.dataset.shareTitle = `${item.code} · ${item.title}`;
+        lbShareBtn.dataset.shareTitle = `Inpalakan Timbers · ${item.code}`;
         lbShareBtn.dataset.shareUrl = itemPageUrl;
       }
       renderThumbnails();
