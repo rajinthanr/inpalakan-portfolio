@@ -559,7 +559,7 @@ function homePage() {
         <div class="hero-title-block">
           <h1 class="hero-business-title">
             <span class="hero-name-en">Inpalakan <em>Timbers</em></span>
-            <span class="hero-name-ta" lang="ta">இன்பழகன் <em>கைத்தொழிலகம்</em></span>
+            <span class="hero-name-ta" lang="ta">இன்பழகன் கைத்தொழிலகம்</span>
           </h1>
           <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
         </div>
