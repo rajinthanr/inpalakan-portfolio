@@ -473,9 +473,14 @@ function patternCard(pattern, index = 0) {
 function homePage() {
   const heroProject = projects.find(p => p.code === 'KC-021');
   if (!heroProject) throw new Error('Missing featured home design KC-021');
-  const featured = [
-    heroProject, ...projects.filter(p => p.featured && p.code !== 'KC-021')
+  const selectedWorkCodes = [
+    'DR-008', 'DR-031', 'KC-021', 'BC-024', 'GY-002', 'FN-004', 'TV-004', 'WN-003', 'DR-005'
   ];
+  const featured = selectedWorkCodes.map(code => {
+    const proj = projects.find(p => p.code === code);
+    if (!proj) throw new Error(`Missing selected work design: ${code}`);
+    return proj;
+  });
   const categoryCoverSelections = {
     doors: {
       code: 'DR-008',

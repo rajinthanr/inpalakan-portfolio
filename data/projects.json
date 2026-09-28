@@ -17,7 +17,7 @@
     "summary": "A paired entrance with circular carving and matching narrow glazed sidelights.",
     "image": "door-carved-medallion-wide.jpg",
     "alt": "Carved paired timber doors with circular centre motifs and narrow textured-glass sidelights",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "door-carved-medallion-wide.jpg",
@@ -40,11 +40,6 @@
         "src": "door-carved-ganesha-pooja.jpg",
         "label": "Full front view",
         "alt": "Installed full front view of carved Ganesha door with floral garland"
-      },
-      {
-        "src": "door-dr-012.jpg",
-        "label": "Mounting stage",
-        "alt": "Doorway fitting stage showing natural timber depth"
       },
       {
         "src": "door-carved-ganesha-workshop-floor.jpg",
@@ -71,7 +66,7 @@
     "summary": "A paired entrance with mirrored peacocks deeply carved into dark-stained panels set in warm timber.",
     "image": "door-two-tone-peacock-veranda-full.jpg",
     "alt": "Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes",
-    "featured": false,
+    "featured": true,
     "views": [
       {
         "src": "door-two-tone-peacock-veranda-full.jpg",
@@ -190,7 +185,7 @@
     "summary": "A full fitted kitchen with light-grey cabinetry, integrated ceiling downlights, and black granite worktops.",
     "image": "cupboard-integrated-grey-kitchen-suite.jpg",
     "alt": "Fitted contemporary grey kitchen with ceiling downlights, black granite countertops, and tiled walls",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "cupboard-integrated-grey-kitchen-suite.jpg",
@@ -234,7 +229,7 @@
     "summary": "A dedicated two-door timber pooja shrine cupboard with raised panels and stainless steel handles.",
     "image": "cupboard-timber-prayer-shrine.jpg",
     "alt": "Two-door polished timber prayer shrine cabinet with raised panel doors",
-    "featured": true
+    "featured": false
   },
   {
     "code": "DR-010",
@@ -307,11 +302,6 @@
         "src": "door-dr-028.jpg",
         "label": "Panel & handle detail",
         "alt": "Close-up of grooved planks, panel joints and brass lockset"
-      },
-      {
-        "src": "door-dr-023.jpg",
-        "label": "Facade elevation",
-        "alt": "Exterior wall facade showing door with adjacent casement window"
       }
     ]
   },
@@ -340,7 +330,7 @@
     "summary": "A grand contemporary double entrance door featuring warm polished timber, horizontal metallic inlays, and custom floral frosted glass sidelights that illuminate the home entrance.",
     "image": "door-dr-033.jpg",
     "alt": "Full front elevation of double timber entrance door with floral frosted sidelights and horizontal inlays",
-    "featured": false,
+    "featured": true,
     "views": [
       {
         "src": "door-dr-033.jpg",
@@ -541,7 +531,7 @@
     "summary": "A showpiece geometric multi-tier false ceiling featuring radiant emerald ambient cove lighting, central star medallion, and integrated recessed spotlighting.",
     "image": "gypsum-emerald-star-perspective.jpg",
     "alt": "Finished emerald star geometric false ceiling with radiant emerald green ambient cove lighting and recessed ceiling spotlights",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "gypsum-emerald-star-perspective.jpg",
@@ -602,7 +592,7 @@
     "summary": "Exquisite solid timber bedhead deeply relief-carved with mirroring peacocks, floral scrollwork crest, and turned finial side posts.",
     "image": "furniture-carved-peacock-bed-headboard.jpg",
     "alt": "Solid timber master bed headboard deeply carved with mirroring peacocks and floral scrollwork",
-    "featured": true
+    "featured": false
   },
   {
     "code": "KC-018",
@@ -612,7 +602,7 @@
     "summary": "Sleek contemporary kitchen suite with matte olive green laminate cabinet facings, smooth soft-close cutlery drawers, and jet-black polished granite countertops.",
     "image": "kitchen-modular-olive-granite-countertop.jpg",
     "alt": "Modern olive green kitchen cabinetry with polished black granite countertop and under-counter storage",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "kitchen-modular-olive-granite-countertop.jpg",
@@ -661,7 +651,7 @@
     "summary": "Central island counter with overhang for bar seating, heavy-duty quartz/granite countertop, built-in prep power outlets, and under-island pots drawer storage.",
     "image": "kitchen-breakfast-bar-island-pendant-lights.jpg",
     "alt": "Contemporary kitchen island breakfast counter with stone top and stylish overhead pendant lighting",
-    "featured": false
+    "featured": true
   },
   {
     "code": "BC-024",
@@ -698,7 +688,7 @@
     "summary": "Three-leaf timber casement window with textured obscure privacy glass, wrought iron ventilation transom above, and solid timber sill.",
     "image": "window-3-sash-transom-front.jpg",
     "alt": "Three-sash timber casement window with textured glass and wrought iron transom",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "window-3-sash-transom-front.jpg",
@@ -735,7 +725,7 @@
     "summary": "A polished double entrance framed by carved crown work and matching floral metalwork sidelights.",
     "image": "door-ornate-crown-sidelights-front.jpg",
     "alt": "Polished carved double entrance with an ornate crown and floral metalwork sidelights",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "door-ornate-crown-sidelights-front.jpg",
@@ -803,7 +793,7 @@
     "summary": "A bright fitted kitchen with soft grey cabinetry, black worktops, integrated tall storage, and warm display lighting.",
     "image": "kitchen-grey-led-complete.jpg",
     "alt": "Completed soft grey fitted kitchen with black worktops and warm display lighting",
-    "featured": true,
+    "featured": false,
     "views": [
       {
         "src": "kitchen-grey-led-complete.jpg",
@@ -889,7 +879,7 @@
     "summary": "A freestanding pooja cabinet with a tiered carved crown, enclosed lower storage, stone-look shelf, and focused interior lighting.",
     "image": "furniture-pooja-cabinet-lit-front.jpg",
     "alt": "Freestanding timber pooja cabinet with carved crown and illuminated shrine shelf",
-    "featured": false,
+    "featured": true,
     "views": [
       {
         "src": "furniture-pooja-cabinet-lit-front.jpg",
