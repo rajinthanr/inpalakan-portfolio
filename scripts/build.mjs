@@ -55,6 +55,14 @@ const kitchenPatterns = [
 }));
 
 const tvUnitPatterns = [
+  ['TVS-001', 'Metallic teal display wall', '01-metallic-teal-display-wall.png'],
+  ['TVS-002', 'Graphite and champagne wall', '02-graphite-champagne-wall.png'],
+  ['TVS-003', 'Pearl-grey corner unit', '03-pearl-grey-corner-unit.png'],
+  ['TVS-005', 'Champagne and charcoal media wall', '05-champagne-charcoal-media-wall.png'],
+  ['TVS-006', 'Graphite asymmetric unit', '06-graphite-asymmetric-unit.png'],
+  ['TVS-008', 'Bronze and gunmetal wall', '08-bronze-gunmetal-wall.png'],
+  ['TVS-009', 'Layered rectangle wall', '09-layered-rectangle-wall.png'],
+  ['TVS-010', 'Media wall with desk', '10-media-wall-desk.png'],
   ['TVS-011', 'Graphite and bronze hall unit', '11-graphite-bronze-sri-lankan-hall.png'],
   ['TVS-012', 'Open-plan divider unit', '12-open-plan-divider-unit.png'],
   ['TVS-013', 'Under-stair sage unit', '13-under-stair-sage-unit.png'],
@@ -65,7 +73,25 @@ const tvUnitPatterns = [
   alt: `Sample TV-unit pattern: ${title}`
 }));
 
-const samplePatterns = [...doorPatterns, ...kitchenPatterns, ...tvUnitPatterns];
+const gypsumPatterns = [
+  ['GYS-001', 'Double-step rectangle ceiling', '01-double-step-rectangle.png'],
+  ['GYS-002', 'Octagon and circle tray ceiling', '02-octagon-circle-tray.png'],
+  ['GYS-003', 'Green star centre ceiling', '03-green-star-centre.png'],
+  ['GYS-004', 'S-curve hall ceiling', '04-s-curve-hall.png'],
+  ['GYS-005', 'Concentric ring halo ceiling', '05-concentric-ring-halo.png'],
+  ['GYS-006', 'Connected rectangle islands', '06-connected-rectangle-islands.png'],
+  ['GYS-007', 'Scalloped corner tray ceiling', '07-scalloped-corner-tray.png'],
+  ['GYS-008', 'Rounded rectangle tray ceiling', '08-rounded-rectangle-tray.png'],
+  ['GYS-009', 'Simple cross feature ceiling', '09-simple-cross-feature.png'],
+  ['GYS-010', 'Symmetrical square tray ceiling', '10-symmetrical-square-tray.png']
+].map(([code, title, image]) => ({
+  code, title, image, category: 'gypsum',
+  alt: `Sample gypsum ceiling pattern: ${title}`
+}));
+
+const samplePatterns = [
+  ...doorPatterns, ...kitchenPatterns, ...tvUnitPatterns, ...gypsumPatterns
+];
 
 const categories = {
   doors: {
@@ -300,7 +326,8 @@ function generatePlaylist(prefix = '') {
     rawSrc: pattern.image,
     label: pattern.category === 'doors' ? 'Sample door pattern' :
         pattern.category === 'kitchens' ? 'Sample kitchen cupboard pattern' :
-                                           'Sample TV-unit pattern',
+        pattern.category === 'tv-units' ? 'Sample TV-unit pattern' :
+                                           'Sample gypsum ceiling pattern',
     alt: pattern.alt,
     url: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     whatsapp: whatsappHref(pattern.code)
@@ -409,7 +436,8 @@ function card(project, prefix = '', index = 0) {
 
 function patternCard(pattern, index = 0) {
   const type = pattern.category === 'doors' ? 'door' :
-      pattern.category === 'kitchens' ? 'kitchen cupboard' : 'TV-unit';
+      pattern.category === 'kitchens' ? 'kitchen cupboard' :
+      pattern.category === 'tv-units' ? 'TV-unit' : 'gypsum ceiling';
   const image = `images/concepts/${pattern.category}/${pattern.image}`;
   const keywords = `${pattern.code} ${pattern.title} sample pattern ${type}`;
   return `<article class="project-card sample-pattern-card" data-category="${pattern.category}" data-code="${esc(pattern.code)}" data-keywords="${esc(keywords)}">
@@ -642,6 +670,15 @@ function galleryPage() {
         ${tvUnitPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
       </div>
     </section>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-gypsum-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">DESIGN INSPIRATION</p><h2 id="sample-gypsum-patterns-title">Sample gypsum ceiling patterns.</h2></div>
+        <p>Practical ceiling references with balanced shapes and concealed lighting. Ask us how a pattern can be adjusted for your room dimensions.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${gypsumPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
     <p class="empty-state" hidden>No designs match your search or filter.</p>
   </section>
   <section class="gallery-note shell">
@@ -798,6 +835,8 @@ await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
 await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
 await cp(join(root, 'references/tv-unit-patterns'), join(dist, 'images/concepts/tv-units'), {recursive: true});
+await mkdir(join(dist, 'images/concepts/gypsum'), {recursive: true});
+await cp(join(root, 'references/gypsum-patterns'), join(dist, 'images/concepts/gypsum'), {recursive: true});
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await writeFile(join(dist, 'index.html'), homePage());
