@@ -10,73 +10,19 @@
     "featured": false
   },
   {
-    "code": "DR-002",
-    "slug": "curved-panel-door",
-    "category": "doors",
-    "title": "Curved panel door",
-    "summary": "A single door with stepped panels and a sweeping curved detail.",
-    "image": "door-curved-panel.jpg",
-    "alt": "Single timber door with rectangular panels and a broad curved inset",
-    "featured": false,
-    "views": [
-      {
-        "src": "door-curved-panel.jpg",
-        "label": "Full front view",
-        "alt": "Full front view of single timber door with sweeping curved inset panel"
-      },
-      {
-        "src": "door-curved-panel-angle.jpg",
-        "label": "Angled perspective",
-        "alt": "Angled view showing door leaf and timber architrave"
-      }
-    ]
-  },
-  {
-    "code": "DR-003",
-    "slug": "contemporary-entrance",
-    "category": "doors",
-    "title": "Contemporary entrance",
-    "summary": "An entrance composition with slim vertical detailing and glazed side panels.",
-    "image": "door-contemporary-entrance.jpg",
-    "alt": "Contemporary timber entrance with vertical detailing and side glazing",
-    "featured": false,
-    "views": [
-      {
-        "src": "door-contemporary-entrance.jpg",
-        "label": "Full front view",
-        "alt": "Full front view of single door with floral glass sidelights"
-      },
-      {
-        "src": "door-dr-021.jpg",
-        "label": "Installation view",
-        "alt": "Craftsman installation view on porch"
-      }
-    ]
-  },
-  {
     "code": "DR-004",
     "slug": "carved-medallion-entrance",
     "category": "doors",
     "title": "Carved medallion entrance",
     "summary": "A paired entrance with circular carving and matching narrow glazed sidelights.",
-    "image": "door-carved-medallion-entrance.jpg",
+    "image": "door-carved-medallion-wide.jpg",
     "alt": "Carved paired timber doors with circular centre motifs and narrow textured-glass sidelights",
     "featured": true,
     "views": [
       {
-        "src": "door-carved-medallion-entrance.jpg",
-        "label": "Full front view",
-        "alt": "Full front view of paired carved medallion entrance doors with textured glass sidelights"
-      },
-      {
         "src": "door-carved-medallion-wide.jpg",
         "label": "Veranda perspective",
         "alt": "Wide veranda view of installed carved medallion entrance doors"
-      },
-      {
-        "src": "door-carved-medallion-detail.jpg",
-        "label": "Carved rosette detail",
-        "alt": "Close-up of central carved floral medallion rosette"
       }
     ]
   },
@@ -94,16 +40,6 @@
         "src": "door-carved-ganesha-pooja.jpg",
         "label": "Full front view",
         "alt": "Installed full front view of carved Ganesha door with floral garland"
-      },
-      {
-        "src": "door-carved-ganesha-garlanded.jpg",
-        "label": "Doorway context",
-        "alt": "Installed doorway view showing full entrance frame with floral garland"
-      },
-      {
-        "src": "door-carved-ganesha-detail.jpg",
-        "label": "Carving detail",
-        "alt": "Close-up relief carving of Lord Ganesha, pillar arch, and Kalasam"
       },
       {
         "src": "door-dr-012.jpg",
@@ -128,30 +64,15 @@
     "featured": false
   },
   {
-    "code": "DR-007",
-    "slug": "floral-vine-carved-entrance",
-    "category": "doors",
-    "title": "Floral vine carved entrance",
-    "summary": "Carved paired timber doors with curling floral vines and lotus blossoms rising from ornamental urns.",
-    "image": "door-floral-vine-carved-entrance.jpg",
-    "alt": "Carved paired timber entrance doors with relief-carved floral vines rising from decorative urns",
-    "featured": true
-  },
-  {
     "code": "DR-008",
     "slug": "two-tone-peacock-entrance",
     "category": "doors",
     "title": "Two-tone peacock entrance",
     "summary": "A paired entrance with mirrored peacocks deeply carved into dark-stained panels set in warm timber.",
-    "image": "door-two-tone-peacock-entrance.jpg",
+    "image": "door-two-tone-peacock-veranda-full.jpg",
     "alt": "Paired timber entrance doors with dark-stained carved peacock panels and floral rosettes",
     "featured": false,
     "views": [
-      {
-        "src": "door-two-tone-peacock-entrance.jpg",
-        "label": "Front studio view",
-        "alt": "Full centered front view of two-tone carved peacock timber entrance doors"
-      },
       {
         "src": "door-two-tone-peacock-veranda-full.jpg",
         "label": "Veranda elevation",
@@ -161,50 +82,8 @@
         "src": "door-two-tone-peacock-carving-close.jpg",
         "label": "Close-up feathers",
         "alt": "High-relief close-up carving of dancing peacock feathers and rosettes"
-      },
-      {
-        "src": "door-two-tone-peacock-unpolished-stage.jpg",
-        "label": "Raw carving stage",
-        "alt": "Artisan workshop stage showing natural timber relief before staining"
-      },
-      {
-        "src": "door-two-tone-peacock-handcarving-feathers.jpg",
-        "label": "Handcarving detail",
-        "alt": "Fine chisel detailing on plumage of carved peacock panel"
       }
     ]
-  },
-  {
-    "code": "DR-009",
-    "slug": "contemporary-inlay-door",
-    "category": "doors",
-    "title": "Contemporary inlay timber door",
-    "summary": "A modern single door featuring contrasting metal inlays and an architectural rectangular pull handle.",
-    "image": "door-contemporary-inlay.jpg",
-    "alt": "Contemporary timber entrance door with horizontal inlays and modern brushed metal pull handle",
-    "featured": false,
-    "views": [
-      {
-        "src": "door-contemporary-inlay.jpg",
-        "label": "Full front view",
-        "alt": "Straight-on full front view of contemporary door with metal inlays"
-      },
-      {
-        "src": "door-dr-035.jpg",
-        "label": "Perspective angle",
-        "alt": "Perspective angle showing handle and gloss timber finish"
-      }
-    ]
-  },
-  {
-    "code": "WN-001",
-    "slug": "geometric-grid-window",
-    "category": "windows",
-    "title": "Geometric grid window",
-    "summary": "A timber window with a strong rectangular grid across two sections.",
-    "image": "window-geometric-grid.jpg",
-    "alt": "Two-section timber window with rectangular glazing grid",
-    "featured": false
   },
   {
     "code": "WN-002",
@@ -225,16 +104,6 @@
     "image": "window-arched-textured-glass.jpg",
     "alt": "Three-section timber window with arched details and textured glass above and below",
     "featured": true
-  },
-  {
-    "code": "WN-004",
-    "slug": "decorative-grille-window",
-    "category": "windows",
-    "title": "Decorative grille window",
-    "summary": "A three-section window with dark scrolling grille patterns set into timber frames.",
-    "image": "window-decorative-grille.jpg",
-    "alt": "Timber-framed three-section window with decorative dark metal scroll grilles",
-    "featured": false
   },
   {
     "code": "WN-006",
@@ -415,28 +284,6 @@
     "featured": false
   },
   {
-    "code": "DR-014",
-    "slug": "timber-door-dr-014",
-    "category": "doors",
-    "title": "Double panel entrance suite (DR-014)",
-    "summary": "Symmetrical paired doors with raised timber panels and substantial frame moldings. Reference code DR-014.",
-    "image": "door-dr-014.jpg",
-    "alt": "Double panel entrance suite in polished timber, design DR-014",
-    "featured": false,
-    "views": [
-      {
-        "src": "door-dr-014.jpg",
-        "label": "Front elevation",
-        "alt": "Front elevation of timber entrance door DR-014"
-      },
-      {
-        "src": "door-dr-015.jpg",
-        "label": "Installed perspective",
-        "alt": "Installed perspective view of door DR-014"
-      }
-    ]
-  },
-  {
     "code": "DR-016",
     "slug": "timber-door-dr-016",
     "category": "doors",
@@ -444,26 +291,6 @@
     "summary": "Single entrance door showcasing fine joinery, durable construction, and smooth polish. Reference code DR-016.",
     "image": "door-dr-016.jpg",
     "alt": "Crafted timber entry door in polished timber, design DR-016",
-    "featured": false
-  },
-  {
-    "code": "DR-017",
-    "slug": "timber-door-dr-017",
-    "category": "doors",
-    "title": "Glazed panel timber door (DR-017)",
-    "summary": "A balanced door composition combining solid timber rails with decorative glazed upper sections. Reference code DR-017.",
-    "image": "door-dr-017.jpg",
-    "alt": "Glazed panel timber door in polished timber, design DR-017",
-    "featured": false
-  },
-  {
-    "code": "DR-018",
-    "slug": "timber-door-dr-018",
-    "category": "doors",
-    "title": "Heritage panel entrance (DR-018)",
-    "summary": "Substantial paired timber doors with classical molding profiles and deep grain luster. Reference code DR-018.",
-    "image": "door-dr-018.jpg",
-    "alt": "Heritage panel entrance in polished timber, design DR-018",
     "featured": false
   },
   {
@@ -497,26 +324,11 @@
         "alt": "Close-up of grooved planks, panel joints and brass lockset"
       },
       {
-        "src": "door-dr-025.jpg",
-        "label": "Open interior view",
-        "alt": "Open interior perspective showing threshold and entrance hall"
-      },
-      {
         "src": "door-dr-023.jpg",
         "label": "Facade elevation",
         "alt": "Exterior wall facade showing door with adjacent casement window"
       }
     ]
-  },
-  {
-    "code": "DR-027",
-    "slug": "timber-door-dr-027",
-    "category": "doors",
-    "title": "Glazed panel timber door (DR-027)",
-    "summary": "A balanced door composition combining solid timber rails with decorative glazed upper sections. Reference code DR-027.",
-    "image": "door-dr-027.jpg",
-    "alt": "Glazed panel timber door in polished timber, design DR-027",
-    "featured": false
   },
   {
     "code": "DR-029",
@@ -532,11 +344,6 @@
         "src": "door-dr-030.jpg",
         "label": "Full front elevation",
         "alt": "Front elevation of 6-panel double entrance door"
-      },
-      {
-        "src": "door-dr-029.jpg",
-        "label": "Threshold view",
-        "alt": "Threshold elevation showing frame molding and doormat"
       }
     ]
   },
@@ -554,11 +361,6 @@
         "src": "door-dr-033.jpg",
         "label": "Full front elevation",
         "alt": "Full front view of double entrance door with sidelights"
-      },
-      {
-        "src": "door-dr-032.jpg",
-        "label": "Entrance & sidelights",
-        "alt": "Medium elevation view showing timber door framing and frosted glass"
       },
       {
         "src": "window-wn-025.jpg",
@@ -583,20 +385,10 @@
     "category": "doors",
     "title": "Grand glazed double entrance with patterned sidelights",
     "summary": "An expansive double entrance suite featuring upper transoms, floor-to-ceiling decorative frosted glass sidelights, and multi-point security hardware.",
-    "image": "door-dr-038.jpg",
+    "image": "door-dr-040.jpg",
     "alt": "Full exterior front view of grand double entrance door with decorative frosted glass panels and transoms",
     "featured": false,
     "views": [
-      {
-        "src": "door-dr-038.jpg",
-        "label": "Full exterior front",
-        "alt": "Straight-on exterior view of double doors and transom glass"
-      },
-      {
-        "src": "door-dr-039.jpg",
-        "label": "Balcony perspective",
-        "alt": "Angled perspective view showing entrance with balcony railing"
-      },
       {
         "src": "door-dr-040.jpg",
         "label": "Interior view",
@@ -618,16 +410,6 @@
         "src": "window-wn-010.jpg",
         "label": "Full front close-up",
         "alt": "Centered full front view of geometric lattice timber window"
-      },
-      {
-        "src": "window-wn-009.jpg",
-        "label": "Front wall elevation",
-        "alt": "Front wall elevation showing window framed between veranda pillars"
-      },
-      {
-        "src": "window-wn-008.jpg",
-        "label": "Veranda perspective",
-        "alt": "Angled perspective view with wall lamps and timber ceiling soffit"
       }
     ]
   },
@@ -647,15 +429,10 @@
     "category": "windows",
     "title": "Two-panel solid timber shutter window",
     "summary": "Traditional solid timber window with raised vertical panel shutters, brass hinges, and durable weather-resistant timber finish.",
-    "image": "window-wn-018.jpg",
+    "image": "window-wn-017.jpg",
     "alt": "Full front view of two-panel solid timber shutter window with raised vertical panels",
     "featured": false,
     "views": [
-      {
-        "src": "window-wn-018.jpg",
-        "label": "Full front shutter view",
-        "alt": "Full front view of two-panel solid timber shutter window"
-      },
       {
         "src": "window-wn-017.jpg",
         "label": "Wall elevation",
@@ -677,16 +454,6 @@
         "src": "window-wn-021.jpg",
         "label": "Full front elevation",
         "alt": "Centered full front elevation of three-panel window"
-      },
-      {
-        "src": "window-wn-019.jpg",
-        "label": "Exterior wall view",
-        "alt": "Exterior wall elevation with sunlight reflection"
-      },
-      {
-        "src": "window-wn-014.jpg",
-        "label": "Veranda perspective",
-        "alt": "Wide veranda perspective showing windows and porch entrance"
       }
     ]
   },
@@ -1320,15 +1087,10 @@
     "category": "windows",
     "title": "3-Sash Casement Window with Textured Glass & Wrought Iron Transom",
     "summary": "Three-leaf timber casement window with textured obscure privacy glass, wrought iron ventilation transom above, and solid timber sill.",
-    "image": "window-3-sash-textured-glass-iron-transom.jpg",
+    "image": "window-3-sash-transom-front.jpg",
     "alt": "Three-sash timber casement window with textured glass and wrought iron transom",
     "featured": true,
     "views": [
-      {
-        "src": "window-3-sash-textured-glass-iron-transom.jpg",
-        "label": "Full window & transom",
-        "alt": "Installed view of 3-sash timber window with ornate iron transom grille"
-      },
       {
         "src": "window-3-sash-transom-front.jpg",
         "label": "Direct front elevation",
@@ -1370,16 +1132,6 @@
         "src": "door-ornate-crown-sidelights-front.jpg",
         "label": "Complete entrance",
         "alt": "Full view of the carved double entrance, crown, and two floral sidelights"
-      },
-      {
-        "src": "door-ornate-crown-detail.jpg",
-        "label": "Carved crown detail",
-        "alt": "Close view of the flowing floral carving above the entrance"
-      },
-      {
-        "src": "door-ornate-sidelight-detail.jpg",
-        "label": "Floral sidelight detail",
-        "alt": "Decorative floral metalwork sidelight within a carved timber frame"
       }
     ]
   },
@@ -1397,11 +1149,6 @@
         "src": "window-triple-arched-casement-front.jpg",
         "label": "Front view",
         "alt": "Front view of a three-section window with arched glazed panels"
-      },
-      {
-        "src": "window-triple-arched-casement-context.jpg",
-        "label": "Installed view",
-        "alt": "Three-section arched timber window installed in a finished exterior wall"
       }
     ]
   },
@@ -1419,11 +1166,6 @@
         "src": "window-curved-grille-triple-front.jpg",
         "label": "Front elevation",
         "alt": "Centered front view of the curved-grille three-leaf window"
-      },
-      {
-        "src": "window-curved-grille-triple-angle.jpg",
-        "label": "Angled view",
-        "alt": "Angled view showing the depth of the timber frame and curved grille pattern"
       }
     ]
   },
@@ -1433,15 +1175,10 @@
     "category": "windows",
     "title": "Diagonal Geometric Double Window",
     "summary": "A paired timber window with bold diagonal rails and textured privacy glass arranged as a mirrored geometric pattern.",
-    "image": "window-diagonal-geometric-double-front.jpg",
+    "image": "window-diagonal-geometric-double-open.jpg",
     "alt": "Paired timber window with mirrored diagonal rails and textured glass",
     "featured": false,
     "views": [
-      {
-        "src": "window-diagonal-geometric-double-front.jpg",
-        "label": "Closed front view",
-        "alt": "Closed paired window showing the mirrored diagonal timber pattern"
-      },
       {
         "src": "window-diagonal-geometric-double-open.jpg",
         "label": "Open view",
