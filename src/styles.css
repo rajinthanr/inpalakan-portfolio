@@ -50,6 +50,7 @@ h1 em,h2 em{font-weight:400;color:var(--accent)}
 .hero-business-title{display:flex;flex-direction:column;gap:19px;margin:0 0 20px;letter-spacing:-.045em}
 .hero-name-en{font-size:clamp(54px,5vw,82px);line-height:.95;white-space:nowrap}
 .hero-name-ta{font-family:'Noto Serif Tamil',var(--serif);font-size:clamp(26px,2.2vw,36px);font-weight:700;line-height:1.25;letter-spacing:0;color:var(--ink);white-space:nowrap}
+.hero-name-ta em{color:inherit;font-style:normal;font-weight:inherit}
 .hero-since{display:flex;align-items:center;gap:13px;width:fit-content;margin:0 auto;align-self:center;color:var(--accent);font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.2em}
 .hero-since span{display:block;width:34px;height:1px;background:var(--accent)}
 .hero-lead{max-width:415px;color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:35px}
