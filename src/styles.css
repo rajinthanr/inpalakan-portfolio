@@ -268,6 +268,7 @@ body.lightbox-open{overflow:hidden;touch-action:none}
 @keyframes slideInLeft{from{opacity:.4;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
 .lb-nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(15,18,16,.32);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);color:var(--white);width:42px;height:54px;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;border-radius:999px;transition:background .2s,transform .15s,opacity .2s;z-index:10}
 .lb-nav-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-50%) scale(1.04)}
+.lb-nav-btn:disabled{opacity:0;pointer-events:none}
 .lb-prev{left:16px}
 .lb-next{right:16px}
 .lightbox-bottom-sheet{position:absolute;left:50%;bottom:max(12px,env(safe-area-inset-bottom));width:min(720px,calc(100% - 24px));transform:translateX(-50%);z-index:20;padding:14px;background:rgba(19,23,20,.62);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.13);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35);transition:opacity .2s,transform .2s}

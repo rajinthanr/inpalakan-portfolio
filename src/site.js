@@ -180,8 +180,12 @@
 
     function preloadAdjacent() {
       if (activePlaylist.length < 2) return;
-      new Image().src = activePlaylist[(currentIndex + 1) % activePlaylist.length].src;
-      new Image().src = activePlaylist[(currentIndex - 1 + activePlaylist.length) % activePlaylist.length].src;
+      if (currentIndex < activePlaylist.length - 1) {
+        new Image().src = activePlaylist[currentIndex + 1].src;
+      }
+      if (currentIndex > 0) {
+        new Image().src = activePlaylist[currentIndex - 1].src;
+      }
     }
 
     function renderThumbnails() {
@@ -215,6 +219,10 @@
       lbImg.alt = item.alt || item.title || item.code;
       lbCode.textContent = item.code;
       lbCounter.textContent = `${currentIndex + 1} / ${activePlaylist.length}`;
+      if (lbPrevBtn) lbPrevBtn.disabled = currentIndex === 0;
+      if (lbNextBtn) {
+        lbNextBtn.disabled = currentIndex === activePlaylist.length - 1;
+      }
       const itemPageUrl = new URL(item.url, window.location.href).href;
       if (lbWhatsappBtn) {
         const whatsappUrl = new URL(item.whatsapp);
@@ -232,14 +240,14 @@
     }
 
     function showNext() {
-      if (scale > 1 || activePlaylist.length < 2) return;
-      currentIndex = (currentIndex + 1) % activePlaylist.length;
+      if (scale > 1 || currentIndex >= activePlaylist.length - 1) return;
+      currentIndex += 1;
       renderSlide('next');
     }
 
     function showPrev() {
-      if (scale > 1 || activePlaylist.length < 2) return;
-      currentIndex = (currentIndex - 1 + activePlaylist.length) % activePlaylist.length;
+      if (scale > 1 || currentIndex <= 0) return;
+      currentIndex -= 1;
       renderSlide('prev');
     }
 
@@ -257,9 +265,7 @@
       if (!selected) return;
       const category = categoryFilter && categoryFilter !== 'all' ?
           categoryFilter : selected.category;
-      activePlaylist = fullPlaylist.filter(item =>
-          item.collection === selected.collection &&
-          (selected.collection === 'work' || item.category === category));
+      activePlaylist = fullPlaylist.filter(item => item.category === category);
       if (!activePlaylist.length) activePlaylist = [selected];
       currentIndex = Math.max(0, activePlaylist.findIndex(item =>
           item.src === selected.src && item.code === selected.code));
