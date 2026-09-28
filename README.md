@@ -1,16 +1,37 @@
 # Inpalakan Timbers portfolio
 
-A mobile-first portfolio for Inpalakan Timbers that helps clients browse completed work and ask about a similar design on WhatsApp.
+A mobile-first portfolio for Inpalakan Timbers. Clients can browse completed doors, windows, and cupboards, open a design's own page, share its link, and ask about a similar project on WhatsApp using its reference code.
 
-## Project goals
+## Run locally
 
-- Show real completed projects in clear groups: doors, windows, kitchens, wardrobes, and specialty cupboards.
-- Give each project a short reference code and its own shareable page.
-- Make the primary action on each project page a WhatsApp enquiry with the reference code and page link prefilled.
-- Keep pages fast and easy to use on phones, without requiring an account or app installation.
-- Label generated concepts separately from photographs of completed work.
+Node.js is the only build requirement; there are no npm dependencies.
 
-## Reference albums
+```bash
+node scripts/build.mjs
+python3 -m http.server 8765 --directory dist
+```
+
+Open `http://localhost:8765/`. The generated `dist/` folder is ignored by Git and is the folder to deploy to a static host when the site is ready.
+
+## Add a design
+
+1. Add a web-ready JPG or WebP to `public/images/projects/` (prefer a clear finished-work photo with a descriptive filename).
+2. Add an entry to `data/projects.json` with a unique, permanent `code` and `slug`, one of the existing categories, an accurate short summary, and useful image alt text.
+3. Run `node scripts/build.mjs`. The homepage/gallery and the design's shareable page are generated together.
+
+The gallery can be expanded without a backend. Each project currently has one selected photo; additional photos and richer project details can be added to the data and page template later. Keep codes and slugs unchanged after sharing them with clients.
+
+The business number and Facebook link are in `data/site.json`. The number currently comes from Inpalakan's public Facebook page and should be confirmed before publishing. The design enquiry button includes the design code and page link automatically.
+
+For rich WhatsApp/Facebook link previews after hosting, build with the final public origin:
+
+```bash
+PUBLIC_BASE_URL=https://your-domain.example node scripts/build.mjs
+```
+
+This adds absolute canonical and Open Graph image URLs to each generated page. The site has **not** been deployed yet.
+
+## Source collections
 
 - [General work](https://photos.app.goo.gl/tAwMZrMWhgwRMvmS9)
 - [Doors](https://photos.app.goo.gl/bYvt1CHPr3SCNLo47)
@@ -18,18 +39,10 @@ A mobile-first portfolio for Inpalakan Timbers that helps clients browse complet
 - [Windows](https://photos.app.goo.gl/17SfQxbBY2sAMRaA7)
 - [Facebook page](https://www.facebook.com/inpalakan)
 
-The albums have been reviewed in the project chat. Photos have not yet been imported into this repository. Before publication, select the strongest finished-project photos, confirm the business WhatsApp number and captions, and prepare appropriately sized web images.
+The eight initial portfolio photos were selected from the shared work albums. Titles and descriptions describe visible design details only. Confirm preferred captions, ordering, and any additional project details before public launch.
 
-## Visual direction observed in the work
+`references/concepts/doors/` contains five AI-generated door concepts from the earlier exploration. Those are **not** photographs of Inpalakan's completed work and do not appear in the website gallery.
 
-- **Doors:** ornate carved entrance pairs, floral and ceremonial relief, circular and arched motifs, classic panel doors, and newer geometric designs.
-- **Windows:** warm timber frames, rectangular glazing grids, curved muntins, textured glass, decorative grilles, solid shutters, and coordinated door/window sets.
-- **Cupboards:** traditional timber kitchen cabinets and carved prayer cupboards, alongside contemporary fitted kitchens and wardrobes with flat fronts, mirrors, open shelves, drawers, and integrated lighting.
+## Visual direction
 
-## Assets in this repository
-
-`references/concepts/doors/` contains five AI-generated door concepts from the earlier exploration. They are **not** photographs of completed Inpalakan projects and must not be presented as such. The ZIP copy from the earlier workspace is omitted because it duplicates these files.
-
-## Status
-
-Repository initialized. Website implementation, real project photo selection, and deployment are still to come.
+Warm ivory, deep green, and muted brass frame the real work. The layout uses large photography, restrained typography, phone-friendly gallery filters, and direct paths from inspiration to enquiry.

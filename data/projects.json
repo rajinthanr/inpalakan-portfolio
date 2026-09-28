@@ -1,0 +1,82 @@
+[
+  {
+    "code": "DR-001",
+    "slug": "carved-entrance-pair",
+    "category": "doors",
+    "title": "Carved entrance pair",
+    "summary": "A paired timber entrance with floral carving and a sculpted centre panel.",
+    "image": "door-carved-entrance.jpg",
+    "alt": "Paired timber entrance doors with floral carved panels",
+    "featured": true
+  },
+  {
+    "code": "DR-002",
+    "slug": "curved-panel-door",
+    "category": "doors",
+    "title": "Curved panel door",
+    "summary": "A single door with stepped panels and a sweeping curved detail.",
+    "image": "door-curved-panel.jpg",
+    "alt": "Single timber door with rectangular panels and a broad curved inset",
+    "featured": true
+  },
+  {
+    "code": "DR-003",
+    "slug": "contemporary-entrance",
+    "category": "doors",
+    "title": "Contemporary entrance",
+    "summary": "An entrance composition with slim vertical detailing and glazed side panels.",
+    "image": "door-contemporary-entrance.jpg",
+    "alt": "Contemporary timber entrance with vertical detailing and side glazing",
+    "featured": false
+  },
+  {
+    "code": "WN-001",
+    "slug": "geometric-grid-window",
+    "category": "windows",
+    "title": "Geometric grid window",
+    "summary": "A timber window with a strong rectangular grid across two sections.",
+    "image": "window-geometric-grid.jpg",
+    "alt": "Two-section timber window with rectangular glazing grid",
+    "featured": true
+  },
+  {
+    "code": "WN-002",
+    "slug": "curved-glass-window",
+    "category": "windows",
+    "title": "Curved glass window",
+    "summary": "A three-section timber window combining curved lines and textured glass.",
+    "image": "window-curved-glass.jpg",
+    "alt": "Three-section timber window with curved detailing and textured glass",
+    "featured": false
+  },
+  {
+    "code": "CB-001",
+    "slug": "fitted-wardrobe",
+    "category": "cupboards",
+    "title": "Fitted wardrobe",
+    "summary": "Full-height dark green storage with a mirror and an open centre section.",
+    "image": "cupboard-fitted-wardrobe.jpg",
+    "alt": "Dark green fitted wardrobe with a mirror and open central niche",
+    "featured": true
+  },
+  {
+    "code": "CB-002",
+    "slug": "timber-kitchen-cabinets",
+    "category": "cupboards",
+    "title": "Timber kitchen cabinets",
+    "summary": "A warm-toned kitchen arrangement with upper glass-front cabinets.",
+    "image": "cupboard-timber-kitchen.jpg",
+    "alt": "Warm-toned kitchen cabinets with glass-front upper units",
+    "featured": false
+  },
+  {
+    "code": "CB-003",
+    "slug": "geometric-kitchen-cabinets",
+    "category": "cupboards",
+    "title": "Geometric kitchen cabinets",
+    "summary": "Dark cabinet fronts with light geometric outlines above and below the counter.",
+    "image": "cupboard-geometric-kitchen.jpg",
+    "alt": "Dark kitchen cabinets with light geometric outlines on the doors",
+    "featured": false
+  }
+]
