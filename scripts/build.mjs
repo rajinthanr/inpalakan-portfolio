@@ -54,7 +54,18 @@ const kitchenPatterns = [
   alt: `Sample kitchen cupboard pattern: ${title}`
 }));
 
-const samplePatterns = [...doorPatterns, ...kitchenPatterns];
+const tvUnitPatterns = [
+  ['TVS-011', 'Graphite and bronze hall unit', '11-graphite-bronze-sri-lankan-hall.png'],
+  ['TVS-012', 'Open-plan divider unit', '12-open-plan-divider-unit.png'],
+  ['TVS-013', 'Under-stair sage unit', '13-under-stair-sage-unit.png'],
+  ['TVS-014', 'Pearl-grey open-hall unit', '14-pearl-grey-open-hall.png'],
+  ['TVS-015', 'Column-integrated blue unit', '15-column-integrated-blue-unit.png']
+].map(([code, title, image]) => ({
+  code, title, image, category: 'tv-units',
+  alt: `Sample TV-unit pattern: ${title}`
+}));
+
+const samplePatterns = [...doorPatterns, ...kitchenPatterns, ...tvUnitPatterns];
 
 const categories = {
   doors: {
@@ -287,7 +298,9 @@ function generatePlaylist(prefix = '') {
     title: pattern.title,
     src: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     rawSrc: pattern.image,
-    label: pattern.category === 'doors' ? 'Sample door pattern' : 'Sample kitchen cupboard pattern',
+    label: pattern.category === 'doors' ? 'Sample door pattern' :
+        pattern.category === 'kitchens' ? 'Sample kitchen cupboard pattern' :
+                                           'Sample TV-unit pattern',
     alt: pattern.alt,
     url: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     whatsapp: whatsappHref(pattern.code)
@@ -395,7 +408,8 @@ function card(project, prefix = '', index = 0) {
 }
 
 function patternCard(pattern, index = 0) {
-  const type = pattern.category === 'doors' ? 'door' : 'kitchen cupboard';
+  const type = pattern.category === 'doors' ? 'door' :
+      pattern.category === 'kitchens' ? 'kitchen cupboard' : 'TV-unit';
   const image = `images/concepts/${pattern.category}/${pattern.image}`;
   const keywords = `${pattern.code} ${pattern.title} sample pattern ${type}`;
   return `<article class="project-card sample-pattern-card" data-category="${pattern.category}" data-code="${esc(pattern.code)}" data-keywords="${esc(keywords)}">
@@ -619,6 +633,15 @@ function galleryPage() {
         ${kitchenPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
       </div>
     </section>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-tv-unit-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">DESIGN INSPIRATION</p><h2 id="sample-tv-unit-patterns-title">Sample TV-unit patterns.</h2></div>
+        <p>Metallic-painted TV-unit references designed for practical Sri Lankan living halls. Ask us how a layout and finish can be adapted for your home.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${tvUnitPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
     <p class="empty-state" hidden>No designs match your search or filter.</p>
   </section>
   <section class="gallery-note shell">
@@ -773,6 +796,8 @@ await mkdir(join(dist, 'images/concepts/doors'), {recursive: true});
 await cp(join(root, 'references/door-patterns'), join(dist, 'images/concepts/doors'), {recursive: true});
 await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
+await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
+await cp(join(root, 'references/tv-unit-patterns'), join(dist, 'images/concepts/tv-units'), {recursive: true});
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await writeFile(join(dist, 'index.html'), homePage());
