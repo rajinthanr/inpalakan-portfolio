@@ -4,11 +4,11 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 ## Current catalog
 
-- 74 design entries across doors, windows, bedrooms, kitchens, furniture, gypsum ceilings, TV units, and granite fitting
-- 127 photographs currently connected to design entries
-- 31 designs with multiple views, such as installation angles, carving details, and interior storage
-- 159 source photographs in `public/images/projects/`; 32 are retained as available source material and are not currently shown
-- 14 featured designs on the home page
+- 84 design entries across doors, windows, bedrooms, kitchens, furniture, gypsum ceilings, TV units, and granite fitting
+- 155 photographs currently connected to design entries
+- 40 designs with multiple views, such as installation angles, carving details, and interior storage
+- 186 source photographs in `public/images/projects/`; 31 are retained as available source material and are not currently shown
+- 17 featured designs on the home page
 
 The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
@@ -16,7 +16,7 @@ On phones, the main action and sticky header lead directly to **Our Work**. Gall
 
 The opening hero presents the English and Tamil business names with “Since 2006” and features design `KC-021`. A subtle brass ornamental texture is applied consistently across the site through CSS.
 
-Homepage category tiles use an explicit curated cover selection in `scripts/build.mjs`. This keeps strong, high-resolution photographs stable even when featured-project ordering changes. Current service covers include `KC-021`, `CB-001`, `GR-001`, `GY-002`, and `CB-009` for their matching categories.
+Homepage category tiles use an explicit curated cover selection in `scripts/build.mjs`. This keeps strong, high-resolution photographs stable even when featured-project ordering changes. Current service covers include `WN-019`, `KC-021`, `CB-001`, `GR-001`, `GY-002`, `FN-004`, and `TV-004` for their matching categories.
 
 Services and portfolio categories share one homepage section: each service is represented by a curated photograph that opens its filtered gallery.
 

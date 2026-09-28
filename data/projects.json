@@ -1225,5 +1225,253 @@
     "image": "window-scalloped-wave-2-sash.jpg",
     "alt": "Two-sash timber window with decorative scalloped wave framing",
     "featured": false
+  },
+  {
+    "code": "DR-041",
+    "slug": "ornate-crown-double-entrance-with-sidelights",
+    "category": "doors",
+    "title": "Ornate Crown Double Entrance with Floral Sidelights",
+    "summary": "A polished double entrance framed by carved crown work and matching floral metalwork sidelights.",
+    "image": "door-ornate-crown-sidelights-front.jpg",
+    "alt": "Polished carved double entrance with an ornate crown and floral metalwork sidelights",
+    "featured": true,
+    "views": [
+      {
+        "src": "door-ornate-crown-sidelights-front.jpg",
+        "label": "Complete entrance",
+        "alt": "Full view of the carved double entrance, crown, and two floral sidelights"
+      },
+      {
+        "src": "door-ornate-crown-detail.jpg",
+        "label": "Carved crown detail",
+        "alt": "Close view of the flowing floral carving above the entrance"
+      },
+      {
+        "src": "door-ornate-sidelight-detail.jpg",
+        "label": "Floral sidelight detail",
+        "alt": "Decorative floral metalwork sidelight within a carved timber frame"
+      }
+    ]
+  },
+  {
+    "code": "WN-034",
+    "slug": "triple-arched-casement-window",
+    "category": "windows",
+    "title": "Triple Arched Casement Window",
+    "summary": "A wide three-section timber window with repeated arched glazing details and a slim upper transom.",
+    "image": "window-triple-arched-casement-front.jpg",
+    "alt": "Wide three-section timber casement window with arched glazing details",
+    "featured": false,
+    "views": [
+      {
+        "src": "window-triple-arched-casement-front.jpg",
+        "label": "Front view",
+        "alt": "Front view of a three-section window with arched glazed panels"
+      },
+      {
+        "src": "window-triple-arched-casement-context.jpg",
+        "label": "Installed view",
+        "alt": "Three-section arched timber window installed in a finished exterior wall"
+      }
+    ]
+  },
+  {
+    "code": "WN-035",
+    "slug": "curved-grille-triple-window",
+    "category": "windows",
+    "title": "Curved-Grille Triple Timber Window",
+    "summary": "A three-leaf window combining curved timber rails, textured glass, and sweeping protective grille patterns.",
+    "image": "window-curved-grille-triple-front.jpg",
+    "alt": "Three-leaf timber window with curved rails and decorative metal grilles",
+    "featured": false,
+    "views": [
+      {
+        "src": "window-curved-grille-triple-front.jpg",
+        "label": "Front elevation",
+        "alt": "Centered front view of the curved-grille three-leaf window"
+      },
+      {
+        "src": "window-curved-grille-triple-angle.jpg",
+        "label": "Angled view",
+        "alt": "Angled view showing the depth of the timber frame and curved grille pattern"
+      }
+    ]
+  },
+  {
+    "code": "WN-036",
+    "slug": "diagonal-geometric-double-window",
+    "category": "windows",
+    "title": "Diagonal Geometric Double Window",
+    "summary": "A paired timber window with bold diagonal rails and textured privacy glass arranged as a mirrored geometric pattern.",
+    "image": "window-diagonal-geometric-double-front.jpg",
+    "alt": "Paired timber window with mirrored diagonal rails and textured glass",
+    "featured": false,
+    "views": [
+      {
+        "src": "window-diagonal-geometric-double-front.jpg",
+        "label": "Closed front view",
+        "alt": "Closed paired window showing the mirrored diagonal timber pattern"
+      },
+      {
+        "src": "window-diagonal-geometric-double-open.jpg",
+        "label": "Open view",
+        "alt": "Partly open geometric timber window showing the casement leaves"
+      }
+    ]
+  },
+  {
+    "code": "KC-024",
+    "slug": "soft-grey-led-kitchen-suite",
+    "category": "kitchens",
+    "title": "Soft Grey Kitchen Suite with Display Lighting",
+    "summary": "A bright fitted kitchen with soft grey cabinetry, black worktops, integrated tall storage, and warm display lighting.",
+    "image": "kitchen-grey-led-complete.jpg",
+    "alt": "Completed soft grey fitted kitchen with black worktops and warm display lighting",
+    "featured": true,
+    "views": [
+      {
+        "src": "kitchen-grey-led-complete.jpg",
+        "label": "Complete kitchen",
+        "alt": "Full view of the soft grey kitchen and illuminated upper cabinets"
+      },
+      {
+        "src": "kitchen-grey-led-counter.jpg",
+        "label": "Island and counter",
+        "alt": "Grey base cabinets and dark counter beneath pendant lights"
+      },
+      {
+        "src": "kitchen-grey-led-wide.jpg",
+        "label": "Wide room view",
+        "alt": "Wide view showing the kitchen cabinetry arranged around the room"
+      },
+      {
+        "src": "kitchen-grey-led-pantry-wall.jpg",
+        "label": "Tall pantry wall",
+        "alt": "Full-height grey pantry cabinets arranged around a timber doorway"
+      }
+    ]
+  },
+  {
+    "code": "KC-025",
+    "slug": "warm-timber-l-shaped-kitchen",
+    "category": "kitchens",
+    "title": "Warm Timber L-Shaped Kitchen",
+    "summary": "An L-shaped kitchen with warm timber-toned cabinet fronts, dark stone worktops, integrated drawers, and under-cabinet lighting.",
+    "image": "kitchen-warm-timber-wide.jpg",
+    "alt": "Warm timber-toned L-shaped kitchen with dark worktops and illuminated wall cabinets",
+    "featured": false,
+    "views": [
+      {
+        "src": "kitchen-warm-timber-wide.jpg",
+        "label": "Complete kitchen",
+        "alt": "Wide front view of the warm timber-toned L-shaped kitchen"
+      },
+      {
+        "src": "kitchen-warm-timber-angle.jpg",
+        "label": "Worktop angle",
+        "alt": "Angled view along the dark worktop and illuminated upper cabinets"
+      },
+      {
+        "src": "kitchen-warm-timber-drawers.jpg",
+        "label": "Drawer storage",
+        "alt": "Open pull-out drawers below the dark kitchen worktop"
+      }
+    ]
+  },
+  {
+    "code": "BC-027",
+    "slug": "rounded-teal-bedroom-storage-suite",
+    "category": "bedrooms",
+    "title": "Rounded Teal Bedroom Storage Suite",
+    "summary": "A coordinated bedroom suite with softly rounded wardrobe ends, open display shelves, and an illuminated dressing mirror with drawers.",
+    "image": "bedroom-rounded-teal-suite.jpg",
+    "alt": "Teal bedroom wardrobe and matching illuminated dressing unit with rounded shelving",
+    "featured": false,
+    "views": [
+      {
+        "src": "bedroom-rounded-teal-suite.jpg",
+        "label": "Complete suite",
+        "alt": "Bedroom view showing the rounded wardrobe and matching dressing unit"
+      },
+      {
+        "src": "bedroom-rounded-teal-wardrobe-front.jpg",
+        "label": "Wardrobe front",
+        "alt": "Front view of a teal wardrobe with drawers and curved open shelves"
+      },
+      {
+        "src": "bedroom-rounded-teal-vanity.jpg",
+        "label": "Dressing mirror",
+        "alt": "Illuminated dressing mirror with teal shelves and lower drawers"
+      },
+      {
+        "src": "bedroom-rounded-teal-vanity-open.jpg",
+        "label": "Vanity storage open",
+        "alt": "Open view of the dressing unit shelves, mirror, and drawer storage"
+      }
+    ]
+  },
+  {
+    "code": "FN-004",
+    "slug": "illuminated-pooja-cabinet",
+    "category": "furniture",
+    "title": "Illuminated Pooja Cabinet",
+    "summary": "A freestanding pooja cabinet with a tiered carved crown, enclosed lower storage, stone-look shelf, and focused interior lighting.",
+    "image": "furniture-pooja-cabinet-lit-front.jpg",
+    "alt": "Freestanding timber pooja cabinet with carved crown and illuminated shrine shelf",
+    "featured": false,
+    "views": [
+      {
+        "src": "furniture-pooja-cabinet-lit-front.jpg",
+        "label": "Illuminated front",
+        "alt": "Front view of the pooja cabinet with its shrine shelf illuminated"
+      },
+      {
+        "src": "furniture-pooja-cabinet-open.jpg",
+        "label": "Full open display",
+        "alt": "Wide front view showing the shrine display and lower cabinet storage"
+      },
+      {
+        "src": "furniture-pooja-cabinet-side.jpg",
+        "label": "Side perspective",
+        "alt": "Side view showing the cabinet depth, carved crown, and shrine columns"
+      }
+    ]
+  },
+  {
+    "code": "TV-004",
+    "slug": "rounded-teal-tv-feature-wall",
+    "category": "tv-units",
+    "title": "Rounded Teal TV Feature Wall",
+    "summary": "A complete media wall with rounded display towers, teal base cabinets, vertical timber slats, and warm integrated lighting.",
+    "image": "tv-unit-rounded-teal-wide.jpg",
+    "alt": "Teal television feature wall with rounded display towers and illuminated timber slats",
+    "featured": true,
+    "views": [
+      {
+        "src": "tv-unit-rounded-teal-wide.jpg",
+        "label": "Complete media wall",
+        "alt": "Wide room view of the teal TV unit with two rounded display towers"
+      },
+      {
+        "src": "tv-unit-rounded-teal-lit.jpg",
+        "label": "Illuminated front",
+        "alt": "Front view of the TV wall with warm lighting behind the screen"
+      },
+      {
+        "src": "tv-unit-rounded-teal-feature-wall.jpg",
+        "label": "Angled perspective",
+        "alt": "Angled view showing the curved display end and lower storage cabinets"
+      }
+    ]
+  },
+  {
+    "code": "GY-007",
+    "slug": "blue-led-floating-tray-ceiling",
+    "category": "gypsum",
+    "title": "Blue LED Floating Tray Ceiling",
+    "summary": "A layered geometric ceiling with a floating central tray, blue concealed lighting, and evenly spaced recessed downlights.",
+    "image": "gypsum-blue-led-floating-tray.jpg",
+    "alt": "Layered floating gypsum tray ceiling with blue concealed lighting and recessed downlights",
+    "featured": false
   }
 ]

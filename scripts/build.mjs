@@ -349,9 +349,9 @@ function homePage() {
       alt: 'Wide view of a carved timber entrance installed on a veranda'
     },
     windows: {
-      code: 'WN-031',
-      image: 'window-3-sash-textured-glass-iron-transom.jpg',
-      alt: 'Three-sash timber window with textured glass and iron transom'
+      code: 'WN-019',
+      image: 'window-wn-021.jpg',
+      alt: 'Three-panel timber window with textured glass and safety grille'
     },
     kitchens: {
       code: 'KC-021',
@@ -374,14 +374,14 @@ function homePage() {
       alt: 'Gypsum tray ceiling with magenta and warm gold lighting'
     },
     furniture: {
-      code: 'CB-009',
-      image: 'cupboard-timber-prayer-shrine.jpg',
-      alt: 'Polished timber prayer shrine cabinet with raised panel doors'
+      code: 'FN-004',
+      image: 'furniture-pooja-cabinet-lit-front.jpg',
+      alt: 'Illuminated timber pooja cabinet with carved crown'
     },
     'tv-units': {
-      code: 'TV-001',
-      image: 'tv-unit-handcrafted-showcase-console.jpg',
-      alt: 'Handcrafted timber television showcase and console'
+      code: 'TV-004',
+      image: 'tv-unit-rounded-teal-wide.jpg',
+      alt: 'Teal television feature wall with rounded display towers'
     }
   };
   const categoryCovers = Object.fromEntries(
@@ -494,7 +494,6 @@ function galleryPage() {
     <p>Tap a category, then tap any photo to see it clearly. Every design has a reference code you can send to us on WhatsApp.</p>
   </section>
   <section class="gallery-section shell" aria-label="Project gallery">
-    <p class="gallery-help"><strong>Step 1:</strong> Choose a category or search by design code.</p>
     <div class="gallery-toolbar">
       <div class="filters" role="group" aria-label="Filter designs">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
@@ -517,7 +516,6 @@ function galleryPage() {
       <p class="gallery-count" aria-live="polite"><span id="visible-count">${
       projects.length}</span> designs</p>
     </div>
-    <p class="gallery-help gallery-help-results"><strong>Step 2:</strong> Tap a photo to open its design page, or use the full-screen button.</p>
     <div class="project-grid gallery-grid">
       ${projects.map((p, i) => card(p, '', i)).join('')}
     </div>
