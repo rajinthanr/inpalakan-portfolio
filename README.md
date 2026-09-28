@@ -1,35 +1,91 @@
 # Inpalakan Timbers portfolio
 
-A mobile-first portfolio for Inpalakan Timbers. Clients can browse completed doors, windows, and cupboards, open a design's own page, share its link, and ask about a similar project on WhatsApp using its reference code.
+A mobile-first static portfolio for Inpalakan Timbers. Clients can browse completed work, search or filter the catalog, open a full-screen photo viewer, share a design page, and ask about a similar project on WhatsApp using its permanent reference code.
+
+## Current catalog
+
+- 48 design entries: 22 doors, 12 windows, and 14 cupboards
+- 81 photographs currently connected to design entries
+- 20 designs with multiple views, such as installation angles, carving details, and interior storage
+- 113 source photographs in `public/images/projects/`; 32 are retained as available source material and are not currently shown
+- 6 featured designs on the home page
+
+The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
 ## Run locally
 
-Node.js is the only build requirement; there are no npm dependencies.
+Node.js 20 or newer is recommended. The build has no installed npm dependencies.
 
 ```bash
-node scripts/build.mjs
+npm run build
 python3 -m http.server 8765 --directory dist
 ```
 
-Open `http://localhost:8765/`. The generated `dist/` folder is ignored by Git and is the folder to deploy to a static host when the site is ready.
+Open `http://localhost:8765/`. You can also run `npm start` after building; that command uses `npx serve dist` and may download `serve` if it is not already available.
 
-## Add a design
+## Project structure
 
-1. Add a web-ready JPG or WebP to `public/images/projects/` (prefer a clear finished-work photo with a descriptive filename).
-2. Add an entry to `data/projects.json` with a unique, permanent `code` and `slug`, one of the existing categories, an accurate short summary, and useful image alt text.
-3. Run `node scripts/build.mjs`. The homepage/gallery and the design's shareable page are generated together.
+| Path | Purpose |
+| --- | --- |
+| `data/projects.json` | Design codes, slugs, categories, captions, featured state, and optional multi-view image lists |
+| `data/site.json` | Brand, contact, social, source-album, and planned service information |
+| `public/images/projects/` | Completed-work photographs copied into the generated site |
+| `public/images/Others/logo.png` | Current business logo |
+| `src/styles.css` | Responsive visual design |
+| `src/site.js` | Filters, search, sharing, multi-view controls, and full-screen viewer behavior |
+| `scripts/build.mjs` | Validates catalog data and generates the static site in `dist/` |
+| `.github/workflows/deploy.yml` | GitHub Pages build and deployment workflow for `main` |
+| `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
+| `scratch/` | Local image-import helpers; these are working utilities rather than site runtime files |
 
-The gallery can be expanded without a backend. Each project currently has one selected photo; additional photos and richer project details can be added to the data and page template later. Keep codes and slugs unchanged after sharing them with clients.
+The current templates use `logo`, `whatsappNumber`, and `facebookUrl` from `data/site.json`. The name, tagline, address, map, email, album, Tamil-name, and service fields are stored centrally for upcoming template work; editing those fields alone does not yet change the generated page copy.
 
-The business number and Facebook link are in `data/site.json`. The number currently comes from Inpalakan's public Facebook page and should be confirmed before publishing. The design enquiry button includes the design code and page link automatically.
+## Add or update a design
 
-For rich WhatsApp/Facebook link previews after hosting, build with the final public origin:
+1. Add a web-ready JPG or WebP to `public/images/projects/`. Prefer a clear finished-work photo with a descriptive filename.
+2. Add or edit the entry in `data/projects.json`. Keep `code` and `slug` unique and permanent, choose an existing category, and write accurate alt text and a short summary.
+3. For a multi-view design, add a `views` array. Each view needs `src`, `label`, and `alt`; keep the primary image first and set `image` to that same filename.
+4. Set `featured` to `true` only when the design should appear in the home-page selection.
+5. Run `npm run build` and review the home page, gallery, design page, full-screen viewer, sharing, and WhatsApp message on a phone-sized screen.
 
-```bash
-PUBLIC_BASE_URL=https://your-domain.example node scripts/build.mjs
+Example multi-view entry:
+
+```json
+{
+  "code": "DR-002",
+  "slug": "curved-panel-door",
+  "category": "doors",
+  "title": "Curved panel door",
+  "summary": "A single door with stepped panels and a sweeping curved detail.",
+  "image": "door-curved-panel.jpg",
+  "alt": "Single timber door with rectangular panels and a broad curved inset",
+  "featured": false,
+  "views": [
+    {
+      "src": "door-curved-panel.jpg",
+      "label": "Full front view",
+      "alt": "Full front view of a timber door with a curved inset panel"
+    },
+    {
+      "src": "door-curved-panel-angle.jpg",
+      "label": "Angled perspective",
+      "alt": "Angled view of the door leaf and timber architrave"
+    }
+  ]
+}
 ```
 
-This adds absolute canonical and Open Graph image URLs to each generated page. The site has **not** been deployed yet.
+Keep completed work clearly separate from the concept images under `references/`. Do not assign a timber species, manufacturing method, dimension, price, or location unless it has been confirmed.
+
+## Sharing and public URLs
+
+Every design page has a stable code, a native share button with a copy-link fallback, and a WhatsApp enquiry button. The WhatsApp message includes the design code; after deployment, the browser adds the public page link.
+
+Build with the final public origin so generated pages contain absolute canonical and Open Graph image URLs for WhatsApp and Facebook previews:
+
+```bash
+PUBLIC_BASE_URL=https://your-domain.example npm run build
+```
 
 ## Source collections
 
@@ -37,37 +93,29 @@ This adds absolute canonical and Open Graph image URLs to each generated page. T
 - [Doors](https://photos.app.goo.gl/bYvt1CHPr3SCNLo47)
 - [Cupboards](https://photos.app.goo.gl/hZsPh5dw3j2s4vff7)
 - [Windows](https://photos.app.goo.gl/17SfQxbBY2sAMRaA7)
+- [Gypsum work](https://photos.app.goo.gl/kTYfrKLphUuwB9aCA)
 - [Facebook page](https://www.facebook.com/inpalakan)
 
-The 105 portfolio photos were selected from the shared work albums (40 doors, 30 windows, and 35 cupboards/interiors). Titles and descriptions describe visible design details only. Confirm preferred captions, ordering, and any additional project details before public launch.
+Titles and descriptions should describe visible design details only. Confirm captions, ordering, business contact details, and any project-specific claims before a public launch.
 
-`references/concepts/doors/` contains five AI-generated door concepts from the earlier exploration. Those are **not** photographs of Inpalakan's completed work and do not appear in the website gallery.
+## Deployment
 
-## Multi-view design catalog
+### GitHub Pages
 
-Projects with multiple photo angles (elevations, interior fittings, close-up carvings, hardware) are consolidated under **one permanent design code**:
-- The main gallery card displays only the primary, full-front high-quality view with a count badge (e.g. `5 views`).
-- Inside the project page, an interactive thumbnail gallery allows customers to toggle between all available angles (facade elevation, hardware close-ups, interior drawers, storage mechanisms) without leaving the design page.
-- WhatsApp enquiry buttons automatically attach the single permanent design code and canonical link.
+1. Push the repository to GitHub.
+2. Open **Settings → Pages** and select **GitHub Actions** as the source.
+3. Push to `main`, or run the workflow manually from the Actions tab.
+4. The included workflow builds with Node.js 20 and deploys `dist/`.
 
-## 100% Free budget hosting options
+GitHub Pages supports a custom domain and HTTPS. Its generated site URL is available from the completed deployment job.
 
-The site is a pure static portfolio (HTML, CSS, JS, optimized images) and can be hosted permanently with **zero running costs**:
+### Cloudflare Pages
 
-### Option 1: GitHub Pages (Recommended — 100% Free forever)
-1. Push your repository to GitHub.
-2. In GitHub repository settings: **Settings → Pages → Source: GitHub Actions**.
-3. The included workflow (`.github/workflows/deploy.yml`) will automatically build and publish your site on every push to `main`.
-4. Free custom domain support (e.g. `inpalakantimbers.com`) with automatic SSL.
-
-### Option 2: Cloudflare Pages (100% Free forever & blazing fast in Sri Lanka)
-1. Sign up for a free [Cloudflare](https://dash.cloudflare.com/) account.
-2. Go to **Workers & Pages → Create Application → Pages → Connect to Git**.
-3. Select this repository and set:
-   - **Build command**: `node scripts/build.mjs`
-   - **Build output directory**: `dist`
-4. Click **Save and Deploy**. Cloudflare serves assets from their Colombo edge pop with unlimited bandwidth.
+1. Connect this repository to a Cloudflare Pages project.
+2. Use `npm run build` as the build command.
+3. Use `dist` as the output directory.
+4. Set `PUBLIC_BASE_URL` to the final site origin when the domain is known.
 
 ## Visual direction
 
-Warm ivory, deep green, and muted brass frame the real work. The layout uses large photography, restrained typography, phone-friendly gallery filters, and direct paths from inspiration to enquiry.
+Warm ivory, deep green, and muted brass frame the real work. The interface prioritizes large photography, restrained typography, phone-friendly filters and search, touch navigation, and a short path from inspiration to a WhatsApp enquiry.

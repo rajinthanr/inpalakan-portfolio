@@ -1,12 +1,69 @@
 {
   "name": "Inpalakan Timbers",
+  "tamilName": "இன்பழகன் கைத்தொழிலகம்",
   "tagline": "Your vision, our craftsmanship",
   "logo": "images/Others/logo.png",
   "whatsappNumber": "94778380180",
   "facebookUrl": "https://www.facebook.com/inpalakan",
+  "mapUrl": "https://maps.app.goo.gl/rT1eQkdS2pcKpcpN9",
+  "address": "Vaavini Veethi, Valvettithurai, Sri Lanka 40000",
+  "phone": "+94 77 838 0180",
+  "email": "ramesvvt@gmail.com",
   "albums": {
     "doors": "https://photos.app.goo.gl/bYvt1CHPr3SCNLo47",
     "windows": "https://photos.app.goo.gl/17SfQxbBY2sAMRaA7",
-    "cupboards": "https://photos.app.goo.gl/hZsPh5dw3j2s4vff7"
-  }
+    "cupboards": "https://photos.app.goo.gl/hZsPh5dw3j2s4vff7",
+    "gypsum": "https://photos.app.goo.gl/kTYfrKLphUuwB9aCA"
+  },
+  "services": [
+    {
+      "key": "kitchens",
+      "icon": "🍽️",
+      "title": "Kitchen Cupboards",
+      "tamil": "சமையலறை அலுமாரிகள்",
+      "description": "Custom modular and L-shaped kitchen cupboards with overhead storage, cutlery drawers, and moisture-resistant finishes."
+    },
+    {
+      "key": "bedrooms",
+      "icon": "🛏️",
+      "title": "Bedroom Cupboards",
+      "tamil": "படுக்கையறை அலமாரி வேலைகள்",
+      "description": "Fitted floor-to-ceiling wardrobes, dressing mirrors, integrated closets, and under-bed drawer storage."
+    },
+    {
+      "key": "gypsum",
+      "icon": "🔲",
+      "title": "Gypsum Ceiling வேலைகள்",
+      "tamil": "Gypsum Ceiling வேலைகள்",
+      "description": "Architectural false ceilings, modern stepped trays, decorative perimeter coves, and warm LED ambient lighting."
+    },
+    {
+      "key": "furniture",
+      "icon": "🪑",
+      "title": "Custom Furniture",
+      "tamil": "தனிப்பயன் மர தளபாடங்கள்",
+      "description": "Handmade solid timber beds, dining sets, restaurant cash counters, preschool furniture, and carved pooja shrines."
+    },
+    {
+      "key": "doors",
+      "icon": "🔨",
+      "title": "மர அலங்கார வேலைப்பாடுகள்",
+      "tamil": "மர அலங்காரக் கதவுகள் & வேலைப்பாடுகள்",
+      "description": "Deeply carved traditional temple and entrance double doors, Ganesha pooja doors, floral vines, and contemporary inlay doors."
+    },
+    {
+      "key": "granite",
+      "icon": "💎",
+      "title": "Kitchen கிரானைட் கல் பதிக்கும் வேலைகள்",
+      "tamil": "Kitchen கிரானைட் கல் பதிக்கும் வேலைகள்",
+      "description": "Heavy-duty kitchen granite countertop cutting, edge-beveling, undermount sink fitting, and splashback installation."
+    },
+    {
+      "key": "tv-units",
+      "icon": "🖥",
+      "title": "TV stand மற்றும் பின்னணி அலங்கார வேலைகள்",
+      "tamil": "TV stand மற்றும் பின்னணி அலங்கார வேலைகள்",
+      "description": "Modern TV consoles, timber fluted wall panel backdrops, floating display shelves, and ambient feature walls."
+    }
+  ]
 }
