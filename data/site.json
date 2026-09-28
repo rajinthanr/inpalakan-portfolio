@@ -18,50 +18,50 @@
     {
       "key": "kitchens",
       "icon": "🍽️",
-      "title": "Kitchen Cupboards & Granite",
-      "tamil": "சமையலறை அலுமாரிகள் & கிரானைட் கல் பதிக்கும் வேலைகள்",
+      "title": "Kitchen Cupboards",
+      "tamil": "சமையலறை அலுமாரிகள் & கிரானைட் வேலைகள்",
       "description": "Custom modular kitchen cupboards, solid timber pantry units, and heavy-duty precision-cut kitchen granite countertops with undermount sink fitting."
     },
     {
       "key": "bedrooms",
       "icon": "🛏️",
       "title": "Bedroom Cupboards",
-      "tamil": "படுக்கையறை அலுமாரிகள்",
+      "tamil": "படுக்கையறை அலங்கார அலுமாரிகள்",
       "description": "Fitted floor-to-ceiling wardrobes, dressing mirrors, integrated closets, and under-bed drawer storage."
     },
     {
       "key": "windows",
       "icon": "🪟",
       "title": "Windows",
-      "tamil": "மர ஜன்னல்கள்",
+      "tamil": "பாரம்பரிய மர ஜன்னல்கள்",
       "description": "Custom timber windows with durable frames, decorative details, privacy glass, and secure grilles."
     },
     {
       "key": "gypsum",
       "icon": "🔲",
       "title": "Gypsum Ceilings",
-      "tamil": "ஜிப்சம் சீலிங் வேலைகள்",
+      "tamil": "அலங்கார ஜிப்சம் சீலிங் வேலைகள்",
       "description": "Architectural false ceilings, modern stepped trays, decorative perimeter coves, and warm LED ambient lighting."
     },
     {
       "key": "furniture",
       "icon": "🪑",
       "title": "Custom Furniture",
-      "tamil": "மரத் தளபாடங்கள்",
+      "tamil": "பாரம்பரிய மரத் தளபாடங்கள்",
       "description": "Handmade solid timber beds, dining sets, restaurant cash counters, preschool furniture, and carved pooja shrines."
     },
     {
       "key": "doors",
       "icon": "🔨",
-      "title": "Carved Doors & Woodwork",
+      "title": "Carved Doors",
       "tamil": "மர அலங்காரக் கதவுகள் & வேலைப்பாடுகள்",
       "description": "Deeply carved traditional temple and entrance double doors, Ganesha pooja doors, floral vines, and contemporary inlay doors."
     },
     {
       "key": "tv-units",
       "icon": "🖥",
-      "title": "TV Stands & Feature Walls",
-      "tamil": "TV stand மற்றும் பின்னணி அலங்கார வேலைகள்",
+      "title": "TV Wall Units",
+      "tamil": "TV சுவர் அலங்கார வடிவமைப்புகள்",
       "description": "Modern TV consoles, timber fluted wall panel backdrops, floating display shelves, and ambient feature walls."
     }
   ]

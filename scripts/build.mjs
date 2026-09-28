@@ -115,8 +115,8 @@ const samplePatterns = [
 
 const categories = {
   doors: {
-    title: 'Carved Doors & Woodwork',
-    english: 'Carved Doors & Woodwork',
+    title: 'Carved Doors',
+    english: 'Carved Doors',
     singular: 'Carved Door',
     icon: '🔨',
     intro:
@@ -131,9 +131,9 @@ const categories = {
         'Timber window frames, decorative wave mullions, and textured privacy glass.'
   },
   kitchens: {
-    title: 'Kitchen Cupboards & Granite',
-    english: 'Kitchen Cupboards & Granite',
-    singular: 'Kitchen Design',
+    title: 'Kitchen Cupboards',
+    english: 'Kitchen Cupboards',
+    singular: 'Kitchen Cupboard',
     icon: '🍽️',
     intro:
         'Custom modular kitchen cupboards, solid timber cabinetry, and precision-cut kitchen granite countertops with undermount sink fittings.'
@@ -163,8 +163,8 @@ const categories = {
         'Handcrafted solid timber beds, carved pooja shrines, display cabinets, and custom woodwork built to last.'
   },
   'tv-units': {
-    title: 'TV Stands & Feature Walls',
-    english: 'TV Stand & Feature Walls',
+    title: 'TV Wall Units',
+    english: 'TV Wall Units',
     singular: 'TV Unit',
     icon: '🖥',
     intro:
@@ -502,9 +502,9 @@ function homePage() {
       alt: 'Modern fitted bedroom suite in soft teal with mirrored closet door and matching bedhead storage'
     },
     gypsum: {
-      code: 'GY-005',
-      image: 'gypsum-classic-hall-ceiling.jpg',
-      alt: 'Classic perimeter false ceiling with soft warm downlights illuminating hall walls'
+      code: 'GY-002',
+      image: 'gypsum-magenta-gold-tray.jpg',
+      alt: 'Dual-tone magenta and warm gold false ceiling tray with ambient LED strip lighting and downlights'
     },
     furniture: {
       code: 'FN-004',
@@ -545,7 +545,7 @@ function homePage() {
       <span class="category-shade"></span>
       <span class="category-copy">
         <strong>${category.title}</strong>
-        <span class="category-subtitle">${
+        <span class="category-subtitle" lang="ta">${
                 esc(servicesByKey[key]?.tamil || category.english)}</span>
         <span class="category-link">View designs ${icon('arrow')}</span>
       </span>
