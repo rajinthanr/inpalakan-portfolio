@@ -4,6 +4,9 @@
   const count = document.querySelector('#visible-count');
   const searchInput = document.querySelector('[data-gallery-search]');
   const emptyState = document.querySelector('.empty-state');
+  const samplePatternSections = [
+    ...document.querySelectorAll('[data-sample-patterns]')
+  ];
   let currentCategory = 'all';
   let currentQuery = '';
 
@@ -21,6 +24,11 @@
     });
     if (count) count.textContent = String(visible);
     if (emptyState) emptyState.hidden = visible > 0;
+    samplePatternSections.forEach(section => {
+      const visibleSamples =
+          section.querySelectorAll('.project-card:not([hidden])').length;
+      section.hidden = visibleSamples === 0;
+    });
   }
 
   function selectCategory(category, updateUrl = false) {

@@ -9,6 +9,53 @@ const projects =
     JSON.parse(await readFile(join(root, 'data/projects.json'), 'utf8'));
 const baseUrl = (process.env.PUBLIC_BASE_URL || '').replace(/\/$/, '');
 
+const doorPatterns = [
+  ['SP-001', 'Floral vine carving', '01-floral-vine.png'],
+  ['SP-002', 'Vertical slat grid', '01-vertical-slat-grid.png'],
+  ['SP-003', 'Circular geometry', '02-circular-geometry.png'],
+  ['SP-004', 'Horizontal slat bands', '02-horizontal-slat-bands.png'],
+  ['SP-005', 'Peacock heritage entrance', '02-peacock-heritage-double-door.jpg'],
+  ['SP-006', 'Circular medallion entrance', '03-circular-medallion-double-door.jpg'],
+  ['SP-007', 'Mixed slat rails', '03-mixed-slat-rails.png'],
+  ['SP-008', 'Peacock heritage carving', '03-peacock-heritage.png'],
+  ['SP-009', 'Modular slat single door', '04-modular-slat-single.png'],
+  ['SP-010', 'Arched classic entrance', '05-arched-classic.png'],
+  ['SP-011', 'Diamond slat bays', '05-diamond-slat-bays.png'],
+  ['SP-012', 'Arched classic double door', '06-arched-classic-double-door.jpg'],
+  ['SP-013', 'Brick-bond slats', '06-brick-bond-slats.png'],
+  ['SP-014', 'Framed vertical slats', '06-framed-vertical-slats.png'],
+  ['SP-015', 'Medallion tiered slats', '07-medallion-tiered-slats.png'],
+  ['SP-016', 'Woven centre slats', '07-woven-center-slats.png'],
+  ['SP-017', 'Arched stepped slats', '08-arched-stepped-slats.png'],
+  ['SP-018', 'Framed chevron slats', '08-framed-chevron-slats.png'],
+  ['SP-019', 'Lotus vertical slats', '09-lotus-vertical-slats.png'],
+  ['SP-020', 'T-rail slat panels', '09-t-rail-slat-panels.png'],
+  ['SP-021', 'Horizontal slats with vine detail', '10-horizontal-slats-vine.png'],
+  ['SP-022', 'Mixed module single door', '10-mixed-module-single.png'],
+  ['SP-023', 'Teak multi-panel divider rails', '18-teak-multi-panel-divider-rails.jpg']
+].map(([code, title, image]) => ({
+  code, title, image, category: 'doors',
+  alt: `Sample door pattern: ${title}`
+}));
+
+const kitchenPatterns = [
+  ['KS-001', 'Champagne metallic L-shape', '01-champagne-metallic-l-shape.png'],
+  ['KS-002', 'Graphite metallic U-shape', '02-graphite-metallic-u-shape.png'],
+  ['KS-003', 'Sage metallic galley', '03-sage-metallic-galley.png'],
+  ['KS-004', 'Pearl silver metallic L-shape', '04-pearl-silver-metallic-l-shape.png'],
+  ['KS-005', 'Bronze metallic peninsula', '05-bronze-metallic-peninsula.png'],
+  ['KS-006', 'Midnight blue metallic kitchen', '06-midnight-blue-metallic.png'],
+  ['KS-007', 'Rose-gold and charcoal metallic', '07-rose-gold-charcoal-metallic.png'],
+  ['KS-008', 'Pearl white metallic galley', '08-pearl-white-metallic-galley.png'],
+  ['KS-009', 'Teal metallic corner kitchen', '09-teal-metallic-corner.png'],
+  ['KS-010', 'Gunmetal and champagne island', '10-gunmetal-champagne-island.png']
+].map(([code, title, image]) => ({
+  code, title, image, category: 'kitchens',
+  alt: `Sample kitchen cupboard pattern: ${title}`
+}));
+
+const samplePatterns = [...doorPatterns, ...kitchenPatterns];
+
 const categories = {
   doors: {
     title: 'Carved Doors & Woodwork',
@@ -234,6 +281,17 @@ function generatePlaylist(prefix = '') {
       });
     });
   });
+  samplePatterns.forEach(pattern => list.push({
+    code: pattern.code,
+    category: pattern.category,
+    title: pattern.title,
+    src: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
+    rawSrc: pattern.image,
+    label: pattern.category === 'doors' ? 'Sample door pattern' : 'Sample kitchen cupboard pattern',
+    alt: pattern.alt,
+    url: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
+    whatsapp: whatsappHref(pattern.code)
+  }));
   return list;
 }
 
@@ -333,6 +391,28 @@ function card(project, prefix = '', index = 0) {
       </span>
       <span class="card-code">${esc(project.code)}</span>
     </a>
+  </article>`;
+}
+
+function patternCard(pattern, index = 0) {
+  const type = pattern.category === 'doors' ? 'door' : 'kitchen cupboard';
+  const image = `images/concepts/${pattern.category}/${pattern.image}`;
+  const keywords = `${pattern.code} ${pattern.title} sample pattern ${type}`;
+  return `<article class="project-card sample-pattern-card" data-category="${pattern.category}" data-code="${esc(pattern.code)}" data-keywords="${esc(keywords)}">
+    <div class="card-image-wrap">
+      <button class="card-image sample-pattern-image" type="button" aria-label="View sample pattern ${esc(pattern.code)} full screen" data-open-lightbox="${esc(pattern.code)}">
+        <img src="${image}" alt="${esc(pattern.alt)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">
+        <span class="ai-generated-badge">Sample</span>
+      </button>
+      <button class="card-expand-btn" type="button" aria-label="View full screen ${esc(pattern.code)}" data-open-lightbox="${esc(pattern.code)}" title="Full screen">⛶</button>
+    </div>
+    <div class="card-meta">
+      <span class="card-meta-text">
+        <strong class="card-title">${esc(pattern.title)}</strong>
+        <span class="card-category">Sample ${type} pattern</span>
+      </span>
+      <span class="card-code">${esc(pattern.code)}</span>
+    </div>
   </article>`;
 }
 
@@ -488,6 +568,7 @@ function homePage() {
 }
 
 function galleryPage() {
+  const totalGalleryItems = projects.length + samplePatterns.length;
   const body = `<section class="page-hero shell">
     <p class="eyebrow">OUR COMPLETED WORK</p>
     <h1>Choose a design<br><em>you like.</em></h1>
@@ -497,7 +578,7 @@ function galleryPage() {
     <div class="gallery-toolbar">
       <div class="filters" role="group" aria-label="Filter designs">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
-          All <span>${projects.length}</span>
+          All <span>${totalGalleryItems}</span>
         </button>
         ${
       Object.entries(categories)
@@ -506,7 +587,8 @@ function galleryPage() {
           <button class="filter" type="button" data-filter="${
                   key}" aria-pressed="false">
             ${category.icon} ${category.title} <span>${
-                  projects.filter(p => p.category === key).length}</span>
+                  projects.filter(p => p.category === key).length +
+                  samplePatterns.filter(p => p.category === key).length}</span>
           </button>
         `).join('')}
       </div>
@@ -514,11 +596,29 @@ function galleryPage() {
         <input class="gallery-search" type="search" placeholder="Search designs, for example DR-004" aria-label="Search designs" data-gallery-search>
       </div>
       <p class="gallery-count" aria-live="polite"><span id="visible-count">${
-      projects.length}</span> designs</p>
+      totalGalleryItems}</span> designs</p>
     </div>
     <div class="project-grid gallery-grid">
       ${projects.map((p, i) => card(p, '', i)).join('')}
     </div>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">DESIGN INSPIRATION</p><h2 id="sample-patterns-title">Sample door patterns.</h2></div>
+        <p>Reference patterns for discussing a similar custom door. Ask us how a pattern can be adapted for your entrance.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${doorPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-kitchen-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">DESIGN INSPIRATION</p><h2 id="sample-kitchen-patterns-title">Sample kitchen patterns.</h2></div>
+        <p>Metallic-painted cupboard references with clean single-board slab doors and no bevelled profiles. Ask us how a finish and layout can be adapted for your kitchen.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${kitchenPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
     <p class="empty-state" hidden>No designs match your search or filter.</p>
   </section>
   <section class="gallery-note shell">
@@ -669,6 +769,10 @@ assertContent();
 await rm(dist, {recursive: true, force: true});
 await mkdir(join(dist, 'projects'), {recursive: true});
 await cp(join(root, 'public'), dist, {recursive: true});
+await mkdir(join(dist, 'images/concepts/doors'), {recursive: true});
+await cp(join(root, 'references/door-patterns'), join(dist, 'images/concepts/doors'), {recursive: true});
+await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
+await cp(join(root, 'references/kitchen-patterns'), join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await writeFile(join(dist, 'index.html'), homePage());
