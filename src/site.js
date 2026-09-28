@@ -126,7 +126,7 @@
         }
       }));
 
-  // Fullscreen Lightbox & Slider Engine
+  // Fullscreen viewer with collection-aware navigation and touch gestures.
   const lightboxModal = document.querySelector('#fullscreen-lightbox');
   const playlistEl = document.querySelector('#catalog-playlist');
 
@@ -134,110 +134,145 @@
     let fullPlaylist = [];
     try {
       fullPlaylist = JSON.parse(playlistEl.textContent);
-    } catch (e) {
-      console.error('Failed to parse catalog playlist', e);
+    } catch (error) {
+      console.error('Failed to parse catalog playlist', error);
     }
 
     let activePlaylist = fullPlaylist;
     let currentIndex = 0;
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let lastTap = 0;
+    let tapTimer = null;
 
     const lbImg = lightboxModal.querySelector('#lb-image');
     const lbCode = lightboxModal.querySelector('#lb-code');
     const lbCounter = lightboxModal.querySelector('#lb-counter');
     const lbCaption = lightboxModal.querySelector('#lb-caption');
     const lbCategory = lightboxModal.querySelector('#lb-category');
-    const lbDetailsLink = lightboxModal.querySelector('#lb-details-link');
     const lbWhatsappBtn = lightboxModal.querySelector('#lb-whatsapp-btn');
+    const lbShareBtn = lightboxModal.querySelector('#lb-share-btn');
     const lbPrevBtn = lightboxModal.querySelector('#lb-prev-btn');
     const lbNextBtn = lightboxModal.querySelector('#lb-next-btn');
     const lbCloseBtn = lightboxModal.querySelector('#lb-close-btn');
     const lbStage = lightboxModal.querySelector('.lightbox-stage');
     const lbBackdrop = lightboxModal.querySelector('.lightbox-backdrop');
+    const lbThumbnails = lightboxModal.querySelector('#lb-thumbnails');
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const distance = touches => Math.hypot(
+        touches[0].clientX - touches[1].clientX,
+        touches[0].clientY - touches[1].clientY);
+
+    function applyTransform(animate = false) {
+      lbImg.classList.toggle('is-zoomed', scale > 1);
+      lbImg.classList.toggle('is-resetting', animate);
+      lbImg.style.transform =
+          `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
+      if (animate) window.setTimeout(() => lbImg.classList.remove('is-resetting'), 220);
+    }
+
+    function resetZoom(animate = false) {
+      scale = 1;
+      translateX = 0;
+      translateY = 0;
+      applyTransform(animate);
+    }
+
+    function toggleControls() {
+      lightboxModal.classList.toggle('controls-hidden');
+    }
 
     function preloadAdjacent() {
-      if (!activePlaylist.length) return;
-      const nextIdx = (currentIndex + 1) % activePlaylist.length;
-      const prevIdx =
-          (currentIndex - 1 + activePlaylist.length) % activePlaylist.length;
-      new Image().src = activePlaylist[nextIdx].src;
-      new Image().src = activePlaylist[prevIdx].src;
+      if (activePlaylist.length < 2) return;
+      new Image().src = activePlaylist[(currentIndex + 1) % activePlaylist.length].src;
+      new Image().src = activePlaylist[(currentIndex - 1 + activePlaylist.length) % activePlaylist.length].src;
+    }
+
+    function renderThumbnails() {
+      if (!lbThumbnails) return;
+      lbThumbnails.innerHTML = activePlaylist.map((item, index) => `
+        <button class="lb-thumb${index === currentIndex ? ' is-active' : ''}" type="button" data-lb-index="${index}" aria-label="View ${item.code}${item.label ? `, ${item.label}` : ''}">
+          <img src="${item.src}" alt="" loading="lazy">
+        </button>`).join('');
+      lbThumbnails.querySelectorAll('[data-lb-index]').forEach(button => {
+        button.addEventListener('click', event => {
+          event.stopPropagation();
+          currentIndex = Number(button.dataset.lbIndex);
+          renderSlide();
+        });
+      });
+      lbThumbnails.querySelector('.is-active')?.scrollIntoView(
+          {behavior: 'smooth', block: 'nearest', inline: 'center'});
     }
 
     function renderSlide(direction = '') {
       if (!activePlaylist.length) return;
+      resetZoom();
       const item = activePlaylist[currentIndex];
-
       if (direction) {
         lbImg.classList.remove('is-sliding-next', 'is-sliding-prev');
         void lbImg.offsetWidth;
         lbImg.classList.add(
             direction === 'next' ? 'is-sliding-next' : 'is-sliding-prev');
       }
-
       lbImg.src = item.src;
       lbImg.alt = item.alt || item.title || item.code;
       lbCode.textContent = item.code;
-      lbCounter.textContent = `${currentIndex + 1} of ${activePlaylist.length}`;
-      lbCaption.textContent =
-          item.label ? `${item.title} (${item.label})` : item.title;
-      lbCategory.textContent = (item.category || '').toUpperCase();
+      lbCounter.textContent = `${currentIndex + 1} / ${activePlaylist.length}`;
+      lbCaption.textContent = item.title;
+      lbCategory.textContent = `${item.collection === 'sample' ? 'Sample · ' : ''}${(item.category || '').replace('-', ' ')}`;
 
-      if (lbDetailsLink) {
-        lbDetailsLink.href = item.url;
-      }
-
+      const itemPageUrl = new URL(item.url, window.location.href).href;
       if (lbWhatsappBtn) {
-        const fullUrl = new URL(item.whatsapp);
-        const itemPageUrl = new URL(item.url, window.location.href).href;
-        const msg =
-            `Hello Inpalakan Timbers, I am interested in design ${item.code} (${
-                item.label ||
-                'full view'}) from your portfolio: ${itemPageUrl}`;
-        fullUrl.searchParams.set('text', msg);
-        lbWhatsappBtn.href = fullUrl.href;
+        const whatsappUrl = new URL(item.whatsapp);
+        whatsappUrl.searchParams.set(
+            'text',
+            `Hello Inpalakan Timbers, I am interested in design ${item.code}${item.label ? ` (${item.label})` : ''}: ${itemPageUrl}`);
+        lbWhatsappBtn.href = whatsappUrl.href;
       }
-
+      if (lbShareBtn) {
+        lbShareBtn.dataset.shareTitle = `${item.code} · ${item.title}`;
+        lbShareBtn.dataset.shareUrl = itemPageUrl;
+      }
+      renderThumbnails();
       preloadAdjacent();
     }
 
     function showNext() {
-      if (activePlaylist.length <= 1) return;
+      if (scale > 1 || activePlaylist.length < 2) return;
       currentIndex = (currentIndex + 1) % activePlaylist.length;
       renderSlide('next');
     }
 
     function showPrev() {
-      if (activePlaylist.length <= 1) return;
-      currentIndex =
-          (currentIndex - 1 + activePlaylist.length) % activePlaylist.length;
+      if (scale > 1 || activePlaylist.length < 2) return;
+      currentIndex = (currentIndex - 1 + activePlaylist.length) % activePlaylist.length;
       renderSlide('prev');
     }
 
+    function findItem(queryValue) {
+      if (!queryValue) return null;
+      const query = queryValue.toLowerCase();
+      return fullPlaylist.find(item =>
+          item.code.toLowerCase() === query ||
+          item.src.toLowerCase().endsWith(query) ||
+          (item.rawSrc && item.rawSrc.toLowerCase() === query));
+    }
+
     function openLightbox(startSrcOrCode, categoryFilter = null) {
-      if (categoryFilter && categoryFilter !== 'all') {
-        const filtered =
-            fullPlaylist.filter(p => p.category === categoryFilter);
-        activePlaylist = filtered.length ? filtered : fullPlaylist;
-      } else {
-        activePlaylist = fullPlaylist;
-      }
-
-      if (!activePlaylist.length) return;
-
-      let targetIndex = -1;
-      if (startSrcOrCode) {
-        const query = startSrcOrCode.toLowerCase();
-        targetIndex = activePlaylist.findIndex(
-            item => item.src.toLowerCase().endsWith(query) ||
-                (item.rawSrc && item.rawSrc.toLowerCase() === query));
-        if (targetIndex === -1) {
-          targetIndex = activePlaylist.findIndex(
-              item => item.code.toLowerCase() === query);
-        }
-      }
-
-      currentIndex = targetIndex >= 0 ? targetIndex : 0;
+      const selected = findItem(startSrcOrCode) || fullPlaylist[0];
+      if (!selected) return;
+      const category = categoryFilter && categoryFilter !== 'all' ?
+          categoryFilter : selected.category;
+      activePlaylist = fullPlaylist.filter(item =>
+          item.category === category && item.collection === selected.collection);
+      if (!activePlaylist.length) activePlaylist = [selected];
+      currentIndex = Math.max(0, activePlaylist.findIndex(item =>
+          item.src === selected.src && item.code === selected.code));
       lightboxModal.hidden = false;
+      lightboxModal.classList.remove('controls-hidden');
       requestAnimationFrame(() => {
         lightboxModal.classList.add('is-open');
         document.body.classList.add('lightbox-open');
@@ -246,105 +281,150 @@
     }
 
     function closeLightbox() {
-      lightboxModal.classList.remove('is-open');
+      resetZoom();
+      lightboxModal.classList.remove('is-open', 'controls-hidden');
       document.body.classList.remove('lightbox-open');
       window.setTimeout(() => {
-        if (!lightboxModal.classList.contains('is-open')) {
-          lightboxModal.hidden = true;
-        }
+        if (!lightboxModal.classList.contains('is-open')) lightboxModal.hidden = true;
       }, 250);
     }
 
-    if (lbNextBtn)
-      lbNextBtn.addEventListener('click', e => {
-        e.stopPropagation();
-        showNext();
-      });
-    if (lbPrevBtn)
-      lbPrevBtn.addEventListener('click', e => {
-        e.stopPropagation();
-        showPrev();
-      });
-    if (lbCloseBtn) lbCloseBtn.addEventListener('click', closeLightbox);
-    if (lbBackdrop) lbBackdrop.addEventListener('click', closeLightbox);
+    lbNextBtn?.addEventListener('click', event => {
+      event.stopPropagation();
+      showNext();
+    });
+    lbPrevBtn?.addEventListener('click', event => {
+      event.stopPropagation();
+      showPrev();
+    });
+    lbCloseBtn?.addEventListener('click', closeLightbox);
+    lbBackdrop?.addEventListener('click', closeLightbox);
+    lbShareBtn?.addEventListener('click', async event => {
+      event.stopPropagation();
+      const title = lbShareBtn.dataset.shareTitle;
+      const url = lbShareBtn.dataset.shareUrl;
+      try {
+        if (navigator.share) await navigator.share({title, url});
+        else if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(url);
+        else window.prompt('Copy this design link:', url);
+      } catch (error) {
+        if (error.name !== 'AbortError') console.error('Could not share this design', error);
+      }
+    });
 
-    // Keyboard controls
-    window.addEventListener('keydown', e => {
+    window.addEventListener('keydown', event => {
       if (!lightboxModal.classList.contains('is-open')) return;
-      if (e.key === 'ArrowRight' || e.key === ' ') {
-        e.preventDefault();
+      if (event.key === 'ArrowRight' || event.key === ' ') {
+        event.preventDefault();
         showNext();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         showPrev();
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
         closeLightbox();
       }
     });
 
-    // Touch Swipe gestures for phones
     if (lbStage) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchDeltaX = 0;
-      let touchDeltaY = 0;
+      let startX = 0;
+      let startY = 0;
+      let deltaX = 0;
+      let deltaY = 0;
+      let startTranslateX = 0;
+      let startTranslateY = 0;
+      let pinchDistance = 0;
+      let pinchScale = 1;
+      let pinching = false;
 
-      lbStage.addEventListener('touchstart', e => {
-        if (e.touches.length === 1) {
-          touchStartX = e.touches[0].clientX;
-          touchStartY = e.touches[0].clientY;
-          touchDeltaX = 0;
-          touchDeltaY = 0;
+      lbStage.addEventListener('touchstart', event => {
+        if (event.touches.length === 2) {
+          pinching = true;
+          pinchDistance = distance(event.touches);
+          pinchScale = scale;
+          clearTimeout(tapTimer);
+        } else if (event.touches.length === 1) {
+          startX = event.touches[0].clientX;
+          startY = event.touches[0].clientY;
+          deltaX = 0;
+          deltaY = 0;
+          startTranslateX = translateX;
+          startTranslateY = translateY;
         }
       }, {passive: true});
 
-      lbStage.addEventListener('touchmove', e => {
-        if (e.touches.length === 1) {
-          touchDeltaX = e.touches[0].clientX - touchStartX;
-          touchDeltaY = e.touches[0].clientY - touchStartY;
-        }
-      }, {passive: true});
-
-      lbStage.addEventListener('touchend', e => {
-        const absX = Math.abs(touchDeltaX);
-        const absY = Math.abs(touchDeltaY);
-
-        if (absX > 35 && absX > absY) {
-          if (touchDeltaX < 0) {
-            showNext();
-          } else {
-            showPrev();
+      lbStage.addEventListener('touchmove', event => {
+        if (event.touches.length === 2 && pinching) {
+          event.preventDefault();
+          scale = clamp(pinchScale * distance(event.touches) / pinchDistance, 1, 4);
+          if (scale === 1) translateX = translateY = 0;
+          applyTransform();
+        } else if (event.touches.length === 1) {
+          deltaX = event.touches[0].clientX - startX;
+          deltaY = event.touches[0].clientY - startY;
+          if (scale > 1) {
+            event.preventDefault();
+            translateX = startTranslateX + deltaX;
+            translateY = startTranslateY + deltaY;
+            applyTransform();
           }
-        } else if (absY > 75 && absY > absX) {
-          closeLightbox();
         }
+      }, {passive: false});
+
+      lbStage.addEventListener('touchend', event => {
+        if (pinching) {
+          if (event.touches.length < 2) pinching = false;
+          if (scale < 1.08) resetZoom(true);
+          return;
+        }
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+        if (scale > 1) return;
+        if (absX > 45 && absX > absY) {
+          deltaX < 0 ? showNext() : showPrev();
+        } else if (deltaY > 85 && absY > absX) {
+          closeLightbox();
+        } else if (absX < 10 && absY < 10) {
+          const now = Date.now();
+          if (now - lastTap < 300) {
+            clearTimeout(tapTimer);
+            scale = 2.5;
+            applyTransform(true);
+            lastTap = 0;
+          } else {
+            lastTap = now;
+            tapTimer = window.setTimeout(toggleControls, 260);
+          }
+        }
+      });
+
+      lbStage.addEventListener('dblclick', event => {
+        event.preventDefault();
+        scale = scale > 1 ? 1 : 2.5;
+        if (scale === 1) translateX = translateY = 0;
+        applyTransform(true);
       });
     }
 
-    // Connect Gallery Card expand buttons
-    document.querySelectorAll('[data-open-lightbox]').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopPropagation();
-        openLightbox(btn.dataset.openLightbox, currentCategory);
+    document.querySelectorAll('[data-open-lightbox]').forEach(trigger => {
+      trigger.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        openLightbox(trigger.dataset.openLightbox, currentCategory);
       });
     });
 
-    // Connect Project Page Main Image Click ("Click again to view full screen")
-    const fullscreenTrigger =
-        document.querySelector('[data-fullscreen-trigger]');
+    const fullscreenTrigger = document.querySelector('[data-fullscreen-trigger]');
     if (fullscreenTrigger) {
       fullscreenTrigger.addEventListener('click', () => {
-        const cat = fullscreenTrigger.dataset.projectCategory;
-        const currentSrc =
-            activeDetailImg ? activeDetailImg.src.split('/').pop() : null;
-        openLightbox(currentSrc || fullscreenTrigger.dataset.projectCode, cat);
+        const currentSrc = activeDetailImg ? activeDetailImg.src.split('/').pop() : null;
+        openLightbox(
+            currentSrc || fullscreenTrigger.dataset.projectCode,
+            fullscreenTrigger.dataset.projectCategory);
       });
-
-      fullscreenTrigger.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
+      fullscreenTrigger.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
           fullscreenTrigger.click();
         }
       });

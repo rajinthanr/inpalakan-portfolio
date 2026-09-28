@@ -308,6 +308,8 @@ function generatePlaylist(prefix = '') {
       list.push({
         code: project.code,
         category: project.category,
+        collection: 'work',
+        group: project.code,
         title: project.title,
         src: `${prefix}${projectImagePath(project, v.src)}`,
         rawSrc: v.src,
@@ -321,6 +323,8 @@ function generatePlaylist(prefix = '') {
   samplePatterns.forEach(pattern => list.push({
     code: pattern.code,
     category: pattern.category,
+    collection: 'sample',
+    group: pattern.code,
     title: pattern.title,
     src: `${prefix}images/concepts/${pattern.category}/${pattern.image}`,
     rawSrc: pattern.image,
@@ -375,7 +379,6 @@ function layout({
         <span id="lb-counter" class="lb-counter"></span>
       </div>
       <div class="lightbox-header-actions">
-        <a id="lb-details-link" class="lb-details-link" href="#">Open details ↗</a>
         <button id="lb-close-btn" class="lb-close-btn" type="button" aria-label="Close full screen viewer (Esc)">✕</button>
       </div>
     </div>
@@ -386,14 +389,18 @@ function layout({
       </div>
       <button id="lb-next-btn" class="lb-nav-btn lb-next" type="button" aria-label="Next image (Right arrow)">›</button>
     </div>
-    <div class="lightbox-footer">
+    <div class="lightbox-bottom-sheet">
       <div class="lightbox-info">
         <p id="lb-caption" class="lb-caption"></p>
         <span id="lb-category" class="lb-category"></span>
       </div>
-      <a id="lb-whatsapp-btn" class="button button-whatsapp lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-        Chat on WhatsApp <span aria-hidden="true">💬</span>
-      </a>
+      <div id="lb-thumbnails" class="lb-thumbnails" aria-label="Images in this collection"></div>
+      <div class="lightbox-actions">
+        <a id="lb-whatsapp-btn" class="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          Ask about this design on WhatsApp
+        </a>
+        <button id="lb-share-btn" class="lb-share-btn" type="button" aria-label="Share this design" title="Share">↗</button>
+      </div>
     </div>
   </div>
   <script id="catalog-playlist" type="application/json">${playlistJson}</script>
@@ -413,24 +420,22 @@ function card(project, prefix = '', index = 0) {
   return `<article class="project-card" data-category="${project.category}" data-code="${
       esc(project.code)}" data-keywords="${esc(searchKeywords)}">
     <div class="card-image-wrap">
-      <a class="card-image" href="${url}" aria-label="Open ${
-      esc(project.title)} (${esc(project.code)})">
+      <a class="card-image" href="${url}" data-open-lightbox="${esc(project.code)}" aria-label="View ${
+      esc(project.title)} (${esc(project.code)}) full screen">
       <img src="${imageUrl(project, prefix)}" alt="${
       esc(project.alt)}" loading="${
       index < 4 ? 'eager' : 'lazy'}" decoding="async">
       ${viewsBadge}
+      <span class="card-image-gradient" aria-hidden="true"></span>
+      <span class="card-overlay">
+        <strong class="card-title">${esc(project.title)}</strong>
+        <span class="card-overlay-row"><span>${esc(category.english)}</span><span class="card-code">${esc(project.code)}</span></span>
+      </span>
       </a>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${
       esc(project.code)}" data-open-lightbox="${
       esc(project.code)}" title="Full screen">⛶</button>
     </div>
-    <a class="card-meta" href="${url}">
-      <span class="card-meta-text">
-        <strong class="card-title">${esc(project.title)}</strong>
-        <span class="card-category">${esc(category.english)}</span>
-      </span>
-      <span class="card-code">${esc(project.code)}</span>
-    </a>
   </article>`;
 }
 
@@ -445,15 +450,13 @@ function patternCard(pattern, index = 0) {
       <button class="card-image sample-pattern-image" type="button" aria-label="View sample pattern ${esc(pattern.code)} full screen" data-open-lightbox="${esc(pattern.code)}">
         <img src="${image}" alt="${esc(pattern.alt)}" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async">
         <span class="ai-generated-badge">Sample</span>
+        <span class="card-image-gradient" aria-hidden="true"></span>
+        <span class="card-overlay">
+          <strong class="card-title">${esc(pattern.title)}</strong>
+          <span class="card-overlay-row"><span>Sample ${type} pattern</span><span class="card-code">${esc(pattern.code)}</span></span>
+        </span>
       </button>
       <button class="card-expand-btn" type="button" aria-label="View full screen ${esc(pattern.code)}" data-open-lightbox="${esc(pattern.code)}" title="Full screen">⛶</button>
-    </div>
-    <div class="card-meta">
-      <span class="card-meta-text">
-        <strong class="card-title">${esc(pattern.title)}</strong>
-        <span class="card-category">Sample ${type} pattern</span>
-      </span>
-      <span class="card-code">${esc(pattern.code)}</span>
     </div>
   </article>`;
 }
