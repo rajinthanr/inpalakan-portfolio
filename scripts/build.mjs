@@ -111,20 +111,12 @@ const categories = {
         'Timber window frames, decorative wave mullions, and textured privacy glass.'
   },
   kitchens: {
-    title: 'Kitchen Cupboards',
-    english: 'Kitchen Cupboards',
-    singular: 'Kitchen Cupboard',
+    title: 'Kitchen Cupboards & Granite',
+    english: 'Kitchen Cupboards & Granite',
+    singular: 'Kitchen Design',
     icon: '🍽️',
     intro:
-        'Custom modular and solid timber kitchen cupboards with overhead storage, cutlery drawers, and durable finishes.'
-  },
-  granite: {
-    title: 'Kitchen Granite Fitting',
-    english: 'Kitchen Granite Fitting',
-    singular: 'Granite Countertop',
-    icon: '💎',
-    intro:
-        'Precision-cut kitchen granite countertops, polished bevel edges, and seamless undermount sink installations.'
+        'Custom modular kitchen cupboards, solid timber cabinetry, and precision-cut kitchen granite countertops with undermount sink fittings.'
   },
   bedrooms: {
     title: 'Bedroom Cupboards',
@@ -473,14 +465,9 @@ function homePage() {
       alt: 'Three-panel timber window with textured glass and safety grille'
     },
     kitchens: {
-      code: 'KC-021',
-      image: 'kitchen-breakfast-bar-island-pendant-lights.jpg',
-      alt: 'Modern kitchen island with cabinetry and pendant lighting'
-    },
-    granite: {
-      code: 'GR-001',
-      image: 'granite-polished-black-kitchen-counter.jpg',
-      alt: 'Polished black granite countertop fitted to kitchen cabinetry'
+      code: 'GR-008',
+      image: 'granite-mirror-black-undermount-double-sink.jpg',
+      alt: 'Mirror-polished black granite countertop with undermount double-bowl stainless steel sink and gooseneck faucet'
     },
     bedrooms: {
       code: 'CB-001',
@@ -542,7 +529,7 @@ function homePage() {
           <span class="hero-name-ta" lang="ta">இன்பழகன் கைத்தொழிலகம்</span>
         </h1>
         <p class="hero-since"><span></span> SINCE 2006 <span></span></p>
-        <p class="hero-lead">Custom carved doors, windows, modular kitchens, granite fitting, gypsum ceilings, and custom furniture. Explore our work, find a design code, and connect with our workshop.</p>
+        <p class="hero-lead">Custom carved doors, windows, modular kitchens &amp; granite worktops, gypsum ceilings, and custom furniture. Explore our work, find a design code, and connect with our workshop.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="gallery.html">View Our Work ${
       icon('arrow')}</a>
@@ -681,7 +668,7 @@ function galleryPage() {
   return layout({
     title: 'Portfolio & Designs',
     description:
-        'Browse completed Inpalakan Timbers doors, windows, kitchens, granite, ceilings, and furniture. Every design has a shareable page and a WhatsApp enquiry code.',
+        'Browse completed Inpalakan Timbers doors, windows, kitchens & granite worktops, ceilings, and furniture. Every design has a shareable page and a WhatsApp enquiry code.',
     body,
     active: 'work',
     path: 'gallery.html'

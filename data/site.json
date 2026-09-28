@@ -18,9 +18,9 @@
     {
       "key": "kitchens",
       "icon": "🍽️",
-      "title": "Kitchen Cupboards",
-      "tamil": "சமையலறை அலுமாரிகள்",
-      "description": "Custom modular and L-shaped kitchen cupboards with overhead storage, cutlery drawers, and moisture-resistant finishes."
+      "title": "Kitchen Cupboards & Granite",
+      "tamil": "சமையலறை அலுமாரிகள் & கிரானைட் கல் பதிக்கும் வேலைகள்",
+      "description": "Custom modular kitchen cupboards, solid timber pantry units, and heavy-duty precision-cut kitchen granite countertops with undermount sink fitting."
     },
     {
       "key": "bedrooms",
@@ -56,13 +56,6 @@
       "title": "Carved Doors & Woodwork",
       "tamil": "மர அலங்காரக் கதவுகள் & வேலைப்பாடுகள்",
       "description": "Deeply carved traditional temple and entrance double doors, Ganesha pooja doors, floral vines, and contemporary inlay doors."
-    },
-    {
-      "key": "granite",
-      "icon": "💎",
-      "title": "Kitchen Granite Fitting",
-      "tamil": "Kitchen கிரானைட் கல் பதிக்கும் வேலைகள்",
-      "description": "Heavy-duty kitchen granite countertop cutting, edge-beveling, undermount sink fitting, and splashback installation."
     },
     {
       "key": "tv-units",
