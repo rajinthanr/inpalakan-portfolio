@@ -11,7 +11,7 @@ const baseUrl = (process.env.PUBLIC_BASE_URL || '').replace(/\/$/, '');
 
 const categories = {
   doors: {
-    title: 'மர அலங்கார வேலைப்பாடுகள்',
+    title: 'Carved Doors & Woodwork',
     english: 'Carved Doors & Woodwork',
     singular: 'Carved Door',
     icon: '🔨',
@@ -35,7 +35,7 @@ const categories = {
         'Custom modular and solid timber kitchen cupboards with overhead storage, cutlery drawers, and durable finishes.'
   },
   granite: {
-    title: 'Kitchen கிரானைட் கல் பதித்தல்',
+    title: 'Kitchen Granite Fitting',
     english: 'Kitchen Granite Fitting',
     singular: 'Granite Countertop',
     icon: '💎',
@@ -51,7 +51,7 @@ const categories = {
         'Fitted floor-to-ceiling wardrobes, dressing mirrors, integrated closet suites, and under-bed storage drawers.'
   },
   gypsum: {
-    title: 'Gypsum Ceiling வேலைகள்',
+    title: 'Gypsum Ceilings',
     english: 'Gypsum Ceilings',
     singular: 'Gypsum Ceiling',
     icon: '🔲',
@@ -67,7 +67,7 @@ const categories = {
         'Handcrafted solid timber beds, carved pooja shrines, display cabinets, and custom woodwork built to last.'
   },
   'tv-units': {
-    title: 'TV Stand & பின்னணி வேலைகள்',
+    title: 'TV Stands & Feature Walls',
     english: 'TV Stand & Feature Walls',
     singular: 'TV Unit',
     icon: '🖥',
@@ -179,7 +179,7 @@ function footer(prefix = '') {
           prefix)}" alt="Inpalakan Timbers logo" width="56" height="56" loading="lazy">
           <span class="footer-brand-text">INPALAKAN <small>TIMBERS</small></span>
         </a>
-        <p class="footer-tamil-brand">இன்பழகன் கைத்தொழிலகம் · Vaavini Veethi, Valvettithurai</p>
+        <p class="footer-tamil-brand">Vaavini Veethi, Valvettithurai</p>
         <div class="footer-links">
           <a href="${prefix}gallery.html">Portfolio</a>
           <a href="${prefix}index.html#services">Services</a>
@@ -196,7 +196,7 @@ function footer(prefix = '') {
     <div class="shell footer-bottom">
       <span>© ${
       new Date()
-          .getFullYear()} Inpalakan Timbers (இன்பழகன் கைத்தொழிலகம்). All rights reserved.</span>
+          .getFullYear()} Inpalakan Timbers. All rights reserved.</span>
       <span>Vaavini Veethi, Valvettithurai, Sri Lanka 40000.</span>
     </div>
   </footer>`;
@@ -401,7 +401,7 @@ function homePage() {
           <img class="intro-badge-logo" src="${
       logoUrl()}" alt="Inpalakan Timbers emblem" width="46" height="46" loading="lazy">
           <div>
-            <strong>Inpalakan Timbers (இன்பழகன் கைத்தொழிலகம்)</strong>
+            <strong>Inpalakan Timbers</strong>
             <span>Master craftsmanship · Est. 2006 · Valvettithurai</span>
           </div>
         </div>
@@ -462,7 +462,7 @@ function homePage() {
         <h2>Visit us in<br><em>Valvettithurai.</em></h2>
         <div class="location-card-content">
           <p class="location-address-box">
-            <strong>இன்பழகன் கைத்தொழிலகம் · Inpalakan Timbers</strong><br>
+            <strong>Inpalakan Timbers</strong><br>
             <span>📍 ${esc(site.address)}</span>
           </p>
           <p class="location-serving">

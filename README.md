@@ -4,11 +4,11 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 ## Current catalog
 
-- 48 design entries: 22 doors, 12 windows, and 14 cupboards
-- 81 photographs currently connected to design entries
-- 20 designs with multiple views, such as installation angles, carving details, and interior storage
-- 113 source photographs in `public/images/projects/`; 32 are retained as available source material and are not currently shown
-- 6 featured designs on the home page
+- 74 design entries across doors, windows, bedrooms, kitchens, furniture, gypsum ceilings, TV units, and granite fitting
+- 127 photographs currently connected to design entries
+- 31 designs with multiple views, such as installation angles, carving details, and interior storage
+- 159 source photographs in `public/images/projects/`; 32 are retained as available source material and are not currently shown
+- 14 featured designs on the home page
 
 The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
@@ -38,7 +38,7 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
 | `scratch/` | Local image-import helpers; these are working utilities rather than site runtime files |
 
-The current templates use `logo`, `whatsappNumber`, and `facebookUrl` from `data/site.json`. The name, tagline, address, map, email, album, Tamil-name, and service fields are stored centrally for upcoming template work; editing those fields alone does not yet change the generated page copy.
+The current templates use the logo, contact, location, social, and service fields from `data/site.json`. Service entries may include a Tamil subtitle; all other public-facing site copy is English.
 
 ## Add or update a design
 

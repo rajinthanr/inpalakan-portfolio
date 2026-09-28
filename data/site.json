@@ -1,6 +1,5 @@
 {
   "name": "Inpalakan Timbers",
-  "tamilName": "இன்பழகன் கைத்தொழிலகம்",
   "tagline": "Your vision, our craftsmanship",
   "logo": "images/Others/logo.png",
   "whatsappNumber": "94778380180",
@@ -33,7 +32,7 @@
     {
       "key": "gypsum",
       "icon": "🔲",
-      "title": "Gypsum Ceiling வேலைகள்",
+      "title": "Gypsum Ceilings",
       "tamil": "Gypsum Ceiling வேலைகள்",
       "description": "Architectural false ceilings, modern stepped trays, decorative perimeter coves, and warm LED ambient lighting."
     },
@@ -47,21 +46,21 @@
     {
       "key": "doors",
       "icon": "🔨",
-      "title": "மர அலங்கார வேலைப்பாடுகள்",
+      "title": "Carved Doors & Woodwork",
       "tamil": "மர அலங்காரக் கதவுகள் & வேலைப்பாடுகள்",
       "description": "Deeply carved traditional temple and entrance double doors, Ganesha pooja doors, floral vines, and contemporary inlay doors."
     },
     {
       "key": "granite",
       "icon": "💎",
-      "title": "Kitchen கிரானைட் கல் பதிக்கும் வேலைகள்",
+      "title": "Kitchen Granite Fitting",
       "tamil": "Kitchen கிரானைட் கல் பதிக்கும் வேலைகள்",
       "description": "Heavy-duty kitchen granite countertop cutting, edge-beveling, undermount sink fitting, and splashback installation."
     },
     {
       "key": "tv-units",
       "icon": "🖥",
-      "title": "TV stand மற்றும் பின்னணி அலங்கார வேலைகள்",
+      "title": "TV Stands & Feature Walls",
       "tamil": "TV stand மற்றும் பின்னணி அலங்கார வேலைகள்",
       "description": "Modern TV consoles, timber fluted wall panel backdrops, floating display shelves, and ambient feature walls."
     }

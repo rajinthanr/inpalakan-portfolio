@@ -15,6 +15,7 @@ Build and maintain a mobile-first portfolio for Inpalakan Timbers. Treat `README
 - Optimize every page for phone browsing, touch controls, and fast access to WhatsApp.
 - Keep gallery filters, code search, full-screen viewing, native sharing, and copy-link fallback working.
 - Include the stable design code in each project page and WhatsApp enquiry message.
+- Keep Tamil copy inside the Our Services cards only. Use English for navigation, portfolio categories, company details, location, footer, and all other page copy.
 - Keep generated links relative during local development. Use `PUBLIC_BASE_URL` for canonical and social-preview URLs in hosted builds.
 
 ## Repository workflow
@@ -22,6 +23,6 @@ Build and maintain a mobile-first portfolio for Inpalakan Timbers. Treat `README
 - Edit source files under `data/`, `public/`, `src/`, and `scripts/`; do not hand-edit generated files in `dist/`.
 - Run `npm run build` after catalog, template, style, or script changes.
 - Review the generated home page, gallery, at least one single-image design, and at least one multi-view design.
-- Treat `data/site.json` fields as configuration only when `scripts/build.mjs` actually renders them. The address, map, email, Tamil name, albums, and services are currently stored for planned sections.
+- Treat `data/site.json` fields as configuration only when `scripts/build.mjs` actually renders them.
 - Preserve local work in `scratch/`; its import scripts are development helpers and are not required by the deployed site.
 - Do not publish the site or change the business's external accounts without the user's authorization.
