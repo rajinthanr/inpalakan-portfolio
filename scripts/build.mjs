@@ -223,10 +223,6 @@ const gypsumPatterns = [
 
 const bedroomPatterns = [
   [
-    'BCS-001', 'Solid Ceylon teak & woven cane rattan wardrobe',
-    '01-sl-teak-cane-rattan-wardrobe.jpg'
-  ],
-  [
     'BCS-002', 'Floor-to-ceiling wardrobe with top loft cabinets',
     '02-sl-floor-to-ceiling-loft-wardrobe.jpg'
   ],
@@ -239,28 +235,20 @@ const bedroomPatterns = [
     '04-sl-fitted-bed-suite-overhead-bridge.jpg'
   ],
   [
-    'BCS-005', 'Classical 3-door teak almirah with arched crown',
-    '05-sl-classical-carved-teak-almirah.jpg'
-  ],
-  [
-    'BCS-006', 'Two-tone teak & matte off-white with corner shelves',
+    'BCS-006', 'Two-tone minimalist wardrobe with corner display shelves',
     '06-sl-two-tone-minimalist-corner-shelves.jpg'
   ],
   [
-    'BCS-007', 'Saree & traditional attire internal organization',
+    'BCS-007', 'Saree & traditional attire internal organization layout',
     '07-sl-internal-saree-wardrobe-organization.jpg'
   ],
   [
-    'BCS-008', 'Corner L-shaped fitted wardrobe',
+    'BCS-008', 'Corner L-shaped fitted wardrobe with bi-fold doors',
     '08-sl-corner-l-shaped-fitted-wardrobe.jpg'
   ],
   [
     'BCS-009', 'Student bedroom wardrobe with integrated study desk',
     '09-sl-study-desk-bookshelf-wardrobe.jpg'
-  ],
-  [
-    'BCS-010', 'Modern fluted timber & tinted smoked glass wardrobe',
-    '10-sl-fluted-timber-smoked-glass-wardrobe.jpg'
   ]
 ].map(([code, title, image]) => ({
         code,

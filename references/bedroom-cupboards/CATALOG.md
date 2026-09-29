@@ -39,6 +39,21 @@ A curated catalog of 10 tailored bedroom cupboard and wardrobe concepts specific
 
 ---
 
+## 4. Modern Metallic Paint Finish Wardrobes & Dressing Suites (மெட்டாலிக் வண்ண நவீன அலமாரிகள்)
+
+> [!TIP]
+> **Contemporary 2K Automotive Metallic Paint Finishing**: Using the same multi-layer polyurethane spray-paint technique applied to Inpalakan's modular kitchen cupboards, these non-wood modern designs deliver a seamless satin shimmer, flawless flat-slab surfaces, scratch resistance, and integrated vertical grooming mirrors and granite-topped dressing vanities tailored for Sri Lankan luxury master bedrooms.
+
+| Code | Design Title | Finish, Materials & Hardware | Sri Lankan Living Features & Mirrors | Design Concept |
+| :--- | :--- | :--- | :--- | :--- |
+| **BCS-011** | **Two-Tone Champagne & Graphite Metallic Wardrobe with 4ft × 14in Mirror** <br> *(ஷாம்பெயின் & கிராஃபைட் மெட்டாலிக் அலமாரி & நீள் கண்ணாடி)* | Multi-layer 2K automotive metallic paint on high-density MR board; champagne upper doors, dark graphite lower drawers; black J-pull profile channels | Centered 4-foot tall, 14-inch wide vertical grooming mirror with beveled edges and warm LED halo backlighting; ceiling-height loft storage | `11-sl-champagne-graphite-metallic-wardrobe-mirror.jpg` |
+| **BCS-012** | **Rose-Gold & Charcoal Metallic Suite with Jet Black Granite Vanity** <br> *(ரோஸ்-கோல்ட் மெட்டாலிக் அலமாரி & கருங்கல் அலங்கார மேசை)* | Satin rose-gold metallic wardrobe doors with charcoal metallic side towers; full-extension soft-close Blum runners | Adjoining dressing vanity featuring a 40mm solid Jet Black granite worktop and flush vertical 4ft × 14in beveled grooming mirror | `12-sl-rosegold-charcoal-metallic-granite-vanity.jpg` |
+| **BCS-013** | **Bronze & Pearl-White Metallic Sliding Wardrobe** <br> *(வெண்கல & முத்து-வெள்ளை மெட்டாலிக் வழுக்கும் அலமாரி)* | 3-track heavy-duty bottom-rolling sliding gear, metallic bronze and pearl-white flat slab doors with anti-fingerprint coating | Full-height silver mirror door panel, integrated Tan Brown granite dressing shelf, soft-close velvet accessories drawer | `13-sl-bronze-pearl-metallic-sliding-mirror.jpg` |
+| **BCS-014** | **Metallic Sage Green & Cream Wardrobe with Integrated Desk & Mirror** <br> *(சேஜ் பச்சை மெட்டாலிக் அலமாரி, படிப்பு மேசை & கண்ணாடி)* | Satin sage green metallic base cabinetry, metallic cream overhead cupboards with push-to-open touch latches | Combined 4ft × 14in dressing mirror beside study desk with granite writing pad; ideal for modern guest or student bedrooms | `14-sl-sage-cream-metallic-desk-mirror.jpg` |
+| **BCS-015** | **Midnight Blue & Champagne Metallic Suite with Granite Island** <br> *(மிட்நைட் ப்ளூ & ஷாம்பெயின் மெட்டாலிக் அலமாரி & கருங்கல் தீவு)* | Deep midnight blue metallic wardrobe fronts with champagne metallic trim; warm 3000K vertical recessed LED profile channels | Walk-in / master bedroom suite with central accessory island capped in polished Black Galaxy granite and vertical wall mirror | `15-sl-midnight-blue-champagne-granite-suite.jpg` |
+
+---
+
 ## Technical Specifications & Inpalakan Timbers Standards
 
 - **Primary Timber Options**:
