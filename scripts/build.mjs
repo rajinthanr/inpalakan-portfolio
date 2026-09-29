@@ -75,13 +75,29 @@ const kitchenPatterns = [
   [
     'KS-010', 'Gunmetal and champagne island',
     '10-gunmetal-champagne-island.png'
+  ],
+  [
+    'KS-011', 'Champagne & graphite metallic with Jet Black granite & mirror',
+    '11-sl-champagne-graphite-granite-mirror.jpg'
+  ],
+  [
+    'KS-012', 'Bronze metallic L-shape with Tan Brown granite & mirror',
+    '12-sl-bronze-pearl-tan-brown-granite-mirror.jpg'
+  ],
+  [
+    'KS-013', 'Midnight blue metallic with black granite island & mirror',
+    '13-sl-midnight-blue-black-granite-island-mirror.jpg'
+  ],
+  [
+    'KS-014', 'Metallic sage green U-shape with Black Galaxy granite & mirror',
+    '14-sl-sage-green-black-galaxy-granite-mirror.jpg'
   ]
 ].map(([code, title, image]) => ({
         code,
         title,
         image,
         category: 'kitchens',
-        alt: `Sample kitchen cupboard pattern: ${title}`
+        alt: `Sample metallic kitchen cupboard pattern: ${title}`
       }));
 
 const granitePatterns = [
@@ -205,9 +221,58 @@ const gypsumPatterns = [
         alt: `Sample gypsum ceiling pattern: ${title}`
       }));
 
+const bedroomPatterns = [
+  [
+    'BCS-001', 'Solid Ceylon teak & woven cane rattan wardrobe',
+    '01-sl-teak-cane-rattan-wardrobe.jpg'
+  ],
+  [
+    'BCS-002', 'Floor-to-ceiling wardrobe with top loft cabinets',
+    '02-sl-floor-to-ceiling-loft-wardrobe.jpg'
+  ],
+  [
+    'BCS-003', 'Sliding door wardrobe with mirror & integrated vanity',
+    '03-sl-sliding-mirror-vanity-wardrobe.jpg'
+  ],
+  [
+    'BCS-004', 'Master bedroom suite with overhead bridge cabinets',
+    '04-sl-fitted-bed-suite-overhead-bridge.jpg'
+  ],
+  [
+    'BCS-005', 'Classical 3-door teak almirah with arched crown',
+    '05-sl-classical-carved-teak-almirah.jpg'
+  ],
+  [
+    'BCS-006', 'Two-tone teak & matte off-white with corner shelves',
+    '06-sl-two-tone-minimalist-corner-shelves.jpg'
+  ],
+  [
+    'BCS-007', 'Saree & traditional attire internal organization',
+    '07-sl-internal-saree-wardrobe-organization.jpg'
+  ],
+  [
+    'BCS-008', 'Corner L-shaped fitted wardrobe',
+    '08-sl-corner-l-shaped-fitted-wardrobe.jpg'
+  ],
+  [
+    'BCS-009', 'Student bedroom wardrobe with integrated study desk',
+    '09-sl-study-desk-bookshelf-wardrobe.jpg'
+  ],
+  [
+    'BCS-010', 'Modern fluted timber & tinted smoked glass wardrobe',
+    '10-sl-fluted-timber-smoked-glass-wardrobe.jpg'
+  ]
+].map(([code, title, image]) => ({
+        code,
+        title,
+        image,
+        category: 'bedrooms',
+        alt: `Sample bedroom cupboard pattern: ${title}`
+      }));
+
 const samplePatterns = [
-  ...doorPatterns, ...kitchenPatterns, ...granitePatterns, ...tvUnitPatterns,
-  ...gypsumPatterns
+  ...doorPatterns, ...kitchenPatterns, ...granitePatterns, ...bedroomPatterns,
+  ...tvUnitPatterns, ...gypsumPatterns
 ];
 
 const categories = {
@@ -558,6 +623,7 @@ function patternCard(pattern, index = 0) {
       pattern.category === 'kitchens'       ? (pattern.code.startsWith('GR') ?
                                                    'granite countertop' :
                                                    'kitchen cupboard') :
+      pattern.category === 'bedrooms'       ? 'bedroom cupboard' :
       pattern.category === 'tv-units'       ? 'TV-unit' :
                                               'gypsum ceiling';
   const image = `images/concepts/${pattern.category}/${pattern.image}`;
@@ -974,6 +1040,12 @@ if (existsSync(join(root, 'references/granite-samples'))) {
   await cp(
       join(root, 'references/granite-samples'),
       join(dist, 'images/concepts/kitchens'), {recursive: true});
+}
+await mkdir(join(dist, 'images/concepts/bedrooms'), {recursive: true});
+if (existsSync(join(root, 'references/bedroom-cupboards'))) {
+  await cp(
+      join(root, 'references/bedroom-cupboards'),
+      join(dist, 'images/concepts/bedrooms'), {recursive: true});
 }
 await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
 await cp(
