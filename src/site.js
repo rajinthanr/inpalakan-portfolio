@@ -147,6 +147,7 @@
     const lbCounter = lightboxModal.querySelector('#lb-counter');
     const lbWhatsappBtn = lightboxModal.querySelector('#lb-whatsapp-btn');
     const lbShareBtn = lightboxModal.querySelector('#lb-share-btn');
+    const lbDownloadBtn = lightboxModal.querySelector('#lb-download-btn');
     const lbPrevBtn = lightboxModal.querySelector('#lb-prev-btn');
     const lbNextBtn = lightboxModal.querySelector('#lb-next-btn');
     const lbCloseBtn = lightboxModal.querySelector('#lb-close-btn');
@@ -234,6 +235,11 @@
       if (lbShareBtn) {
         lbShareBtn.dataset.shareTitle = `Inpalakan Timbers · ${item.code}`;
         lbShareBtn.dataset.shareUrl = itemPageUrl;
+      }
+      if (lbDownloadBtn) {
+        const extension = item.src.split('.').pop().split(/[?#]/)[0] || 'jpg';
+        lbDownloadBtn.href = item.src;
+        lbDownloadBtn.download = `${item.code}.${extension}`;
       }
       renderThumbnails();
       preloadAdjacent();

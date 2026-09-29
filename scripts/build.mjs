@@ -381,6 +381,8 @@ function icon(name) {
     return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   if (name === 'share')
     return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 13.5v5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5v-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  if (name === 'download')
+    return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   if (name === 'whatsapp')
     return '<svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .3 0 .4.4l.7 1.7c.1.3.1.4-.1.6l-.6.8c-.2.2-.1.4 0 .6.7 1.2 1.6 2.1 2.9 2.7.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.9c.3.1.3.3.3.5-.1.8-.5 1.5-1.2 1.9-.6.4-1.5.6-2.4.3-1-.3-2.3-.8-3.8-2.1-1.2-1.1-2.1-2.4-2.5-3.4-.5-1.1 0-2.6.4-3.3Z" fill="currentColor"/></svg>';
   if (name === 'map')
@@ -562,9 +564,10 @@ function layout({
       <div id="lb-thumbnails" class="lb-thumbnails" aria-label="Images in this collection"></div>
       <div class="lightbox-actions">
         <a id="lb-whatsapp-btn" class="lb-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-          Ask about this design on WhatsApp
+          ${icon('whatsapp')} <span>Enquire</span>
         </a>
-        <button id="lb-share-btn" class="lb-share-btn" type="button" aria-label="Share this design" title="Share">↗</button>
+        <button id="lb-share-btn" class="lb-round-action" type="button" aria-label="Share this design" title="Share">${icon('share')}</button>
+        <a id="lb-download-btn" class="lb-round-action" href="#" download aria-label="Download this image" title="Download">${icon('download')}</a>
       </div>
     </div>
   </div>

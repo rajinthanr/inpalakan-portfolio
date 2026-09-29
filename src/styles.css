@@ -276,16 +276,19 @@ body.lightbox-open{overflow:hidden;touch-action:none}
 .lb-nav-btn:disabled{opacity:0;pointer-events:none}
 .lb-prev{left:16px}
 .lb-next{right:16px}
-.lightbox-bottom-sheet{position:absolute;left:50%;bottom:max(12px,env(safe-area-inset-bottom));width:min(720px,calc(100% - 24px));transform:translateX(-50%);z-index:20;padding:14px;background:rgba(19,23,20,.62);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.13);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35);transition:opacity .2s,transform .2s}
+.lightbox-bottom-sheet{position:absolute;left:50%;bottom:max(12px,env(safe-area-inset-bottom));width:min(720px,calc(100% - 24px));transform:translateX(-50%);z-index:20;padding:12px;background:rgba(12,16,13,.34);backdrop-filter:blur(24px) saturate(125%);border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.24);transition:opacity .2s,transform .2s}
 .lb-thumbnails{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-inline:contain;padding:1px 0 10px}
 .lb-thumbnails::-webkit-scrollbar{display:none}
 .lb-thumb{flex:0 0 54px;width:54px;height:42px;padding:0;border:1px solid transparent;border-radius:6px;overflow:hidden;background:#151916;opacity:.55;cursor:pointer;transition:opacity .2s,border-color .2s,transform .2s}
 .lb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .lb-thumb.is-active{opacity:1;border-color:#fff;transform:translateY(-1px)}
-.lightbox-actions{display:grid;grid-template-columns:1fr 44px;gap:8px}
-.lb-whatsapp{display:flex;align-items:center;justify-content:center;min-height:44px;background:rgba(37,211,102,.9);color:#0e1e12;font-size:13px;font-weight:750;padding:10px 14px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s}
+.lightbox-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.lb-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;background:rgba(37,211,102,.86);color:#0e1e12;font-size:12px;font-weight:750;padding:0 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;text-decoration:none;transition:background .2s,transform .15s;backdrop-filter:blur(10px)}
+.lb-whatsapp .button-icon{width:17px;height:17px}
 .lb-whatsapp:hover{background:#20ba5a;transform:translateY(-1px)}
-.lb-share-btn{width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.1);color:#fff;font-size:19px;cursor:pointer;backdrop-filter:blur(10px)}
+.lb-round-action{width:40px;height:40px;flex:0 0 40px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);color:#fff;cursor:pointer;backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .2s,transform .15s}
+.lb-round-action:hover{background:rgba(255,255,255,.18);transform:translateY(-1px)}
+.lb-round-action svg{width:18px;height:18px}
 .controls-hidden .lightbox-header{opacity:0;transform:translateY(-12px);pointer-events:none}
 .controls-hidden .lightbox-bottom-sheet{opacity:0;transform:translate(-50%,12px);pointer-events:none}
 .controls-hidden .lb-nav-btn{opacity:0;pointer-events:none}
@@ -301,6 +304,6 @@ body.lightbox-open{overflow:hidden;touch-action:none}
 @media(max-width:760px){.gallery-section{padding-bottom:62px}.gallery-toolbar{border-top:0;padding-top:0;gap:10px;margin-bottom:22px}.gallery-search{min-height:44px;border-radius:7px;padding-inline:13px;background:rgba(255,253,248,.9)}.filters{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:inline proximity;gap:8px;margin-right:-16px;padding:2px 16px 7px 0;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{flex:0 0 auto;min-height:40px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.65);white-space:nowrap;scroll-snap-align:start;line-height:1.2}.filter.is-active{border-color:var(--ink)}.gallery-count{font-size:12px;align-self:flex-start;color:var(--muted)}}
 @media(max-width:520px){.filters{display:flex;grid-template-columns:none}.filter{min-height:40px;padding:9px 13px;white-space:nowrap}.page-hero{padding-bottom:27px}.gallery-toolbar{margin-bottom:18px}}
 @media(max-width:1050px){.gallery-grid .card-image{height:auto;aspect-ratio:4/5}}
-@media(max-width:760px){.gallery-grid .card-image{height:auto;aspect-ratio:4/5}.lightbox-slide{padding:0}.lb-nav-btn{width:38px;height:48px;font-size:25px}.lb-prev{left:7px}.lb-next{right:7px}.lightbox-bottom-sheet{width:calc(100% - 16px);bottom:max(8px,env(safe-area-inset-bottom));padding:11px;border-radius:14px}.lb-thumbnails{padding-bottom:8px}.lb-thumb{flex-basis:48px;width:48px;height:38px}.lightbox-actions{grid-template-columns:1fr 42px}.lb-whatsapp,.lb-share-btn{min-height:42px;height:42px}.lightbox-header{padding-inline:10px}.card-overlay{padding:54px 13px 13px}.card-overlay .card-title{font-size:17px}.card-expand-btn{opacity:1;background:rgba(20,25,22,.4)}}
-@media(max-width:520px){.gallery-grid .card-image{height:auto;aspect-ratio:4/5}.lightbox-bottom-sheet{background:rgba(16,19,17,.58)}.lb-nav-btn{opacity:.75}.card-overlay .card-title{font-size:20px}}
+@media(max-width:760px){.gallery-grid .card-image{height:auto;aspect-ratio:4/5}.lightbox-slide{padding:0}.lb-nav-btn{width:38px;height:48px;font-size:25px}.lb-prev{left:7px}.lb-next{right:7px}.lightbox-bottom-sheet{width:calc(100% - 16px);bottom:max(8px,env(safe-area-inset-bottom));padding:10px;border-radius:16px}.lb-thumbnails{padding-bottom:8px}.lb-thumb{flex-basis:48px;width:48px;height:38px}.lb-whatsapp{height:38px;padding-inline:13px}.lb-round-action{width:38px;height:38px;flex-basis:38px}.lightbox-header{padding-inline:10px}.card-overlay{padding:54px 13px 13px}.card-overlay .card-title{font-size:17px}.card-expand-btn{opacity:1;background:rgba(20,25,22,.4)}}
+@media(max-width:520px){.gallery-grid .card-image{height:auto;aspect-ratio:4/5}.lightbox-bottom-sheet{background:rgba(12,16,13,.26)}.lb-nav-btn{opacity:.75}.card-overlay .card-title{font-size:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
