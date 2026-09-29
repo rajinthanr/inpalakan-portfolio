@@ -141,6 +141,8 @@
     let translateY = 0;
     let lastTap = 0;
     let tapTimer = null;
+    let currentDownloadItem = null;
+    let downloadFilePromise = null;
 
     const lbImg = lightboxModal.querySelector('#lb-image');
     const lbCode = lightboxModal.querySelector('#lb-code');
@@ -240,6 +242,16 @@
         const extension = item.src.split('.').pop().split(/[?#]/)[0] || 'jpg';
         lbDownloadBtn.href = item.src;
         lbDownloadBtn.download = `${item.code}.${extension}`;
+        currentDownloadItem = item;
+        downloadFilePromise = fetch(item.src)
+            .then(response => {
+              if (!response.ok) throw new Error('Could not load image');
+              return response.blob();
+            })
+            .then(blob => new File(
+                [blob], `${item.code}.${extension}`,
+                {type: blob.type || `image/${extension}`}))
+            .catch(() => null);
       }
       renderThumbnails();
       preloadAdjacent();
@@ -314,6 +326,24 @@
       } catch (error) {
         if (error.name !== 'AbortError') console.error('Could not share this design', error);
       }
+    });
+    lbDownloadBtn?.addEventListener('click', async event => {
+      const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (!isAppleMobile || !navigator.share || !downloadFilePromise) return;
+      event.preventDefault();
+      event.stopPropagation();
+      try {
+        const file = await downloadFilePromise;
+        if (file && (!navigator.canShare || navigator.canShare({files: [file]}))) {
+          await navigator.share({files: [file]});
+          return;
+        }
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        console.error('Could not open the image share sheet', error);
+      }
+      if (currentDownloadItem) window.open(currentDownloadItem.src, '_blank');
     });
 
     window.addEventListener('keydown', event => {

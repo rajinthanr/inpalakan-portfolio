@@ -567,7 +567,7 @@ function layout({
           ${icon('whatsapp')} <span>Enquire</span>
         </a>
         <button id="lb-share-btn" class="lb-round-action" type="button" aria-label="Share this design" title="Share">${icon('share')}</button>
-        <a id="lb-download-btn" class="lb-round-action" href="#" download aria-label="Download this image" title="Download">${icon('download')}</a>
+        <a id="lb-download-btn" class="lb-round-action" href="#" download aria-label="Save this image" title="Save image">${icon('download')}</a>
       </div>
     </div>
   </div>
