@@ -8,7 +8,7 @@ const dist = join(root, 'dist');
 const site = JSON.parse(await readFile(join(root, 'data/site.json'), 'utf8'));
 const projects =
     JSON.parse(await readFile(join(root, 'data/projects.json'), 'utf8'));
-const baseUrl = (process.env.PUBLIC_BASE_URL || '').replace(/\/$/, '');
+const baseUrl = (process.env.PUBLIC_BASE_URL || 'https://inpalakan-timbers.rajinthan.com').replace(/\/$/, '');
 
 const doorPatterns = [
   ['SP-001', 'Floral vine carving', '01-floral-vine.png'],
@@ -516,28 +516,44 @@ function layout({
   prefix = '',
   active = '',
   image = '',
-  path = ''
+  path = '',
+  structuredData = []
 }) {
-  const canonical = baseUrl && path ? `${baseUrl}/${path}` : '';
+  const pageTitle = title.includes('Inpalakan Timbers') ? title : `${title} · Inpalakan Timbers`;
+  const canonicalPath = path === 'index.html' ? '' : path;
+  const canonical = baseUrl ? (canonicalPath ? `${baseUrl}/${canonicalPath}` : `${baseUrl}/`) : '';
   const socialImage =
       baseUrl && (image || site.logo || 'images/Others/logo.png') ?
       `${baseUrl}/${image || site.logo || 'images/Others/logo.png'}` :
       '';
   const logo = logoUrl(prefix);
   const playlistJson = JSON.stringify(generatePlaylist(prefix));
+  const jsonLdScripts = structuredData && structuredData.length ?
+      structuredData.map(data => `<script type="application/ld+json">${JSON.stringify(data)}</script>`).join('') :
+      '';
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e8"><title>${
-      esc(title)} · Inpalakan Timbers</title><meta name="description" content="${
+<html lang="en"><head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PY4803MNBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PY4803MNBN');
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f0e8"><title>${
+      esc(pageTitle)}</title><meta name="description" content="${
       esc(description)}"><meta property="og:type" content="website"><meta property="og:site_name" content="Inpalakan Timbers"><meta property="og:title" content="${
-      esc(title)} · Inpalakan Timbers"><meta property="og:description" content="${
+      esc(pageTitle)}"><meta property="og:description" content="${
       esc(description)}">${
       canonical ? `<link rel="canonical" href="${
                       esc(canonical)}"><meta property="og:url" content="${
                       esc(canonical)}">` :
                   ''}${
       socialImage ?
-          `<meta property="og:image" content="${esc(socialImage)}">` :
-          ''}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="icon" href="${
+          `<meta property="og:image" content="${esc(socialImage)}"><meta name="twitter:image" content="${esc(socialImage)}">` :
+          ''}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${
+      esc(pageTitle)}"><meta name="twitter:description" content="${
+      esc(description)}">${jsonLdScripts}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="icon" href="${
       logo}" type="image/png"><link rel="apple-touch-icon" href="${
       logo}"><link rel="stylesheet" href="${prefix}styles.css"><script src="${
       prefix}site.js" defer></script></head><body><a class="skip-link" href="#main">Skip to content</a>${
@@ -640,6 +656,45 @@ function patternCard(pattern, index = 0) {
     </div>
   </article>`;
 }
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  'name': 'Inpalakan Timbers',
+  'alternateName': 'இன்பழகன் கைத்தொழிலகம்',
+  'description': 'Master craftsmen in Valvettithurai since 2006. Specializing in custom carved wooden doors, modular kitchens, traditional furniture, and gypsum ceilings across Vadamarachy.',
+  'url': `${baseUrl}/`,
+  'telephone': site.phone,
+  'email': site.email,
+  'priceRange': '$$',
+  'image': `${baseUrl}/images/Others/logo.png`,
+  'address': {
+    '@type': 'PostalAddress',
+    'streetAddress': 'Vaavini Veethi',
+    'addressLocality': 'Valvettithurai',
+    'addressRegion': 'Northern Province',
+    'addressCountry': 'LK'
+  },
+  'geo': {
+    '@type': 'GeoCoordinates',
+    'latitude': 9.8277,
+    'longitude': 80.1707
+  },
+  'hasMap': site.mapUrl,
+  'sameAs': [
+    site.facebookUrl
+  ],
+  'areaServed': [
+    'Valvettithurai',
+    'Point Pedro',
+    'Nelliady',
+    'Thondaimanaru',
+    'Thikkam',
+    'Karaveddy',
+    'Vadamarachy',
+    'Jaffna'
+  ]
+};
 
 function homePage() {
   const heroProject = projects.find(p => p.code === 'KC-021');
@@ -789,12 +844,13 @@ function homePage() {
   `;
 
   return layout({
-    title: 'Timber craftsmanship since 2006',
+    title: 'Inpalakan Timbers | Custom Doors & Furniture in Valvettithurai',
     description:
-        'Explore real door, window, kitchen, bedroom, gypsum ceiling, and custom furniture projects by Inpalakan Timbers in Valvettithurai.',
+        'Master craftsmen in Valvettithurai since 2006. Specializing in custom carved wooden doors, modular kitchens, traditional furniture, and gypsum ceilings across Vadamarachy.',
     body,
     path: 'index.html',
-    image: projectImagePath(heroProject)
+    image: projectImagePath(heroProject),
+    structuredData: [localBusinessSchema]
   });
 }
 
@@ -885,12 +941,13 @@ function galleryPage() {
   </section>`;
 
   return layout({
-    title: 'Portfolio & Designs',
+    title: 'Inpalakan Timbers | Portfolio & Woodwork Designs in Valvettithurai',
     description:
-        'Browse completed Inpalakan Timbers doors, windows, kitchens & granite worktops, ceilings, and furniture. Every design has a shareable page and a WhatsApp enquiry code.',
+        'Explore 120+ completed custom woodwork designs by Inpalakan Timbers: carved entrance doors, modular kitchens, granite worktops, bedroom wardrobes, and gypsum ceilings with instant WhatsApp enquiry codes.',
     body,
     active: 'work',
-    path: 'gallery.html'
+    path: 'gallery.html',
+    structuredData: [localBusinessSchema]
   });
 }
 
@@ -996,16 +1053,102 @@ function projectPage(project) {
     </a>
   </div>`;
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': `${baseUrl}/`
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Portfolio',
+        'item': `${baseUrl}/gallery.html`
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'name': category.title,
+        'item': `${baseUrl}/gallery.html?category=${project.category}`
+      },
+      {
+        '@type': 'ListItem',
+        'position': 4,
+        'name': `${project.title} (${project.code})`,
+        'item': `${baseUrl}/projects/${project.slug}.html`
+      }
+    ]
+  };
+
+  const projectArtworkSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VisualArtwork',
+    'name': `${project.title} (${project.code})`,
+    'description': project.alt,
+    'image': `${baseUrl}/${projectImagePath(project)}`,
+    'artMedium': category.singular,
+    'creator': {
+      '@type': 'Organization',
+      'name': 'Inpalakan Timbers',
+      'url': `${baseUrl}/`
+    }
+  };
+
   return layout({
-    title: `${project.title} (${project.code})`,
-    description: `${project.summary} View design ${
-        project.code} and ask Inpalakan Timbers about a similar project.`,
+    title: `${project.title} (${project.code}) | Custom ${category.singular} | Inpalakan Timbers`,
+    description: `Custom ${category.singular} design ${project.code} by Inpalakan Timbers in Valvettithurai, Sri Lanka. ${project.alt}. Enquire directly via WhatsApp.`,
     body,
     prefix: '../',
     active: 'work',
     path: `projects/${project.slug}.html`,
-    image: projectImagePath(project)
+    image: projectImagePath(project),
+    structuredData: [breadcrumbSchema, projectArtworkSchema]
   });
+}
+
+function generateSitemap() {
+  const urls = [];
+  const now = new Date().toISOString().split('T')[0];
+
+  urls.push(`  <url>
+    <loc>${baseUrl}/</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>`);
+
+  urls.push(`  <url>
+    <loc>${baseUrl}/gallery.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>`);
+
+  for (const project of projects) {
+    const imgUrl = `${baseUrl}/${projectImagePath(project)}`;
+    urls.push(`  <url>
+    <loc>${baseUrl}/projects/${project.slug}.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>${imgUrl}</image:loc>
+      <image:title>${esc(project.title)} (${esc(project.code)})</image:title>
+      <image:caption>${esc(project.alt)}</image:caption>
+    </image:image>
+  </url>`);
+  }
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.join('\n')}
+</urlset>
+`;
 }
 
 assertContent();
@@ -1050,6 +1193,7 @@ await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await writeFile(join(dist, 'index.html'), homePage());
 await writeFile(join(dist, 'gallery.html'), galleryPage());
+await writeFile(join(dist, 'sitemap.xml'), generateSitemap());
 for (const project of projects) {
   await writeFile(
       join(dist, 'projects', `${project.slug}.html`), projectPage(project));
