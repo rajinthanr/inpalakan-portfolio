@@ -90,8 +90,8 @@
     const target = new URL(link.href);
     target.searchParams.set(
         'text',
-        `Hello Inpalakan Timbers, I am interested in design ${
-            code}. Could we discuss something similar for my space? ${
+        `Hello Inpalakan Timbers, I like design ${
+            code}. Can you make something similar for my home? ${
             window.location.href}`);
     link.href = target.href;
   });
@@ -231,7 +231,7 @@
         const whatsappUrl = new URL(item.whatsapp);
         whatsappUrl.searchParams.set(
             'text',
-            `Hello Inpalakan Timbers, I am interested in design ${item.code}: ${itemPageUrl}`);
+            `Hello Inpalakan Timbers, I like design ${item.code}. Can you make something similar for my home? ${itemPageUrl}`);
         lbWhatsappBtn.href = whatsappUrl.href;
       }
       if (lbShareBtn) {
@@ -274,6 +274,7 @@
       const query = queryValue.toLowerCase();
       return fullPlaylist.find(item =>
           item.code.toLowerCase() === query ||
+          item.legacyCode?.toLowerCase() === query ||
           item.src.toLowerCase().endsWith(query) ||
           (item.rawSrc && item.rawSrc.toLowerCase() === query));
     }

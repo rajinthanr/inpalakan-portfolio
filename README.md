@@ -4,19 +4,20 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 ## Current catalog
 
-- 84 design entries across doors, windows, bedrooms, kitchens, furniture, gypsum ceilings, TV units, and granite fitting
-- 155 photographs currently connected to design entries
-- 40 designs with multiple views, such as installation angles, carving details, and interior storage
-- 186 source photographs in `public/images/projects/`; 31 are retained as available source material and are not currently shown
-- 17 featured designs on the home page
+- 122 completed-work designs and 93 sample designs
+- 154 photographs connected to completed-work designs
+- 25 completed-work designs with multiple views
+- 9 featured designs on the home page
 
 The site generates a home page, a searchable gallery, and one shareable page for every design. The generated output belongs in `dist/` and is intentionally ignored by Git.
 
+The gallery shows selected modern completed work first. Older styles follow in their existing order. Sample sections also put modern designs first. Codes now follow this gallery order within each category; keep each assigned code fixed when changing the order later.
+
 On phones, the main action and sticky header lead directly to **Our Work**. Gallery filters wrap into large tap targets, and each result shows a readable title, category, reference code, and separate full-screen control. The home-page featured designs use a horizontal, touch-friendly snap slider so customers can browse without a long vertical list.
 
-The opening hero presents the English and Tamil business names with “Since 2006” and features design `KC-021`. A subtle brass ornamental texture is applied consistently across the site through CSS.
+The opening hero presents the English and Tamil business names with “Since 2006” and features design `KIT-001`. A subtle brass ornamental texture is applied consistently across the site through CSS.
 
-Homepage category tiles use an explicit curated cover selection in `scripts/build.mjs`. This keeps strong, high-resolution photographs stable even when featured-project ordering changes. Current service covers include `WN-019`, `KC-021`, `CB-001`, `GR-001`, `GY-002`, `FN-004`, and `TV-004` for their matching categories.
+Homepage category tiles use an explicit cover selection in `scripts/build.mjs`. The current covers are `DOR-007`, `WIN-008`, `KIT-516`, `BED-001`, `GYP-003`, `FUR-006`, and `TVU-001` for their matching categories.
 
 Services and portfolio categories share one homepage section: each service is represented by a curated photograph that opens its filtered gallery.
 
@@ -38,6 +39,7 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | Path | Purpose |
 | --- | --- |
 | `data/projects.json` | Design codes, slugs, categories, captions, featured state, and optional multi-view image lists |
+| `data/sample-codes.json` | Fixed sample codes and their older search aliases; display order does not change these codes |
 | `data/site.json` | Brand, contact, social, source-album, and planned service information |
 | `public/images/projects/<category>/` | Completed-work photographs grouped by their catalog category |
 | `public/images/projects/unassigned-cupboards/` | Older unused cupboard source photos awaiting a kitchen, bedroom, or furniture classification |
@@ -47,6 +49,8 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | `scripts/build.mjs` | Validates catalog data and generates the static site in `dist/` |
 | `.github/workflows/deploy.yml` | GitHub Pages build and deployment workflow for `main` |
 | `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
+| `references/concepts/bedroom-cupboards/` | AI-generated bedroom cupboard concepts; optimized WebP copies are included in the gallery's bedroom sample section |
+| `references/concepts/furniture/` | AI-generated furniture concepts; optimized WebP copies are included in the gallery's furniture sample section |
 | `scratch/` | Local image-import helpers; these are working utilities rather than site runtime files |
 
 The current templates use the logo, contact, location, social, and service fields from `data/site.json`. Service entries include the Tamil subtitle shown on each image tile; all other public-facing site copy is English.
@@ -63,7 +67,7 @@ Example multi-view entry:
 
 ```json
 {
-  "code": "DR-002",
+  "code": "DOR-045",
   "slug": "curved-panel-door",
   "category": "doors",
   "title": "Curved panel door",
@@ -88,6 +92,18 @@ Example multi-view entry:
 
 Keep completed work clearly separate from the concept images under `references/`. Do not assign a timber species, manufacturing method, dimension, price, or location unless it has been confirmed.
 
+Reference codes use three letters for the category and three digits for the design. Completed work starts at `001` in the current gallery order for each category. Samples start at `501` in their current display order. Keep these codes fixed after sharing them with clients. Existing pages keep their slugs, and older codes remain searchable through the `legacyCode` field.
+
+| Category | Code prefix |
+| --- | --- |
+| Doors | `DOR` |
+| Windows | `WIN` |
+| Kitchen cupboards and granite samples | `KIT` |
+| Bedroom cupboards | `BED` |
+| Furniture | `FUR` |
+| Gypsum ceilings | `GYP` |
+| TV wall units | `TVU` |
+
 ## Sharing and public URLs
 
 Every design page has a stable code, a native share button with a copy-link fallback, and a WhatsApp enquiry button. The WhatsApp message includes the design code; after deployment, the browser adds the public page link.
@@ -97,6 +113,12 @@ Build with the final public origin so generated pages contain absolute canonical
 ```bash
 PUBLIC_BASE_URL=https://your-domain.example npm run build
 ```
+
+## Search visibility
+
+The build writes a sitemap and a `robots.txt` file using `PUBLIC_BASE_URL`. Set that variable to the address visitors actually use before publishing. The sitemap lists the home page, gallery, and completed-work design pages. Keep page titles and descriptions plain and accurate, and put place names only where they describe the business or a verified service area.
+
+After publishing, check that the home page, `robots.txt`, and `sitemap.xml` open at the public address. Verify the site in Google Search Console, submit `sitemap.xml`, and check its indexing and search-query reports. The business owner should also verify and complete the Google Business Profile with the same website, phone, workshop address, services, and real work photos. Ask genuine customers for reviews without offering rewards.
 
 ## Source collections
 
