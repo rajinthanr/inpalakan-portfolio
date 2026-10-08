@@ -4,7 +4,7 @@ A mobile-first static portfolio for Inpalakan Timbers. Clients can browse comple
 
 ## Current catalog
 
-- 122 completed-work designs and 93 sample designs
+- 122 completed-work designs and 98 sample designs
 - 154 photographs connected to completed-work designs
 - 25 completed-work designs with multiple views
 - 9 featured designs on the home page
@@ -51,6 +51,7 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
 | `references/concepts/bedroom-cupboards/` | AI-generated bedroom cupboard concepts; optimized WebP copies are included in the gallery's bedroom sample section |
 | `references/concepts/furniture/` | AI-generated furniture concepts; optimized WebP copies are included in the gallery's furniture sample section |
+| `references/concepts/tv-units/` | AI-generated metallic-finish TV-unit concepts; optimized WebP copies are included in the TV sample section |
 | `scratch/` | Local image-import helpers; these are working utilities rather than site runtime files |
 
 The current templates use the logo, contact, location, social, and service fields from `data/site.json`. Service entries include the Tamil subtitle shown on each image tile; all other public-facing site copy is English.

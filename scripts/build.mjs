@@ -213,14 +213,39 @@ const tvUnitPatterns = [
   [
     'TVS-015', 'Column-integrated blue unit',
     '15-column-integrated-blue-unit.png'
+  ],
+  [
+    'TVS-016', 'Metallic TV unit with window seat',
+    '16-slate-blue-window-seat-tv.webp',
+    'Slate-blue metallic TV cupboards turning into a cushioned window seat with lower drawers'
+  ],
+  [
+    'TVS-017', 'Pearl-grey TV unit with loft cupboards',
+    '17-pearl-champagne-loft-tv.webp',
+    'Pearl-grey metallic TV unit with tall side cupboard, overhead loft doors and lower drawers'
+  ],
+  [
+    'TVS-018', 'Champagne sliding TV cupboard',
+    '18-champagne-sliding-tv-cupboard.webp',
+    'Champagne metallic sliding doors partly open around a TV with lower storage cupboards'
+  ],
+  [
+    'TVS-019', 'Sage TV unit with side storage',
+    '19-sage-graphite-storage-tv.webp',
+    'Sage metallic TV base with lower drawers and a tall side cupboard open to shelves and a pull-out tray'
+  ],
+  [
+    'TVS-020', 'Bronze TV unit with pull-out table',
+    '20-bronze-pullout-table-tv.webp',
+    'Bronze and pearl metallic TV cupboards with a supported pull-out side table and upper cupboard'
   ]
-].map(([legacyCode, title, image]) => ({
+].map(([legacyCode, title, image, alt]) => ({
         code: sampleCode(legacyCode),
         legacyCode,
         title,
         image,
         category: 'tv-units',
-        alt: `Sample TV-unit pattern: ${title}`
+        alt: alt || `Sample TV-unit pattern: ${title}`
       }));
 
 const gypsumPatterns = [
@@ -1354,6 +1379,11 @@ await mkdir(join(dist, 'images/concepts/tv-units'), {recursive: true});
 await cp(
     join(root, 'references/tv-unit-patterns'),
     join(dist, 'images/concepts/tv-units'), {recursive: true});
+for (const pattern of tvUnitPatterns.filter(p => p.image.endsWith('.webp'))) {
+  await cp(
+      join(root, 'references/concepts/tv-units', pattern.image),
+      join(dist, 'images/concepts/tv-units', pattern.image));
+}
 await mkdir(join(dist, 'images/concepts/gypsum'), {recursive: true});
 await cp(
     join(root, 'references/gypsum-patterns'),
