@@ -78,6 +78,41 @@ const doorPatterns = [
         alt: `Sample door pattern: ${title}`
       }));
 
+const windowPatterns = [
+  [
+    'WNS-001', 'Three-shutter teak window with top glass',
+    '01-three-sash-transom-grille.webp',
+    'Three teak shutters with textured glass, fixed top panes and a steel grille behind one open shutter'
+  ],
+  [
+    'WNS-002', 'Two-shutter teak window with solid lower panels',
+    '02-two-sash-solid-lower.webp',
+    'Two teak shutters with textured upper glass, solid lower panels and a steel grille'
+  ],
+  [
+    'WNS-003', 'Diagonal teak glazing bars',
+    '03-diagonal-glass-grille.webp',
+    'Two teak shutters with diagonal glazing bars and textured glass, one open beside a steel grille'
+  ],
+  [
+    'WNS-004', 'Compact teak kitchen window',
+    '04-kitchen-two-sash-grille.webp',
+    'Two teak kitchen window shutters with textured glass and a steel grille above the sink'
+  ],
+  [
+    'WNS-005', 'Three-shutter teak window with solid panels',
+    '05-three-sash-solid-lower.webp',
+    'Three teak shutters with textured upper glass and solid lower panels, with a grille behind the open centre shutter'
+  ]
+].map(([legacyCode, title, image, alt]) => ({
+        code: sampleCode(legacyCode),
+        legacyCode,
+        title,
+        image,
+        category: 'windows',
+        alt
+      }));
+
 const kitchenPatterns = [
   ['KS-001', 'Champagne metallic L-shape', '01-champagne-metallic-l-shape.png'],
   ['KS-002', 'Graphite metallic U-shape', '02-graphite-metallic-u-shape.png'],
@@ -402,7 +437,8 @@ const galleryGypsumPatterns = modernFirst(gypsumPatterns, [
 ]);
 
 const samplePatterns = [
-  ...galleryDoorPatterns, ...kitchenPatterns, ...galleryGranitePatterns,
+  ...galleryDoorPatterns, ...windowPatterns, ...kitchenPatterns,
+  ...galleryGranitePatterns,
   ...bedroomPatterns, ...furniturePatterns, ...tvUnitPatterns,
   ...galleryGypsumPatterns
 ];
@@ -798,6 +834,7 @@ function card(project, prefix = '', index = 0) {
 
 function patternCard(pattern, index = 0) {
   const type = pattern.category === 'doors' ? 'door' :
+      pattern.category === 'windows'       ? 'window' :
       pattern.category === 'kitchens'       ? (pattern.kind === 'granite' ?
                                                    'granite countertop' :
                                                    'kitchen cupboard') :
@@ -1072,6 +1109,15 @@ function galleryPage() {
       </div>
       <div class="project-grid gallery-grid sample-pattern-grid">
         ${galleryDoorPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
+      </div>
+    </section>
+    <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-window-patterns-title">
+      <div class="sample-patterns-heading">
+        <div><p class="eyebrow">SAMPLE DESIGNS</p><h2 id="sample-window-patterns-title">Window design ideas.</h2></div>
+        <p>See different window openings and layouts.</p>
+      </div>
+      <div class="project-grid gallery-grid sample-pattern-grid">
+        ${windowPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
       </div>
     </section>
     <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-kitchen-patterns-title">
@@ -1350,6 +1396,12 @@ if (existsSync(join(root, 'references/concepts/doors'))) {
   await cp(
       join(root, 'references/concepts/doors'),
       join(dist, 'images/concepts/doors'), {recursive: true});
+}
+await mkdir(join(dist, 'images/concepts/windows'), {recursive: true});
+for (const pattern of windowPatterns) {
+  await cp(
+      join(root, 'references/concepts/windows', pattern.image),
+      join(dist, 'images/concepts/windows', pattern.image));
 }
 await mkdir(join(dist, 'images/concepts/kitchens'), {recursive: true});
 await cp(
