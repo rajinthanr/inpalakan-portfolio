@@ -31,10 +31,10 @@
     {name: 'Blue + silver (like KIT-016)', upper: '1E7-TOY', base: 'EGR-PEU', handle: 'Matt black', top: 'Black Galaxy granite'},
   ];
   const VIEWS = [
-    {name: 'Perspective', orbit: '-28deg 72deg 5.4m', target: '1.83m 1.2m 0.25m'},
+    {name: 'Perspective', orbit: '-28deg 85deg 5.6m', target: '1.83m 1.25m 0.25m'},
     {name: 'Front', orbit: '0deg 90deg 5.6m', target: '1.83m 1.3m 0.25m'},
-    {name: 'Left', orbit: '-72deg 84deg 4.6m', target: '1.83m 1.2m 0.25m'},
-    {name: 'Right', orbit: '72deg 84deg 4.6m', target: '1.83m 1.2m 0.25m'},
+    {name: 'Left', orbit: '-72deg 87deg 4.6m', target: '1.83m 1.2m 0.25m'},
+    {name: 'Right', orbit: '72deg 87deg 4.6m', target: '1.83m 1.2m 0.25m'},
     {name: 'Top', orbit: '0deg 0.5deg 6.2m', target: '1.83m 1.0m 0.25m'},
     {name: 'Hob', orbit: '8deg 52deg 1.4m', target: '2.44m 0.82m 0.30m'},
   ];
@@ -55,8 +55,8 @@
     for (const m of mv.model.materials) {
       if (match instanceof RegExp ? match.test(m.name) : m.name === match) {
         m.pbrMetallicRoughness.setBaseColorFactor(rgba(spec.hex));
-        m.pbrMetallicRoughness.setMetallicFactor(spec.metal);
-        m.pbrMetallicRoughness.setRoughnessFactor(spec.rough);
+        m.pbrMetallicRoughness.setMetallicFactor(Math.min(spec.metal, 0.3));
+        m.pbrMetallicRoughness.setRoughnessFactor(Math.max(spec.rough, 0.32));
       }
     }
   }
@@ -108,7 +108,18 @@
   });
   swatches('k3d-handle', 'handle', HANDLES);
   swatches('k3d-top', 'top', WORKTOPS);
-  mv.addEventListener('load', () => { $('k3d-loading').hidden = true; apply(); });
+
+  function glowWashes(viewer) {   // warm downlight scallops: make the wash texture self-lit so it glows on any colour
+  if (!viewer.model) return;
+  for (const m of viewer.model.materials) {
+    if (!/Downlight Wash/.test(m.name)) continue;
+    const t = m.pbrMetallicRoughness.baseColorTexture && m.pbrMetallicRoughness.baseColorTexture.texture;
+    if (t && m.emissiveTexture) m.emissiveTexture.setTexture(t);
+    m.setEmissiveFactor([1.0, 0.85, 0.62]);
+    m.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 1]);
+  }
+}
+  mv.addEventListener('load', () => { glowWashes(mv); $('k3d-loading').hidden = true; apply(); });
   $('k3d-save').addEventListener('click', async () => {
     const blob = await mv.toBlob({mimeType: 'image/png'});
     const a = document.createElement('a');
@@ -128,7 +139,7 @@
       for (const c of items) {
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'k3d-pal-sw'; b.style.background = c.hex; b.dataset.id = c.id;
-        b.title = `${c.name} · ${c.code} · ${c.card}`; b.setAttribute('aria-label', `${c.name} ${c.code}`);
+        b.title = `${c.name} · ${c.code} · ${c.card}` + (c.confidence === 'card' ? ' (colour from our shade card)' : ' (colour from OEM paint reference)'); b.setAttribute('aria-label', `${c.name} ${c.code}`);
         b.innerHTML = `<span>${c.code.split(' ')[0]}</span>`;
         b.addEventListener('click', () => {
           if (target !== 'base') state.upper = c.id;

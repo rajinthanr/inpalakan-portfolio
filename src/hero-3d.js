@@ -9,11 +9,11 @@
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
   const F = {   // from our paint shade cards (palette.json ids: BN6-NIS, 199-TOY, 1816817, CM1-NIS, FN4-NIS, 1E7-TOY, EGR-PEU)
     darkblue: ['#1a1c29', 0.35, 0.22],
-    silver: ['#7b7a6d', 0.6, 0.3],
+    silver: ['#d8d1c6', 0.6, 0.3],
     copper: ['#713d1c', 0.6, 0.3],
-    cream: ['#948a76', 0.35, 0.22],
-    teal: ['#19333f', 0.35, 0.22],
-    crystal: ['#c8d0d1', 0.6, 0.3],
+    cream: ['#99958e', 0.35, 0.22],
+    teal: ['#1f5c56', 0.35, 0.22],
+    crystal: ['#e2dfd0', 0.6, 0.3],
     starblue: ['#546588', 0.6, 0.3],
   };
   const LOOKS = [
@@ -28,8 +28,8 @@
     for (const m of (mv.model ? mv.model.materials : [])) {
       if (name instanceof RegExp ? name.test(m.name) : m.name === name) {
         m.pbrMetallicRoughness.setBaseColorFactor(rgba(hex));
-        m.pbrMetallicRoughness.setMetallicFactor(metal);
-        m.pbrMetallicRoughness.setRoughnessFactor(rough);
+        m.pbrMetallicRoughness.setMetallicFactor(Math.min(metal, 0.3));
+        m.pbrMetallicRoughness.setRoughnessFactor(Math.max(rough, 0.32));
       }
     }
   }
@@ -51,5 +51,37 @@
     b.addEventListener('click', () => apply(look));
     box.appendChild(b);
   }
-  mv.addEventListener('load', () => { document.getElementById('hero-3d-loading').hidden = true; apply(current); });
+
+  function glowWashes(viewer) {   // warm downlight scallops: make the wash texture self-lit so it glows on any colour
+  if (!viewer.model) return;
+  for (const m of viewer.model.materials) {
+    if (!/Downlight Wash/.test(m.name)) continue;
+    const t = m.pbrMetallicRoughness.baseColorTexture && m.pbrMetallicRoughness.baseColorTexture.texture;
+    if (t && m.emissiveTexture) m.emissiveTexture.setTexture(t);
+    m.setEmissiveFactor([1.0, 0.85, 0.62]);
+    m.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 1]);
+  }
+}
+  mv.addEventListener('load', () => { glowWashes(mv); document.getElementById('hero-3d-loading').hidden = true; apply(current); sway(); });
+
+  // gentle side-to-side sway (front ± 35°) instead of a full turn, so the back is never shown;
+  // pauses while the visitor drags and resumes 4 s after they let go
+  let idleSince = performance.now(), dragging = false, t0 = performance.now();
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  mv.addEventListener('camera-change', e => { if (e.detail.source === 'user-interaction') { dragging = true; idleSince = performance.now(); } });
+  mv.addEventListener('pointerup', () => { dragging = false; idleSince = performance.now(); });
+  function sway() {
+    if (reduced) return;
+    const step = now => {
+      if (!dragging && now - idleSince > 4000 && !document.hidden) {
+        const theta = -25 + 35 * Math.sin((now - t0) / 9000 * 2 * Math.PI);
+        const orbit = mv.getCameraOrbit();
+        mv.cameraOrbit = `${theta.toFixed(2)}deg ${(orbit.phi * 180 / Math.PI).toFixed(2)}deg ${orbit.radius.toFixed(3)}m`;
+      } else if (dragging === false && now - idleSince <= 4000) {
+        t0 = now - 9000 * Math.asin(Math.max(-1, Math.min(1, ((mv.getCameraOrbit().theta * 180 / Math.PI) + 25) / 35))) / (2 * Math.PI);
+      }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
 })();
