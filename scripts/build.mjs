@@ -1026,6 +1026,12 @@ function homePage() {
     </div>
   </section>
 
+  <section class="section k3d-cta shell">
+    <div><p class="eyebrow">NEW · 3D</p><h2>Try kitchen colours <em>in 3D.</em></h2>
+    <p>Turn a sample kitchen and pick colours for the cupboards, handles and worktop.</p></div>
+    <a class="button button-dark" href="kitchen-3d.html">Open the 3D kitchen ${icon('arrow')}</a>
+  </section>
+
   <section class="section services-section shell" id="services">
     <div class="section-heading">
       <div>
@@ -1056,11 +1062,6 @@ function homePage() {
       </div>
       <p class="swipe-hint" aria-hidden="true">Swipe to see more <span>→</span></p>
     </div>
-  </section>
-  <section class="section k3d-cta shell">
-    <div><p class="eyebrow">NEW · 3D</p><h2>Try kitchen colours <em>in 3D.</em></h2>
-    <p>Turn a sample kitchen and pick colours for the cupboards, handles and worktop.</p></div>
-    <a class="button button-dark" href="kitchen-3d.html">Open the 3D kitchen ${icon('arrow')}</a>
   </section>
   `;
 
