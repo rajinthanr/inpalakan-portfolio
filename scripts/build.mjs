@@ -1020,17 +1020,24 @@ function homePage() {
         <div class="hero-footnote"><span class="rule"></span> YOUR VISION, OUR CRAFTSMANSHIP</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <img src="${imageUrl(heroProject)}" alt="${
-      esc(heroProject.alt)}" fetchpriority="high">
+    <div class="hero-visual hero-visual-3d">
+      <model-viewer id="hero-3d" src="3d/modern-kitchen.glb" camera-controls disable-zoom disable-pan
+        touch-action="pan-y" auto-rotate auto-rotate-delay="2500" rotation-per-second="6deg"
+        camera-orbit="-25deg 76deg 6.8m" camera-target="1.83m 1.15m 0.25m"
+        min-camera-orbit="auto 55deg auto" max-camera-orbit="auto 96deg auto"
+        shadow-intensity="0.9" exposure="1.05" environment-image="neutral" interaction-prompt="none"
+        alt="Interactive 3D sample kitchen with metallic cupboards, black granite worktop and four-burner glass hob">
+        <div class="hero-3d-loading" id="hero-3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
+      </model-viewer>
+      <p class="hero-3d-label">SAMPLE DESIGN IN 3D · DRAG TO TURN</p>
+      <div class="hero-3d-bar">
+        <div class="hero-3d-chips" id="hero-3d-chips" aria-label="Try cupboard colours"></div>
+        <a class="hero-3d-open" href="kitchen-3d.html">Try all colours ${icon('arrow')}</a>
+      </div>
     </div>
   </section>
-
-  <section class="section k3d-cta shell">
-    <div><p class="eyebrow">NEW · 3D</p><h2>Try kitchen colours <em>in 3D.</em></h2>
-    <p>Turn a sample kitchen and pick colours for the cupboards, handles and worktop.</p></div>
-    <a class="button button-dark" href="kitchen-3d.html">Open the 3D kitchen ${icon('arrow')}</a>
-  </section>
+  <script type="module" src="3d/vendor/model-viewer.min.js"></script>
+  <script src="hero-3d.js" defer></script>
 
   <section class="section services-section shell" id="services">
     <div class="section-heading">
@@ -1361,7 +1368,7 @@ function kitchen3dPage() {
   const body = `<section class="page-hero shell k3d-hero">
     <p class="eyebrow">SAMPLE DESIGN · 3D</p>
     <h1>Try kitchen colours <em>in 3D.</em></h1>
-    <p>Turn the kitchen, zoom in, and pick colours for the top and bottom cupboards, handles and worktop. This is a sample design; colours on screen are approximate, so we will show you real finish samples before you order.</p>
+    <p>Turn the kitchen, zoom in, and pick colours for the top and bottom cupboards, handles and worktop. Colours come from the paint shade cards we use (Asian Paints Causeway, Sunny Hi-Build Lacquer and Pearl / Metallic). This is a sample design and screen colours are approximate, so we will show you the real shade card before you order.</p>
   </section>
   <section class="k3d shell" aria-label="3D kitchen colour explorer">
     <div class="k3d-stage">
@@ -1377,10 +1384,13 @@ function kitchen3dPage() {
     <div class="k3d-panel">
       <h2>Looks from our kitchens</h2>
       <div class="k3d-presets" id="k3d-presets"></div>
-      <h2>Top cupboards <small id="k3d-upper-name"></small></h2>
-      <div class="k3d-swatches" id="k3d-upper"></div>
-      <h2>Bottom cupboards <small id="k3d-base-name"></small></h2>
-      <div class="k3d-swatches" id="k3d-base"></div>
+      <h2>Cupboard colour <small>our paint shade cards</small></h2>
+      <p class="k3d-current">Top: <b id="k3d-upper-name"></b><br>Bottom: <b id="k3d-base-name"></b></p>
+      <div class="k3d-target" id="k3d-target" role="group" aria-label="Apply colour to">
+        <button type="button" data-t="upper" aria-pressed="false">Top</button><button type="button" data-t="base" aria-pressed="false">Bottom</button><button type="button" data-t="both" aria-pressed="true">Both</button>
+      </div>
+      <input class="k3d-search" id="k3d-search" type="search" placeholder="Search colour name or code, e.g. BN6" aria-label="Search paint colours">
+      <div id="k3d-palette"></div>
       <h2>Handles <small id="k3d-handle-name"></small></h2>
       <div class="k3d-swatches" id="k3d-handle"></div>
       <h2>Worktop <small id="k3d-top-name"></small></h2>
@@ -1500,6 +1510,7 @@ await cp(
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
 await cp(join(root, 'src/kitchen-3d.js'), join(dist, 'kitchen-3d.js'));
+await cp(join(root, 'src/hero-3d.js'), join(dist, 'hero-3d.js'));
 await writeFile(join(dist, 'index.html'), homePage());
 await writeFile(join(dist, 'gallery.html'), galleryPage());
 await writeFile(join(dist, 'kitchen-3d.html'), kitchen3dPage());
