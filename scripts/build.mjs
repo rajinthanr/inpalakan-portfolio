@@ -1057,6 +1057,11 @@ function homePage() {
       <p class="swipe-hint" aria-hidden="true">Swipe to see more <span>→</span></p>
     </div>
   </section>
+  <section class="section k3d-cta shell">
+    <div><p class="eyebrow">NEW · 3D</p><h2>Try kitchen colours <em>in 3D.</em></h2>
+    <p>Turn a sample kitchen and pick colours for the cupboards, handles and worktop.</p></div>
+    <a class="button button-dark" href="kitchen-3d.html">Open the 3D kitchen ${icon('arrow')}</a>
+  </section>
   `;
 
   return layout({
@@ -1123,7 +1128,7 @@ function galleryPage() {
     <section class="sample-patterns" data-sample-patterns aria-labelledby="sample-kitchen-patterns-title">
       <div class="sample-patterns-heading">
         <div><p class="eyebrow">SAMPLE DESIGNS</p><h2 id="sample-kitchen-patterns-title">Kitchen cupboard ideas.</h2></div>
-        <p>See different colours and cupboard layouts.</p>
+        <p>See different colours and cupboard layouts. <a class="text-link" href="kitchen-3d.html">Try colours in 3D ${icon('arrow')}</a></p>
       </div>
       <div class="project-grid gallery-grid sample-pattern-grid">
         ${kitchenPatterns.map((pattern, i) => patternCard(pattern, i)).join('')}
@@ -1351,6 +1356,53 @@ function projectPage(project) {
   });
 }
 
+function kitchen3dPage() {
+  const body = `<section class="page-hero shell k3d-hero">
+    <p class="eyebrow">SAMPLE DESIGN · 3D</p>
+    <h1>Try kitchen colours <em>in 3D.</em></h1>
+    <p>Turn the kitchen, zoom in, and pick colours for the top and bottom cupboards, handles and worktop. This is a sample design; colours on screen are approximate, so we will show you real finish samples before you order.</p>
+  </section>
+  <section class="k3d shell" aria-label="3D kitchen colour explorer">
+    <div class="k3d-stage">
+      <model-viewer id="k3d-viewer" data-root="" src="3d/modern-kitchen.glb" camera-controls touch-action="pan-y"
+        shadow-intensity="0.9" exposure="1.05" environment-image="neutral" interaction-prompt="auto"
+        camera-orbit="-28deg 72deg 5.4m" camera-target="1.83m 1.2m 0.25m"
+        min-camera-orbit="auto 0deg 0.5m" max-camera-orbit="auto 180deg 14m"
+        alt="3D sample kitchen with metallic cupboards, black granite worktop and a four-burner glass hob">
+        <div class="k3d-loading" id="k3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
+      </model-viewer>
+      <div class="k3d-views" id="k3d-views" aria-label="Camera views"></div>
+    </div>
+    <div class="k3d-panel">
+      <h2>Looks from our kitchens</h2>
+      <div class="k3d-presets" id="k3d-presets"></div>
+      <h2>Top cupboards <small id="k3d-upper-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-upper"></div>
+      <h2>Bottom cupboards <small id="k3d-base-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-base"></div>
+      <h2>Handles <small id="k3d-handle-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-handle"></div>
+      <h2>Worktop <small id="k3d-top-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-top"></div>
+      <div class="k3d-actions">
+        <a class="button button-dark" id="k3d-whatsapp" data-number="${site.whatsappNumber}" href="${
+      whatsappHref()}" target="_blank" rel="noopener noreferrer">${icon('whatsapp')} Ask about these colours</a>
+        <button class="button k3d-save" id="k3d-save" type="button">${icon('download')} Save picture</button>
+      </div>
+      <p class="k3d-note">See real kitchens we have built in <a href="gallery.html">Our Work</a>.</p>
+    </div>
+  </section>
+  <script type="module" src="3d/vendor/model-viewer.min.js"></script>
+  <script src="kitchen-3d.js" defer></script>`;
+  return layout({
+    title: 'Try Kitchen Colours in 3D',
+    description: 'Turn a sample kitchen in 3D and try cupboard colours, handles and granite worktops from Inpalakan Timbers kitchens.',
+    body,
+    path: 'kitchen-3d.html',
+    active: 'work'
+  });
+}
+
 function generateSitemap() {
   const urls = [];
 
@@ -1360,6 +1412,10 @@ function generateSitemap() {
 
   urls.push(`  <url>
     <loc>${baseUrl}/gallery.html</loc>
+  </url>`);
+
+  urls.push(`  <url>
+    <loc>${baseUrl}/kitchen-3d.html</loc>
   </url>`);
 
   for (const project of projects) {
@@ -1442,8 +1498,10 @@ await cp(
     join(dist, 'images/concepts/gypsum'), {recursive: true});
 await cp(join(root, 'src/styles.css'), join(dist, 'styles.css'));
 await cp(join(root, 'src/site.js'), join(dist, 'site.js'));
+await cp(join(root, 'src/kitchen-3d.js'), join(dist, 'kitchen-3d.js'));
 await writeFile(join(dist, 'index.html'), homePage());
 await writeFile(join(dist, 'gallery.html'), galleryPage());
+await writeFile(join(dist, 'kitchen-3d.html'), kitchen3dPage());
 await writeFile(join(dist, 'sitemap.xml'), generateSitemap());
 await writeFile(
     join(dist, 'robots.txt'),

@@ -106,6 +106,14 @@ Reference codes use three letters for the category and three digits for the desi
 | Gypsum ceilings | `GYP` |
 | TV wall units | `TVU` |
 
+## 3D kitchen colour explorer
+
+`kitchen-3d.html` lets visitors turn a sample kitchen in 3D and try colours for the top and bottom cupboards, handles and worktop. A WhatsApp button sends the chosen colours.
+
+- Model: `public/3d/modern-kitchen.glb`, exported from the `cabinet-design` repository: `blender-kitchen/run_all.sh` produces `final/kitchen-3d.web.glb`, which is meshopt-compressed and about 130 KB. It must keep the material names `Finish Upper`, `Finish Base`, `Handle` and a material containing `Granite`.
+- Viewer: Google `<model-viewer>` 4.0.0 and the meshopt decoder are self-hosted in `public/3d/vendor/`, with no CDN.
+- Colours, looks and camera views are defined at the top of `src/kitchen-3d.js`. The page is a **sample design**; keep it separate from completed work.
+
 ## Sharing and public URLs
 
 Every design page has a stable code, a native share button with a copy-link fallback, and a WhatsApp enquiry button. The WhatsApp message includes the design code; after deployment, the browser adds the public page link.
