@@ -115,7 +115,7 @@
     if (!/Downlight Wash/.test(m.name)) continue;
     const t = m.pbrMetallicRoughness.baseColorTexture && m.pbrMetallicRoughness.baseColorTexture.texture;
     if (t && m.emissiveTexture) m.emissiveTexture.setTexture(t);
-    m.setEmissiveFactor([1.0, 0.85, 0.62]);
+    m.setEmissiveFactor([0.45, 0.38, 0.28]);   // soft warm wash (kept minimal)
     m.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 1]);
   }
 }
