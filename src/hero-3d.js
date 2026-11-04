@@ -17,11 +17,11 @@
     starblue: ['#546588', 0.6, 0.3],
   };
   const LOOKS = [
+    {name: 'Blue Green P.M FN4', upper: 'teal', base: 'teal', top: ['#0b0b0c', 0.55]},
     {name: 'Dark Blue Pearl BN6', upper: 'darkblue', base: 'darkblue', top: ['#0b0b0c', 0.55], handle: ['#c8c8c8', 1.0, 0.30]},
     {name: 'Silver Met 199', upper: 'silver', base: 'silver', top: ['#0b0b0c', 0.55]},
     {name: 'Tasman Gold (copper look)', upper: 'copper', base: 'copper', top: ['#4e5054', 0.30]},
     {name: 'Light Beige Pearl CM1', upper: 'cream', base: 'cream', top: ['#0b0b0c', 0.55]},
-    {name: 'Blue Green P.M FN4', upper: 'teal', base: 'teal', top: ['#0b0b0c', 0.55]},
     {name: 'Crystal Silver 1E7 + Star Blue EGR', upper: 'crystal', base: 'starblue', top: ['#0b0b0c', 0.55]},
   ];
   function set(name, hex, metal, rough) {

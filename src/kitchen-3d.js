@@ -11,7 +11,7 @@
   });
 
   let FINISHES = [];                       // loaded from 3d/palette.json (our shade cards)
-  const DEF = 'BN6-NIS';                   // Dark Blue Pearl for top and bottom
+  const DEF = 'FN4-NIS';                   // Teal (Blue Green P.M FN4) for top and bottom, like KIT-015
   const HANDLES = [
     {name: 'Matt black', hex: '#141414', metal: 0.6, rough: 0.45},
     {name: 'Stainless steel', hex: '#c8c8c8', metal: 1.0, rough: 0.30},
@@ -23,11 +23,11 @@
     {name: 'White quartz', hex: '#e7e5e0', metal: 0, rough: 0.32},
   ];
   const PRESETS = [
+    {name: 'Teal (like KIT-015)', upper: 'FN4-NIS', base: 'FN4-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
     {name: 'Dark blue', upper: 'BN6-NIS', base: 'BN6-NIS', handle: 'Stainless steel', top: 'Black Galaxy granite'},
     {name: 'Silver (like KIT-002)', upper: '199-TOY', base: '199-TOY', handle: 'Matt black', top: 'Black Galaxy granite'},
     {name: 'Copper (like KIT-003)', upper: '1816817', base: '1816817', handle: 'Matt black', top: 'Steel grey granite'},
     {name: 'Cream (like KIT-010)', upper: 'CM1-NIS', base: 'CM1-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
-    {name: 'Teal (like KIT-015)', upper: 'FN4-NIS', base: 'FN4-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
     {name: 'Blue + silver (like KIT-016)', upper: '1E7-TOY', base: 'EGR-PEU', handle: 'Matt black', top: 'Black Galaxy granite'},
   ];
   const VIEWS = [
@@ -42,7 +42,7 @@
     for (const v of VIEWS) v.orbit = v.orbit.replace(/([\d.]+)m$/, (_, r) => (parseFloat(r) * 1.5).toFixed(1) + 'm');
     mv.cameraOrbit = VIEWS[0].orbit;
   }
-  const state = {upper: DEF, base: DEF, handle: 'Stainless steel', top: 'Black Galaxy granite'};
+  const state = {upper: DEF, base: DEF, handle: 'Matt black', top: 'Black Galaxy granite'};
   let target = 'both';
   const lin = c => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
