@@ -1,4 +1,5 @@
-// Home-page hero: live 3D sample kitchen with quick colour looks.
+// Home-page hero: live 3D sample kitchen (two-tone framed: the doors take the look's colours, the frame stays gloss black)
+// with quick colour looks.
 (function () {
   const mv = document.getElementById('hero-3d');
   if (!mv) return;
@@ -49,6 +50,7 @@
     set('Finish Upper', ...F[look.upper]);
     set('Finish Base', ...F[look.base]);
     set('Handle', ...(look.handle || ['#141414', 0.6, 0.45]));
+    set('Frame', '#0d0d0e', 0, 0.15);   // gloss-black frame (same as the 3D page's "Gloss black")
     worktop(look.top || null);
     document.querySelectorAll('.hero-3d-chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.look === look.name)));
   }

@@ -12,10 +12,10 @@
     customElements.get('model-viewer').meshoptDecoderLocation = root + '3d/vendor/meshopt_decoder.js';
   });
 
-  const DESIGNS = [
-    {id: 'modern', name: 'Modern slab', glb: '3d/modern-kitchen.glb', defaults: {}},
+  const DESIGNS = [   // the first one is what the page opens with (its GLB is also the src in build.mjs)
     {id: 'framed', name: 'Two-tone framed', glb: '3d/two-tone-framed.glb',
-      defaults: {upper: 'Z2S-SUZ', base: 'Z2S-SUZ', frame: 'SOLID-BLACK'}},
+      defaults: {upper: 'FN4-NIS', base: 'FN4-NIS', frame: 'SOLID-BLACK'}},   // teal doors (KIT-015) in gloss black
+    {id: 'modern', name: 'Modern slab', glb: '3d/modern-kitchen.glb', defaults: {}},
   ];
   let FINISHES = [];                       // solids + 3d/palette.json (our shade cards)
   const DEF = 'FN4-NIS';                   // Teal (Blue Green P.M FN4) for top and bottom, like KIT-015
@@ -50,7 +50,10 @@
     {name: 'Copper (like KIT-003)', upper: '1816817', base: '1816817', handle: 'Matt black', top: 'Steel grey granite'},
     {name: 'Cream (like KIT-010)', upper: 'CM1-NIS', base: 'CM1-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
     {name: 'Blue + silver (like KIT-016)', upper: '1E7-TOY', base: 'EGR-PEU', handle: 'Matt black', top: 'Black Galaxy granite'},
-    // two-tone framed design only: grey gloss doors in a gloss-black frame, like a completed L-shaped kitchen
+    // two-tone framed design only
+    {name: 'Teal in black frame', upper: 'FN4-NIS', base: 'FN4-NIS', handle: 'Matt black', top: 'Black Galaxy granite',
+      frame: 'SOLID-BLACK', framed: true},
+    // grey gloss doors in a gloss-black frame, like a completed L-shaped kitchen
     {name: 'Silver in black frame', upper: 'Z2S-SUZ', base: 'Z2S-SUZ', handle: 'Matt black', top: 'Black Galaxy granite',
       frame: 'SOLID-BLACK', framed: true},
   ];
@@ -73,7 +76,7 @@
   const BASE = {upper: DEF, base: DEF, frame: 'SOLID-BLACK', handle: 'Matt black', top: 'Black Galaxy granite',
     hood: 'Black', light: 'Warm white'};
   let design = DESIGNS[0];
-  const state = {...BASE};
+  const state = {...BASE, ...design.defaults};
   let target = 'both', hasFrame = false;
   const lin = c => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
