@@ -7,8 +7,7 @@
 
   const lin = c => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
-  const F = {   // from our paint shade cards (palette.json ids: BN6-NIS, 199-TOY, 1816817, CM1-NIS, FN4-NIS, 1E7-TOY, EGR-PEU)
-    darkblue: ['#1a1c29', 0.35, 0.22],
+  const F = {   // from our paint shade cards (palette.json ids: 199-TOY, 1816817, CM1-NIS, FN4-NIS, 1E7-TOY, EGR-PEU)
     silver: ['#d8d1c6', 0.6, 0.3],
     copper: ['#713d1c', 0.6, 0.3],
     cream: ['#99958e', 0.35, 0.22],
@@ -17,20 +16,31 @@
     starblue: ['#546588', 0.6, 0.3],
   };
   const LOOKS = [
-    {name: 'Blue Green P.M FN4', upper: 'teal', base: 'teal', top: ['#0b0b0c', 0.55]},
-    {name: 'Dark Blue Pearl BN6', upper: 'darkblue', base: 'darkblue', top: ['#0b0b0c', 0.55], handle: ['#c8c8c8', 1.0, 0.30]},
-    {name: 'Silver Met 199', upper: 'silver', base: 'silver', top: ['#0b0b0c', 0.55]},
-    {name: 'Tasman Gold (copper look)', upper: 'copper', base: 'copper', top: ['#4e5054', 0.30]},
-    {name: 'Light Beige Pearl CM1', upper: 'cream', base: 'cream', top: ['#0b0b0c', 0.55]},
-    {name: 'Crystal Silver 1E7 + Star Blue EGR', upper: 'crystal', base: 'starblue', top: ['#0b0b0c', 0.55]},
+    {name: 'Blue Green P.M FN4', upper: 'teal', base: 'teal'},
+    {name: 'Silver Met 199', upper: 'silver', base: 'silver'},
+    {name: 'Tasman Gold (copper look)', upper: 'copper', base: 'copper', top: 'steel-grey'},
+    {name: 'Light Beige Pearl CM1', upper: 'cream', base: 'cream'},
+    {name: 'Crystal Silver 1E7 + Star Blue EGR', upper: 'crystal', base: 'starblue'},
   ];
   function set(name, hex, metal, rough) {
     for (const m of (mv.model ? mv.model.materials : [])) {
       if (name instanceof RegExp ? name.test(m.name) : m.name === name) {
         m.pbrMetallicRoughness.setBaseColorFactor(rgba(hex));
-        m.pbrMetallicRoughness.setMetallicFactor(Math.min(metal, 0.3));
-        m.pbrMetallicRoughness.setRoughnessFactor(Math.max(rough, 0.32));
+        m.pbrMetallicRoughness.setMetallicFactor(Math.min(metal, 0.7));   // metallic flake under the GLB's clear coat
+        m.pbrMetallicRoughness.setRoughnessFactor(Math.min(Math.max(rough, 0.3), 0.5));
       }
+    }
+  }
+  // granite worktop: the GLB carries the Black Galaxy texture; other stones are swapped in from 3d/textures/
+  let blackTex = null; const texCache = {};
+  async function worktop(stone) {
+    for (const m of (mv.model ? mv.model.materials : []).filter(m => /Granite/i.test(m.name))) {
+      const slot = m.pbrMetallicRoughness.baseColorTexture;
+      if (!slot) continue;
+      if (!blackTex) blackTex = slot.texture;
+      const tex = stone ? await (texCache[stone] = texCache[stone] || mv.createTexture(`3d/textures/granite-${stone}.jpg`)) : blackTex;
+      if ((current.top || null) !== stone) return;   // a newer look was picked while loading
+      slot.setTexture(tex);
     }
   }
   let current = LOOKS[0];
@@ -39,7 +49,7 @@
     set('Finish Upper', ...F[look.upper]);
     set('Finish Base', ...F[look.base]);
     set('Handle', ...(look.handle || ['#141414', 0.6, 0.45]));
-    set(/Granite/i, look.top[0], 0, look.top[1]);
+    worktop(look.top || null);
     document.querySelectorAll('.hero-3d-chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.look === look.name)));
   }
   const box = document.getElementById('hero-3d-chips');
@@ -52,17 +62,7 @@
     box.appendChild(b);
   }
 
-  function glowWashes(viewer) {   // warm downlight scallops: make the wash texture self-lit so it glows on any colour
-  if (!viewer.model) return;
-  for (const m of viewer.model.materials) {
-    if (!/Downlight Wash/.test(m.name)) continue;
-    const t = m.pbrMetallicRoughness.baseColorTexture && m.pbrMetallicRoughness.baseColorTexture.texture;
-    if (t && m.emissiveTexture) m.emissiveTexture.setTexture(t);
-    m.setEmissiveFactor([0.45, 0.38, 0.28]);   // soft warm wash (kept minimal)
-    m.pbrMetallicRoughness.setBaseColorFactor([0, 0, 0, 1]);
-  }
-}
-  mv.addEventListener('load', () => { glowWashes(mv); document.getElementById('hero-3d-loading').hidden = true; apply(current); sway(); });
+  mv.addEventListener('load', () => { blackTex = null; document.getElementById('hero-3d-loading').hidden = true; apply(current); sway(); });
 
   // gentle side-to-side sway (front ± 35°) instead of a full turn, so the back is never shown;
   // pauses while the visitor drags and resumes 4 s after they let go

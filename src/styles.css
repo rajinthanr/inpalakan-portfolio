@@ -350,6 +350,7 @@ body.lightbox-open{overflow:hidden;touch-action:none}
 @media(max-width:520px){.hero-visual-3d{height:400px}.hero-3d-bar{flex-direction:column;align-items:stretch}.hero-3d-chips{justify-content:space-between}.hero-3d-open{justify-content:center}}
 .k3d-current{margin:0 0 8px;font-size:13px;color:var(--muted)}.k3d-current b{color:var(--ink)}
 .k3d-target{display:flex;gap:6px;margin-bottom:8px}.k3d-target button{flex:1;font:inherit;font-size:13px;padding:8px;border:1px solid var(--line);background:var(--white);cursor:pointer}
+.k3d-preset[hidden]{display:none}
 .k3d-target button[aria-pressed=true]{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .k3d-search{width:100%;font:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--line);background:var(--white)}
 .k3d-card{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin:14px 0 6px;text-transform:uppercase}

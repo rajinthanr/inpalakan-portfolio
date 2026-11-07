@@ -1025,7 +1025,7 @@ function homePage() {
         touch-action="pan-y"
         camera-orbit="-25deg 85deg 6.8m" camera-target="1.83m 1.2m 0.25m"
         min-camera-orbit="-60deg 70deg auto" max-camera-orbit="60deg 96deg auto"
-        shadow-intensity="0.9" exposure="1.05" environment-image="3d/warm-studio.hdr" tone-mapping="neutral" interaction-prompt="none"
+        shadow-intensity="0.9" exposure="1.05" environment-image="3d/room-warm.hdr" tone-mapping="neutral" interaction-prompt="none"
         alt="Interactive 3D sample kitchen with metallic cupboards, black granite worktop and four-burner glass hob">
         <div class="hero-3d-loading" id="hero-3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
       </model-viewer>
@@ -1368,29 +1368,33 @@ function kitchen3dPage() {
   const body = `<section class="page-hero shell k3d-hero">
     <p class="eyebrow">SAMPLE DESIGN · 3D</p>
     <h1>Try kitchen colours <em>in 3D.</em></h1>
-    <p>Turn the kitchen, zoom in, and pick colours for the top and bottom cupboards, handles and worktop. Colours come from the paint shade cards we use (Asian Paints Causeway, Sunny Hi-Build Lacquer and Pearl / Metallic). This is a sample design and screen colours are approximate, so we will show you the real shade card before you order.</p>
+    <p>Turn the kitchen, zoom in, and pick colours for the cupboards, handles, worktop, cooker hood and lights. Try a plain modern kitchen or a two-tone framed one. Colours come from the paint shade cards we use (Asian Paints Causeway, Sunny Hi-Build Lacquer and Pearl / Metallic). This is a sample design and screen colours are approximate, so we will show you the real shade card before you order.</p>
   </section>
   <section class="k3d shell" aria-label="3D kitchen colour explorer">
     <div class="k3d-stage">
       <model-viewer id="k3d-viewer" data-root="" src="3d/modern-kitchen.glb" camera-controls touch-action="pan-y"
-        shadow-intensity="0.9" exposure="1.05" environment-image="3d/warm-studio.hdr" tone-mapping="neutral" interaction-prompt="auto"
+        shadow-intensity="0.9" exposure="1.05" environment-image="3d/room-warm.hdr" tone-mapping="neutral" interaction-prompt="auto"
         camera-orbit="-28deg 85deg 5.6m" camera-target="1.83m 1.25m 0.25m"
         min-camera-orbit="-95deg 0deg 0.5m" max-camera-orbit="95deg 180deg 14m"
-        alt="3D sample kitchen with metallic cupboards, black granite worktop and a four-burner glass hob">
+        alt="3D sample kitchen with metallic cupboards, black granite worktop, a four-burner glass hob and a cooker hood">
         <div class="k3d-loading" id="k3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
       </model-viewer>
       <div class="k3d-views" id="k3d-views" aria-label="Camera views"></div>
     </div>
     <div class="k3d-panel">
+      <h2>Design</h2>
+      <div class="k3d-target" id="k3d-design" role="group" aria-label="Kitchen design"></div>
       <h2>Looks from our kitchens</h2>
       <div class="k3d-presets" id="k3d-presets"></div>
       <h2>Cupboard colour <small>our paint shade cards</small></h2>
-      <p class="k3d-current">Top: <b id="k3d-upper-name"></b><br>Bottom: <b id="k3d-base-name"></b></p>
-      <div class="k3d-target" id="k3d-target" role="group" aria-label="Apply colour to">
-        <button type="button" data-t="upper" aria-pressed="false">Top</button><button type="button" data-t="base" aria-pressed="false">Bottom</button><button type="button" data-t="both" aria-pressed="true">Both</button>
-      </div>
+      <p class="k3d-current"><span id="k3d-label-1">Top</span>: <b id="k3d-name-1"></b><br><span id="k3d-label-2">Bottom</span>: <b id="k3d-name-2"></b></p>
+      <div class="k3d-target" id="k3d-target" role="group" aria-label="Apply colour to"></div>
       <input class="k3d-search" id="k3d-search" type="search" placeholder="Search colour name or code, e.g. BN6" aria-label="Search paint colours">
       <div id="k3d-palette"></div>
+      <h2>Lights <small id="k3d-light-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-light"></div>
+      <h2>Cooker hood <small id="k3d-hood-name"></small></h2>
+      <div class="k3d-swatches" id="k3d-hood"></div>
       <h2>Handles <small id="k3d-handle-name"></small></h2>
       <div class="k3d-swatches" id="k3d-handle"></div>
       <h2>Worktop <small id="k3d-top-name"></small></h2>

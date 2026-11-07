@@ -108,9 +108,10 @@ Reference codes use three letters for the category and three digits for the desi
 
 ## 3D kitchen colour explorer
 
-`kitchen-3d.html` lets visitors turn a sample kitchen in 3D and try colours for the top and bottom cupboards, handles and worktop. A WhatsApp button sends the chosen colours.
+`kitchen-3d.html` lets visitors turn a sample kitchen in 3D and pick one of two designs: **Modern slab** or **Two-tone framed** (doors in a gloss-black outline). They can try colours for the cupboards (top / bottom, or front / background on the framed design), handles, granite worktop, cooker hood (black or silver) and downlights (warm white or white). A WhatsApp button sends the chosen design and colours. The home-page hero shows the modern design with quick colour looks (`src/hero-3d.js`).
 
-- Model: `public/3d/modern-kitchen.glb`, exported from the `cabinet-design` repository: `blender-kitchen/run_all.sh` produces `final/kitchen-3d.web.glb`, which is meshopt-compressed and about 130 KB. It must keep the material names `Finish Upper`, `Finish Base`, `Handle` and a material containing `Granite`.
+- Models: `public/3d/modern-kitchen.glb` and `public/3d/two-tone-framed.glb`. They are the Kitchen Design Viewer models from the `cabinet-design` repository (`viewer/designs/modern-kitchen-12ft.glb`, `two-tone-framed-12ft.glb`), meshopt-compressed with `npx @gltf-transform/cli@4.1.1 optimize IN OUT --compress meshopt --texture-compress false --simplify false --palette false` (about 630 KB each, Black Galaxy granite texture included). They must keep the material names `Finish Upper`, `Finish Base`, `Handle`, `Hood Body`, `Hood Accent`, `Downlight Lens`, a material containing `Granite` (with a base-colour texture), and `Frame` on framed designs.
+- Lighting and stone: `public/3d/room-warm.hdr` / `room-white.hdr` are half-size copies of the viewer's `viewer/env/` room environments; `public/3d/textures/granite-*.jpg` are the viewer's worktop textures saved at JPEG quality 80.
 - Viewer: Google `<model-viewer>` 4.0.0 and the meshopt decoder are self-hosted in `public/3d/vendor/`, with no CDN.
 - Colours, looks and camera views are defined at the top of `src/kitchen-3d.js`. The page is a **sample design**; keep it separate from completed work.
 
