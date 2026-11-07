@@ -62,6 +62,8 @@
     box.appendChild(b);
   }
 
+  let retried = false;   // a failed load must not leave "Loading…" forever: retry once
+  mv.addEventListener('error', () => { if (!retried) { retried = true; const s = mv.src; setTimeout(() => { mv.src = ''; mv.src = s; }, 800); } });
   mv.addEventListener('load', () => { blackTex = null; document.getElementById('hero-3d-loading').hidden = true; apply(current); sway(); });
 
   // gentle side-to-side sway (front ± 35°) instead of a full turn, so the back is never shown;

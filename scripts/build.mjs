@@ -1036,6 +1036,7 @@ function homePage() {
       </div>
     </div>
   </section>
+  <script>self.ModelViewerElement = {meshoptDecoderLocation: '3d/vendor/meshopt_decoder.js'};</script><!-- set before model-viewer starts: a model must never load before it knows the meshopt decoder -->
   <script type="module" src="3d/vendor/model-viewer.min.js"></script>
   <script src="hero-3d.js" defer></script>
 
@@ -1407,6 +1408,7 @@ function kitchen3dPage() {
       <p class="k3d-note">See real kitchens we have built in <a href="gallery.html">Our Work</a>.</p>
     </div>
   </section>
+  <script>self.ModelViewerElement = {meshoptDecoderLocation: '3d/vendor/meshopt_decoder.js'};</script><!-- set before model-viewer starts: a model must never load before it knows the meshopt decoder -->
   <script type="module" src="3d/vendor/model-viewer.min.js"></script>
   <script src="kitchen-3d.js" defer></script>`;
   return layout({

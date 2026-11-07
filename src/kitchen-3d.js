@@ -62,6 +62,10 @@
     {name: 'Hob', orbit: '8deg 52deg 1.4m', target: '2.44m 0.82m 0.30m'},
     {name: 'Sink', orbit: '-10deg 55deg 1.5m', target: '1.68m 0.80m 0.30m'},
   ];
+  // pin the 3D view right under the sticky site header on narrow screens (see .k3d-stage in styles.css)
+  const header = document.querySelector('.site-header');
+  const pinTop = () => { if (header) document.documentElement.style.setProperty('--k3d-top', header.offsetHeight + 'px'); };
+  pinTop(); window.addEventListener('resize', pinTop);
   if (window.matchMedia('(max-width: 700px)').matches) {     // narrow phones: pull the camera back
     for (const v of VIEWS) v.orbit = v.orbit.replace(/([\d.]+)m$/, (_, r) => (parseFloat(r) * 1.5).toFixed(1) + 'm');
     mv.cameraOrbit = VIEWS[0].orbit;
@@ -194,7 +198,17 @@
   swatches('k3d-handle', 'handle', HANDLES);
   swatches('k3d-top', 'top', WORKTOPS);
 
+  // a failed load (e.g. a dropped connection) must not leave "Loading…" forever: retry once, then offer a tap to retry
+  let retried = false;
+  const reload = () => { $('k3d-loading').textContent = 'Loading 3D kitchen…'; const s = mv.src; mv.src = ''; mv.src = s; };
+  mv.addEventListener('error', () => {
+    if (!retried) { retried = true; setTimeout(reload, 800); return; }
+    const box = $('k3d-loading');
+    box.innerHTML = '<button type="button" class="k3d-view">Could not load the 3D kitchen. Tap to try again</button>';
+    box.querySelector('button').addEventListener('click', reload);
+  });
   mv.addEventListener('load', () => {
+    retried = false;
     texCache = {};
     hasFrame = mats('Frame').length > 0;
     targets();
