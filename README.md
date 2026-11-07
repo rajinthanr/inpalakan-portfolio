@@ -47,7 +47,8 @@ Open `http://localhost:8765/`. You can also run `npm start` after building; that
 | `src/styles.css` | Responsive visual design |
 | `src/site.js` | Filters, search, sharing, multi-view controls, and full-screen viewer behavior |
 | `scripts/build.mjs` | Validates catalog data and generates the static site in `dist/` |
-| `.github/workflows/deploy.yml` | GitHub Pages build and deployment workflow for `main` |
+| `.github/workflows/deploy.yml` | GitHub Pages workflow for `main` (not used while Pages deploys from `gh-pages`) |
+| `scripts/deploy-pages-branch.sh` | Builds the site and pushes it to the `gh-pages` branch (current deployment) |
 | `references/concepts/doors/` | AI-generated door concepts kept separate from completed work |
 | `references/concepts/bedroom-cupboards/` | AI-generated bedroom cupboard concepts; optimized WebP copies are included in the gallery's bedroom sample section |
 | `references/concepts/furniture/` | AI-generated furniture concepts; optimized WebP copies are included in the gallery's furniture sample section |
@@ -144,7 +145,19 @@ Titles and descriptions should describe visible design details only. Confirm cap
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (current: deploy from the `gh-pages` branch)
+
+Since November 2026 the site is published without GitHub Actions minutes. **Settings → Pages** is set to *Deploy from a branch*, `gh-pages`, `/ (root)`. To publish, commit your changes and run:
+
+```bash
+scripts/deploy-pages-branch.sh
+```
+
+It builds `dist/` locally (with `PUBLIC_BASE_URL=https://rajinthanr.github.io/inpalakan-portfolio`) and force-pushes it, with a `.nojekyll` file, to the `gh-pages` branch. GitHub's built-in *pages build and deployment* then publishes it to https://rajinthan.com/inpalakan-portfolio/ in a minute or two. The `Deploy Portfolio to GitHub Pages` workflow still runs on pushes to `main`. While the account's Actions are blocked by a billing lock it fails without changing the site, and you can disable it under **Actions**.
+
+To go back to the workflow: set the Pages source to **GitHub Actions**.
+
+#### Workflow deployment (previous setup)
 
 1. Push the repository to GitHub.
 2. Open **Settings → Pages** and select **GitHub Actions** as the source.
