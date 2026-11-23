@@ -1,4 +1,4 @@
-// Home-page hero: live 3D sample kitchen (two-tone framed: the doors take the look's colours, the frame stays gloss black)
+// Home-page hero: live 3D sample kitchen (two-tone framed: the doors take the look's colours, the frame stays Black Mica 209)
 // with quick colour looks.
 (function () {
   const mv = document.getElementById('hero-3d');
@@ -8,20 +8,18 @@
 
   const lin = c => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
-  const F = {   // from our paint shade cards (palette.json ids: 199-TOY, 1816817, CM1-NIS, FN4-NIS, 1E7-TOY, EGR-PEU)
+  const F = {   // from our paint shade cards (palette.json ids: 199-TOY, FN4-NIS, 3Q3-TOY, G84-MIT, 209-TOY)
     silver: ['#d8d1c6', 0.6, 0.3],
-    copper: ['#713d1c', 0.6, 0.3],
-    cream: ['#99958e', 0.35, 0.22],
     teal: ['#1f5c56', 0.35, 0.22],
-    crystal: ['#e2dfd0', 0.6, 0.3],
-    starblue: ['#546588', 0.6, 0.3],
+    maroon: ['#59282b', 0.45, 0.26],
+    emerald: ['#1f4140', 0.35, 0.22],
   };
-  const LOOKS = [
-    {name: 'Blue Green P.M FN4', upper: 'teal', base: 'teal'},
-    {name: 'Silver Met 199', upper: 'silver', base: 'silver'},
-    {name: 'Tasman Gold (copper look)', upper: 'copper', base: 'copper', top: 'steel-grey'},
-    {name: 'Light Beige Pearl CM1', upper: 'cream', base: 'cream'},
-    {name: 'Crystal Silver 1E7 + Star Blue EGR', upper: 'crystal', base: 'starblue'},
+  const FRAME = ['#15181f', 0.45, 0.26];   // Black Mica 209 TOY (Sunny card)
+  const LOOKS = [   // the suggested colours, as on the 3D kitchen page
+    {name: 'Teal FN4', upper: 'teal', base: 'teal'},
+    {name: 'Silver 199', upper: 'silver', base: 'silver'},
+    {name: 'Maroon 3Q3', upper: 'maroon', base: 'maroon'},
+    {name: 'Emerald green G84', upper: 'emerald', base: 'emerald'},
   ];
   function set(name, hex, metal, rough) {
     for (const m of (mv.model ? mv.model.materials : [])) {
@@ -50,7 +48,7 @@
     set('Finish Upper', ...F[look.upper]);
     set('Finish Base', ...F[look.base]);
     set('Handle', ...(look.handle || ['#141414', 0.6, 0.45]));
-    set('Frame', '#0d0d0e', 0, 0.15);   // gloss-black frame (same as the 3D page's "Gloss black")
+    set('Frame', ...FRAME);   // black frame (same as the 3D page's background)
     worktop(look.top || null);
     document.querySelectorAll('.hero-3d-chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.look === look.name)));
   }

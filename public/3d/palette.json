@@ -736,12 +736,12 @@
   "name": "Black Mica",
   "code": "209 TOY",
   "card": "Sunny Hi-Build Lacquer",
-  "hex": "#0a1a10",
+  "hex": "#15181f",
   "metal": 0.45,
   "rough": 0.26,
   "hex_card": "#15181f",
-  "source": "https://www.paintscratch.com/colors/toyota/black-pearl-209/",
-  "confidence": "high"
+  "source": "measured from our shade card photo (online value #0a1a10 looked green)",
+  "confidence": "card"
  },
  {
   "id": "1G3-TOY",

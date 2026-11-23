@@ -1026,7 +1026,7 @@ function homePage() {
         camera-orbit="-25deg 85deg 6.8m" camera-target="1.83m 1.2m 0.25m"
         min-camera-orbit="-60deg 70deg auto" max-camera-orbit="60deg 96deg auto"
         shadow-intensity="0.9" exposure="1.05" environment-image="3d/room-warm.hdr" tone-mapping="neutral" interaction-prompt="none"
-        alt="Interactive 3D sample kitchen with teal doors in a gloss-black frame, black granite worktop and four-burner glass hob">
+        alt="Interactive 3D sample kitchen with teal doors in a black frame, black granite worktop and four-burner glass hob">
         <div class="hero-3d-loading" id="hero-3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
       </model-viewer>
       <p class="hero-3d-label">SAMPLE DESIGN IN 3D · DRAG TO TURN</p>
@@ -1377,7 +1377,7 @@ function kitchen3dPage() {
         shadow-intensity="0.9" exposure="1.05" environment-image="3d/room-warm.hdr" tone-mapping="neutral" interaction-prompt="auto"
         camera-orbit="-28deg 85deg 5.6m" camera-target="1.83m 1.25m 0.25m"
         min-camera-orbit="-95deg 0deg 0.5m" max-camera-orbit="95deg 180deg 14m"
-        alt="3D sample kitchen with teal doors in a gloss-black frame, black granite worktop, a four-burner glass hob and a cooker hood">
+        alt="3D sample kitchen with teal doors in a black frame, black granite worktop, a four-burner glass hob and a cooker hood">
         <div class="k3d-loading" id="k3d-loading" slot="progress-bar">Loading 3D kitchen…</div>
       </model-viewer>
       <div class="k3d-views" id="k3d-views" aria-label="Camera views"></div>
@@ -1385,7 +1385,7 @@ function kitchen3dPage() {
     <div class="k3d-panel">
       <h2>Design</h2>
       <div class="k3d-target" id="k3d-design" role="group" aria-label="Kitchen design"></div>
-      <h2>Looks from our kitchens</h2>
+      <h2>Suggested colours</h2>
       <div class="k3d-presets" id="k3d-presets"></div>
       <h2>Cupboard colour <small>our paint shade cards</small></h2>
       <p class="k3d-current"><span id="k3d-label-1">Top</span>: <b id="k3d-name-1"></b><br><span id="k3d-label-2">Bottom</span>: <b id="k3d-name-2"></b></p>

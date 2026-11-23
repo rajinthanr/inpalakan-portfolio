@@ -12,20 +12,14 @@
     customElements.get('model-viewer').meshoptDecoderLocation = root + '3d/vendor/meshopt_decoder.js';
   });
 
+  const FRAME_BLACK = '209-TOY';           // Black Mica (Sunny card): the background (frame) of two-tone designs
   const DESIGNS = [   // the first one is what the page opens with (its GLB is also the src in build.mjs)
     {id: 'framed', name: 'Two-tone framed', glb: '3d/two-tone-framed.glb',
-      defaults: {upper: 'FN4-NIS', base: 'FN4-NIS', frame: 'SOLID-BLACK'}},   // teal doors (KIT-015) in gloss black
+      defaults: {upper: 'FN4-NIS', base: 'FN4-NIS', frame: FRAME_BLACK}},   // teal doors (KIT-015) in Black Mica 209
     {id: 'modern', name: 'Modern slab', glb: '3d/modern-kitchen.glb', defaults: {}},
   ];
-  let FINISHES = [];                       // solids + 3d/palette.json (our shade cards)
-  const DEF = 'FN4-NIS';                   // Teal (Blue Green P.M FN4) for top and bottom, like KIT-015
-  // plain (non-metallic) gloss colours; gloss black is the usual background of two-tone framed designs
-  const SOLIDS = [
-    {id: 'SOLID-BLACK', name: 'Gloss black', code: 'Black', hex: '#0d0d0e', metal: 0, rough: 0.15},
-    {id: 'SOLID-CHARCOAL', name: 'Gloss charcoal', code: 'Charcoal', hex: '#2e3033', metal: 0, rough: 0.20},
-    {id: 'SOLID-WHITE', name: 'Gloss white', code: 'White', hex: '#eeede8', metal: 0, rough: 0.15},
-    {id: 'SOLID-WALNUT', name: 'Dark walnut', code: 'Walnut', hex: '#3a281c', metal: 0, rough: 0.35},
-  ].map(c => ({...c, card: 'Solid gloss', confidence: 'solid'}));
+  let FINISHES = [];                       // 3d/palette.json (our shade cards only)
+  const DEF = 'FN4-NIS';                   // Teal (Blue Green P.M FN4) for all cupboards, like KIT-015
   const HANDLES = [
     {name: 'Matt black', hex: '#141414', metal: 0.6, rough: 0.45},
     {name: 'Stainless steel', hex: '#c8c8c8', metal: 1.0, rough: 0.30},
@@ -44,18 +38,11 @@
     {name: 'Tan Brown granite', hex: '#5a3a2a', metal: 0, rough: 0.22, tex: '3d/textures/granite-tan-brown.jpg'},
     {name: 'White quartz', hex: '#e7e5e0', metal: 0, rough: 0.25, tex: '3d/textures/granite-white-quartz.jpg'},
   ];
-  const PRESETS = [
-    {name: 'Teal (like KIT-015)', upper: 'FN4-NIS', base: 'FN4-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
-    {name: 'Silver (like KIT-002)', upper: '199-TOY', base: '199-TOY', handle: 'Matt black', top: 'Black Galaxy granite'},
-    {name: 'Copper (like KIT-003)', upper: '1816817', base: '1816817', handle: 'Matt black', top: 'Steel grey granite'},
-    {name: 'Cream (like KIT-010)', upper: 'CM1-NIS', base: 'CM1-NIS', handle: 'Matt black', top: 'Black Galaxy granite'},
-    {name: 'Blue + silver (like KIT-016)', upper: '1E7-TOY', base: 'EGR-PEU', handle: 'Matt black', top: 'Black Galaxy granite'},
-    // two-tone framed design only
-    {name: 'Teal in black frame', upper: 'FN4-NIS', base: 'FN4-NIS', handle: 'Matt black', top: 'Black Galaxy granite',
-      frame: 'SOLID-BLACK', framed: true},
-    // grey gloss doors in a gloss-black frame, like a completed L-shaped kitchen
-    {name: 'Silver in black frame', upper: 'Z2S-SUZ', base: 'Z2S-SUZ', handle: 'Matt black', top: 'Black Galaxy granite',
-      frame: 'SOLID-BLACK', framed: true},
+  const PRESETS = [   // suggested colours; on the two-tone design each comes in the black frame
+    {name: 'Silver', colour: '199-TOY'},          // 199 TOY Silver Met.
+    {name: 'Teal', colour: 'FN4-NIS'},            // FN4 NIS Blue Green P.M (like KIT-015)
+    {name: 'Maroon', colour: '3Q3-TOY'},          // 3Q3 TOY Dark Red Mica Met
+    {name: 'Emerald green', colour: 'G84-MIT'},   // G84 MIT Emerald Green Pearl
   ];
   const VIEWS = [
     {name: 'Perspective', orbit: '-28deg 85deg 5.6m', target: '1.83m 1.25m 0.25m'},
@@ -73,15 +60,15 @@
     for (const v of VIEWS) v.orbit = v.orbit.replace(/([\d.]+)m$/, (_, r) => (parseFloat(r) * 1.5).toFixed(1) + 'm');
     mv.cameraOrbit = VIEWS[0].orbit;
   }
-  const BASE = {upper: DEF, base: DEF, frame: 'SOLID-BLACK', handle: 'Matt black', top: 'Black Galaxy granite',
+  const BASE = {upper: DEF, base: DEF, frame: FRAME_BLACK, handle: 'Matt black', top: 'Black Galaxy granite',
     hood: 'Black', light: 'Warm white'};
   let design = DESIGNS[0];
   const state = {...BASE, ...design.defaults};
-  let target = 'both', hasFrame = false;
+  let target = 'front', hasFrame = false;
   const lin = c => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
   const rgba = hex => [1, 3, 5].map(i => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).concat(1);
   const find = (list, key) => list.find(x => x.id === key || x.name === key) || list[0];
-  const label = c => (c.code && c.confidence !== 'solid' ? `${c.name} ${c.code}` : c.name);
+  const label = c => (c.code ? `${c.name} ${c.code}` : c.name);
   const $ = id => document.getElementById(id);
   const mats = match => (mv.model ? mv.model.materials : []).filter(m => (match instanceof RegExp ? match.test(m.name) : m.name === match));
 
@@ -143,7 +130,7 @@
     if (wa) {
       const colours = hasFrame
           ? `${label(up)} doors in a ${label(fr)} frame`
-          : `top cabinets ${label(up)}, bottom cabinets ${label(bs)}`;
+          : `cupboards in ${label(up)}`;
       const msg = `Hello Inpalakan Timbers, I tried the 3D kitchen (${design.name}): ${colours}, ${state.handle} handles, ${
           state.top} worktop, ${state.hood.toLowerCase()} cooker hood, ${state.light.toLowerCase()} lights. Can you make a kitchen like this for my home?`;
       wa.href = `https://wa.me/${wa.dataset.number}?text=${encodeURIComponent(msg)}`;
@@ -177,15 +164,30 @@
     });
   }
 
-  // what a palette click colours: Top / Bottom / Both, or Front / Background on two-tone framed designs
+  // one colour for all cupboards; two-tone framed designs add Front / Background buttons for the palette
   function targets() {
-    const list = hasFrame ? [{t: 'front', name: 'Front'}, {t: 'background', name: 'Background'}]
-                          : [{t: 'upper', name: 'Top'}, {t: 'base', name: 'Bottom'}, {t: 'both', name: 'Both'}];
-    target = hasFrame ? 'front' : 'both';
-    buttons('k3d-target', list, x => { target = x.t; }, hasFrame ? 0 : 2);
-    $('k3d-label-1').textContent = hasFrame ? 'Front' : 'Top';
-    $('k3d-label-2').textContent = hasFrame ? 'Background' : 'Bottom';
-    document.querySelectorAll('.k3d-preset[data-framed]').forEach(b => { b.hidden = !hasFrame; });
+    target = 'front';
+    buttons('k3d-target', hasFrame ? [{t: 'front', name: 'Front'}, {t: 'background', name: 'Background'}] : [],
+        x => { target = x.t; }, 0);
+    $('k3d-target').hidden = !hasFrame;
+    $('k3d-label-1').textContent = hasFrame ? 'Front' : 'Colour';
+    $('k3d-label-2').textContent = 'Background';
+    $('k3d-label-2').parentNode.querySelectorAll('#k3d-label-2, #k3d-name-2, br').forEach(e => { e.hidden = !hasFrame; });
+    presets();
+  }
+  function presets() {   // suggested colours; on two-tone designs they show and apply the black background
+    const box = $('k3d-presets'); box.innerHTML = '';
+    if (!FINISHES.length) return;
+    for (const p of PRESETS) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'k3d-preset';
+      b.innerHTML = `<i style="--u:${find(FINISHES, p.colour).hex};--b:${find(FINISHES, hasFrame ? FRAME_BLACK : p.colour).hex}"></i><span>${
+          p.name}${hasFrame ? ' in black frame' : ''}</span>`;
+      b.addEventListener('click', () => {
+        Object.assign(state, {upper: p.colour, base: p.colour}, hasFrame ? {frame: FRAME_BLACK} : {}); apply();
+      });
+      box.appendChild(b);
+    }
   }
 
   buttons('k3d-views', VIEWS, v => { mv.cameraTarget = v.target; mv.cameraOrbit = v.orbit; }, 0, 'k3d-view');
@@ -239,16 +241,12 @@
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'k3d-pal-sw'; b.style.background = c.hex; b.dataset.id = c.id;
         b.title = `${c.name} · ${c.code} · ${c.card}` + (c.confidence === 'card' ? ' (colour from our shade card)'
-            : c.confidence === 'solid' ? ' (plain gloss paint)' : ' (colour from OEM paint reference)');
+            : ' (colour from OEM paint reference)');
         b.setAttribute('aria-label', label(c));
         b.innerHTML = `<span>${c.code.split(' ')[0]}</span>`;
         b.addEventListener('click', () => {
           if (target === 'background') state.frame = c.id;
-          else if (target === 'front') state.upper = state.base = c.id;
-          else {
-            if (target !== 'base') state.upper = c.id;
-            if (target !== 'upper') state.base = c.id;
-          }
+          else state.upper = state.base = c.id;   // one colour for all cupboards
           apply();
         });
         grid.appendChild(b);
@@ -258,19 +256,8 @@
   }
   $('k3d-search').addEventListener('input', e => palette(e.target.value));
   fetch(root + '3d/palette.json').then(r => r.json()).then(p => {
-    FINISHES = [...SOLIDS, ...p];
-    const presetBox = $('k3d-presets');
-    for (const p of PRESETS) {
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'k3d-preset';
-      b.innerHTML = `<i style="--u:${find(FINISHES, p.upper).hex};--b:${find(FINISHES, p.frame || p.base).hex}"></i><span>${p.name}</span>`;
-      if (p.framed) { b.dataset.framed = '1'; b.hidden = !hasFrame; }
-      b.addEventListener('click', () => {
-        const {name, framed, ...look} = p;
-        Object.assign(state, look); apply();
-      });
-      presetBox.appendChild(b);
-    }
+    FINISHES = p;
+    presets();
     palette();
   });
 })();
