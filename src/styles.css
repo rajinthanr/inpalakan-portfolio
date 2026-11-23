@@ -188,8 +188,9 @@ h1 em,h2 em{font-weight:400;color:var(--accent)}
 .gallery-help-results{margin:0 0 22px}
 .gallery-toolbar{border-top:1px solid var(--line);padding-top:21px;display:grid;grid-template-columns:minmax(240px,320px) auto;align-items:center;gap:16px 20px;margin-bottom:34px}
 .filters{grid-column:1/-1;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.filter{border:1px solid transparent;background:transparent;color:var(--ink);font-size:13px;cursor:pointer;padding:11px 17px;white-space:nowrap}
-.filter span{font-size:10px;margin-left:5px;color:var(--muted)}
+.filter{display:inline-flex;align-items:center;gap:7px;border:1px solid transparent;background:transparent;color:var(--ink);font-size:13px;cursor:pointer;padding:11px 17px;white-space:nowrap}
+.filter .filter-icon{width:16px;height:16px;flex:none}
+.filter span{font-size:10px;margin-left:-2px;color:var(--muted)}
 .filter.is-active{background:var(--ink);color:var(--white)}
 .filter.is-active span{color:#ced8cf}
 .filter:hover:not(.is-active){border-color:var(--line)}

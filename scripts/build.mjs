@@ -598,6 +598,33 @@ function icon(name) {
   return '';
 }
 
+// Line-style category icons for the gallery filter chips (replaces the old emojis).
+// Same look as icon() above: 24x24, stroke currentColor, no fill.
+function catIcon(key) {
+  const svg = body =>
+      `<svg class="filter-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${
+          body}</svg>`;
+  const paths = {
+    // grid of tiles – the "All" chip
+    all: '<rect x="4" y="4" width="7" height="7" rx="1.3"/><rect x="13" y="4" width="7" height="7" rx="1.3"/><rect x="4" y="13" width="7" height="7" rx="1.3"/><rect x="13" y="13" width="7" height="7" rx="1.3"/>',
+    // panelled door with a knob
+    doors: '<path d="M7 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17"/><path d="M5 21h14"/><path d="M9.5 7h5M9.5 11h5"/><path d="M14.4 14.2v1.8"/>',
+    // four-pane window
+    windows: '<rect x="4.5" y="4.5" width="15" height="15" rx="1"/><path d="M12 4.5v15M4.5 12h15"/>',
+    // counter with two base cupboard doors
+    kitchens: '<path d="M3.5 7.5h17"/><rect x="4.5" y="7.5" width="15" height="12" rx="1"/><path d="M12 7.5v12"/><path d="M9.6 12v1.6M14.4 12v1.6"/>',
+    // tall two-door wardrobe on legs
+    bedrooms: '<rect x="6" y="3.5" width="12" height="16" rx="1"/><path d="M12 3.5v16"/><path d="M10.6 10v3M13.4 10v3"/><path d="M8 19.5v1.5M16 19.5v1.5"/>',
+    // layered ceiling tray with a downlight
+    gypsum: '<path d="M4 6.5h16M6 10.5h12M4 14.5h16"/><circle cx="12" cy="18.2" r="1.1"/>',
+    // armchair
+    furniture: '<path d="M6 11V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M6 11a1.5 1.5 0 0 0-1.5 1.5v2A1.5 1.5 0 0 0 6 16h12a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 18 11"/><path d="M8 11.5h8"/><path d="M6 16v2M18 16v2"/>',
+    // flat-screen on a stand
+    'tv-units': '<rect x="4" y="4.5" width="16" height="11" rx="1.3"/><path d="M9 19h6M12 15.5V19"/>',
+  };
+  return svg(paths[key] || '');
+}
+
 function logoUrl(prefix = '') {
   return `${prefix}${site.logo || 'images/Others/logo.png'}`;
 }
@@ -1093,7 +1120,7 @@ function galleryPage() {
     <div class="gallery-toolbar">
       <div class="filters" role="group" aria-label="Filter designs">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">
-          All <span>${totalGalleryItems}</span>
+          ${catIcon('all')} All <span>${totalGalleryItems}</span>
         </button>
         ${
       Object.entries(categories)
@@ -1101,7 +1128,7 @@ function galleryPage() {
               ([key, category]) => `
           <button class="filter" type="button" data-filter="${
                   key}" aria-pressed="false">
-            ${category.icon} ${category.title} <span>${
+            ${catIcon(key)} ${category.title} <span>${
                   projects.filter(p => p.category === key).length +
                   samplePatterns.filter(p => p.category === key).length}</span>
           </button>
